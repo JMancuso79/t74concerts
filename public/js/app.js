@@ -18480,11 +18480,11 @@ __webpack_require__.r(__webpack_exports__);
         concertId: this.concert.id,
         concertPrice: this.concert.ticket,
         concertTitle: this.concert.title,
-        concertVenue: this.venue.name,
-        venueAddress: this.venue.address,
-        venueCity: this.venue.city,
-        venueState: this.venue.state,
-        venueZip: this.venue.zipCode
+        concertVenue: this.concert.venue[0].name,
+        venueAddress: this.concert.venue[0].address,
+        venueCity: this.concert.venue[0].city,
+        venueState: this.concert.venue[0].state,
+        venueZip: this.concert.venue[0].zipCode
       }).then(function (response) {
         // Success
         if (response.data.message == 'success') {
