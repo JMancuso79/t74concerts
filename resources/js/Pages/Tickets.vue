@@ -11,31 +11,27 @@
             <div class="max-width mx-auto">
                 <!-- Concert -->
                 <div v-if="concert != null && concert != undefined && concert != []">
-                    <div class="grid grid-cols-1 text-white">
-                        <div class="p-2">
-                            <div class="max-w-md mx-auto dark:bg-gray-800 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-                                <div class="md:flex">
-                                    <div class="md:flex-shrink-0">
-                                        <img class="h-48 w-full object-cover md:w-48" :src="concert.image" :alt="concert.title">
-                                    </div>
-                                    <div class="p-4 w-full">
-                                        <div class="uppercase tracking-wide text-sm text-white font-semibold">
-                                            {{concert.title}}
-                                        </div>
-                                        <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
-                                            {{concert.venue[0].name}}
-                                        </a>
-                                        <p class="mt-2 text-gray-500">{{concert.details}}</p>
-                                    </div>
-
-                                </div>
+                   
+                    <div class="m-4 md:m-0">
+                        <img class="w-full" :src="concert.imageFull" :alt="concert.title">
+                        <div class="w-full" >
+                            <div class="uppercase tracking-wide text-sm text-white font-semibold">
+                                {{concert.title}}
                             </div>
+                            <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
+                                {{concert.venue[0].name}}
+                            </a>
+                            <p class="mt-2 text-gray-500">{{concert.details}}</p>
+                            <p class="mt-2 text-gray-500">
+                                <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
+                            </p>
                         </div>
                     </div>
+       
 
-                    <div class="grid grid-cols-1">
-                        <div class="p-2">
-                            <div class="max-w-md mx-auto dark:bg-gray-400 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                    <div class="m-4 md:m-0">
+                        <div>
+                            <div class="dark:bg-gray-400 shadow-md overflow-hidden">
                                 <!-- Not Loading -->
                                 <div v-if="isLoading === false">
                                     <div class="p-4">
@@ -233,13 +229,14 @@
                             {
                                 name: 'The B Foundation',
                                 url: 'https://artistwave.com',
-                                image: '/images/tower-74-concert-1.jpg'
+                                image: '/images/tower-74-concert-1.jpg',
                             }
                         ],
-                        details: 'This is some detail text',
+                        details: 'Kyle Smith, The B Foundation, Rebel Shakedown & Die Criminal. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
                         url: 'https://artistwave.com',
                         ticketLink: 'https://artistwave.com',
-                        image: '/images/tower-74-concert-1.jpg',
+                        image: '/images/tower74-ks-bf.jpg',
+                        imageFull: '/images/tower74-ks-bf-full.jpg',
                         ticket: 35
                     },
                     {
@@ -271,10 +268,11 @@
                                 image: '/images/tower-74-concert-2.jpg'
                             }
                         ],
-                        details: 'This is some detail text',
+                        details: 'Sammy Ramone, Velvateen, Noble Savage & Doahs Daydream. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
                         url: 'https://artistwave.com',
                         ticketLink: 'https://artistwave.com',
-                        image: '/images/tower-74-concert-2.jpg',
+                        image: '/images/tower-74-sammy-ramone.jpg',
+                        imageFull: '/images/tower-74-sammy-ramone-full.jpg',
                         ticket: 15
                     },
                 ]

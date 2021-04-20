@@ -9,32 +9,49 @@
         -->
         <div class="top-spacer">
             <!-- Event -->
-            <div v-for="concert in concerts" class="max-width mx-auto">
+            <div v-for="concert in concerts" class="max-width mx-auto mb-4">
 
-                <div class="grid grid-cols-1">
-                    <div class="p-2">
-                        <div class="max-w-md mx-auto dark:bg-gray-800 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-                            <div class="md:flex">
-                                <div class="md:flex-shrink-0">
-                                    <img class="h-48 w-full object-cover md:w-48" :src="concert.image" :alt="concert.title">
-                                </div>
-                                <div class="p-4 w-full">
-                                    <div class="uppercase tracking-wide text-sm text-white font-semibold">
-                                        {{concert.title}}
-                                    </div>
-                                    <a :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
-                                        {{concert.venue[0].name}}
-                                    </a>
-                                    <p class="mt-2 text-gray-500">{{concert.details}}</p>
-                                    <p class="mt-2 text-gray-500">
-                                        <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
-                                    </p>
-                                </div>
-
+                <div class="md:hidden bg-black mb-4 ml-4 mr-4 p-2 text-white">
+                    <img class="w-full" :src="concert.imageFull" :alt="concert.title">
+                        <div class="p-4 w-full">
+                            <div class="uppercase tracking-wide text-sm text-white font-semibold">
+                                {{concert.title}}
                             </div>
+                            <a :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
+                                {{concert.venue[0].name}}
+                            </a>
+                            <p class="mt-2 text-gray-500">{{concert.details}}</p>
+                            <p class="mt-2 text-gray-500">
+                                <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
+                            </p>
+                        </div>
+                </div>
+
+
+                <div class="hidden md:flex bg-black p-2">
+                    <div class="flex-none w-48">
+                        <!-- This item will not grow -->
+                        <div class="grid justify-items-center items-center">
+                            <img class="w-full" :src="concert.image" :alt="concert.title">
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                         <div class="p-4 w-full">
+                            <div class="uppercase tracking-wide text-sm text-white font-semibold">
+                                {{concert.title}}
+                            </div>
+                            <a :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
+                                {{concert.venue[0].name}}
+                            </a>
+                            <p class="mt-2 text-gray-500">{{concert.details}}</p>
+                            <p class="mt-2 text-gray-500">
+                                <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
+                            </p>
                         </div>
                     </div>
                 </div>
+
+
 
             </div> 
         </div>
@@ -82,13 +99,14 @@
                             {
                                 name: 'The B Foundation',
                                 url: 'https://artistwave.com',
-                                image: '/images/tower-74-concert-1.jpg'
+                                image: '/images/tower-74-concert-1.jpg',
                             }
                         ],
-                        details: 'This is some detail text',
+                        details: 'Kyle Smith, The B Foundation, Rebel Shakedown & Die Criminal. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
                         url: 'https://artistwave.com',
                         ticketLink: 'https://artistwave.com',
-                        image: '/images/tower-74-concert-1.jpg',
+                        image: '/images/tower74-ks-bf.jpg',
+                        imageFull: '/images/tower74-ks-bf-full.jpg',
                         ticket: 35
                     },
                     {
@@ -120,10 +138,11 @@
                                 image: '/images/tower-74-concert-2.jpg'
                             }
                         ],
-                        details: 'This is some detail text',
+                        details: 'Sammy Ramone, Velvateen, Noble Savage & Doahs Daydream. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
                         url: 'https://artistwave.com',
                         ticketLink: 'https://artistwave.com',
-                        image: '/images/tower-74-concert-2.jpg',
+                        image: '/images/tower-74-sammy-ramone.jpg',
+                        imageFull: '/images/tower-74-sammy-ramone-full.jpg',
                         ticket: 15
                     },
                 ]
