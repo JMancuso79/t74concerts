@@ -59,6 +59,11 @@
                                         </div>
                                         <!-- Payment Form -->
                                         <div v-if="step === 2">
+
+                                            <p v-if="errCode">
+                                                {{errMsg}}
+                                            </p>
+
                                             <!-- Single -->
                                             <div class="w-full pb-2">
                                                 <input type="text" class="form-input w-full" v-model="nameOnCard" placeholder="Name on card">
@@ -167,10 +172,10 @@
             Header,
         },
         props: [
-            'id'
+            'slug'
         ],
         mounted() {
-            if(this.id > 0) {
+            if(this.slug) {
                 this.getConcert()
             }
         },
@@ -207,6 +212,7 @@
                         date: '2021-05-21',
                         time: '7:00 pm',
                         title: 'Kyle Smith W/The B Foundation',
+                        slug: 'kyle-smith-the-b-foundation',
                         venue: [
                             {
                                 name: 'Tiki Bar',
@@ -241,6 +247,7 @@
                         date: '2021-06-05',
                         time: '7:00 pm',
                         title: 'Sammy Ramone',
+                        slug: 'sammy-ramone',
                         venue: [
                             {
                                 name: 'Tiki Bar',
@@ -278,7 +285,7 @@
                 if(this.concerts) {
                     if(this.concerts.length > 0) {
                         for(var i=0;i<this.concerts.length;i++) {
-                            if(this.id === this.concerts[i].id) {
+                            if(this.slug === this.concerts[i].slug) {
                                 this.concert = this.concerts[i]
                             }
                         }
@@ -366,6 +373,8 @@
                     ticketHolder: this.ticketHolder,
                     ticketNumber: this.ticketNumber,
                     concertId: this.concert.id,
+                    concertDate: this.concert.date,
+                    concertTime: this.concert.time,
                     concertPrice: this.concert.ticket,
                     concertTitle: this.concert.title,
                     concertVenue: this.concert.venue[0].name,
@@ -374,23 +383,29 @@
                     venueState:this.concert.venue[0].state,
                     venueZip: this.concert.venue[0].zipCode
                 }).then((response) => {
-                    // Success
-                    if(response.data.message == 'success') {
-                        this.step = 3
-                        this.errCode = 'success'
-                        this.errMsg = 'Your payment was successful'
-                        this.resetForm()
+
+                    // Validation error
+                    if(response.data.code == 'fail-validation' ) {
+                        this.errCode = 'fail-validation'
+                        this.errMsg = response.data.errors
+                    } 
+                    // All others
+                    else {
+                        this.errCode = response.data.code
+                        this.errMsg = response.data.message
+                        // Success
+                        if(this.errCode == 'success') {
+                            this.step = 3
+                            this.resetForm()
+                        }
                     }
-                    // Something went wrong
-                    if(response.data.message == 'fail' ) {
-                        this.errCode = 'fail'
-                        this.errMsg = 'Something went wrong! Please text or call to if you need assistance. 949 205 9629'
-                    }
+
                     this.isLoading = false  
                 }).catch(error => {
+                    
                     // Something went wrong
-                    this.errCode = 'fail'
-                    this.errMsg = 'Something went wrong! Please text or call to if you need assistance. 949 205 9629'
+                    this.errCode = error.code
+                    this.errMsg = error.message
                     this.isLoading = false 
                 });
             },
@@ -416,6 +431,11 @@
             }
         },
         watch: {
+            slug: function() {
+                if(this.slug) {
+                    this.getConcert()
+                }
+            },
             nameOnCard: function() {
                 this.validatePaymentForm()
             },

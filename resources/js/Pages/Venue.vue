@@ -11,12 +11,17 @@
             <div class="max-width mx-auto">
                 <!-- Concert -->
                 <div v-if="venue != null && venue != undefined && venue != []">
-                    <div class="grid grid-cols-1 text-white">
+                    <div class="grid grid-cols-1">
                         <div class="p-2">
-                            <div class="max-w-md mx-auto dark:bg-gray-800 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-                                <a :href="'/venue/'+venue.slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
+                            <div class="max-w-md mx-auto dark:bg-gray-400 rounded-xl shadow-md overflow-hidden md:max-w-2xl p-4">
+                                <p class="text-lg leading-tight font-bold">
                                     {{venue.name}}
-                                </a>
+                                </p>
+                                <p>
+                                    {{venue.address}}<br>
+                                    {{venue.city}}, {{venue.state}} {{venue.zipCode}}
+                                </p>
+                                <p v-if="venue.website">Website: <a :href="venue.website" target="_blank">{{venue.website}}</a></p>
                             </div>
                         </div>
                     </div>
@@ -64,8 +69,8 @@
                         website: 'https://tikibaroc.com/'
                     },
                     {
-                        name: 'Tiki Bar',
-                        slug: 'tiki-bar',
+                        name: 'Red Flag STL',
+                        slug: 'red-flag-stl',
                         address: '3040 Locust Street.', 
                         city: 'St. Louis',
                         state: 'MO',

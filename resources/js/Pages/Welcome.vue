@@ -27,7 +27,7 @@
                                     </a>
                                     <p class="mt-2 text-gray-500">{{concert.details}}</p>
                                     <p class="mt-2 text-gray-500">
-                                        <a :href="'/tickets/'+concert.id">Buy Tickets</a>
+                                        <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
                                     </p>
                                 </div>
 
@@ -61,6 +61,7 @@
                         date: '2021-05-21',
                         time: '7:00 pm',
                         title: 'Kyle Smith W/The B Foundation',
+                        slug: 'kyle-smith-the-b-foundation',
                         venue: [
                             {
                                 name: 'Tiki Bar',
@@ -95,6 +96,7 @@
                         date: '2021-06-05',
                         time: '7:00 pm',
                         title: 'Sammy Ramone',
+                        slug: 'sammy-ramone',
                         venue: [
                             {
                                 name: 'Tiki Bar',
