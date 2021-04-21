@@ -9,27 +9,29 @@
         -->
         <div class="top-spacer">
             <div class="max-width mx-auto">
-                <!-- Concert -->
-                <div v-if="venue != null && venue != undefined && venue != []">
-                    <div class="grid grid-cols-1">
-                        <div class="p-2">
-                            <div class="max-w-md mx-auto dark:bg-gray-400 rounded-xl shadow-md overflow-hidden md:max-w-2xl p-4">
-                                <p class="text-lg leading-tight font-bold">
-                                    {{venue.name}}
-                                </p>
-                                <p>
-                                    {{venue.address}}<br>
-                                    {{venue.city}}, {{venue.state}} {{venue.zipCode}}
-                                </p>
-                                <p v-if="venue.website">Website: <a :href="venue.website" target="_blank">{{venue.website}}</a></p>
+                <div class="dark:bg-gray-200 ml-4 mr-4 mb-4">
+                    <!-- Concert -->
+                    <div v-if="venue != null && venue != undefined && venue != []">
+                        <div>
+                            <div class="p-2">
+                                <div>
+                                    <p class="text-lg leading-tight font-bold">
+                                        {{venue.name}}
+                                    </p>
+                                    <p>
+                                        {{venue.address}}<br>
+                                        {{venue.city}}, {{venue.state}} {{venue.zipCode}}
+                                    </p>
+                                    <p v-if="venue.website">Website: <a :href="venue.website" target="_blank">{{venue.website}}</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Not found -->
-                <div v-else>
-                    <div>
-                        There was a problem.
+                    <!-- Not found -->
+                    <div v-else>
+                        <div>
+                            There was a problem.
+                        </div>
                     </div>
                 </div>
             </div>

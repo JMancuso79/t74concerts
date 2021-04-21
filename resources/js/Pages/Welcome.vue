@@ -18,11 +18,11 @@
                         <div class="uppercase text-title">
                             {{concert.title}}
                         </div>
-                        <a :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400 hover:underline">
+                        <a :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400">
                             Venue: {{concert.venue[0].name}}
                         </a>
                         <p class="mt-2 text-gray-400">{{concert.details}}</p>
-                        <p class="mt-2 text-gray-500">
+                        <p class="mt-2">
                             <a class="ticket-button block w-full" :href="'/tickets/'+concert.slug">Buy Tickets</a>
                         </p>
                     </div>
@@ -37,15 +37,16 @@
                     </div>
                     <div class="flex-grow">
                          <div class="p-4 w-full">
-                            <div class="uppercase tracking-wide text-sm text-white font-semibold">
+                            <p class="text-date font-bold uppercase">{{concert.dateHuman}} | {{concert.time}}</p>
+                            <div class="uppercase text-title">
                                 {{concert.title}}
                             </div>
-                            <a :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
-                                {{concert.venue[0].name}}
+                            <a :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400">
+                                Venue: {{concert.venue[0].name}}
                             </a>
-                            <p class="mt-2 text-gray-500">{{concert.details}}</p>
-                            <p class="mt-2 text-gray-500">
-                                <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
+                            <p class="mt-2 text-gray-400">{{concert.details}}</p>
+                            <p class="mt-2 text-right">
+                                <a class="ticket-button" :href="'/tickets/'+concert.slug">Buy Tickets</a>
                             </p>
                         </div>
                     </div>

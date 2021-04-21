@@ -12,97 +12,131 @@
                 <!-- Concert -->
                 <div v-if="concert != null && concert != undefined && concert != []">
                    
-                    <div class="m-4 md:m-0">
+                    <div class="mt-4 ml-4 mr-4 md:m-0">
                         <img class="w-full" :src="concert.imageFull" :alt="concert.title">
-                        <div class="w-full" >
-                            <div class="uppercase tracking-wide text-sm text-white font-semibold">
+                        <div class="p-4 w-full bg-black">
+                            <p class="text-date font-bold uppercase">{{concert.dateHuman}} | {{concert.time}}</p>
+                            <div class="uppercase text-title">
                                 {{concert.title}}
                             </div>
-                            <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline">
-                                {{concert.venue[0].name}}
+                            <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400">
+                                Venue: {{concert.venue[0].name}}
                             </a>
-                            <p class="mt-2 text-gray-500">{{concert.details}}</p>
-                            <p class="mt-2 text-gray-500">
-                                <a :href="'/tickets/'+concert.slug">Buy Tickets</a>
-                            </p>
+                            <p class="mt-2 text-gray-400">{{concert.details}}</p>
                         </div>
                     </div>
        
 
-                    <div class="m-4 md:m-0">
+                    <div class="mb-4 ml-4 mr-4 md:m-0">
                         <div>
-                            <div class="dark:bg-gray-400 shadow-md overflow-hidden">
+                            <div class="dark:bg-gray-200 shadow-md overflow-hidden">
                                 <!-- Not Loading -->
                                 <div v-if="isLoading === false">
                                     <div class="p-4">
                                         <!-- Number of tickets -->
                                         <div v-if="step === 0">
-                                            <p>Tickets: ${{concert.ticket}}.00</p>
-                                            <p>How many tickets?</p>
-                                            <input type="number" class="form-input" min="0" max="10" v-model="ticketNumber">
-                                            <p>${{total = ticketNumber * concert.ticket}}.00</p>
+                                            <p class="font-bold">Tickets: ${{concert.ticket}}.00</p>
+                                            <p class="mb-2">How many tickets do you want to purchase?</p>
+
+                                            <div>
+                                                <div style="display:inline-block;width:15%;margin-right:5%;">
+                                                    <input type="number" class="form-input w-full " min="0" max="10" v-model="ticketNumber">
+                                                </div>
+                                                <div style="display:inline-block;width:35%;margin-right:5%;">
+                                                    <button :disabled="ticketNumber < 1" class="w-full ticket-number-button" @click.prevent="ticketNumber --">-</button>
+                                                </div>
+                                                <div style="display:inline-block;width:40%;">
+                                                    <button class="w-full ticket-number-button" @click.prevent="ticketNumber ++">+</button>
+                                                </div>
+                                            </div>
+
+                                            <p class="font-bold mt-2">Total: ${{total = ticketNumber * concert.ticket}}.00</p>
                                             <div v-if="ticketNumber > 0">
-                                                <button @click="step = 1">Buy Now</button>
+                                                <button @click="step = 1" class="buy-now-button mt-2 w-full">
+                                                    Buy Now
+                                                </button>
                                             </div>
                                         </div>
                                         <!-- Ticket holder name -->
                                         <div v-if="step === 1">
-                                            <p>Name of primary ticket holder</p>
+                                            <p class="font-bold mb-2">Name of primary ticket holder</p>
+                                            <p class="mb-2">The person who will claim the tickets at the venue the night of the show.</p>
                                             <input type="text" class="form-input w-full" v-model="ticketHolder"> 
                                             <div v-if="ticketHolder != null && ticketHolder != ''">
-                                                <button @click="step = 2">Next</button>
+                                                <button @click="step = 2" class="buy-now-button mt-2 w-full">
+                                                    Next
+                                                </button>
                                             </div> 
                                         </div>
                                         <!-- Payment Form -->
                                         <div v-if="step === 2">
 
-                                            <p v-if="errCode">
+                                            <p v-if="errCode" class="mb-4 pb-2" style="border-bottom:2px solid #000000;">
                                                 {{errMsg}}
                                             </p>
-
+                                            <p class="font-bold mb-2">Payment Information</p>
+                                            <p style="font-size:14px; color:#444444;" class="mb-2">Your payment is processed securely through Stripe. Your card details are never stored on our servers.</p>
                                             <!-- Single -->
                                             <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="nameOnCard" placeholder="Name on card">
+                                                <input type="text" class="form-input w-full" v-model="nameOnCard" placeholder="Name on card*">
                                             </div>
                                             <!-- Group -->
                                             <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="email" placeholder="email">
+                                                <input type="text" class="form-input w-full" v-model="email" placeholder="email*">
                                             </div>
                                             <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="phone" placeholder="Phone">
+                                                <input type="text" class="form-input w-full" v-model="phone" placeholder="Phone*">
                                             </div>   
                                             <!-- Single -->
                                             <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="cardNumber" placeholder="Card Number">
+                                                <input type="text" class="form-input w-full" v-model="cardNumber" placeholder="Card Number*">
                                             </div>
-                                            <!-- Group -->
-                                            <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="expMonth" placeholder="Month">
+
+                                            <div class="grid grid-cols-3 gap-4">
+                                                <div>
+                                                    <!-- Group -->
+                                                    <div class="w-full pb-2">
+                                                        <input type="text" class="form-input w-full" v-model="expMonth" placeholder="Month*">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="w-full pb-2">
+                                                        <input type="text" class="form-input w-full" v-model="expYear" placeholder="Year*">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="w-full pb-2">
+                                                        <input type="text" class="form-input w-full" v-model="cvv" placeholder="CVV*">
+                                                    </div>
+                                                </div>
                                             </div>
+
+                                            <!-- Single -->
                                             <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="expYear" placeholder="Year">
-                                            </div>
-                                            <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="cvv" placeholder="CVV">
+                                                <input type="text" class="form-input w-full" v-model="address" placeholder="Address*">
                                             </div>
                                             <!-- Single -->
                                             <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="address" placeholder="Address">
+                                                <input type="text" class="form-input w-full" v-model="city" placeholder="City*">
                                             </div>
-                                            <!-- Single -->
-                                            <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="city" placeholder="City">
+
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div>
+                                                    <!-- Group -->
+                                                    <div class="w-full pb-2">
+                                                        <input type="text" class="form-input w-full" v-model="state" placeholder="State*">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="w-full pb-2">
+                                                        <input type="text" class="form-input w-full" v-model="zip" placeholder="Zip Code*">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!-- Group -->
-                                            <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="state" placeholder="State">
-                                            </div>
-                                            <div class="w-full pb-2">
-                                                <input type="text" class="form-input w-full" v-model="zip" placeholder="Zip Code">
-                                            </div>
+
                                             <!-- Can pay -->
                                             <div v-if="isPaymentFormValidated === true">
-                                                <button @click="sendPayment()">Submit</button>
+                                                <button @click="sendPayment()" class="buy-now-button mt-2 w-full">Submit</button>
                                             </div>
                                         </div>
                                         <!-- After Payment -->

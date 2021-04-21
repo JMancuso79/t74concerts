@@ -10,19 +10,17 @@
         <div class="top-spacer">
             <!-- Event -->
             <div class="max-width mx-auto">
-                <div class="grid grid-cols-1">
+                <div class="dark:bg-gray-200 ml-4 mr-4 mb-4">
                     <div class="p-2">
-                        <div class="max-w-md mx-auto dark:bg-gray-400 rounded-xl shadow-md overflow-hidden md:max-w-2xl p-4">
-                            <p class="text-lg leading-tight font-bold">
-                                Contact
-                            </p>
-                            <p v-if="errCode == 'success'">
+                        <div>
+                            <p class="font-bold mb-2">Contact </p>
+                            <p v-if="errCode == 'success'" class="mb-4">
                                 {{errMsg}}
                             </p>
-                            <p v-if="errCode == 'fail'">
+                            <p v-if="errCode == 'fail'" class="mb-4">
                                 {{errMsg}}
                             </p>
-                            <p v-if="errCode == 'fail-validation'">
+                            <p v-if="errCode == 'fail-validation'" class="mb-4">
                                 {{errMsg}}
                             </p>
                             <!-- Name -->
@@ -47,7 +45,7 @@
                             </div> 
                             <!-- Can Submit -->
                             <div v-if="isValidated === true">
-                                <button @click="sendMessage()">Send</button>
+                                <button @click="sendMessage()" class="buy-now-button w-full">Send</button>
                             </div>
                         </div>
                     </div>
