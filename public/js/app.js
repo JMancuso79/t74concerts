@@ -18387,72 +18387,26 @@ __webpack_require__.r(__webpack_exports__);
       step: 0,
       // Concert
       concert: [],
-      // Concerts
-      concerts: [{
-        id: '1000',
-        date: '2021-05-21',
-        time: '7:00 pm',
-        title: 'Kyle Smith W/The B Foundation',
-        slug: 'kyle-smith-the-b-foundation',
-        venue: [{
-          name: 'Tiki Bar',
-          slug: 'tiki-bar',
-          address: '1700 Placentia Ave',
-          city: 'Costa Mesa',
-          state: 'CA',
-          zipCode: 92627,
-          website: 'https://tikibaroc.com/'
-        }],
-        artists: [{
-          name: 'Kyle Smith',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-1.jpg'
-        }, {
-          name: 'The B Foundation',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-1.jpg'
-        }],
-        details: 'Kyle Smith, The B Foundation, Rebel Shakedown & Die Criminal. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
-        url: 'https://artistwave.com',
-        ticketLink: 'https://artistwave.com',
-        image: '/images/tower74-ks-bf.jpg',
-        imageFull: '/images/tower74-ks-bf-full.jpg',
-        ticket: 35
-      }, {
-        id: '1001',
-        date: '2021-06-05',
-        time: '7:00 pm',
-        title: 'Sammy Ramone',
-        slug: 'sammy-ramone',
-        venue: [{
-          name: 'Tiki Bar',
-          slug: 'tiki-bar',
-          address: '1700 Placentia Ave',
-          city: 'Costa Mesa',
-          state: 'CA',
-          zipCode: 92627,
-          website: 'https://tikibaroc.com/'
-        }],
-        artists: [{
-          name: 'Sammy Ramone',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-2.jpg'
-        }, {
-          name: 'Noble Savage',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-2.jpg'
-        }],
-        details: 'Sammy Ramone, Velvateen, Noble Savage & Doahs Daydream. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
-        url: 'https://artistwave.com',
-        ticketLink: 'https://artistwave.com',
-        image: '/images/tower-74-sammy-ramone.jpg',
-        imageFull: '/images/tower-74-sammy-ramone-full.jpg',
-        ticket: 15
-      }]
+      concerts: []
     };
   },
   methods: {
     getConcert: function getConcert() {
+      var _this = this;
+
+      axios.get('/data/concerts.json').then(function (response) {
+        console.log(response.data);
+
+        if (response.data) {
+          _this.concerts = response.data;
+
+          _this.doConcert();
+        }
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    doConcert: function doConcert() {
       if (this.concerts) {
         if (this.concerts.length > 0) {
           for (var i = 0; i < this.concerts.length; i++) {
@@ -18548,7 +18502,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     sendPayment: function sendPayment() {
-      var _this = this;
+      var _this2 = this;
 
       this.isLoading = true;
       axios.post('/api/payment', {
@@ -18579,26 +18533,26 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         // Validation error
         if (response.data.code == 'fail-validation') {
-          _this.errCode = 'fail-validation';
-          _this.errMsg = response.data.errors;
+          _this2.errCode = 'fail-validation';
+          _this2.errMsg = response.data.errors;
         } // All others
         else {
-            _this.errCode = response.data.code;
-            _this.errMsg = response.data.message; // Success
+            _this2.errCode = response.data.code;
+            _this2.errMsg = response.data.message; // Success
 
-            if (_this.errCode == 'success') {
-              _this.step = 3;
+            if (_this2.errCode == 'success') {
+              _this2.step = 3;
 
-              _this.resetForm();
+              _this2.resetForm();
             }
           }
 
-        _this.isLoading = false;
+        _this2.isLoading = false;
       })["catch"](function (error) {
         // Something went wrong
-        _this.errCode = error.code;
-        _this.errMsg = error.message;
-        _this.isLoading = false;
+        _this2.errCode = error.code;
+        _this2.errMsg = error.message;
+        _this2.isLoading = false;
       });
     },
     resetForm: function resetForm() {
@@ -18754,70 +18708,27 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // Concerts
-      concerts: [{
-        id: '1000',
-        date: '2021-05-21',
-        time: '7:00 pm',
-        title: 'Kyle Smith W/The B Foundation',
-        slug: 'kyle-smith-the-b-foundation',
-        venue: [{
-          name: 'Tiki Bar',
-          slug: 'tiki-bar',
-          address: '1700 Placentia Ave',
-          city: 'Costa Mesa',
-          state: 'CA',
-          zipCode: 92627,
-          website: 'https://tikibaroc.com/'
-        }],
-        artists: [{
-          name: 'Kyle Smith',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-1.jpg'
-        }, {
-          name: 'The B Foundation',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-1.jpg'
-        }],
-        details: 'Kyle Smith, The B Foundation, Rebel Shakedown & Die Criminal. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
-        url: 'https://artistwave.com',
-        ticketLink: 'https://artistwave.com',
-        image: '/images/tower74-ks-bf.jpg',
-        imageFull: '/images/tower74-ks-bf-full.jpg',
-        ticket: 35
-      }, {
-        id: '1001',
-        date: '2021-06-05',
-        time: '7:00 pm',
-        title: 'Sammy Ramone',
-        slug: 'sammy-ramone',
-        venue: [{
-          name: 'Tiki Bar',
-          slug: 'tiki-bar',
-          address: '1700 Placentia Ave',
-          city: 'Costa Mesa',
-          state: 'CA',
-          zipCode: 92627,
-          website: 'https://tikibaroc.com/'
-        }],
-        artists: [{
-          name: 'Sammy Ramone',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-2.jpg'
-        }, {
-          name: 'Noble Savage',
-          url: 'https://artistwave.com',
-          image: '/images/tower-74-concert-2.jpg'
-        }],
-        details: 'Sammy Ramone, Velvateen, Noble Savage & Doahs Daydream. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.',
-        url: 'https://artistwave.com',
-        ticketLink: 'https://artistwave.com',
-        image: '/images/tower-74-sammy-ramone.jpg',
-        imageFull: '/images/tower-74-sammy-ramone-full.jpg',
-        ticket: 15
-      }]
+      concerts: []
     };
   },
-  mounted: function mounted() {}
+  methods: {
+    getConcerts: function getConcerts() {
+      var _this = this;
+
+      axios.get('/data/concerts.json').then(function (response) {
+        console.log(response.data);
+
+        if (response.data) {
+          _this.concerts = response.data;
+        }
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getConcerts();
+  }
 });
 
 /***/ }),
@@ -22310,7 +22221,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "fixed top-0 left-0 right-0 bg-black shadow"
+  "class": "fixed top-0 left-0 right-0 shadow nav-bg"
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
@@ -22330,7 +22241,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "stroke-width": "2",
   viewBox: "0 0 24 24",
   stroke: "currentColor",
-  "class": "-mt-px w-5 h-5 text-white"
+  "class": "-mt-px w-5 h-5 text-dark"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   "stroke-linecap": "round",
   "stroke-linejoin": "round",
@@ -22359,7 +22270,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "stroke-width": "2",
   viewBox: "0 0 24 24",
   stroke: "currentColor",
-  "class": "-mt-px w-5 h-5 text-white"
+  "class": "-mt-px w-5 h-5 text-dark"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   "stroke-linecap": "round",
   "stroke-linejoin": "round",
@@ -23941,16 +23852,16 @@ var _hoisted_3 = {
   "class": "max-width mx-auto mb-4"
 };
 var _hoisted_4 = {
-  "class": "md:hidden bg-black mb-4 ml-4 mr-4 p-2 text-white"
+  "class": "md:hidden bg-black mb-4 ml-4 mr-4 text-white"
 };
 var _hoisted_5 = {
   "class": "p-4 w-full"
 };
 var _hoisted_6 = {
-  "class": "uppercase tracking-wide text-sm text-white font-semibold"
+  "class": "uppercase tracking-wide text-sm text-title font-semibold"
 };
 var _hoisted_7 = {
-  "class": "mt-2 text-gray-500"
+  "class": "mt-2 text-gray-400"
 };
 var _hoisted_8 = {
   "class": "mt-2 text-gray-500"
@@ -23993,12 +23904,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: '/venue/' + concert.venue[0].slug,
-      "class": "block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline"
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 9
+      "class": "block mt-1 text-lg leading-tight font-medium text-white hover:underline"
+    }, " Venue: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 9
     /* TEXT, PROPS */
     , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+      "class": "ticket-button block w-full",
       href: '/tickets/' + concert.slug
     }, "Buy Tickets", 8
     /* PROPS */

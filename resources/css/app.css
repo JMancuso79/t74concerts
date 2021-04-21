@@ -21,8 +21,31 @@ body {
 	max-width: 768px;
 }
 
+.nav-bg {
+	background: #f56011;
+}
+
+.text-dark {
+	color:#232220;
+}
+
+.text-title {
+	color:#d79564;
+	font-weight:900!important;
+	font-family: 'Montserrat', sans-serif!important;
+}
+
+.ticket-button {
+	color:#ffffff;
+	border:2px solid #ffffff;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
 .sm-logo {
-	color:#FFFFFF;
+	color:#232220;
 	font-weight:900!important;
 	font-size:14px;
 	font-family: 'Montserrat', sans-serif!important;
@@ -32,7 +55,7 @@ body {
 }
 
 .lg-logo {
-	color:#FFFFFF;
+	color:#232220;
 	font-weight:900!important;
 	font-size:32px;
 	font-family: 'Montserrat', sans-serif!important;

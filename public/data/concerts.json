@@ -1,0 +1,74 @@
+[
+   {
+      "id":"1000",
+      "date":"2021-05-21",
+      "time":"7:00 pm",
+      "title":"Kyle Smith W/The B Foundation",
+      "slug":"kyle-smith-the-b-foundation",
+      "venue":[
+         {
+            "name":"Tiki Bar",
+            "slug":"tiki-bar",
+            "address":"1700 Placentia Ave",
+            "city":"Costa Mesa",
+            "state":"CA",
+            "zipCode":92627,
+            "website":"https://tikibaroc.com/"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Kyle Smith",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-1.jpg"
+         },
+         {
+            "name":"The B Foundation",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-1.jpg"
+         }
+      ],
+      "details":"Kyle Smith, The B Foundation, Rebel Shakedown & Die Criminal. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.",
+      "url":"https://artistwave.com",
+      "ticketLink":"https://artistwave.com",
+      "image":"/images/tower74-ks-bf.jpg",
+      "imageFull":"/images/tower74-ks-bf-full.jpg",
+      "ticket":35
+   },
+   {
+      "id":"1001",
+      "date":"2021-06-05",
+      "time":"7:00 pm",
+      "title":"Sammy Ramone",
+      "slug":"sammy-ramone",
+      "venue":[
+         {
+            "name":"Tiki Bar",
+            "slug":"tiki-bar",
+            "address":"1700 Placentia Ave",
+            "city":"Costa Mesa",
+            "state":"CA",
+            "zipCode":92627,
+            "website":"https://tikibaroc.com/"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Sammy Ramone",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-2.jpg"
+         },
+         {
+            "name":"Noble Savage",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-2.jpg"
+         }
+      ],
+      "details":"Sammy Ramone, Velvateen, Noble Savage & Doahs Daydream. This is a 21+ show. Capacity will be determined by COVID guidelines on the day of the show.",
+      "url":"https://artistwave.com",
+      "ticketLink":"https://artistwave.com",
+      "image":"/images/tower-74-sammy-ramone.jpg",
+      "imageFull":"/images/tower-74-sammy-ramone-full.jpg",
+      "ticket":15
+   }
+]
