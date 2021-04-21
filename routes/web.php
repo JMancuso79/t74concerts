@@ -19,7 +19,7 @@ Route::get('/', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-concert-1.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
 		'url' => 'https://tower74concerts.com'
 	];
 	session([
@@ -39,7 +39,7 @@ Route::get('/contact', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Contact',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-concert-1.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
 		'url' => 'https://tower74concerts.com/contact'
 	];
 	session([
@@ -54,7 +54,7 @@ Route::get('/tickets/{slug}', function ($slug) {
 		$page_data = [
 			'title' => 'Tower74 Concerts | Kyle Smith w/The B Foundation at Tiki Bar Costa Mesa',
 			'description' => 'Tower74 Presents Kyle Smith, The B Foundation, Rebel Shakedown and Die Criminal at Tiki Bar in Costa Mesa, CA. Capacity of this concert will be determined by Orange County COVID guidelines on the day of.',
-			'image' => 'https://tower74concerts.com/images/tower-74-concert-1.jpg',
+			'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
 			'url' => 'https://tower74concerts.com/tickets/'.$slug
 		];
 	}
@@ -62,7 +62,7 @@ Route::get('/tickets/{slug}', function ($slug) {
 		$page_data = [
 			'title' => 'Tower74 Concerts | Sammy Ramone w/ Velvateen, Doahs Daydream and Noble Savage at Tiki Bar Costa Mesa',
 			'description' => 'Tower74 Presents Sammy Ramone w/ Velvateen, Doahs Daydream and Noble Savage at Tiki Bar in Costa Mesa, CA. Capacity of this concert will be determined by Orange County COVID guidelines on the day of.',
-			'image' => 'https://tower74concerts.com/images/tower-74-concert-2.jpg',
+			'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
 			'url' => 'https://tower74concerts.com/tickets/'.$slug
 		];	
 	}
@@ -79,7 +79,7 @@ Route::get('/venue/{slug}', function ($slug) {
 	$page_data = [
 		'title' => 'Tower74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-concert-1.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
 		'url' => 'https://tower74concerts.com/venue/'.$slug
 	];
 	session([
