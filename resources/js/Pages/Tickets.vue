@@ -22,6 +22,8 @@
                             <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400">
                                 Venue: {{concert.venue[0].name}}
                             </a>
+                            <p v-if="concert.venue" class="text-gray-400" style="font-size:14px;">{{concert.venue[0].address}}</p>
+                            <p v-if="concert.venue" class="text-gray-400" style="font-size:14px;">{{concert.venue[0].city}}, {{concert.venue[0].state}} {{concert.venue[0].zipCode}}</p>
                             <p class="mt-2 text-gray-400">{{concert.details}}</p>
                         </div>
                     </div>
