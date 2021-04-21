@@ -61,7 +61,7 @@ Route::get('/tickets/{slug}', function ($slug) {
 	if($slug == 'sammy-ramone') {
 		$page_data = [
 			'title' => 'Tower74 Concerts | Sammy Ramone w/ Velvateen, Doahs Daydream and Noble Savage at Tiki Bar Costa Mesa',
-			'description' => 'Tower74 Presents Sammy Ramone w/ Velvateen, Doahs Daydream and Noble Savage at Tiki Bar in Costa Mesa, CA. Capacity of this concert will be determined by Orange County COVID guidelines on the day of.',
+			'description' => 'Tower74 Presents Sammy Ramone w/ Velvateen, Doahs Day Dream and Noble Savage at Tiki Bar in Costa Mesa, CA. Capacity of this concert will be determined by Orange County COVID guidelines on the day of.',
 			'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
 			'url' => 'https://tower74concerts.com/tickets/'.$slug
 		];	
