@@ -14,10 +14,11 @@
                 <div class="md:hidden bg-black mb-4 ml-4 mr-4 text-white">
                     <img class="w-full" :src="concert.imageFull" :alt="concert.title">
                     <div class="p-4 w-full">
-                        <div class="uppercase tracking-wide text-sm text-title font-semibold">
+                        <p class="text-date font-bold uppercase">{{concert.dateHuman}} | {{concert.time}}</p>
+                        <div class="uppercase text-title">
                             {{concert.title}}
                         </div>
-                        <a :href="'/venue/'+concert.venue[0].slug" class="block mt-1 text-lg leading-tight font-medium text-white hover:underline">
+                        <a :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400 hover:underline">
                             Venue: {{concert.venue[0].name}}
                         </a>
                         <p class="mt-2 text-gray-400">{{concert.details}}</p>

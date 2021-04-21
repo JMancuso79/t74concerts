@@ -23858,36 +23858,39 @@ var _hoisted_5 = {
   "class": "p-4 w-full"
 };
 var _hoisted_6 = {
-  "class": "uppercase tracking-wide text-sm text-title font-semibold"
+  "class": "text-date font-bold uppercase"
 };
 var _hoisted_7 = {
-  "class": "mt-2 text-gray-400"
+  "class": "uppercase text-title"
 };
 var _hoisted_8 = {
-  "class": "mt-2 text-gray-500"
+  "class": "mt-2 text-gray-400"
 };
 var _hoisted_9 = {
-  "class": "hidden md:flex bg-black p-2"
-};
-var _hoisted_10 = {
-  "class": "flex-none w-48"
-};
-var _hoisted_11 = {
-  "class": "grid justify-items-center items-center"
-};
-var _hoisted_12 = {
-  "class": "flex-grow"
-};
-var _hoisted_13 = {
-  "class": "p-4 w-full"
-};
-var _hoisted_14 = {
-  "class": "uppercase tracking-wide text-sm text-white font-semibold"
-};
-var _hoisted_15 = {
   "class": "mt-2 text-gray-500"
 };
+var _hoisted_10 = {
+  "class": "hidden md:flex bg-black p-2"
+};
+var _hoisted_11 = {
+  "class": "flex-none w-48"
+};
+var _hoisted_12 = {
+  "class": "grid justify-items-center items-center"
+};
+var _hoisted_13 = {
+  "class": "flex-grow"
+};
+var _hoisted_14 = {
+  "class": "p-4 w-full"
+};
+var _hoisted_15 = {
+  "class": "uppercase tracking-wide text-sm text-white font-semibold"
+};
 var _hoisted_16 = {
+  "class": "mt-2 text-gray-500"
+};
+var _hoisted_17 = {
   "class": "mt-2 text-gray-500"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -23900,36 +23903,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       alt: concert.title
     }, null, 8
     /* PROPS */
-    , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
+    , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.time), 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: '/venue/' + concert.venue[0].slug,
-      "class": "block mt-1 text-lg leading-tight font-medium text-white hover:underline"
+      "class": "block text-venue text-gray-400 hover:underline"
     }, " Venue: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 9
     /* TEXT, PROPS */
-    , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
+    , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       "class": "ticket-button block w-full",
       href: '/tickets/' + concert.slug
     }, "Buy Tickets", 8
     /* PROPS */
-    , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This item will not grow "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+    , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This item will not grow "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       "class": "w-full",
       src: concert.image,
       alt: concert.title
     }, null, 8
     /* PROPS */
-    , ["src", "alt"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
+    , ["src", "alt"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: '/venue/' + concert.venue[0].slug,
       "class": "block mt-1 text-lg leading-tight font-medium text-gray-500 hover:underline"
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 9
     /* TEXT, PROPS */
-    , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
+    , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: '/tickets/' + concert.slug
     }, "Buy Tickets", 8
     /* PROPS */

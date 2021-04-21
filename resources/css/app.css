@@ -8,6 +8,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
 .top-spacer {
 	padding-top:84px;
 }
@@ -30,9 +34,22 @@ body {
 }
 
 .text-title {
-	color:#d79564;
+	color:#f56011;
 	font-weight:900!important;
 	font-family: 'Montserrat', sans-serif!important;
+	font-size: 18px;
+}
+
+.text-venue {
+	font-weight:bold;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+.text-date {
+	color:#ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 }
 
 .ticket-button {
