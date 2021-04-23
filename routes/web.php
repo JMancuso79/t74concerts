@@ -49,6 +49,22 @@ Route::get('/contact', function () {
 	]);
     return Inertia::render('Contact');
 });
+
+Route::get('/about', function () {
+	$page_data = [
+		'title' => 'Tower74 Concerts | Contact',
+		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
+		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
+		'url' => 'https://tower74concerts.com/contact'
+	];
+	session([
+		'slug' => null,
+		'page' =>'contact',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('About');
+});
+
 Route::get('/tickets/{slug}', function ($slug) {
 	if($slug == 'kyle-smith-the-b-foundation') {
 		$page_data = [
