@@ -27,7 +27,7 @@ class CreateBookingRequestsTable extends Migration
             $table->integer('gig_swap')->default(0);
             $table->string('gig_swap_home')->nullable();
             $table->string('gig_swap_away')->nullable();
-            $table->string('message');
+            $table->string('message')->nullable();
             $table->string('url')->nullable();
             $table->string('genres');
             $table->string('dates')->nullable();    
