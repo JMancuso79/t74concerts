@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="hidden md:flex bg-black p-2">
+                <div class="hidden md:flex bg-black p-2 mb-4">
                     <div class="flex-none w-48">
                         <!-- This item will not grow -->
                         <div class="grid justify-items-center items-center">
@@ -54,17 +54,21 @@
                     </div>
                 </div>
 
-            </div> 
+            </div>
+
+            <ArtistWave />
+
         </div>
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
+    import ArtistWave from '@/Pages/Partials/ArtistWave'
 
     export default {
         components: {
-            Header,
+            Header, ArtistWave
         },
         props: {
             canLogin: Boolean,

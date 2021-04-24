@@ -10,7 +10,7 @@
         <div class="top-spacer">
             <!-- Event -->
             <div class="max-width mx-auto">
-                <div class="dark:bg-gray-200 ml-4 mr-4 mb-4">
+                <div class="dark:bg-gray-200 ml-4 mr-4 mb-4 md:m-0">
                     <div class="p-2">
                         <div>
                             <p class="font-bold mb-2">Contact </p>
@@ -52,15 +52,19 @@
                 </div>
             </div> 
         </div>
+        <div class="mt-4">
+            <ArtistWave />
+        </div>
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
+    import ArtistWave from '@/Pages/Partials/ArtistWave'
 
     export default {
         components: {
-            Header,
+            Header, ArtistWave
         },
 
         data() {

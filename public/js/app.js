@@ -17297,10 +17297,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+/* harmony import */ var _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/Partials/ArtistWave */ "./resources/js/Pages/Partials/ArtistWave.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ArtistWave: _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__.default
   },
   props: [],
   mounted: function mounted() {},
@@ -17735,10 +17738,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+/* harmony import */ var _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/Partials/ArtistWave */ "./resources/js/Pages/Partials/ArtistWave.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ArtistWave: _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__.default
   },
   data: function data() {
     return {
@@ -17943,10 +17949,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+/* harmony import */ var _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/Partials/ArtistWave */ "./resources/js/Pages/Partials/ArtistWave.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ArtistWave: _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__.default
   },
   data: function data() {
     return {
@@ -18061,6 +18070,23 @@ __webpack_require__.r(__webpack_exports__);
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
     Welcome: _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__.default
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Partials/ArtistWave.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Partials/ArtistWave.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'ArtistWave'
 });
 
 /***/ }),
@@ -18618,10 +18644,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+/* harmony import */ var _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/Partials/ArtistWave */ "./resources/js/Pages/Partials/ArtistWave.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ArtistWave: _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__.default
   },
   props: ['slug'],
   mounted: function mounted() {
@@ -18900,10 +18929,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+/* harmony import */ var _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/Partials/ArtistWave */ "./resources/js/Pages/Partials/ArtistWave.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ArtistWave: _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__.default
   },
   props: ['slug'],
   mounted: function mounted() {
@@ -18964,10 +18996,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+/* harmony import */ var _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Pages/Partials/ArtistWave */ "./resources/js/Pages/Partials/ArtistWave.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ArtistWave: _Pages_Partials_ArtistWave__WEBPACK_IMPORTED_MODULE_1__.default
   },
   props: {
     canLogin: Boolean,
@@ -21366,12 +21401,17 @@ var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><div class=\"p-4\"><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. After high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows at Pop&#39;s back home in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. He owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John started splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it&#39;s doors, John settled back into OC and is now living in Newport Beach. </p><p class=\"text-white mb-4\"> Tower74 LLC was formed as a web and app development company and a legal entity to book concerts under. </p></div></div><div><div class=\"grid  grid-cols-1 md:grid-cols-3 gap-4 text-white text-center mb-4\"><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid  grid-cols-1 md:grid-cols-2 gap-4 text-white text-center\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/muse.jpg\" class=\"w-full\"><div class=\"p-2\"> John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish </div></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><div class=\"p-4\"><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. After high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows at Pop&#39;s back home in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. </p><p class=\"text-white mb-4\"> John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it&#39;s doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href=\"https://artistwave.com\" target=\"_blank\" style=\"font-weight:bold;\">ArtistWave</a>. </p><p class=\"text-white mb-4\"> Tower74 LLC was formed as a web and app development company and a legal entity to book concerts. </p></div></div><div><div class=\"grid  grid-cols-1 md:grid-cols-3 gap-4 text-white text-center mb-4\"><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid  grid-cols-1 md:grid-cols-2 gap-4 text-white text-center\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/muse.jpg\" class=\"w-full\"><div class=\"p-2\"> John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish </div></div></div></div></div></div>", 1);
 
+var _hoisted_3 = {
+  "class": "mt-4"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), _hoisted_2]);
+  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
 }
 
 /***/ }),
@@ -22288,7 +22328,7 @@ var _hoisted_3 = {
   "class": "max-width mx-auto"
 };
 var _hoisted_4 = {
-  "class": "bg-black ml-4 mr-4 mb-4"
+  "class": "bg-black ml-4 mr-4 mb-4 md:m-0"
 };
 var _hoisted_5 = {
   key: 0
@@ -22712,8 +22752,13 @@ var _hoisted_95 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
+var _hoisted_96 = {
+  "class": "mt-4"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Event "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not Loading "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Buttons Artist "), $data.type === 'artist' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [$data.step > 1 && $data.step < 7 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function ($event) {
@@ -23049,7 +23094,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 1
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_95], 64
   /* STABLE_FRAGMENT */
-  ))])])])]);
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_96, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
 }
 
 /***/ }),
@@ -23077,7 +23122,7 @@ var _hoisted_3 = {
   "class": "max-width mx-auto"
 };
 var _hoisted_4 = {
-  "class": "dark:bg-gray-200 ml-4 mr-4 mb-4"
+  "class": "dark:bg-gray-200 ml-4 mr-4 mb-4 md:m-0"
 };
 var _hoisted_5 = {
   "class": "p-2"
@@ -23136,8 +23181,13 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 var _hoisted_18 = {
   key: 3
 };
+var _hoisted_19 = {
+  "class": "mt-4"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Event "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_6, $data.errCode == 'success' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errMsg), 1
   /* TEXT */
@@ -23185,7 +23235,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.sendMessage();
     }),
     "class": "buy-now-button w-full"
-  }, "Send")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])]);
+  }, "Send")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
 }
 
 /***/ }),
@@ -23235,6 +23285,160 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Partials/ArtistWave.vue?vue&type=template&id=215b3584":
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Partials/ArtistWave.vue?vue&type=template&id=215b3584 ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "max-width mx-auto mb-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "bg-black pl-4 pr-4 pb-4 ml-4 mr-4 md:m-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-white pt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  style: {
+    "width": "100%",
+    "max-width": "300px"
+  },
+  "class": "mx-auto"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+  type: "image/svg+xml",
+  version: "1.1",
+  xmlns: "http://www.w3.org/2000/svg",
+  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+  x: "0px",
+  y: "0px",
+  viewBox: "0 120 1024 120",
+  "xml:space": "preserve"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("g", {
+  id: "Layer_2_1_"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("g", {
+  id: "Layer_3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("g", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+  cx: "152.5",
+  cy: "206.9",
+  r: "8.3",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("g", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M68.6,223.7c44.8,6.9,53.4-68,81.6-71.5c-19.7-7.9-35.2,5.7-44.4,23.6C95.8,195.2,86.4,215.8,68.6,223.7z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M266.6,178.7c-10.8-21.8-24.2-47.2-52.3-44.5c15.2,7.5,25,28.7,33.9,44.5c11.4,22.8,24.3,47.9,52.6,45.2\n                        C286.9,216.1,277.3,200.6,266.6,178.7z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M233.7,178.7c-10.8-21.8-24.2-47.2-52.3-44.5c15.2,7.5,25,28.7,33.9,44.5c11.4,22.8,24.3,47.9,52.6,45.2\n                        C254.1,216.1,244.5,200.6,233.7,178.7z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M234.9,224c-13.9-7.8-23.5-23.4-34.2-45.2c-11.9-23.4-22.8-44.7-48.2-44.7c-14.8,0-28,9.3-33.5,19.1\n                        c13.6-13.3,46.9-9.5,63.4,25.7C192.7,200.8,206.6,226.7,234.9,224z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("g", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M399.7,221.7v0.4c-3,1.3-6.2,2.2-9.7,2.6c-5.9,0.7-11.4,0-16.7-2.1c-5.6-2.2-10-5.7-13.2-10.6\n                        c-3.6-5.3-5.4-12.1-5.4-20.5c0-10.4,2.9-18.5,8.8-24.4c5.8-5.7,13.5-8.6,23-8.6c9.6,0,17.3,2.9,23.1,8.7\n                        c5.8,5.8,8.7,13.5,8.7,23.1v33h-12.6v-33c0-6.1-1.7-10.9-5.1-14.3c-3.3-3.3-8-4.9-14.1-4.9c-6.1,0-10.8,1.6-14.1,4.9\n                        c-3.4,3.4-5.1,8.6-5.1,15.5c0,6.9,1.7,12,5.1,15.4c3.3,3.3,8,5,14.1,5c0.8,0,1.6,0,2.3-0.1C394.7,211.5,399.7,215.9,399.7,221.7z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M466,159.7l0,12.6c-11,0-17.3,1.5-21.2,5.6c-2.8,2.8-4.2,7.4-4.2,13.7v31.8h-12.6v-31.8\n                        c0-9.6,2.6-17,7.7-22.4C443.9,160.5,456.8,159.7,466,159.7z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M530.9,146.8h-12.6v-12.6l0,0C525.3,134.2,530.9,139.8,530.9,146.8L530.9,146.8z M530.9,223.3h-12.6v-63.6\n                        h12.6V223.3z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M588.1,159.7v12.6h-23.5c-4.7,0-8.3,0.8-10.7,2.4c-1.7,1.1-2.5,2.4-2.5,4.1c0,2.2,1.4,3.8,4.3,4.8\n                        c1.7,0.6,4.9,1.2,9.6,1.7c8.3,1,14.1,2.3,17.2,4c5.2,2.8,7.8,7.9,7.8,15c0,6.2-2.7,11.1-8.2,14.6c-4.5,3-10.4,4.5-17.6,4.5h-23.9\n                        v-12.6h23.9c4.7,0,8.3-0.8,10.7-2.4c1.7-1.1,2.5-2.5,2.5-4.1c0-2.2-1.4-3.8-4.3-4.8c-1.8-0.6-4.9-1.2-9.6-1.7\n                        c-8.3-0.9-14.1-2.3-17.2-4c-5.2-2.8-7.8-7.9-7.8-15c0-6.2,2.7-11.1,8.2-14.7c4.5-2.9,10.4-4.4,17.6-4.4H588.1z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M612.6,172.3v19.2c0,6.1,1.7,10.8,5.1,14.2c3.3,3.3,7.4,5,15.1,5l0,12.6h-1.1c-9.6,0-17.2-3-23-8.7\n                        c-5.9-5.9-8.8-13.6-8.8-23.1v-57.3l0,0c6.9,0,12.6,5.6,12.6,12.6v12.9h19.8v12.6H612.6z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M488.3,172.3v19.2c0,6.1,1.7,10.8,5.1,14.2c3.3,3.3,7.4,5,15.1,5l0,12.6h-1.1c-9.6,0-17.2-3-23-8.7\n                        c-5.9-5.9-8.8-13.6-8.8-23.1v-57.3l0,0c6.9,0,12.6,5.6,12.6,12.6v12.9h19.8v12.6H488.3z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M642.6,162c3.5,0,6.5,2.4,7.2,5.9l9.4,44.9c0.3,1.5,1,2.7,2,3.5c1.1,0.8,2.5,1.2,4.2,1.2\n                        c1.8,0,3.3-0.4,4.3-1.3c0.9-0.8,1.6-2,2.1-3.7l9.8-33.9c0.9-3,2.3-5.4,4.4-7.1c2.3-1.9,4.8-2.9,7.6-2.9c2.7,0,5,0.7,6.8,2\n                        c2.4,1.7,4.2,4.4,5.3,8.1l9.8,33.9c0.5,1.7,1.3,3,2.3,3.8c1,0.8,2.4,1.2,4.1,1.2c1.7,0,3.1-0.4,4.2-1.2c1-0.8,1.7-2,2-3.5\n                        l9.4-44.9c0.7-3.4,3.7-5.9,7.2-5.9l0,0l-10.9,52c-0.7,3-2,5.3-4.2,7c-2,1.6-4.6,2.4-7.8,2.4c-3,0-5.6-0.8-7.6-2.4\n                        c-2.1-1.6-3.5-3.8-4.4-6.8l-9.8-33.9c-0.7-2.4-1.7-4-2.9-4.9c-0.9-0.6-2-0.9-3.5-0.9c-1.4,0-2.7,0.5-3.8,1.5c-1.2,1-2,2.4-2.6,4.2\n                        l-9.8,34c-0.8,2.8-2.1,4.9-3.9,6.4c-2.1,1.8-4.8,2.7-8.1,2.7c-3.1,0-5.7-0.8-7.8-2.4c-2.2-1.7-3.5-4-4.2-7L642.6,162L642.6,162z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M797.7,217.2L797.7,217.2c-5.2,4.1-11.8,6.2-19.9,6.2c-9.3,0-16.8-2.7-22.3-8.2c-5.6-5.6-8.4-13.1-8.4-22.4\n                        c0-9.3,2.8-16.8,8.4-22.5c5.5-5.5,13-8.2,22.3-8.2c9.3,0,16.7,2.7,22.2,8.2c5.6,5.7,8.4,13.1,8.4,22.5v30.7h-5.9v-30.7\n                        c0-7.7-2.2-13.8-6.7-18.3c-4.4-4.4-10.4-6.6-18.1-6.6c-7.7,0-13.8,2.2-18.1,6.6c-4.5,4.4-6.7,10.5-6.7,18.3\n                        c0,7.7,2.2,13.8,6.7,18.3c4.4,4.4,10.4,6.5,18.1,6.5c5.7,0,10.6-1.3,14.3-3.5C794.6,212.5,797.7,214.3,797.7,217.2z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M807.1,162c3.8,0,7.3,2.3,8.7,5.9l17.9,45.3c0.5,1.3,1.4,2.4,2.6,3.1c1.3,0.8,2.9,1.2,4.6,1.2\n                        c1.7,0,3.3-0.4,4.6-1.2c1.3-0.7,2.2-1.8,2.7-3.1l17.9-45.3c1.4-3.6,4.9-5.9,8.7-5.9l0,0l-21.1,53.4c-1,2.5-2.7,4.5-5,5.9\n                        c-2.3,1.4-4.8,2.1-7.7,2.1c-2.8,0-5.4-0.7-7.6-2.1c-2.3-1.5-4-3.4-5-5.9L807.1,162L807.1,162z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M927.5,183.5c-1.4-4.6-3.9-8.2-7.4-10.9c-4.2-3.2-9.5-4.8-16.1-4.8c-7.7,0-13.8,2.2-18.1,6.6\n                        c-4.5,4.4-6.7,10.5-6.7,18.3c0,3.3,0.6,6.7,1.7,10.3c1.1,3.1,2.8,5.8,5,8c4.4,4.4,10.4,6.5,18.1,6.5h18c3.2,0,5.9,2.6,5.9,5.9l0,0\n                        H904c-9.3,0-16.8-2.7-22.3-8.2c-5.6-5.6-8.4-13.1-8.4-22.4c0-9.3,2.8-16.8,8.4-22.5c5.5-5.5,13-8.2,22.3-8.2c7.9,0,14.4,2,19.6,6\n                        c5.3,4.1,8.8,9.7,10.3,16.9l0.6,2.7l-49.2,14.1l0,0c-0.8-3.1,1-6.3,4.1-7.2L927.5,183.5z",
+  "class": "st0",
+  style: {
+    "fill": "rgb(255, 255, 255) !important"
+  }
+})])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "w-full mx-auto text-center text-gray-400"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  style: {
+    "font-weight": "bold"
+  },
+  "class": "mt-2"
+}, " Reconnecting The Music Scene. Summer 2021 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-center mt-4 pb-2"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  href: "https://artistwave.com",
+  target: "_blank",
+  "class": "secondary-button"
+}, "Sign Up for Beta")])])])], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [_hoisted_1]);
 }
 
 /***/ }),
@@ -24866,8 +25070,13 @@ var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
+var _hoisted_52 = {
+  "class": "mt-4"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concert "), $data.concert != null && $data.concert != undefined && $data.concert != [] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     "class": "w-full",
@@ -25050,7 +25259,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 1
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not found "), _hoisted_51], 64
   /* STABLE_FRAGMENT */
-  ))])])]);
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_52, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])])]);
 }
 
 /***/ }),
@@ -25078,7 +25287,7 @@ var _hoisted_3 = {
   "class": "max-width mx-auto"
 };
 var _hoisted_4 = {
-  "class": "dark:bg-gray-200 ml-4 mr-4 mb-4"
+  "class": "dark:bg-gray-200 ml-4 mr-4 mb-4 md:m-0"
 };
 var _hoisted_5 = {
   key: 0
@@ -25104,8 +25313,13 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
+var _hoisted_12 = {
+  "class": "mt-4"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concert "), $data.venue != null && $data.venue != undefined && $data.venue != [] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.name), 1
   /* TEXT */
@@ -25122,7 +25336,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 1
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not found "), _hoisted_11], 64
   /* STABLE_FRAGMENT */
-  ))])])])]);
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
 }
 
 /***/ }),
@@ -25175,7 +25389,7 @@ var _hoisted_10 = {
   "class": "mt-2"
 };
 var _hoisted_11 = {
-  "class": "hidden md:flex bg-black p-2"
+  "class": "hidden md:flex bg-black p-2 mb-4"
 };
 var _hoisted_12 = {
   "class": "flex-none w-48"
@@ -25210,6 +25424,8 @@ var _hoisted_20 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Event "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.concerts, function (concert) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
@@ -25265,7 +25481,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])])])])])]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  ))])]);
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
 }
 
 /***/ }),
@@ -46476,6 +46692,32 @@ _Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__fi
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Partials/ArtistWave.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/Pages/Partials/ArtistWave.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ArtistWave_vue_vue_type_template_id_215b3584__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArtistWave.vue?vue&type=template&id=215b3584 */ "./resources/js/Pages/Partials/ArtistWave.vue?vue&type=template&id=215b3584");
+/* harmony import */ var _ArtistWave_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ArtistWave.vue?vue&type=script&lang=js */ "./resources/js/Pages/Partials/ArtistWave.vue?vue&type=script&lang=js");
+
+
+
+_ArtistWave_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _ArtistWave_vue_vue_type_template_id_215b3584__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_ArtistWave_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/Pages/Partials/ArtistWave.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ArtistWave_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Partials/Footer.vue":
 /*!************************************************!*\
   !*** ./resources/js/Pages/Partials/Footer.vue ***!
@@ -47372,6 +47614,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Partials/ArtistWave.vue?vue&type=script&lang=js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/Pages/Partials/ArtistWave.vue?vue&type=script&lang=js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ArtistWave_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ArtistWave_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ArtistWave.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Partials/ArtistWave.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Partials/Header.vue?vue&type=script&lang=js":
 /*!************************************************************************!*\
   !*** ./resources/js/Pages/Partials/Header.vue?vue&type=script&lang=js ***!
@@ -48220,6 +48478,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Partials/ArtistWave.vue?vue&type=template&id=215b3584":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/Pages/Partials/ArtistWave.vue?vue&type=template&id=215b3584 ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ArtistWave_vue_vue_type_template_id_215b3584__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ArtistWave_vue_vue_type_template_id_215b3584__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ArtistWave.vue?vue&type=template&id=215b3584 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Partials/ArtistWave.vue?vue&type=template&id=215b3584");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Partials/Footer.vue?vue&type=template&id=688110bf":
 /*!******************************************************************************!*\
   !*** ./resources/js/Pages/Partials/Footer.vue?vue&type=template&id=688110bf ***!
@@ -48659,6 +48933,8 @@ var map = {
 	"./Contact.vue": "./resources/js/Pages/Contact.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
+	"./Partials/ArtistWave": "./resources/js/Pages/Partials/ArtistWave.vue",
+	"./Partials/ArtistWave.vue": "./resources/js/Pages/Partials/ArtistWave.vue",
 	"./Partials/Footer": "./resources/js/Pages/Partials/Footer.vue",
 	"./Partials/Footer.vue": "./resources/js/Pages/Partials/Footer.vue",
 	"./Partials/Header": "./resources/js/Pages/Partials/Header.vue",

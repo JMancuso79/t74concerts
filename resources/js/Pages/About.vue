@@ -19,10 +19,13 @@
                             While living in So Cal, John started booking shows at Pop's back home in St. Louis. Pop's focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop's and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. 
                         </p>
                         <p class="text-white mb-4">
-                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. He owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John started splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it's doors, John settled back into OC and is now living in Newport Beach. 
+                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. 
                         </p>
                         <p class="text-white mb-4">
-                            Tower74 LLC was formed as a web and app development company and a legal entity to book concerts under. 
+                            John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it's doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href="https://artistwave.com" target="_blank" style="font-weight:bold;">ArtistWave</a>.
+                        </p>
+                        <p class="text-white mb-4">
+                            Tower74 LLC was formed as a web and app development company and a legal entity to book concerts. 
                         </p>
                     </div>
                 </div>
@@ -260,16 +263,19 @@
                 </div>
             </div>
         </div>
-
+        <div class="mt-4">
+            <ArtistWave />
+        </div>
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
+    import ArtistWave from '@/Pages/Partials/ArtistWave'
 
     export default {
         components: {
-            Header,
+            Header, ArtistWave
         },
         props: [],
         mounted() {

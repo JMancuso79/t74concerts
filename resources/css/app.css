@@ -29,6 +29,16 @@ p {
 	background: #f56011;
 }
 
+.secondary-button {
+	background:#555555;
+	color:#000000;
+	border:0px solid #cccccc;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
 .text-dark {
 	color:#232220;
 }

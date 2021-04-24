@@ -191,6 +191,10 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-4">
+                <ArtistWave />
+            </div>
         </div>
 
     </div>
@@ -198,10 +202,11 @@
 
 <script>
     import Header from '@/Pages/Partials/Header'
+    import ArtistWave from '@/Pages/Partials/ArtistWave'
 
     export default {
         components: {
-            Header,
+            Header, ArtistWave
         },
         props: [
             'slug'
