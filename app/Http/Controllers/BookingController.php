@@ -24,8 +24,6 @@ class BookingController extends Controller
             'city' => 'required|string|max:255',
             'state' => 'required|string|max:255',
             'zip' => 'required|string|max:255',
-            'url' => 'required|string|max:255',
-            'message' => 'required|string|max:255',
             'genres' => 'required|string|max:255',
             'dates' => 'required|string|max:255',
         ]); 

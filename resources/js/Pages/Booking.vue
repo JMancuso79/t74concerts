@@ -392,15 +392,12 @@
                     if(this.email != null && this.email != '') {
                         if(this.phone != null && this.phone != '') {
                             if(this.contactName != null && this.contactName != '') {
-                                if(this.type != null && this.type != '') {
-                                    if(this.city != null && this.city != '') {
-                                        if(this.state != null && this.state != '') {
-                                            if(this.zipCode != null && this.zipCode != '') {
-                                                if(this.genres != null && this.genres != '') {
-                                                    this.isValidated = true
-                                                } else {
-                                                    this.isValidated = false
-                                                }
+                               
+                                if(this.city != null && this.city != '') {
+                                    if(this.state != null && this.state != '') {
+                                        if(this.zipCode != null && this.zipCode != '') {
+                                            if(this.genres != null && this.genres != '') {
+                                                this.isValidated = true
                                             } else {
                                                 this.isValidated = false
                                             }
@@ -413,6 +410,7 @@
                                 } else {
                                     this.isValidated = false
                                 }
+
                             } else {
                                 this.isValidated = false
                             }
