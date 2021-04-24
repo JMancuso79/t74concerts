@@ -17822,15 +17822,11 @@ __webpack_require__.r(__webpack_exports__);
         if (this.email != null && this.email != '') {
           if (this.phone != null && this.phone != '') {
             if (this.contactName != null && this.contactName != '') {
-              if (this.type != null && this.type != '') {
-                if (this.city != null && this.city != '') {
-                  if (this.state != null && this.state != '') {
-                    if (this.zipCode != null && this.zipCode != '') {
-                      if (this.genres != null && this.genres != '') {
-                        this.isValidated = true;
-                      } else {
-                        this.isValidated = false;
-                      }
+              if (this.city != null && this.city != '') {
+                if (this.state != null && this.state != '') {
+                  if (this.zipCode != null && this.zipCode != '') {
+                    if (this.genres != null && this.genres != '') {
+                      this.isValidated = true;
                     } else {
                       this.isValidated = false;
                     }
@@ -22792,7 +22788,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
       return $data.city = $event;
     }),
-    placeholder: "Enter your phone"
+    placeholder: "City"
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.city]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_36, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
@@ -22958,7 +22954,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
       return $data.city = $event;
     }),
-    placeholder: "Enter your phone"
+    placeholder: "City"
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.city]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_77, [_hoisted_78, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
