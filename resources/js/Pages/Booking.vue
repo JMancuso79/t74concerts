@@ -105,7 +105,7 @@
                                     <!-- City -->
                                     <div class="w-full pb-2">
                                         <label class="text-white">City</label>
-                                        <input type="text" class="form-input w-full" v-model="city" placeholder="Enter your phone">
+                                        <input type="text" class="form-input w-full" v-model="city" placeholder="City">
                                     </div>
                                     <div class="grid grid-cols-2 gap-4">
                                         <div>
@@ -230,7 +230,7 @@
                                     <!-- City -->
                                     <div class="w-full pb-2">
                                         <label class="text-white">City</label>
-                                        <input type="text" class="form-input w-full" v-model="city" placeholder="Enter your phone">
+                                        <input type="text" class="form-input w-full" v-model="city" placeholder="City">
                                     </div>
                                     <div class="grid grid-cols-2 gap-4">
                                         <div>
