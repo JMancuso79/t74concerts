@@ -17723,6 +17723,218 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Booking.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Booking.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Pages/Partials/Header */ "./resources/js/Pages/Partials/Header.vue");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {
+      step: 0,
+      type: null,
+      name: null,
+      contactName: null,
+      email: null,
+      phone: null,
+      city: null,
+      state: null,
+      message: null,
+      address: null,
+      zipCode: null,
+      url: null,
+      genres: null,
+      gigSwap: null,
+      gigSwapAway: null,
+      gigSwapHome: null,
+      availability: null,
+      isLoading: false,
+      isValidated: false,
+      errCode: null,
+      errMsg: null
+    };
+  },
+  mounted: function mounted() {},
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      this.isLoading = true;
+      axios.post('/api/booking-request', {
+        type: this.type,
+        name: this.name,
+        contact_name: this.contactName,
+        email: this.email,
+        phone: this.phone,
+        address: this.address,
+        city: this.city,
+        state: this.state,
+        zip: this.zipCode,
+        url: this.url,
+        genres: this.genres,
+        gig_swap: this.gigSwap,
+        gig_swap_home: this.gigSwapHome,
+        gig_swap_away: this.gigSwapAway,
+        dates: this.availability,
+        message: this.message
+      }).then(function (response) {
+        // Success
+        if (response.data.message == 'success') {
+          _this.errCode = 'success';
+          _this.errMsg = 'Your information has been sent and we will be in touch.';
+
+          _this.resetForm();
+        } // Something went wrong
+
+
+        if (response.data.message == 'fail') {
+          _this.errCode = 'fail';
+          _this.errMsg = 'Something went wrong!';
+        } // Something went wrong
+
+
+        if (response.data.message == 'fail-validation') {
+          _this.errCode = 'fail-validation';
+          _this.errMsg = 'Please make sure your email address is a valid email.';
+        }
+
+        _this.isLoading = false;
+      })["catch"](function (error) {
+        // Something went wrong
+        _this.errCode = 'fail';
+        _this.errMsg = 'Something went wrong!';
+        _this.isLoading = false;
+      });
+    },
+    validateForm: function validateForm() {
+      if (this.name != null && this.name != '') {
+        if (this.email != null && this.email != '') {
+          if (this.phone != null && this.phone != '') {
+            if (this.contactName != null && this.contactName != '') {
+              if (this.type != null && this.type != '') {
+                if (this.city != null && this.city != '') {
+                  if (this.state != null && this.state != '') {
+                    if (this.zipCode != null && this.zipCode != '') {
+                      if (this.genres != null && this.genres != '') {
+                        this.isValidated = true;
+                      } else {
+                        this.isValidated = false;
+                      }
+                    } else {
+                      this.isValidated = false;
+                    }
+                  } else {
+                    this.isValidated = false;
+                  }
+                } else {
+                  this.isValidated = false;
+                }
+              } else {
+                this.isValidated = false;
+              }
+            } else {
+              this.isValidated = false;
+            }
+          } else {
+            this.isValidated = false;
+          }
+        } else {
+          this.isValidated = false;
+        }
+      } else {
+        this.isValidated = false;
+      }
+    },
+    resetForm: function resetForm() {
+      this.step = 0;
+      this.type = null;
+      this.name = null;
+      this.contactName = null;
+      this.email = null;
+      this.phone = null;
+      this.message = null;
+      this.city = null;
+      this.state = null;
+      this.address = null;
+      this.zipCode = null;
+      this.url = null;
+      this.genres = null;
+      this.gigSwap = null;
+      this.gigSwapHome = null;
+      this.gigSwapAway = null;
+      this.isValidated = false;
+      this.availability = null;
+    }
+  },
+  watch: {
+    type: function type() {
+      if (this.type != null) {
+        this.step = 1;
+      }
+    },
+    email: function email() {
+      this.validateForm();
+    },
+    message: function message() {
+      this.validateForm();
+    },
+    name: function name() {
+      this.validateForm();
+    },
+    address: function address() {
+      this.validateForm();
+    },
+    contactName: function contactName() {
+      this.validateForm();
+    },
+    city: function city() {
+      this.validateForm();
+    },
+    availability: function availability() {
+      this.validateForm();
+    },
+    genres: function genres() {
+      this.validateForm();
+    },
+    url: function url() {
+      this.validateForm();
+    },
+    state: function state() {
+      this.validateForm();
+    },
+    zipCode: function zipCode() {
+      this.validateForm();
+    },
+    phone: function phone() {
+      this.validateForm();
+    },
+    gigSwap: function gigSwap() {
+      if (this.gigSwap != null) {
+        if (this.gigSwap === 1) {
+          this.step = 5;
+        }
+
+        if (this.gigSwap === 0) {
+          this.step = 7;
+        }
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Contact.vue?vue&type=script&lang=js":
 /*!********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Contact.vue?vue&type=script&lang=js ***!
@@ -21158,7 +21370,7 @@ var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><div class=\"p-4\"><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. Shortly after high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows back home at Pop&#39;s in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John booked shows from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. He went on to open The Mad Magician, a 500 cap bar and venue in STL with long time friend and business partner Jason Rottler and Tyler Kasch, vocalist of Tear Out The Heart. John was splitting his time between St. Louis and Orange County with a bar in STL and a web development business forming in CA. The Mad Magician closed it&#39;s doors in 2015 and John settled down in OC to go full time in web and app development. </p><p class=\"text-white mb-4\"> In 2013, John took on Pierce Brosnan&#39;s website and various site&#39;s for the Brosnan family. His years working for Pierce opened many doors for his career in web development. After a short stint in the corporate world, John found web development for marketing agencies a better fit. </p><p class=\"text-white mb-4\"> John and Jason Rottler formed ArtistWave Software LLC in 2018 to create an app for the music scene. The app is based on their years of experience booking and running a venue. The ArtistWave mobile app is currently in submission to Apple&#39;s beta program, with hopes of a release to the app stores this summer. </p><p class=\"text-white mb-4\"> Tower74 LLC was formed as a web and app development company and a legal entity to book concerts under. John currently lives in Newport Beach, CA. </p></div></div><div><div class=\"grid  grid-cols-1 md:grid-cols-3 gap-4 text-white text-center mb-4\"><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid  grid-cols-1 md:grid-cols-2 gap-4 text-white text-center\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/muse.jpg\" class=\"w-full\"><div class=\"p-2\"> John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish </div></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><div class=\"p-4\"><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. After high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows at Pop&#39;s back home in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. He owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John started splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it&#39;s doors, John settled back into OC and is now living in Newport Beach. </p><p class=\"text-white mb-4\"> Tower74 LLC was formed as a web and app development company and a legal entity to book concerts under. </p></div></div><div><div class=\"grid  grid-cols-1 md:grid-cols-3 gap-4 text-white text-center mb-4\"><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid  grid-cols-1 md:grid-cols-2 gap-4 text-white text-center\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/muse.jpg\" class=\"w-full\"><div class=\"p-2\"> John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish </div></div></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
@@ -22057,6 +22269,781 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Booking.vue?vue&type=template&id=08c0e780":
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Booking.vue?vue&type=template&id=08c0e780 ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "feat-bg bottom-spacer"
+};
+var _hoisted_2 = {
+  "class": "top-spacer"
+};
+var _hoisted_3 = {
+  "class": "max-width mx-auto"
+};
+var _hoisted_4 = {
+  "class": "bg-black ml-4 mr-4 mb-4"
+};
+var _hoisted_5 = {
+  key: 0
+};
+var _hoisted_6 = {
+  key: 0
+};
+var _hoisted_7 = {
+  key: 0
+};
+var _hoisted_8 = {
+  key: 1
+};
+var _hoisted_9 = {
+  key: 1
+};
+var _hoisted_10 = {
+  key: 0
+};
+var _hoisted_11 = {
+  key: 1
+};
+var _hoisted_12 = {
+  key: 2,
+  "class": "mt-4 ml-4 mr-4 pt-4"
+};
+var _hoisted_13 = {
+  key: 0,
+  "class": "text-white"
+};
+var _hoisted_14 = {
+  key: 1,
+  "class": "text-white"
+};
+var _hoisted_15 = {
+  key: 2
+};
+var _hoisted_16 = {
+  "class": "text-white"
+};
+var _hoisted_17 = {
+  "class": "w-full pt-4"
+};
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Email*", -1
+/* HOISTED */
+);
+
+var _hoisted_19 = {
+  key: 3,
+  "class": "bg-black p-4"
+};
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "uppercase text-title pb-4"
+}, " Choose a booking type ", -1
+/* HOISTED */
+);
+
+var _hoisted_21 = {
+  "class": "grid grid-cols-1 md:grid-cols-2 md:gap-4 text-white text-center"
+};
+var _hoisted_22 = {
+  key: 4,
+  "class": "bg-black p-4"
+};
+var _hoisted_23 = {
+  "class": "pb-4"
+};
+var _hoisted_24 = {
+  key: 0
+};
+var _hoisted_25 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Artist Name*", -1
+/* HOISTED */
+);
+
+var _hoisted_27 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Contact*", -1
+/* HOISTED */
+);
+
+var _hoisted_29 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Email*", -1
+/* HOISTED */
+);
+
+var _hoisted_31 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Phone", -1
+/* HOISTED */
+);
+
+var _hoisted_33 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "City", -1
+/* HOISTED */
+);
+
+var _hoisted_35 = {
+  "class": "grid grid-cols-2 gap-4"
+};
+var _hoisted_36 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "State", -1
+/* HOISTED */
+);
+
+var _hoisted_38 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Zip Code", -1
+/* HOISTED */
+);
+
+var _hoisted_40 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Website", -1
+/* HOISTED */
+);
+
+var _hoisted_42 = {
+  key: 0
+};
+var _hoisted_43 = {
+  key: 1
+};
+var _hoisted_44 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "List your genres*", -1
+/* HOISTED */
+);
+
+var _hoisted_46 = {
+  key: 2
+};
+var _hoisted_47 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "List your availability*", -1
+/* HOISTED */
+);
+
+var _hoisted_49 = {
+  key: 3
+};
+
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "uppercase text-title pb-4"
+}, " Would you like to trade shows with artists in your region? ", -1
+/* HOISTED */
+);
+
+var _hoisted_51 = {
+  "class": "grid grid-cols-1 md:grid-cols-2 md:gap-4 text-white text-center"
+};
+var _hoisted_52 = {
+  key: 4
+};
+var _hoisted_53 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "List cities you can travel to*", -1
+/* HOISTED */
+);
+
+var _hoisted_55 = {
+  key: 5
+};
+var _hoisted_56 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Where can you book shows to trade?*", -1
+/* HOISTED */
+);
+
+var _hoisted_58 = {
+  key: 6
+};
+var _hoisted_59 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Leave a message", -1
+/* HOISTED */
+);
+
+var _hoisted_61 = {
+  key: 5,
+  "class": "bg-black p-4"
+};
+var _hoisted_62 = {
+  "class": "pb-4"
+};
+var _hoisted_63 = {
+  key: 0
+};
+var _hoisted_64 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Venue Name*", -1
+/* HOISTED */
+);
+
+var _hoisted_66 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Contact*", -1
+/* HOISTED */
+);
+
+var _hoisted_68 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Email*", -1
+/* HOISTED */
+);
+
+var _hoisted_70 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Phone", -1
+/* HOISTED */
+);
+
+var _hoisted_72 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Address", -1
+/* HOISTED */
+);
+
+var _hoisted_74 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "City", -1
+/* HOISTED */
+);
+
+var _hoisted_76 = {
+  "class": "grid grid-cols-2 gap-4"
+};
+var _hoisted_77 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "State", -1
+/* HOISTED */
+);
+
+var _hoisted_79 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Zip Code", -1
+/* HOISTED */
+);
+
+var _hoisted_81 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_82 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Website", -1
+/* HOISTED */
+);
+
+var _hoisted_83 = {
+  key: 0
+};
+var _hoisted_84 = {
+  key: 1
+};
+var _hoisted_85 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "What dates do you have available?", -1
+/* HOISTED */
+);
+
+var _hoisted_87 = {
+  key: 2
+};
+var _hoisted_88 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_89 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "What genres can be booked?*", -1
+/* HOISTED */
+);
+
+var _hoisted_90 = {
+  key: 3
+};
+var _hoisted_91 = {
+  "class": "w-full pb-2"
+};
+
+var _hoisted_92 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "text-white"
+}, "Additional information", -1
+/* HOISTED */
+);
+
+var _hoisted_93 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "pt-4 pb-4 text-white"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  style: {
+    "width": "100%",
+    "max-width": "120px",
+    "margin": "0 auto"
+  }
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "loading"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "white"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  "stroke-linecap": "round",
+  "stroke-linejoin": "round",
+  "stroke-width": "1",
+  d: "M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-center"
+}, " Submitting your information ")], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Event "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not Loading "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Buttons Artist "), $data.type === 'artist' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [$data.step > 1 && $data.step < 7 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $data.step--;
+    }),
+    "class": "back-button mt-4 ml-4 mr-4"
+  }, " Back ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Cancel "), $data.step === 1 || $data.step === 7 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return $options.resetForm();
+    }),
+    "class": "back-button mt-4 ml-4 mr-4"
+  }, " Cancel ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Buttons Venue "), $data.type === 'venue' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [$data.step > 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[3] || (_cache[3] = function ($event) {
+      return $data.step--;
+    }),
+    "class": "back-button mt-4 ml-4 mr-4"
+  }, " Back ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Cancel "), $data.step === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[4] || (_cache[4] = function ($event) {
+      return $options.resetForm();
+    }),
+    "class": "back-button mt-4 ml-4 mr-4"
+  }, " Cancel ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Errors "), $data.errCode != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [$data.errCode == 'success' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errMsg), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errCode == 'fail' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errMsg), 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errCode == 'fail-validation' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errMsg), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "email",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+      return $data.email = $event;
+    }),
+    placeholder: "Enter your email"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Type "), $data.type === null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[6] || (_cache[6] = function ($event) {
+      return $data.type = 'artist';
+    }),
+    "class": "booking-button w-full mb-4 md:m-0"
+  }, " Artist Booking ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[7] || (_cache[7] = function ($event) {
+      return $data.type = 'venue';
+    }),
+    "class": "booking-button w-full mb-4 md:m-0"
+  }, " Venue Booking ")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Form "), $data.type === 'artist' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 1 "), $data.step === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
+      return $data.name = $event;
+    }),
+    placeholder: "Enter artist name"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
+      return $data.contactName = $event;
+    }),
+    placeholder: "Enter contact name"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.contactName]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "email",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+      return $data.email = $event;
+    }),
+    placeholder: "Enter your email"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Phone "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
+      return $data.phone = $event;
+    }),
+    placeholder: "Enter your phone"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" City "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
+      return $data.city = $event;
+    }),
+    placeholder: "Enter your phone"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.city]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_36, [_hoisted_37, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
+      return $data.state = $event;
+    }),
+    placeholder: "State*"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.state]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_38, [_hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[14] || (_cache[14] = function ($event) {
+      return $data.zipCode = $event;
+    }),
+    placeholder: "Zip Code*"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.zipCode]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" URL "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[15] || (_cache[15] = function ($event) {
+      return $data.url = $event;
+    }),
+    placeholder: "Enter your website"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.url]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Can Submit "), $data.name != null && $data.contactName != null && $data.email != null && $data.phone != null && $data.city != null && $data.state != null && $data.zipCode != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[16] || (_cache[16] = function ($event) {
+      return $data.step = 2;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 2 "), $data.step === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Genres "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
+      return $data.genres = $event;
+    }),
+    placeholder: "Enter your genre(s)"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.genres]])]), $data.genres != null && $data.genres != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[18] || (_cache[18] = function ($event) {
+      return $data.step = 3;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 3 "), $data.step === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Availability "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
+      return $data.availability = $event;
+    }),
+    placeholder: "Enter your availability"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.availability]])]), $data.availability != null && $data.availability != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[20] || (_cache[20] = function ($event) {
+      return $data.step = 4;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 4 "), $data.step === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[21] || (_cache[21] = function ($event) {
+      return $data.gigSwap = 1;
+    }),
+    "class": "booking-button w-full mb-4 md:m-0"
+  }, " Yes ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[22] || (_cache[22] = function ($event) {
+      return $data.gigSwap = 0;
+    }),
+    "class": "booking-button w-full mb-4 md:m-0"
+  }, " No ")])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 5 "), $data.step === 5 && $data.gigSwap === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_52, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Availability "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_53, [_hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[23] || (_cache[23] = function ($event) {
+      return $data.gigSwapAway = $event;
+    }),
+    placeholder: "Enter cities you can travel to"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.gigSwapAway]])]), $data.gigSwapAway != null && $data.gigSwapAway != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[24] || (_cache[24] = function ($event) {
+      return $data.step = 6;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 6 "), $data.step === 6 && $data.gigSwap === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_55, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Availability "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_56, [_hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[25] || (_cache[25] = function ($event) {
+      return $data.gigSwapHome = $event;
+    }),
+    placeholder: "Enter cities you can book"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.gigSwapHome]])]), $data.gigSwapHome != null && $data.gigSwapHome != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[26] || (_cache[26] = function ($event) {
+      return $data.step = 7;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 7 "), $data.step === 7 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_58, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Availability "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_59, [_hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[27] || (_cache[27] = function ($event) {
+      return $data.message = $event;
+    }),
+    placeholder: "Enter a message"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.message]])]), $data.isValidated === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[28] || (_cache[28] = function ($event) {
+      return $options.submit();
+    }),
+    "class": "booking-button w-full"
+  }, "Submit")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Venue "), $data.type === 'venue' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 1 "), $data.step === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_63, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_64, [_hoisted_65, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[29] || (_cache[29] = function ($event) {
+      return $data.name = $event;
+    }),
+    placeholder: "Enter venue name"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Name "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_66, [_hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[30] || (_cache[30] = function ($event) {
+      return $data.contactName = $event;
+    }),
+    placeholder: "Enter contact name"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.contactName]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Email "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_68, [_hoisted_69, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "email",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[31] || (_cache[31] = function ($event) {
+      return $data.email = $event;
+    }),
+    placeholder: "Enter your email"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Phone "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_70, [_hoisted_71, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
+      return $data.phone = $event;
+    }),
+    placeholder: "Enter your phone"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Address "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_72, [_hoisted_73, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
+      return $data.address = $event;
+    }),
+    placeholder: "Enter your address"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.address]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" City "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_74, [_hoisted_75, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
+      return $data.city = $event;
+    }),
+    placeholder: "Enter your phone"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.city]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_77, [_hoisted_78, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[35] || (_cache[35] = function ($event) {
+      return $data.state = $event;
+    }),
+    placeholder: "State*"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.state]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_79, [_hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
+      return $data.zipCode = $event;
+    }),
+    placeholder: "Zip Code*"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.zipCode]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" URL "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_81, [_hoisted_82, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[37] || (_cache[37] = function ($event) {
+      return $data.url = $event;
+    }),
+    placeholder: "Enter your website"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.url]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Can Submit "), $data.name != null && $data.contactName != null && $data.email != null && $data.phone != null && $data.city != null && $data.state != null && $data.zipCode != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_83, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[38] || (_cache[38] = function ($event) {
+      return $data.step = 2;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 2 "), $data.step === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_84, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Availability "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_85, [_hoisted_86, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[39] || (_cache[39] = function ($event) {
+      return $data.availability = $event;
+    }),
+    placeholder: "Enter your availability"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.availability]])]), $data.availability != null && $data.availability != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[40] || (_cache[40] = function ($event) {
+      return $data.step = 3;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 3 "), $data.step === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_87, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Genres "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_88, [_hoisted_89, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[41] || (_cache[41] = function ($event) {
+      return $data.genres = $event;
+    }),
+    placeholder: "Enter your genre(s)"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.genres]])]), $data.genres != null && $data.genres != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[42] || (_cache[42] = function ($event) {
+      return $data.step = 4;
+    }),
+    "class": "booking-button w-full"
+  }, "Next")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Step 4 "), $data.step === 4 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_90, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Availability "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_91, [_hoisted_92, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "class": "form-input w-full",
+    "onUpdate:modelValue": _cache[43] || (_cache[43] = function ($event) {
+      return $data.message = $event;
+    }),
+    placeholder: "Enter a message"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.message]])]), $data.isValidated === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+    key: 0,
+    onClick: _cache[44] || (_cache[44] = function ($event) {
+      return $options.submit();
+    }),
+    "class": "booking-button w-full"
+  }, "Submit")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_93], 64
+  /* STABLE_FRAGMENT */
+  ))])])])]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Contact.vue?vue&type=template&id=2c2b26f2":
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Contact.vue?vue&type=template&id=2c2b26f2 ***!
@@ -22334,32 +23321,36 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" About ");
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Contact ");
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Booking ");
 
-var _hoisted_11 = {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Contact ");
+
+var _hoisted_12 = {
   "class": "-mr-2 flex items-center sm:hidden"
 };
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "h-6 w-6",
   stroke: "currentColor",
   fill: "none",
   viewBox: "0 0 24 24"
 };
-var _hoisted_13 = {
+var _hoisted_14 = {
   "class": "pt-2 pb-3 space-y-1"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Concerts ");
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Concerts ");
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" About ");
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" About ");
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Contact ");
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Booking ");
 
-var _hoisted_17 = {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Contact ");
+
+var _hoisted_19 = {
   key: 0,
   "class": "bg-white shadow"
 };
-var _hoisted_18 = {
+var _hoisted_20 = {
   "class": "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -22399,7 +23390,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_nav_link, {
-    href: "/contact"
+    href: "/booking"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_10];
@@ -22407,12 +23398,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hamburger "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_nav_link, {
+    href: "/contact"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_11];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hamburger "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $data.showingNavigationDropdown = !$data.showingNavigationDropdown;
     }),
     "class": "inline-flex items-center justify-center p-2 rounded-md text-dark hover:text-dark focus:outline-none focus:text-dark transition duration-150 ease-in-out"
-  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("svg", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("svg", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
     "class": {
       'hidden': $data.showingNavigationDropdown,
       'inline-flex': !$data.showingNavigationDropdown
@@ -22439,17 +23439,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       'block': $data.showingNavigationDropdown,
       'hidden': !$data.showingNavigationDropdown
     }, "sm:hidden"]
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
     href: "/"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_14];
-    }),
-    _: 1
-    /* STABLE */
-
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
-    href: "/about"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_15];
@@ -22458,7 +23449,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
-    href: "/contact"
+    href: "/about"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_16];
@@ -22466,9 +23457,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
+    href: "/booking"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_17];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_responsive_nav_link, {
+    href: "/contact"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_18];
+    }),
+    _: 1
+    /* STABLE */
+
   })])], 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("header", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("header", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
 }
 
 /***/ }),
@@ -45379,6 +46388,32 @@ _VerifyEmail_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Booking.vue":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Booking.vue ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Booking_vue_vue_type_template_id_08c0e780__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Booking.vue?vue&type=template&id=08c0e780 */ "./resources/js/Pages/Booking.vue?vue&type=template&id=08c0e780");
+/* harmony import */ var _Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Booking.vue?vue&type=script&lang=js */ "./resources/js/Pages/Booking.vue?vue&type=script&lang=js");
+
+
+
+_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Booking_vue_vue_type_template_id_08c0e780__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/Pages/Booking.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Contact.vue":
 /*!****************************************!*\
   !*** ./resources/js/Pages/Contact.vue ***!
@@ -46279,6 +47314,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Booking.vue?vue&type=script&lang=js":
+/*!****************************************************************!*\
+  !*** ./resources/js/Pages/Booking.vue?vue&type=script&lang=js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Booking.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Booking.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Contact.vue?vue&type=script&lang=js":
 /*!****************************************************************!*\
   !*** ./resources/js/Pages/Contact.vue?vue&type=script&lang=js ***!
@@ -47111,6 +48162,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Booking.vue?vue&type=template&id=08c0e780":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Pages/Booking.vue?vue&type=template&id=08c0e780 ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_template_id_08c0e780__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Booking_vue_vue_type_template_id_08c0e780__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Booking.vue?vue&type=template&id=08c0e780 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Booking.vue?vue&type=template&id=08c0e780");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Contact.vue?vue&type=template&id=2c2b26f2":
 /*!**********************************************************************!*\
   !*** ./resources/js/Pages/Contact.vue?vue&type=template&id=2c2b26f2 ***!
@@ -47576,6 +48643,8 @@ var map = {
 	"./Auth/TwoFactorChallenge.vue": "./resources/js/Pages/Auth/TwoFactorChallenge.vue",
 	"./Auth/VerifyEmail": "./resources/js/Pages/Auth/VerifyEmail.vue",
 	"./Auth/VerifyEmail.vue": "./resources/js/Pages/Auth/VerifyEmail.vue",
+	"./Booking": "./resources/js/Pages/Booking.vue",
+	"./Booking.vue": "./resources/js/Pages/Booking.vue",
 	"./Contact": "./resources/js/Pages/Contact.vue",
 	"./Contact.vue": "./resources/js/Pages/Contact.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",

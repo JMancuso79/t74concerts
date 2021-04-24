@@ -22,6 +22,9 @@
                                 <jet-nav-link href="/about">
                                     About
                                 </jet-nav-link>
+                                <jet-nav-link href="/booking">
+                                    Booking
+                                </jet-nav-link>
                                 <jet-nav-link href="/contact">
                                     Contact
                                 </jet-nav-link>
@@ -49,6 +52,9 @@
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link href="/about">
                             About
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link href="/booking">
+                            Booking
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link href="/contact">
                             Contact

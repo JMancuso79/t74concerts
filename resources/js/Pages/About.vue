@@ -13,22 +13,16 @@
                     <img src="/images/joshua-tree.jpg" class="w-full" alt="John Mancuso Joshua Tree" />
                     <div class="p-4">
                         <p class="text-white mb-4">
-                            <strong>Tower 74 LLC</strong> was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. Shortly after high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americoma's street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20's while working for indie record labels Americoma and Rotten Records.
+                            <strong>Tower 74 LLC</strong> was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. After high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americoma's street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20's while working for indie record labels Americoma and Rotten Records.
                         </p>
                         <p class="text-white mb-4">
-                            While living in So Cal, John started booking shows back home at Pop's in St. Louis. Pop's focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop's and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities.
+                            While living in So Cal, John started booking shows at Pop's back home in St. Louis. Pop's focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop's and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. 
                         </p>
                         <p class="text-white mb-4">
-                            John booked shows from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. He went on to open The Mad Magician, a 500 cap bar and venue in STL with long time friend and business partner Jason Rottler and Tyler Kasch, vocalist of Tear Out The Heart. John was splitting his time between St. Louis and Orange County with a bar in STL and a web development business forming in CA. The Mad Magician closed it's doors in 2015 and John settled down in OC to go full time in web and app development. 
+                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. He owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John started splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it's doors, John settled back into OC and is now living in Newport Beach. 
                         </p>
                         <p class="text-white mb-4">
-                            In 2013, John took on Pierce Brosnan's website and various site's for the Brosnan family. His years working for Pierce opened many doors for his career in web development. After a short stint in the corporate world, John found web development for marketing agencies a better fit. 
-                        </p>
-                        <p class="text-white mb-4">
-                            John and Jason Rottler formed ArtistWave Software LLC in 2018 to create an app for the music scene. The app is based on their years of experience booking and running a venue. The ArtistWave mobile app is currently in submission to Apple's beta program, with hopes of a release to the app stores this summer. 
-                        </p>
-                        <p class="text-white mb-4">
-                            Tower74 LLC was formed as a web and app development company and a legal entity to book concerts under. John currently lives in Newport Beach, CA. 
+                            Tower74 LLC was formed as a web and app development company and a legal entity to book concerts under. 
                         </p>
                     </div>
                 </div>
