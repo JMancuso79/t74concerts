@@ -82,6 +82,7 @@
                             <div class="pb-4">
                                 <!-- Step 1 -->
                                 <div v-if="step === 1">
+                                    <p class="text-white pb-4">If you'd like to be booked by Tower74, please fill out the form.</p>
                                     <!-- Name -->
                                     <div class="w-full pb-2">
                                         <label class="text-white">Artist Name*</label>
@@ -202,6 +203,7 @@
                             <div class="pb-4">
                                 <!-- Step 1 -->
                                 <div v-if="step === 1">
+                                    <p class="text-white pb-4">If you're a representative of a venue and would like Tower74 to book your venue, please fill out the form.</p>
                                     <!-- Name -->
                                     <div class="w-full pb-2">
                                         <label class="text-white">Venue Name*</label>
