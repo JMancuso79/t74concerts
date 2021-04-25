@@ -205,7 +205,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-white text-center mt-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-white text-center pt-4 ml-4 mr-4 md:m-0">
                         <div class="bg-black">
                             <img src="/images/past/rakim-live.jpg" class="w-full" />
                             <div class="p-2">
