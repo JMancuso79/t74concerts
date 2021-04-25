@@ -10,41 +10,43 @@
         <div class="top-spacer">
             <!-- Event -->
             <div class="max-width mx-auto">
-                <div class="dark:bg-gray-200 ml-4 mr-4 mb-4 md:m-0">
-                    <div class="p-2">
+                <div class="bg-black ml-4 mr-4 mb-4 md:m-0">
+                    <div class="pl-4 pr-4">
                         <div>
-                            <p class="font-bold mb-2">Contact </p>
-                            <p v-if="errCode == 'success'" class="mb-4">
+                            <div class="uppercase text-title pt-4">
+                                Contact Tower74
+                            </div>
+                            <p v-if="errCode == 'success'" class="mb-4 text-white">
                                 {{errMsg}}
                             </p>
-                            <p v-if="errCode == 'fail'" class="mb-4">
+                            <p v-if="errCode == 'fail'" class="mb-4 text-white">
                                 {{errMsg}}
                             </p>
-                            <p v-if="errCode == 'fail-validation'" class="mb-4">
+                            <p v-if="errCode == 'fail-validation'" class="mb-4 text-white">
                                 {{errMsg}}
                             </p>
                             <!-- Name -->
                             <div class="w-full pb-2">
-                                <label>Name*</label>
+                                <label class="text-white">Name*</label>
                                 <input type="text" class="form-input w-full" v-model="name" placeholder="Enter your name">
                             </div>
                             <!-- Email -->
                             <div class="w-full pb-2">
-                                <label>Email*</label>
+                                <label class="text-white">Email*</label>
                                 <input type="email" class="form-input w-full" v-model="email" placeholder="Enter your email">
                             </div>
                             <!-- Phone -->
                             <div class="w-full pb-2">
-                                <label>Phone</label>
+                                <label class="text-white">Phone</label>
                                 <input type="text" class="form-input w-full" v-model="phone" placeholder="Enter your phone">
                             </div>
                             <!-- Message -->
                             <div class="w-full pb-2">
-                                <label>Message*</label>
+                                <label class="text-white">Message*</label>
                                 <textarea class="form-input w-full" v-model="message" placeholder="Enter your message"></textarea>
                             </div> 
                             <!-- Can Submit -->
-                            <div v-if="isValidated === true">
+                            <div v-if="isValidated === true" class="pb-4">
                                 <button @click="sendMessage()" class="buy-now-button w-full">Send</button>
                             </div>
                         </div>
