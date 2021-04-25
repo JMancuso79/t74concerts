@@ -38,174 +38,174 @@
                 </div>
 
                 <div>
-                    <div class="grid  grid-cols-1 md:grid-cols-3 gap-4 text-white text-center mb-4">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-white text-center ml-4 mr-4 md:m-0">
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/misfits.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/bone-col.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/dmx.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/method-man.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/mgk.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/rakim.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/deck.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/twista.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/krs.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/filter.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/steve-ewing.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/hed-pe.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/suicide-silence.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/summer-slaughter.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/alol.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/hurt.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/days.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/rittz.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/greek-fire.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/chanel.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/dizzy.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/wyte.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/wrek.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/2-bones.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/bone-again.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/hed-2.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/foad.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/snow.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/non.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/blh.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/john-5.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/mush.jpg" class="w-full" />
                             </div>
                         </div>
                         <div class="bg-black">
-                            <div class="pt-2 pl-2 pr-2 md:p-0">
+                            <div>
                                 <img src="/images/past/drown.jpg" class="w-full" />
                             </div>
                         </div>
                     </div>
-                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4 text-white text-center">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-white text-center mt-4">
                         <div class="bg-black">
                             <img src="/images/past/rakim-live.jpg" class="w-full" />
                             <div class="p-2">

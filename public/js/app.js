@@ -21401,7 +21401,7 @@ var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><p class=\"mt-2 ml-4 mr-4 text-white\" style=\"font-size:14px;color:#cccccc;\">Tower 74 Founder John Mancuso at Joshua Tree National Park March 2021</p><div class=\"pl-4 pr-4 pb-4\"><div class=\"uppercase text-title pt-4\"> About Tower 74 LLC </div><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was established in January of 2021 in California by John Mancuso. John is a web and app developer and long time concert promoter. Tower 74 LLC was formed as a web and app development company and a legal entity to book concerts. </p><div class=\"uppercase text-title pt-4\"> About John Mancuso </div><p class=\"text-white mb-4\"> Originally from St. Louis, MO, John played in bands in the STL metal scene. After graduating high school, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows at Pop&#39;s back home in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it&#39;s doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href=\"https://artistwave.com\" target=\"_blank\" style=\"font-weight:bold;\">ArtistWave</a>. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. </p></div></div><div><div class=\"grid  grid-cols-1 md:grid-cols-3 gap-4 text-white text-center mb-4\"><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div class=\"pt-2 pl-2 pr-2 md:p-0\"><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid  grid-cols-1 md:grid-cols-2 gap-4 text-white text-center\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/muse.jpg\" class=\"w-full\"><div class=\"p-2\"> John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish </div></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><p class=\"mt-2 ml-4 mr-4 text-white\" style=\"font-size:14px;color:#cccccc;\">Tower 74 Founder John Mancuso at Joshua Tree National Park March 2021</p><div class=\"pl-4 pr-4 pb-4\"><div class=\"uppercase text-title pt-4\"> About Tower 74 LLC </div><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was established in January of 2021 in California by John Mancuso. John is a web and app developer and long time concert promoter. Tower 74 LLC was formed as a web and app development company and a legal entity to book concerts. </p><div class=\"uppercase text-title pt-4\"> About John Mancuso </div><p class=\"text-white mb-4\"> Originally from St. Louis, MO, John played in bands in the STL metal scene. After graduating high school, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows at Pop&#39;s back home in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it&#39;s doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href=\"https://artistwave.com\" target=\"_blank\" style=\"font-weight:bold;\">ArtistWave</a>. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. </p></div></div><div><div class=\"grid grid-cols-2 md:grid-cols-3 gap-4 text-white text-center ml-4 mr-4 md:m-0\"><div class=\"bg-black\"><div><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-white text-center mt-4\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/muse.jpg\" class=\"w-full\"><div class=\"p-2\"> John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish </div></div></div></div></div></div>", 1);
 
 var _hoisted_3 = {
   "class": "mt-4"
@@ -24847,135 +24847,112 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "max-width mx-auto"
 };
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "pb-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "/",
-  "class": "mt-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "bg-black p-2 inline-block"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  "class": "h-6 w-6",
-  fill: "none",
-  viewBox: "0 0 24 24",
-  stroke: "white"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  "stroke-linecap": "round",
-  "stroke-linejoin": "round",
-  "stroke-width": "2",
-  d: "M15 19l-7-7 7-7"
-})])])])], -1
-/* HOISTED */
-);
-
-var _hoisted_5 = {
+var _hoisted_4 = {
   key: 0
 };
-var _hoisted_6 = {
+var _hoisted_5 = {
   "class": "mt-4 ml-4 mr-4 md:m-0"
 };
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "p-4 w-full bg-black"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "text-date font-bold uppercase"
 };
-var _hoisted_9 = {
+var _hoisted_8 = {
   "class": "uppercase text-title"
 };
-var _hoisted_10 = {
+var _hoisted_9 = {
   key: 1,
   "class": "text-gray-400",
   style: {
     "font-size": "14px"
   }
 };
-var _hoisted_11 = {
+var _hoisted_10 = {
   key: 2,
   "class": "text-gray-400",
   style: {
     "font-size": "14px"
   }
 };
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "mt-2 text-gray-400"
 };
-var _hoisted_13 = {
+var _hoisted_12 = {
   "class": "mb-4 ml-4 mr-4 md:m-0"
 };
-var _hoisted_14 = {
+var _hoisted_13 = {
   "class": "dark:bg-gray-200 shadow-md overflow-hidden"
 };
-var _hoisted_15 = {
+var _hoisted_14 = {
   key: 0
 };
-var _hoisted_16 = {
+var _hoisted_15 = {
   "class": "p-4"
 };
-var _hoisted_17 = {
+var _hoisted_16 = {
   key: 0
 };
-var _hoisted_18 = {
+var _hoisted_17 = {
   "class": "font-bold"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "mb-2"
 }, "How many tickets do you want to purchase?", -1
 /* HOISTED */
 );
 
-var _hoisted_20 = {
+var _hoisted_19 = {
   style: {
     "display": "inline-block",
     "width": "15%",
     "margin-right": "5%"
   }
 };
-var _hoisted_21 = {
+var _hoisted_20 = {
   style: {
     "display": "inline-block",
     "width": "35%",
     "margin-right": "5%"
   }
 };
-var _hoisted_22 = {
+var _hoisted_21 = {
   style: {
     "display": "inline-block",
     "width": "40%"
   }
 };
-var _hoisted_23 = {
+var _hoisted_22 = {
   "class": "font-bold mt-2"
 };
-var _hoisted_24 = {
+var _hoisted_23 = {
   key: 0
 };
-var _hoisted_25 = {
+var _hoisted_24 = {
   key: 1
 };
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "font-bold mb-2"
 }, "Name of primary ticket holder", -1
 /* HOISTED */
 );
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "mb-2"
 }, "The person who will claim the tickets at the venue the night of the show.", -1
 /* HOISTED */
 );
 
-var _hoisted_28 = {
+var _hoisted_27 = {
   key: 0
 };
-var _hoisted_29 = {
+var _hoisted_28 = {
   key: 2
 };
-var _hoisted_30 = {
+var _hoisted_29 = {
   key: 0,
   "class": "mb-4 pb-2",
   style: {
@@ -24983,13 +24960,13 @@ var _hoisted_30 = {
   }
 };
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "font-bold mb-2"
 }, "Payment Information", -1
 /* HOISTED */
 );
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   style: {
     "font-size": "14px",
     "color": "#444444"
@@ -24999,6 +24976,9 @@ var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
+var _hoisted_32 = {
+  "class": "w-full pb-2"
+};
 var _hoisted_33 = {
   "class": "w-full pb-2"
 };
@@ -25009,10 +24989,10 @@ var _hoisted_35 = {
   "class": "w-full pb-2"
 };
 var _hoisted_36 = {
-  "class": "w-full pb-2"
+  "class": "grid grid-cols-3 gap-4"
 };
 var _hoisted_37 = {
-  "class": "grid grid-cols-3 gap-4"
+  "class": "w-full pb-2"
 };
 var _hoisted_38 = {
   "class": "w-full pb-2"
@@ -25027,25 +25007,22 @@ var _hoisted_41 = {
   "class": "w-full pb-2"
 };
 var _hoisted_42 = {
-  "class": "w-full pb-2"
+  "class": "grid grid-cols-2 gap-4"
 };
 var _hoisted_43 = {
-  "class": "grid grid-cols-2 gap-4"
+  "class": "w-full pb-2"
 };
 var _hoisted_44 = {
   "class": "w-full pb-2"
 };
 var _hoisted_45 = {
-  "class": "w-full pb-2"
-};
-var _hoisted_46 = {
   key: 1
 };
-var _hoisted_47 = {
+var _hoisted_46 = {
   key: 3
 };
 
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "pb-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
   "class": "text-lg font-bold text-gray-900"
@@ -25053,7 +25030,7 @@ var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "pb-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
   "class": "text-lg font-bold text-gray-900"
@@ -25061,7 +25038,7 @@ var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "pb-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", {
   "class": "text-lg font-bold text-gray-900"
@@ -25072,7 +25049,7 @@ var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "pt-4 pb-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   style: {
@@ -25098,11 +25075,11 @@ var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, " There was a problem. ")], -1
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, " There was a problem. ")], -1
 /* HOISTED */
 );
 
-var _hoisted_53 = {
+var _hoisted_52 = {
   "class": "mt-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25110,15 +25087,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concert "), $data.concert != null && $data.concert != undefined && $data.concert != [] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concert "), $data.concert != null && $data.concert != undefined && $data.concert != [] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     "class": "w-full",
     src: $data.concert.imageFull,
     alt: $data.concert.title
   }, null, 8
   /* PROPS */
-  , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.time), 1
+  , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.time), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.title), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.title), 1
   /* TEXT */
   ), $data.concert.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("a", {
     key: 0,
@@ -25126,15 +25103,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "block text-venue text-gray-400"
   }, " Venue: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].name), 9
   /* TEXT, PROPS */
-  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.concert.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].address), 1
+  , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.concert.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].address), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.concert.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].city) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].state) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].zipCode), 1
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.concert.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].city) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].state) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.venue[0].zipCode), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.details), 1
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.details), 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not Loading "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Number of tickets "), $data.step === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_18, "Tickets: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.ticket) + ".00", 1
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not Loading "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Number of tickets "), $data.step === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_17, "Tickets: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.concert.ticket) + ".00", 1
   /* TEXT */
-  ), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "number",
     "class": "form-input w-full ",
     min: "0",
@@ -25144,7 +25121,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.ticketNumber]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.ticketNumber]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     disabled: $data.ticketNumber < 1,
     "class": "w-full ticket-number-button",
     onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
@@ -25152,19 +25129,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, ["prevent"]))
   }, "-", 8
   /* PROPS */
-  , ["disabled"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  , ["disabled"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     "class": "w-full ticket-number-button",
     onClick: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $data.ticketNumber++;
     }, ["prevent"]))
-  }, "+")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_23, "Total: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.total = $data.ticketNumber * $data.concert.ticket) + ".00", 1
+  }, "+")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_22, "Total: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.total = $data.ticketNumber * $data.concert.ticket) + ".00", 1
   /* TEXT */
-  ), $data.ticketNumber > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ), $data.ticketNumber > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $data.step = 1;
     }),
     "class": "buy-now-button mt-2 w-full"
-  }, " Buy Now ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ticket holder name "), $data.step === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_25, [_hoisted_26, _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, " Buy Now ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ticket holder name "), $data.step === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_24, [_hoisted_25, _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
@@ -25172,14 +25149,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.ticketHolder]]), $data.ticketHolder != null && $data.ticketHolder != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.ticketHolder]]), $data.ticketHolder != null && $data.ticketHolder != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[6] || (_cache[6] = function ($event) {
       return $data.step = 2;
     }),
     "class": "buy-now-button mt-2 w-full"
-  }, " Next ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Payment Form "), $data.step === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_29, [$data.errCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errMsg), 1
+  }, " Next ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Payment Form "), $data.step === 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_28, [$data.errCode ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errMsg), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_30, _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
@@ -25188,7 +25165,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Name on card*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.nameOnCard]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.nameOnCard]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
@@ -25197,7 +25174,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "email*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
@@ -25206,7 +25183,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Phone*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.phone]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
@@ -25215,7 +25192,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Card Number*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.cardNumber]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.cardNumber]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
@@ -25224,7 +25201,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Month*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.expMonth]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.expMonth]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
@@ -25233,7 +25210,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Year*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.expYear]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.expYear]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
@@ -25242,7 +25219,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "CVV*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.cvv]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.cvv]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[14] || (_cache[14] = function ($event) {
@@ -25251,7 +25228,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Address*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.address]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.address]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Single "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[15] || (_cache[15] = function ($event) {
@@ -25260,7 +25237,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "City*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.city]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.city]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Group "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
@@ -25269,7 +25246,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "State*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.state]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.state]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "text",
     "class": "form-input w-full",
     "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
@@ -25278,20 +25255,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Zip Code*"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.zip]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Can pay "), $data.isPaymentFormValidated === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.zip]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Can pay "), $data.isPaymentFormValidated === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[18] || (_cache[18] = function ($event) {
       return $options.sendPayment();
     }),
     "class": "buy-now-button mt-2 w-full"
-  }, "Submit")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" After Payment "), $data.step === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_47, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Thank You "), _hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tickets "), _hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contact "), _hoisted_50])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  }, "Submit")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" After Payment "), $data.step === 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Thank You "), _hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tickets "), _hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contact "), _hoisted_49])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_51], 64
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_50], 64
   /* STABLE_FRAGMENT */
   ))])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not found "), _hoisted_52], 64
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not found "), _hoisted_51], 64
   /* STABLE_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_53, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])])]);
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_52, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])])]);
 }
 
 /***/ }),
@@ -25318,57 +25295,34 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "max-width mx-auto"
 };
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "pb-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "/",
-  "class": "mt-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "bg-black p-2 inline-block"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  "class": "h-6 w-6",
-  fill: "none",
-  viewBox: "0 0 24 24",
-  stroke: "white"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  "stroke-linecap": "round",
-  "stroke-linejoin": "round",
-  "stroke-width": "2",
-  d: "M15 19l-7-7 7-7"
-})])])])], -1
-/* HOISTED */
-);
-
-var _hoisted_5 = {
+var _hoisted_4 = {
   "class": "bg-black text-white ml-4 mr-4 mb-4 md:m-0"
 };
-var _hoisted_6 = {
+var _hoisted_5 = {
   key: 0
 };
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "p-4"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "text-lg leading-tight font-bold"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_10 = {
+var _hoisted_9 = {
   key: 0
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Website: ");
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Website: ");
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, " There was a problem. ")], -1
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, " There was a problem. ")], -1
 /* HOISTED */
 );
 
-var _hoisted_13 = {
+var _hoisted_12 = {
   "class": "mt-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25376,22 +25330,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concert "), $data.venue != null && $data.venue != undefined && $data.venue != [] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.name), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concert "), $data.venue != null && $data.venue != undefined && $data.venue != [] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.name), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.address), 1
   /* TEXT */
-  ), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.city) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.state) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.zipCode), 1
+  ), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.city) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.state) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.zipCode), 1
   /* TEXT */
-  )]), $data.venue.website ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  )]), $data.venue.website ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $data.venue.website,
     target: "_blank"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.venue.website), 9
   /* TEXT, PROPS */
   , ["href"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not found "), _hoisted_12], 64
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not found "), _hoisted_11], 64
   /* STABLE_FRAGMENT */
-  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave)])]);
 }
 
 /***/ }),

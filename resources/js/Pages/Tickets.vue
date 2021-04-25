@@ -9,15 +9,7 @@
         -->
         <div class="top-spacer">
             <div class="max-width mx-auto">
-                <div class="pb-4">
-                    <a href="/" class="mt-4">
-                        <div class="bg-black p-2 inline-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                            </svg> 
-                        </div>
-                    </a>
-                </div>
+
                 <!-- Concert -->
                 <div v-if="concert != null && concert != undefined && concert != []">
                    
