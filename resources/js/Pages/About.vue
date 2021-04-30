@@ -32,7 +32,7 @@
                             John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it's doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href="https://artistwave.com" target="_blank" style="font-weight:bold;">ArtistWave</a>.
                         </p>
                         <p class="text-white mb-4">
-                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, MGK, Rise Against, Guttermouth, Against Me!, Saosin, Mudvayne and many more. 
+                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, Machine Gun Kelly, Rise Against, Guttermouth, Against Me!, Saosin, High On Fire, Carcass, Mudvayne, The Summer Slaughter Tour and many more. 
                         </p>
                     </div>
                 </div>
@@ -260,12 +260,6 @@
                                 Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso
                             </div>
                         </div>
-                        <div class="bg-black">
-                            <img src="/images/past/muse.jpg" class="w-full" />
-                            <div class="p-2">
-                                John and long time friend/business partner Jason Rottler at The Muse Nashville, TN 2010-ish
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -273,16 +267,18 @@
         <div class="mt-4">
             <ArtistWave />
         </div>
+        <Footer />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
     import ArtistWave from '@/Pages/Partials/ArtistWave'
+    import Footer from '@/Pages/Partials/Footer'
 
     export default {
         components: {
-            Header, ArtistWave
+            Header, ArtistWave, Footer
         },
         props: [],
         mounted() {

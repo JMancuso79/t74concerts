@@ -57,16 +57,18 @@
         <div class="mt-4">
             <ArtistWave />
         </div>
+        <Footer />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
     import ArtistWave from '@/Pages/Partials/ArtistWave'
+    import Footer from '@/Pages/Partials/Footer'
 
     export default {
         components: {
-            Header, ArtistWave
+            Header, ArtistWave, Footer
         },
 
         data() {

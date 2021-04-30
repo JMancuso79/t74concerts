@@ -1,5 +1,5 @@
 <template>
-    <div class="feat-bg bottom-spacer">
+    <div class="feat-bg">
         <!-- 
             Header
         -->
@@ -18,11 +18,13 @@
                         <div class="uppercase text-title">
                             {{concert.title}}
                         </div>
-                        <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400">
-                            Venue: {{concert.venue[0].name}}
-                        </a>
-                        <p v-if="concert.venue" class="text-gray-400" style="font-size:14px;">{{concert.venue[0].city}}, {{concert.venue[0].state}}</p>
-                        <p class="mt-2 text-gray-400">{{concert.details}}</p>
+                        <div>
+                            <span class="text-venue text-gray-400">
+                                {{concert.venue[0].name}}
+                            </span> {{concert.venue[0].city}}, {{concert.venue[0].state}}
+                        </div>
+                        <p v-if="concert.details.length < 72" class="mt-2 text-gray-400">{{concert.details}}</p>
+                        <p v-else class="mt-2 text-gray-400">{{concert.details.substring(0, 72)}}... <a :href="'/tickets/'+concert.slug"><strong>Read More</strong></a></p>
                         <p class="mt-2">
                             <a class="ticket-button block w-full" :href="'/tickets/'+concert.slug">Buy Tickets</a>
                         </p>
@@ -42,11 +44,13 @@
                             <div class="uppercase text-title">
                                 {{concert.title}}
                             </div>
-                            <a v-if="concert.venue" :href="'/venue/'+concert.venue[0].slug" class="block text-venue text-gray-400">
-                                Venue: {{concert.venue[0].name}}
-                            </a>
-                            <p class="text-gray-400"  style="font-size:14px;" v-if="concert.venue">{{concert.venue[0].city}}, {{concert.venue[0].state}}</p>
-                            <p class="mt-2 text-gray-400">{{concert.details}}</p>
+                            <div class="text-gray-400">
+                                <span class="text-venue">
+                                    {{concert.venue[0].name}}
+                                </span> {{concert.venue[0].city}}, {{concert.venue[0].state}}
+                            </div>
+                            <p v-if="concert.details.length < 120" class="mt-2 text-gray-400">{{concert.details}}</p>
+                            <p v-else class="mt-2 text-gray-400">{{concert.details.substring(0, 120)}}... <a :href="'/tickets/'+concert.slug"><strong>Read More</strong></a></p>
                             <p class="mt-2 text-right">
                                 <a class="ticket-button" :href="'/tickets/'+concert.slug">Buy Tickets</a>
                             </p>
@@ -59,16 +63,19 @@
             <ArtistWave />
 
         </div>
+
+        <Footer />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
+    import Footer from '@/Pages/Partials/Footer'
     import ArtistWave from '@/Pages/Partials/ArtistWave'
 
     export default {
         components: {
-            Header, ArtistWave
+            Header, ArtistWave, Footer
         },
         props: {
             canLogin: Boolean,
