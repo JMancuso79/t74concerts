@@ -23488,7 +23488,7 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/tower74-big-trans.png",
+  src: "/images/tower74-grey-trans.png",
   style: {
     "max-width": "240px",
     "width": "100%"
