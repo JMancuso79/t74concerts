@@ -23772,17 +23772,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "bg-black max-width mx-auto mb-4 pl-4 pr-4 pb-4"
+  "class": "max-width mx-auto mb-4"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "bg-black ml-4 mr-4 md:m-0 p-2"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "/booking"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "/images/atg-booking.jpg",
   style: {
     "width": "100%"
   }
-})], -1
+})])], -1
 /* HOISTED */
 );
 
