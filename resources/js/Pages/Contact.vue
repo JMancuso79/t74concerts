@@ -7,7 +7,7 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer">
+        <div class="top-spacer mb-4">
             <!-- Event -->
             <div class="max-width mx-auto">
                 <div class="bg-black ml-4 mr-4 mb-4 md:m-0">
@@ -54,21 +54,18 @@
                 </div>
             </div> 
         </div>
-        <div class="mt-4">
-            <ArtistWave />
-        </div>
-        <Footer />
+
+        <Footer page="contact" />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
-    import ArtistWave from '@/Pages/Partials/ArtistWave'
     import Footer from '@/Pages/Partials/Footer'
 
     export default {
         components: {
-            Header, ArtistWave, Footer
+            Header, Footer
         },
 
         data() {

@@ -60,22 +60,19 @@
 
             </div>
 
-            <ArtistWave />
-
         </div>
 
-        <Footer />
+        <Footer page="concerts" />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
     import Footer from '@/Pages/Partials/Footer'
-    import ArtistWave from '@/Pages/Partials/ArtistWave'
 
     export default {
         components: {
-            Header, ArtistWave, Footer
+            Header, Footer
         },
         props: {
             canLogin: Boolean,

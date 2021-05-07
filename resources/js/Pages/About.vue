@@ -7,7 +7,7 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer">
+        <div class="top-spacer mb-4">
             <div class="max-width mx-auto">
                 <div class="bg-black mb-4">
                     <img src="/images/joshua-tree.jpg" class="w-full" alt="John Mancuso Joshua Tree" />
@@ -264,21 +264,18 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4">
-            <ArtistWave />
-        </div>
-        <Footer />
+
+        <Footer page="about" />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
-    import ArtistWave from '@/Pages/Partials/ArtistWave'
     import Footer from '@/Pages/Partials/Footer'
 
     export default {
         components: {
-            Header, ArtistWave, Footer
+            Header, Footer
         },
         props: [],
         mounted() {

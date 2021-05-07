@@ -206,7 +206,7 @@
             resetForm: function() {
                 this.email = null
                 this.phone = null
-                this.nameOnCard = null
+                this.name = null
                 this.cardNumber = null
                 this.expMonth = null
                 this.expYear = null

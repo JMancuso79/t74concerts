@@ -7,7 +7,7 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer">
+        <div class="top-spacer mb-4">
             <div class="max-width mx-auto">
 
                 <!-- Concert -->
@@ -193,22 +193,18 @@
                 </div>
             </div>
 
-            <div class="mt-4">
-                <ArtistWave />
-            </div>
         </div>
-        <Footer />
+        <Footer page="tickets" />
     </div>
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
-    import ArtistWave from '@/Pages/Partials/ArtistWave'
     import Footer from '@/Pages/Partials/Footer'
 
     export default {
         components: {
-            Header, ArtistWave, Footer
+            Header, Footer
         },
         props: [
             'slug'
