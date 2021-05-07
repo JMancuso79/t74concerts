@@ -15,14 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('stripe_payment_id');
-            $table->string('name_on_card');
-            $table->string('ticket_holder');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip');
+            $table->string('stripe_payment_id')->nullable();
+            $table->string('name_on_card')->nullable();
+            $table->string('ticket_holder')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip')->nullable();
             $table->integer('num_of_tickets');
             $table->integer('price_per_ticket');
             $table->integer('total_sale');

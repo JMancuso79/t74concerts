@@ -1,5 +1,5 @@
 <template>
-    <jet-authentication-card>
+    <!--<jet-authentication-card>
         <template #logo>
             <jet-authentication-card-logo />
         </template>
@@ -49,7 +49,7 @@
                 </jet-button>
             </div>
         </form>
-    </jet-authentication-card>
+    </jet-authentication-card>-->
 </template>
 
 <script>

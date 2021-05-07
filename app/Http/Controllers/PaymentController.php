@@ -272,4 +272,126 @@ class PaymentController extends Controller
     		return 0;
     	}
     }
+
+    public function boxOfficeOrder(Request $request) {
+
+        // Validate 
+        $validator = Validator::make($request->all(), [
+            'ticketNumber' => 'required|integer|max:255',
+            // App input
+            'total' => 'required|integer',
+            'concertId' => 'required|integer',
+            'concertDate' => 'required|string|max:255',
+            'concertTime' => 'required|string|max:255',
+            'concertPrice' => 'required|integer',
+            'concertTitle' => 'required|string|max:255',
+            'concertVenue' => 'required|string|max:255',
+            'venueAddress' => 'required|string|max:255',
+            'venueCity' => 'required|string|max:255',
+            'venueState' => 'required|string|max:255',
+            'venueZip' => 'required|integer'
+        ]); 
+        if ($validator->fails()) {
+            // If Validation Fails
+            return response()->json([
+                'code' => 'fail-validation',
+                'errors' => $validator->errors()->first()
+            ]);
+        } else {
+            $order = new Order;
+
+            $order->stripe_payment_id = null;
+            $order->name_on_card = $request->nameOnCard;
+            $order->ticket_holder = $request->ticketHolder;
+            $order->email = $request->email;
+            $order->phone = $request->phone;
+            $order->city = $request->city;
+            $order->state = $request->state;
+            $order->zip = $request->zip;
+            $order->num_of_tickets = $request->ticketNumber;
+            $order->price_per_ticket = $request->concertPrice;
+            $order->total_sale = $request->total;
+            $order->concert_id = $request->concertId;
+            $order->concert_title = $request->concertTitle;
+            $order->concert_date = $request->concertDate;
+            $order->venue = $request->concertVenue;
+            $order->venue_city = $request->venueCity;
+            $order->venue_state = $request->venueState;
+
+            $order->save();
+
+            if($order) {
+                return response()->json([
+                    'code' => 'success',
+                    'message' => 'Your order was created.'
+                ]);
+            } else {
+                return response()->json([
+                    'code' => 'fail',
+                    'message' => 'Something went wrong.'
+                ]);
+            }
+        } 
+    }
+
+    public function getOrders($concert_id) {
+        $orders = Order::where('concert_id', $concert_id)->get();
+
+        return $orders;
+    }
+
+    public function getOrdersByConcert() {
+        $concert_ids = Order::all(['concert_id']);
+        $unique_ids = [];
+        $orders = [];
+        if($concert_ids) {
+            $ids = [];
+            foreach ($concert_ids as $concert_id) {
+                $ids[] = $concert_id->concert_id;
+            }
+
+            $ids = array_unique($ids);
+            
+            foreach ($ids as $id) {
+                $unique_ids[] = $id;
+            }
+
+            foreach ($unique_ids as $unique_id) {
+                $ticket_orders = Order::where('concert_id', $unique_id)->get();
+
+                if($ticket_orders) {
+                   
+                    $cid = $ticket_orders[0]->concert_id;
+                    $title = $ticket_orders[0]->concert_title;
+                    $concert_date = $ticket_orders[0]->concert_date;
+
+                    $orders[] = [
+                        'id' => $cid,
+                        'title' => $title,
+                        'date' => $concert_date,
+                        'tickets_sold' => $this->getTixSold($ticket_orders),
+                        'gross_sales' => $this->getGrossSales($ticket_orders)
+                    ];
+                }
+
+            }
+        } 
+        return $orders;
+    }
+
+    public function getTixSold($ticket_orders) {
+        $tixSold = 0;
+        foreach ($ticket_orders as $ticket_order) {
+            $tixSold = $ticket_order->num_of_tickets + $tixSold;
+        }
+        return $tixSold;
+    }
+
+    public function getGrossSales($ticket_orders) {
+        $grossSales = 0;
+        foreach ($ticket_orders as $ticket_order) {
+            $grossSales = $ticket_order->total_sale + $grossSales;
+        }
+        return $grossSales;
+    }
 }

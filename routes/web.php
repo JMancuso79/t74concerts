@@ -29,7 +29,27 @@ Route::get('/', function () {
 	]);
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
+        //'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::get('/register', function () {
+	$page_data = [
+		'title' => 'Tower74 Concerts',
+		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
+		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
+		'url' => 'https://tower74concerts.com'
+	];
+	session([
+		'slug' => null,
+		'page' =>'calendar',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        //'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
@@ -122,6 +142,61 @@ Route::get('/venue/{slug}', function ($slug) {
     	'slug' => $slug
     ]);
 });
+
+Route::get('/sunset-strip-showcase', function () {
+	$page_data = [
+		'title' => 'Tower74 Concerts | Sunset Strip Showcase',
+		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
+		'image' => 'https://tower74concerts.com/images/sunset-strip-showcase.jpg',
+		'url' => 'https://tower74concerts.com/sunset-strip-showcase'
+	];
+	session([
+		'slug' => 'sunset-strip-showcase',
+		'page' => 'sunset-strip-showcase',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('SunsetStripShowcase');
+});
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/manage/concert/{id}', function ($id) {
+	$page_data = [
+		'title' => 'Tower74 Concerts | Manage Concert',
+		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
+		'image' => 'https://tower74concerts.com/images/sunset-strip-showcase.jpg',
+		'url' => 'https://tower74concerts.com/sunset-strip-showcase'
+	];
+	session([
+		'slug' => 'manage-concert',
+		'page' => 'manage-concert',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('ManageConcert', [
+    	'id' => $id
+    ]);
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/box-office/{id}', function ($id) {
+	$page_data = [
+		'title' => 'Tower74 Concerts | Box Office',
+		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
+		'image' => 'https://tower74concerts.com/images/sunset-strip-showcase.jpg',
+		'url' => 'https://tower74concerts.com/sunset-strip-showcase'
+	];
+	session([
+		'slug' => 'box-office',
+		'page' => 'box-office',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('BoxOffice', [
+    	'id' => $id
+    ]);
+});
+
+Route::middleware('auth:sanctum')->get('/web-api/orders/concert/{concert_id}', 'App\Http\Controllers\PaymentController@getOrders');
+Route::middleware('auth:sanctum')->get('/web-api/orders-by-concert', 'App\Http\Controllers\PaymentController@getOrdersByConcert');
+Route::middleware('auth:sanctum')->post('/web-api/box-office-order', 'App\Http\Controllers\PaymentController@boxOfficeOrder');

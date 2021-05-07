@@ -29,6 +29,15 @@ p {
 	background: #f56011;
 }
 
+.showcase-logo {
+	color:#ffffff;
+	font-weight:900!important;
+	font-size:24px;
+	font-family: 'Montserrat', sans-serif!important;
+	line-height:24px;
+	text-transform: uppercase;
+}
+
 .secondary-button {
 	background:#cccccc;
 	color:#000000;

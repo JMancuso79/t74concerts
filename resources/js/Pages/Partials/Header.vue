@@ -10,7 +10,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link href="/" class="lg-logo">
-                                    Tower74 Concerts
+                                    Tower74
                                 </inertia-link>
                             </div>
 
