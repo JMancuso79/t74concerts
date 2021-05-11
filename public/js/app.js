@@ -18254,6 +18254,25 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default //Welcome,
 
+  },
+  mounted: function mounted() {
+    this.getOrders();
+  },
+  data: function data() {
+    return {
+      orders: []
+    };
+  },
+  methods: {
+    getOrders: function getOrders() {
+      var _this = this;
+
+      axios.get('/web-api/get-concert-orders/' + this.id).then(function (response) {
+        _this.orders = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -23494,6 +23513,36 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 var _hoisted_6 = {
   "class": "p-6 sm:px-20 bg-gray-200 bg-opacity-25"
 };
+var _hoisted_7 = {
+  key: 0
+};
+var _hoisted_8 = {
+  key: 0,
+  "class": "pt-4 text-xl"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_10 = {
+  "class": "border-bottom"
+};
+var _hoisted_11 = {
+  key: 0
+};
+var _hoisted_12 = {
+  key: 1
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-center pt-3 pb-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  "class": "secondary-button w-full"
+}, "Check In")], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
@@ -23507,7 +23556,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         href: '/box-office/' + $props.id
       }, " Box Office ", 8
       /* PROPS */
-      , ["href"])])])])])];
+      , ["href"]), $data.orders ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [$data.orders.tickets_sold && $data.orders.gross_sales ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, "Tickets Sold: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.orders.tickets_sold), 1
+      /* TEXT */
+      ), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, "Gross Sales: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.orders.gross_sales), 1
+      /* TEXT */
+      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.orders.orders, function (order) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [order.ticket_holder != null && order.ticket_holder != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.ticket_holder), 1
+        /* TEXT */
+        )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), order.name_on_card != null && order.name_on_card != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, " Name on card: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.name_on_card), 1
+        /* TEXT */
+        )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, " Tickets: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.num_of_tickets) + " | Paid: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.total_sale), 1
+        /* TEXT */
+        ), _hoisted_13]);
+      }), 256
+      /* UNKEYED_FRAGMENT */
+      ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])];
     }),
     _: 1
     /* STABLE */

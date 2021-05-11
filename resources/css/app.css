@@ -12,6 +12,12 @@ p {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.border-bottom {
+	padding:5px 0px;
+	margin: 5px 0px;
+	border-bottom: 1px solid #eeeeee;
+}
+
 .top-spacer {
 	padding-top:84px;
 }

@@ -200,3 +200,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/box-office/{id}', functio
 Route::middleware('auth:sanctum')->get('/web-api/orders/concert/{concert_id}', 'App\Http\Controllers\PaymentController@getOrders');
 Route::middleware('auth:sanctum')->get('/web-api/orders-by-concert', 'App\Http\Controllers\PaymentController@getOrdersByConcert');
 Route::middleware('auth:sanctum')->post('/web-api/box-office-order', 'App\Http\Controllers\PaymentController@boxOfficeOrder');
+Route::middleware('auth:sanctum')->get('/web-api/get-concert-orders/{id}', 'App\Http\Controllers\PaymentController@getConcertOrders');
+

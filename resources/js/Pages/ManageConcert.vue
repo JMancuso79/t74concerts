@@ -22,6 +22,28 @@
                         <a class="block p-2 border-2 border-black pointer text-center font-bold" :href="'/box-office/'+id">
                             Box Office
                         </a>
+
+                        <div v-if="orders">
+                            <div v-if="orders.tickets_sold && orders.gross_sales" class="pt-4 text-xl">
+                                <strong>Tickets Sold: {{orders.tickets_sold}}</strong><br> 
+                                <strong>Gross Sales: ${{orders.gross_sales}}</strong>
+                            </div>
+                            <div v-for="order in orders.orders" class="border-bottom">
+                                <div v-if="order.ticket_holder != null && order.ticket_holder != ''">
+                                    <strong>{{order.ticket_holder}}</strong>
+                                </div>
+                                <div v-if="order.name_on_card != null && order.name_on_card != ''">
+                                    Name on card: {{order.name_on_card}}
+                                </div>
+                                <div>
+                                    Tickets: {{order.num_of_tickets}} | Paid: ${{order.total_sale}}
+                                </div>
+                                <div class="text-center pt-3 pb-3">
+                                    <button class="secondary-button w-full">Check In</button>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -39,5 +61,24 @@
             AppLayout,
             //Welcome,
         },
+        mounted() {
+            this.getOrders()
+        },
+        data() {
+            return {
+                orders: [],
+            }
+        },
+
+        methods: {
+            getOrders: function() {
+                axios.get('/web-api/get-concert-orders/' + this.id)
+                .then((response) => {
+                    this.orders = response.data
+                }).catch(error => {
+                    console.log(error)
+                });
+            },            
+        }
     }
 </script>
