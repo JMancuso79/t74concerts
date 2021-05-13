@@ -380,7 +380,7 @@ class PaymentController extends Controller
     }
 
     public function getConcertOrders($id) {
-        $ticket_orders = Order::where('concert_id', $id)->get();
+        $ticket_orders = Order::where('concert_id', $id)->orderBy('created_at', 'DESC')->get();
         $data = [
             'tickets_sold' => $this->getTixSold($ticket_orders),
             'gross_sales' => $this->getGrossSales($ticket_orders),
