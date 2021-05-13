@@ -84,7 +84,7 @@
                 });
             }, 
             getDate(d) {
-                return format(Date.parse(d), 'eeee, MMMM dd yyyy | h:MM')
+                return format(Date.parse(d), 'eeee, MMMM dd yyyy')
             }           
         }
     }

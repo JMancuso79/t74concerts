@@ -18276,7 +18276,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getDate: function getDate(d) {
-      return (0,date_fns__WEBPACK_IMPORTED_MODULE_1__.default)(Date.parse(d), 'eeee, MMMM dd yyyy | h:MM');
+      return (0,date_fns__WEBPACK_IMPORTED_MODULE_1__.default)(Date.parse(d), 'eeee, MMMM dd yyyy');
     }
   }
 });
