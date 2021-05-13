@@ -18,8 +18,13 @@
                     </div>
 
                     <div class="p-6 sm:px-20 bg-gray-200 bg-opacity-25">
-                        <p v-if="concert" class="font-bold">Tickets: ${{concert.ticket}}.00</p>
-                        <p class="mb-2">How many tickets do you want to purchase?</p>
+                        <a class="block p-2 border-2 border-black pointer text-center font-bold" :href="'/manage/concert/'+id">
+                            Manage
+                        </a>
+                        <div class="pt-4">
+                            <p v-if="concert" class="font-bold">Tickets: ${{concert.ticket}}.00</p>
+                            <p class="mb-2">How many tickets do you want to purchase?</p>
+                        </div>
 
                         <div>
                             <div style="display:inline-block;width:15%;margin-right:5%;">
@@ -33,7 +38,7 @@
                             </div>
                         </div>
 
-                        <p class="font-bold mt-2">Total: ${{total = ticketNumber * concert.ticket}}.00</p>
+                        <p class="font-bold mt-2 mb-4">Total: ${{total = ticketNumber * concert.ticket}}.00</p>
                         <!-- Group -->
                         <div class="w-full pb-2">
                             <input type="text" class="form-input w-full" v-model="ticketHolder" placeholder="Ticket holder"> 

@@ -380,12 +380,18 @@ class PaymentController extends Controller
     }
 
     public function getConcertOrders($id) {
+        $data = [];
         $ticket_orders = Order::where('concert_id', $id)->orderBy('created_at', 'DESC')->get();
-        $data = [
-            'tickets_sold' => $this->getTixSold($ticket_orders),
-            'gross_sales' => $this->getGrossSales($ticket_orders),
-            'orders' => $ticket_orders
-        ];
+        if($ticket_orders) {
+            $title = $ticket_orders[0]->concert_title;
+            $data = [
+                'title' => $title,
+                'tickets_sold' => $this->getTixSold($ticket_orders),
+                'gross_sales' => $this->getGrossSales($ticket_orders),
+                'orders' => $ticket_orders
+            ];  
+        }
+
 
         return $data;
     }
