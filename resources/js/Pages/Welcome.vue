@@ -36,13 +36,24 @@
                                                 {{concert.title}}
                                             </div>
                                             <div>
-                                                <span class="text-venue text-gray-400">
-                                                    {{concert.venue[0].name}}
-                                                </span> {{concert.venue[0].city}}, {{concert.venue[0].state}}
+                                                <div class="flex">
+                                                    <div class="w-8">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-venue text-gray-400">
+                                                            {{concert.venue[0].name}}
+                                                        </span>  
+                                                        {{concert.venue[0].city}}, {{concert.venue[0].state}}
+                                                    </div>
+                                                </div>
                                             </div>
                                             <p v-if="concert.details.length < 72" class="mt-2 text-gray-400">{{concert.details}}</p>
                                             <p v-else class="mt-2 text-gray-400">{{concert.details.substring(0, 72)}}... <a :href="'/tickets/'+concert.slug"><strong>Read More</strong></a></p>
-                                            <p class="mt-2">
+                                            <p class="mt-4">
                                                 <a class="ticket-button block w-full" :href="'/tickets/'+concert.slug">Buy Tickets</a>
                                             </p>
                                         </div>
@@ -62,9 +73,20 @@
                                                     {{concert.title}}
                                                 </div>
                                                 <div class="text-gray-400">
-                                                    <span class="text-venue">
-                                                        {{concert.venue[0].name}}
-                                                    </span> {{concert.venue[0].city}}, {{concert.venue[0].state}}
+                                                    <div class="flex">
+                                                        <div class="w-8">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-venue text-gray-400">
+                                                                {{concert.venue[0].name}}
+                                                            </span>  
+                                                            {{concert.venue[0].city}}, {{concert.venue[0].state}}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <p v-if="concert.details.length < 120" class="mt-2 text-gray-400">{{concert.details}}</p>
                                                 <p v-else class="mt-2 text-gray-400">{{concert.details.substring(0, 120)}}... <a :href="'/tickets/'+concert.slug"><strong>Read More</strong></a></p>
