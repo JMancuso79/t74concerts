@@ -36,6 +36,9 @@
                                     Name on card: {{order.name_on_card}}
                                 </div>
                                 <div>
+                                    Purchased: {{getDate(order.created_at)}}
+                                </div>
+                                <div>
                                     Tickets: {{order.num_of_tickets}} | Paid: ${{order.total_sale}}
                                 </div>
                                 <div class="text-center pt-3 pb-3">
@@ -54,6 +57,7 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     //import Welcome from '@/Jetstream/Welcome'
+    import { format } from 'date-fns'
 
     export default {
         props: ['id'],
@@ -78,7 +82,10 @@
                 }).catch(error => {
                     console.log(error)
                 });
-            },            
+            }, 
+            getDate(d) {
+                return format(Date.parse(d), 'eeee, MMMM dd yyyy | h:MM')
+            }           
         }
     }
 </script>
