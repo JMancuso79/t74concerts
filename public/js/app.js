@@ -19319,14 +19319,19 @@ __webpack_require__.r(__webpack_exports__);
     Header: _Pages_Partials_Header__WEBPACK_IMPORTED_MODULE_0__.default,
     Footer: _Pages_Partials_Footer__WEBPACK_IMPORTED_MODULE_1__.default
   },
-  props: {
-    canLogin: Boolean,
-    canRegister: Boolean
+  mounted: function mounted() {
+    this.getConcerts();
   },
   data: function data() {
     return {
       // Concerts
-      concerts: []
+      concerts: [],
+      matchedItems: [],
+      region: 'default',
+      defaultClass: 'active-location-tab',
+      westCoastClass: 'location-tab',
+      midWestClass: 'location-tab',
+      isLoading: false
     };
   },
   methods: {
@@ -19334,18 +19339,68 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/data/concerts.json').then(function (response) {
-        console.log(response.data);
-
         if (response.data) {
           _this.concerts = response.data;
         }
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    filterConcerts: function filterConcerts() {
+      // Default
+      if (this.region == 'default') {
+        this.matchedItems = this.concerts;
+      } // Selected Region
+      else {
+          this.matchedItems = [];
+
+          for (var i = 0; i < this.concerts.length; i++) {
+            if (this.concerts[i].venue) {
+              if (this.concerts[i].venue[0]) {
+                if (this.concerts[i].venue[0].region == this.region) {
+                  this.matchedItems.push(this.concerts[i]);
+                }
+              }
+            }
+          }
+        }
     }
   },
-  mounted: function mounted() {
-    this.getConcerts();
+  watch: {
+    concerts: {
+      handler: function handler() {
+        if (this.concerts) {
+          if (this.concerts.length > 0) {
+            this.matchedItems = this.concerts;
+          }
+        }
+      },
+      deep: true
+    },
+    region: function region() {
+      // Default
+      if (this.region == 'default') {
+        this.defaultClass = 'active-location-tab';
+        this.westCoastClass = 'location-tab';
+        this.midWestClass = 'location-tab';
+      } // West Coast
+
+
+      if (this.region == 'west-coast') {
+        this.defaultClass = 'location-tab';
+        this.westCoastClass = 'active-location-tab';
+        this.midWestClass = 'location-tab';
+      } // Midwest
+
+
+      if (this.region == 'midwest') {
+        this.defaultClass = 'location-tab';
+        this.westCoastClass = 'location-tab';
+        this.midWestClass = 'active-location-tab';
+      }
+
+      this.filterConcerts();
+    }
   }
 });
 
@@ -21545,7 +21600,7 @@ var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer mb-4\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><p class=\"mt-2 ml-4 mr-4 text-white\" style=\"font-size:14px;color:#cccccc;\">Tower 74 Founder John Mancuso at Joshua Tree National Park March 2021</p><div class=\"pl-4 pr-4 pb-4\"><div class=\"uppercase text-title pt-4\"> About Tower 74 LLC </div><p class=\"text-white mb-4\"><strong>Tower 74 LLC</strong> was established in January of 2021 in California by John Mancuso. John is a web and app developer and long time concert promoter. Tower 74 LLC was formed as a web and app development company and a legal entity to book concerts. </p><div class=\"uppercase text-title pt-4\"> About John Mancuso </div><p class=\"text-white mb-4\"> Originally from St. Louis, MO, John played in bands in the STL metal scene. After graduating high school, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While living in So Cal, John started booking shows at Pop&#39;s back home in St. Louis. Pop&#39;s focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop&#39;s and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it&#39;s doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href=\"https://artistwave.com\" target=\"_blank\" style=\"font-weight:bold;\">ArtistWave</a>. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, Machine Gun Kelly, Rise Against, Guttermouth, Against Me!, Saosin, High On Fire, Carcass, Mudvayne, The Summer Slaughter Tour and many more. </p></div></div><div><div class=\"grid grid-cols-2 md:grid-cols-3 gap-4 text-white text-center ml-4 mr-4 md:m-0\"><div class=\"bg-black\"><div><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-white text-center pt-4 ml-4 mr-4 md:m-0\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"top-spacer mb-4\"><div class=\"max-width mx-auto\"><div class=\"bg-black mb-4\"><img src=\"/images/joshua-tree.jpg\" class=\"w-full\" alt=\"John Mancuso Joshua Tree\"><p class=\"mt-2 ml-4 mr-4 text-white\" style=\"font-size:14px;color:#cccccc;\">Tower74 Founder John Mancuso at Joshua Tree National Park March 2021</p><div class=\"pl-4 pr-4 pb-4\"><div class=\"uppercase text-title pt-4\"> About Tower74 LLC </div><p class=\"text-white mb-4\"><strong>Tower74 LLC</strong> was established in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Tower74 was created as a web and app development company and a legal entity to book concerts. Tower74 is currently booking concerts on the West Coast and in the Midwest. </p><div class=\"uppercase text-title pt-4\"> About John Mancuso </div><p class=\"text-white mb-4\"> Originally from St. Louis, MO, John played in bands in the STL metal scene. After graduating high school, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records. Americoma was owned by Nikki Sixx and was based in West Hollywood. While stuffing envelopes to send out to Americoma&#39;s street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20&#39;s while working for indie record labels Americoma and Rotten Records. </p><p class=\"text-white mb-4\"> While learning the West Hollywood scene of the early 2000s, John began booking concerts at Pop&#39;s Concert Venue back home in St. Louis. Pop&#39;s focused heavily on the local scene and had a need for someone who could book local bands. John moved back to St. Louis and over the next decade booked Pop&#39;s and the Creepy Crawl. The concerts multiplied and went from local bands, to national bands and then to international bands, sometimes three to five shows in a night and across multiple cities. </p><p class=\"text-white mb-4\"> In 2007 John bought STLPunk.com, a popular St. Louis music website. The purchase of STLPunk was the beginning of his career as a web and app developer. By 2013 John owned The Mad Magician, a bar and concert venue, in St. Louis, MO and was building a web development business in Southern California. After four years of traveling back and forth, splitting his time between running a venue, booking concerts and his web clients, it was time to slow down. He moved back to Orange County and took a break from booking to focus on web development. </p><p class=\"text-white mb-4\"> John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John&#39;s booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, Machine Gun Kelly, Rise Against, Guttermouth, Against Me!, Saosin, High On Fire, Carcass, Mudvayne, The Summer Slaughter Tour and many more. </p><p class=\"text-white mb-4\"> In 2021, John is combining his booking and web development experience to create ArtistWave. Tower74 concerts will play a critical role in the development of the app, which has booking features for venues and artists. The ArtistWave app is expected to be in the app stores in 2021. </p></div></div><div><div class=\"grid grid-cols-2 md:grid-cols-3 gap-4 text-white text-center ml-4 mr-4 md:m-0\"><div class=\"bg-black\"><div><img src=\"/images/past/misfits.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/bone-col.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/dmx.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/method-man.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/mgk.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/rakim.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/deck.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/twista.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/krs.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/filter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/steve-ewing.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hed-pe.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/suicide-silence.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/summer-slaughter.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/alol.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hurt.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/days.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/rittz.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/greek-fire.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/chanel.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/dizzy.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/wyte.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/wrek.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/2-bones.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/bone-again.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/hed-2.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/foad.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/snow.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/non.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/blh.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/john-5.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/mush.jpg\" class=\"w-full\"></div></div><div class=\"bg-black\"><div><img src=\"/images/past/drown.jpg\" class=\"w-full\"></div></div></div><div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-white text-center pt-4 ml-4 mr-4 md:m-0\"><div class=\"bg-black\"><img src=\"/images/past/rakim-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Rakim at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/wish.jpg\" class=\"w-full\"><div class=\"p-2\"> John and Wish Bone having a drink after a show in 2012 </div></div><div class=\"bg-black\"><img src=\"/images/past/john-krs.jpg\" class=\"w-full\"><div class=\"p-2\"> John with KRS ONE at The Coliseum 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5.jpg\" class=\"w-full\"><div class=\"p-2\"> Pre show signing with all 5 members of Bone 2013 </div></div><div class=\"bg-black\"><img src=\"/images/past/mgk-live.jpg\" class=\"w-full\"><div class=\"p-2\"> MGK live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-5-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Bone live on their 20th anniversary tour 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/krs-one-live.jpg\" class=\"w-full\"><div class=\"p-2\"> KRS ONE live at The Coliseum 2013. Photo by John Mancuso </div></div><div class=\"bg-black\"><img src=\"/images/past/dime.jpg\" class=\"w-full\"><div class=\"p-2\"> &quot;John! Thanks for tha goods!&quot; - Dimebag 2004 </div></div><div class=\"bg-black\"><img src=\"/images/past/bone-2-live.jpg\" class=\"w-full\"><div class=\"p-2\"> Krayzie and Wish Bone St. Louis, MO 2012. Photo by John Mancuso </div></div></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
@@ -23833,25 +23888,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  key: 0,
-  "class": "max-width mx-auto mb-4"
-};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "bg-black ml-4 mr-4 md:m-0 p-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  href: "/booking"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/atg-booking.jpg",
-  style: {
-    "width": "100%"
-  }
-})])], -1
-/* HOISTED */
-);
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "max-width mx-auto mb-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "/"
@@ -23866,7 +23904,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "bg-black"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "max-width mx-auto p-4"
@@ -23888,9 +23926,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_ArtistWave = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ArtistWave");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [$props.page != 'booking' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ArtistWave), _hoisted_3, _hoisted_4]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div v-if=\"page != 'booking'\" class=\"max-width mx-auto mb-4\">\n            <div class=\"bg-black ml-4 mr-4 md:m-0 p-2\">\n                <a href=\"/booking\">\n                    <img src=\"/images/atg-booking.jpg\" style=\"width:100%;\" />\n                </a>\n            </div>\n        </div>\n        <ArtistWave />"), _hoisted_1, _hoisted_2]);
 }
 
 /***/ }),
@@ -25912,138 +25948,200 @@ var _hoisted_2 = {
   "class": "top-spacer"
 };
 var _hoisted_3 = {
-  "class": "max-width mx-auto mb-4"
+  "class": "max-width mx-auto"
 };
 var _hoisted_4 = {
-  "class": "md:hidden bg-black mb-4 ml-4 mr-4 text-white"
+  "class": "mr-4 ml-4 md:m-0"
 };
 var _hoisted_5 = {
-  "class": "p-4 w-full"
+  key: 0
 };
 var _hoisted_6 = {
-  "class": "text-date font-bold uppercase"
+  "class": "mb-4 text-white"
 };
 var _hoisted_7 = {
-  "class": "uppercase text-title"
+  "class": "bg-black"
 };
 var _hoisted_8 = {
-  "class": "text-venue text-gray-400"
+  key: 0,
+  "class": "text-white"
 };
 var _hoisted_9 = {
-  key: 0,
-  "class": "mt-2 text-gray-400"
+  key: 0
 };
 var _hoisted_10 = {
-  key: 1,
-  "class": "mt-2 text-gray-400"
+  "class": "mb-4"
 };
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, "Read More", -1
-/* HOISTED */
-);
-
+var _hoisted_11 = {
+  "class": "md:hidden bg-black text-white"
+};
 var _hoisted_12 = {
-  "class": "mt-2"
-};
-var _hoisted_13 = {
-  "class": "hidden md:flex bg-black p-2 mb-4"
-};
-var _hoisted_14 = {
-  "class": "flex-none w-48"
-};
-var _hoisted_15 = {
-  "class": "grid justify-items-center items-center"
-};
-var _hoisted_16 = {
-  "class": "flex-grow"
-};
-var _hoisted_17 = {
   "class": "p-4 w-full"
 };
-var _hoisted_18 = {
+var _hoisted_13 = {
   "class": "text-date font-bold uppercase"
 };
-var _hoisted_19 = {
+var _hoisted_14 = {
   "class": "uppercase text-title"
 };
-var _hoisted_20 = {
-  "class": "text-gray-400"
+var _hoisted_15 = {
+  "class": "text-venue text-gray-400"
 };
-var _hoisted_21 = {
-  "class": "text-venue"
-};
-var _hoisted_22 = {
+var _hoisted_16 = {
   key: 0,
   "class": "mt-2 text-gray-400"
 };
-var _hoisted_23 = {
+var _hoisted_17 = {
   key: 1,
   "class": "mt-2 text-gray-400"
 };
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, "Read More", -1
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, "Read More", -1
 /* HOISTED */
 );
 
+var _hoisted_19 = {
+  "class": "mt-2"
+};
+var _hoisted_20 = {
+  "class": "hidden md:flex bg-black p-2 mb-4"
+};
+var _hoisted_21 = {
+  "class": "flex-none w-48"
+};
+var _hoisted_22 = {
+  "class": "grid justify-items-center items-center"
+};
+var _hoisted_23 = {
+  "class": "flex-grow"
+};
+var _hoisted_24 = {
+  "class": "p-4 w-full"
+};
 var _hoisted_25 = {
+  "class": "text-date font-bold uppercase"
+};
+var _hoisted_26 = {
+  "class": "uppercase text-title"
+};
+var _hoisted_27 = {
+  "class": "text-gray-400"
+};
+var _hoisted_28 = {
+  "class": "text-venue"
+};
+var _hoisted_29 = {
+  key: 0,
+  "class": "mt-2 text-gray-400"
+};
+var _hoisted_30 = {
+  key: 1,
+  "class": "mt-2 text-gray-400"
+};
+
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("strong", null, "Read More", -1
+/* HOISTED */
+);
+
+var _hoisted_32 = {
   "class": "mt-2 text-right"
 };
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "bg-black text-white p-4"
+}, " There are no concerts at this time. ", -1
+/* HOISTED */
+);
+
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "bg-black text-white p-4"
+}, " There are no concerts at this time. ", -1
+/* HOISTED */
+);
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-white"
+}, " Loading ", -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
 
   var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Event "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.concerts, function (concert) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content \n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n                        Not Loading \n                    "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Regions "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": $data.defaultClass,
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $data.region = 'default';
+    })
+  }, "All Regions", 2
+  /* CLASS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": $data.westCoastClass,
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return $data.region = 'west-coast';
+    })
+  }, "West Coast", 2
+  /* CLASS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": $data.midWestClass,
+    onClick: _cache[3] || (_cache[3] = function ($event) {
+      return $data.region = 'midwest';
+    })
+  }, "Midwest", 2
+  /* CLASS */
+  )])]), $data.matchedItems ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Concerts "), $data.matchedItems.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Event "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.matchedItems, function (concert) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       "class": "w-full",
       src: concert.imageFull,
       alt: concert.title
     }, null, 8
     /* PROPS */
-    , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.time), 1
+    , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.time), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].city) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].state), 1
     /* TEXT */
-    )]), concert.details.length < 72 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
+    )]), concert.details.length < 72 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
     /* TEXT */
-    )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details.substring(0, 72)) + "... ", 1
+    )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details.substring(0, 72)) + "... ", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: '/tickets/' + concert.slug
-    }, [_hoisted_11], 8
+    }, [_hoisted_18], 8
     /* PROPS */
-    , ["href"])])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+    , ["href"])])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       "class": "ticket-button block w-full",
       href: '/tickets/' + concert.slug
     }, "Buy Tickets", 8
     /* PROPS */
-    , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This item will not grow "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+    , ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" This item will not grow "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       "class": "w-full",
       src: concert.image,
       alt: concert.title
     }, null, 8
     /* PROPS */
-    , ["src", "alt"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.time), 1
+    , ["src", "alt"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.dateHuman) + " | " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.time), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].name), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].city) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.venue[0].state), 1
     /* TEXT */
-    )]), concert.details.length < 120 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
+    )]), concert.details.length < 120 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details), 1
     /* TEXT */
-    )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details.substring(0, 120)) + "... ", 1
+    )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.details.substring(0, 120)) + "... ", 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       href: '/tickets/' + concert.slug
-    }, [_hoisted_24], 8
+    }, [_hoisted_31], 8
     /* PROPS */
-    , ["href"])])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+    , ["href"])])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       "class": "ticket-button",
       href: '/tickets/' + concert.slug
     }, "Buy Tickets", 8
@@ -26051,7 +26149,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])])])])])]);
   }), 256
   /* UNKEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer, {
+  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" No Concerts "), _hoisted_33], 64
+  /* STABLE_FRAGMENT */
+  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" No Concerts "), _hoisted_34], 64
+  /* STABLE_FRAGMENT */
+  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_35], 64
+  /* STABLE_FRAGMENT */
+  ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer, {
     page: "concerts"
   })]);
 }

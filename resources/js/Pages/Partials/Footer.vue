@@ -1,13 +1,13 @@
 <template>
     <div>
-        <div v-if="page != 'booking'" class="max-width mx-auto mb-4">
+        <!--<div v-if="page != 'booking'" class="max-width mx-auto mb-4">
             <div class="bg-black ml-4 mr-4 md:m-0 p-2">
                 <a href="/booking">
                     <img src="/images/atg-booking.jpg" style="width:100%;" />
                 </a>
             </div>
         </div>
-        <ArtistWave />
+        <ArtistWave />-->
         <div class="max-width mx-auto mb-6">
             <a href="/">
                 <img src="/images/tower-grey-trans.png" style="max-width:240px; width:100%;" class="mx-auto" />

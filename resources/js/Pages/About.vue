@@ -11,29 +11,33 @@
             <div class="max-width mx-auto">
                 <div class="bg-black mb-4">
                     <img src="/images/joshua-tree.jpg" class="w-full" alt="John Mancuso Joshua Tree" />
-                    <p class="mt-2 ml-4 mr-4 text-white" style="font-size:14px;color:#cccccc;">Tower 74 Founder John Mancuso at Joshua Tree National Park March 2021</p>
+                    <p class="mt-2 ml-4 mr-4 text-white" style="font-size:14px;color:#cccccc;">Tower74 Founder John Mancuso at Joshua Tree National Park March 2021</p>
                     <div class="pl-4 pr-4 pb-4">
                         <div class="uppercase text-title pt-4">
-                            About Tower 74 LLC
+                            About Tower74 LLC
                         </div>
                         <p class="text-white mb-4">
-                            <strong>Tower 74 LLC</strong> was established in January of 2021 in California by John Mancuso. John is a web and app developer and long time concert promoter. Tower 74 LLC was formed as a web and app development company and a legal entity to book concerts. 
+                            <strong>Tower74 LLC</strong> was established in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Tower74 was created as a web and app development company and a legal entity to book concerts. Tower74 is currently booking concerts on the West Coast and in the Midwest.
                         </p>
                         <div class="uppercase text-title pt-4">
                             About John Mancuso
                         </div>
                         <p class="text-white mb-4">
-                            Originally from St. Louis, MO, John played in bands in the STL metal scene. After graduating high school, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx in West Hollywood. While stuffing envelopes to send out to Americoma's street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20's while working for indie record labels Americoma and Rotten Records.
+                            Originally from St. Louis, MO, John played in bands in the STL metal scene. After graduating high school, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records. Americoma was owned by Nikki Sixx and was based in West Hollywood. While stuffing envelopes to send out to Americoma's street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20's while working for indie record labels Americoma and Rotten Records.
                         </p>
                         <p class="text-white mb-4">
-                            While living in So Cal, John started booking shows at Pop's back home in St. Louis. Pop's focused heavily on the local scene and it created an opportunity for John. Having spent a few years booking and learning the West Hollywood scene of the early 2000s, he moved back to STL and went full time booking at Pop's and The Creepy Crawl. The shows multiplied and went from local bands, to national bands and then to international bands, sometimes having three to five shows in a night and across multiple cities. 
+                            While learning the West Hollywood scene of the early 2000s, John began booking concerts at Pop's Concert Venue back home in St. Louis. Pop's focused heavily on the local scene and had a need for someone who could book local bands. John moved back to St. Louis and over the next decade booked Pop's and the Creepy Crawl. The concerts multiplied and went from local bands, to national bands and then to international bands, sometimes three to five shows in a night and across multiple cities. 
                         </p>
                         <p class="text-white mb-4">
-                            John owned The Mad Magician, a bar and venue, in St. Louis, MO, with long time friend and business partner Jason Rottler. In 2013 John began splitting his time between STL and Orange County, where he had a web development business. When The Mad Magician closed it's doors, John settled back into OC and is now living in Newport Beach, where he spends much of his time developing <a href="https://artistwave.com" target="_blank" style="font-weight:bold;">ArtistWave</a>.
+                            In 2007 John bought STLPunk.com, a popular St. Louis music website. The purchase of STLPunk was the beginning of his career as a web and app developer. By 2013 John owned The Mad Magician, a bar and concert venue, in St. Louis, MO and was building a web development business in Southern California. After four years of traveling back and forth, splitting his time between running a venue, booking concerts and his web clients, it was time to slow down. He moved back to Orange County and took a break from booking to focus on web development.  
                         </p>
                         <p class="text-white mb-4">
                             John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, Machine Gun Kelly, Rise Against, Guttermouth, Against Me!, Saosin, High On Fire, Carcass, Mudvayne, The Summer Slaughter Tour and many more. 
                         </p>
+                        <p class="text-white mb-4">
+                            In 2021, John is combining his booking and web development experience to create ArtistWave. Tower74 concerts will play a critical role in the development of the app, which has booking features for venues and artists. The ArtistWave app is expected to be in the app stores in 2021. 
+                        </p>
+
                     </div>
                 </div>
 
