@@ -32,12 +32,14 @@
                             In 2007 John bought STLPunk.com, a popular St. Louis music website. The purchase of STLPunk was the beginning of his career as a web and app developer. By 2013 John owned The Mad Magician, a bar and concert venue, in St. Louis, MO and was building a web development business in Southern California. After four years of traveling back and forth, splitting his time between running a venue, booking concerts and his web clients, it was time to slow down. He moved back to Orange County and took a break from booking to focus on web development.  
                         </p>
                         <p class="text-white mb-4">
-                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Wu Tang Clan members, Machine Gun Kelly, Rise Against, Guttermouth, Against Me!, Saosin, High On Fire, Carcass, Mudvayne, The Summer Slaughter Tour and many more. 
-                        </p>
-                        <p class="text-white mb-4">
                             In 2021, John is combining his booking and web development experience to create ArtistWave. Tower74 concerts will play a critical role in the development of the app, which has booking features for venues and artists. The ArtistWave app is expected to be in the app stores in 2021. 
                         </p>
-
+                        <div class="uppercase text-title pt-4">
+                            Booking Highlights
+                        </div>
+                        <p class="text-white mb-4">
+                            John booked thousands of bands and artists from 2000 - 2017 under Mancuso Productions, Archfront Media and Mancuso Concerts. Some of John's booking highlights are Avenged Sevenfold, The Misfits, DMX, Method Man and other Wu Tang Clan members, Machine Gun Kelly, Rise Against, Guttermouth, Against Me!, Saosin, High On Fire, Carcass, Mudvayne, The Summer Slaughter Tour, GBH, Guitar Wolf and many more. 
+                        </p>
                     </div>
                 </div>
 
