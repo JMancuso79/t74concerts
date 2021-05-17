@@ -24039,15 +24039,7 @@ var _hoisted_5 = {
   "class": "flex-shrink-0 flex items-center"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/tower-text.png",
-  style: {
-    "max-width": "140px",
-    "width": "100%"
-  }
-}, null, -1
-/* HOISTED */
-);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Tower74 ");
 
 var _hoisted_7 = {
   "class": "hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-dark"
