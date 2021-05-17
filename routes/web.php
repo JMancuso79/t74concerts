@@ -125,6 +125,14 @@ Route::get('/tickets/{slug}', function ($slug) {
 			'url' => 'https://tower74concerts.com/tickets/'.$slug
 		];	
 	}
+	if($slug == 'against-the-grave-inimical-drive-tiki-bar') {
+		$page_data = [
+			'title' => 'Tower74 Concerts | Against The Grave & Inimical Drive at Tiki Bar - Costa Mesa, CA',
+			'description' => 'Tower74 Concerts | Against The Grave & Inimical Drive at Tiki Bar - Costa Mesa, CA',
+			'image' => 'https://tower74concerts.com/images/tower74-atg-id-full.jpg',
+			'url' => 'https://tower74concerts.com/tickets/'.$slug
+		];	
+	}
 	session([
 		'slug' => $slug,
 		'page' =>'tickets',

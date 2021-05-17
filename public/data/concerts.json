@@ -101,11 +101,54 @@
             "image":"/images/id-full.jpg"
          }
       ],
-      "details":"",
+      "details":"Inimical Drive, TBA. $12 ADV / $15 DOS. All Ages.",
       "url":"https://artistwave.com",
       "ticketLink":"https://artistwave.com",
       "image":"/images/id-square.jpg",
       "imageFull":"/images/id-full.jpg",
+      "ticket":12
+   },
+   {
+      "id":"1003",
+      "date":"2021-07-23",
+      "dateHuman":"Friday, July 23rd 2021",
+      "time":"7:00 pm",
+      "title":"Against The Grave & Inimical Drive",
+      "slug":"against-the-grave-inimical-drive-tiki-bar",
+      "venue":[
+         {
+            "name":"Tiki Bar",
+            "slug":"tiki-bar",
+            "address":"1700 Placentia Ave",
+            "city":"Costa Mesa",
+            "state":"CA",
+            "zipCode":92627,
+            "region":"west-coast",
+            "website":"https://tikibaroc.com/"
+         }
+      ],
+      "artists":[
+         {
+            "name":"Against The Grave",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-1.jpg"
+         },
+         {
+            "name":"Inimical Drive",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-1.jpg"
+         },
+         {
+            "name":"Die Criminal",
+            "url":"https://artistwave.com",
+            "image":"/images/tower-74-concert-1.jpg"
+         }
+      ],
+      "details":"Against The Grave, Inimical Drive, Die Criminal, TBA. $12 ADV / $15 DOS. 21+",
+      "url":"https://artistwave.com",
+      "ticketLink":"https://artistwave.com",
+      "image":"/images/tiki-7-23-insta.jpg",
+      "imageFull":"/images/tower74-atg-id-full.jpg",
       "ticket":12
    }
 ]
