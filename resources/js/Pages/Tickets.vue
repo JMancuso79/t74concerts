@@ -39,8 +39,8 @@
                                         <!-- Number of tickets -->
                                         <div v-if="step === 0">
                                             <p class="font-bold">Tickets: ${{concert.ticket}}.00</p>
-                                            <p class="mb-0">How many tickets do you want to purchase?</p>
-                                            <p class="mb-2 text-xs">You can enter a promo code after selecting the number of tickets. Please note, all ticket sales are final and only refundable if the concert is canceled.</p>
+                                            <p class="mb-0">How many tickets would you like to purchase?</p>
+                                            <p class="mb-2 text-xs">You can enter a promo code after selecting the number of tickets.</p>
 
                                             <div>
                                                 <div style="display:inline-block;width:15%;margin-right:5%;">
@@ -68,6 +68,7 @@
 
                                             <p class="font-bold mt-2">Total: ${{total = ticketNumber * concert.ticket - promoDiscount}}.00</p>
                                             <div v-if="ticketNumber > 0">
+                                                <p class="mb-2 text-xs">All ticket sales are final and only refundable if the concert is canceled.</p>
                                                 <button @click="step = 1" class="buy-now-button mt-2 w-full">
                                                     Buy Now
                                                 </button>
