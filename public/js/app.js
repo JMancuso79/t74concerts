@@ -19248,7 +19248,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     doPromoCode: function doPromoCode(tixPrice) {
       if (this.promoCode) {
-        if (this.promoCode == 'promo20') {
+        if (this.promoCode.toLowerCase() == 'promo20') {
           this.promoDiscount = 15 * this.ticketNumber;
           this.promoMsg = 'Success! Your total has been updated.';
         } else {
