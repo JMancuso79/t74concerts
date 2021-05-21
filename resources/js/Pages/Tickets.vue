@@ -38,40 +38,51 @@
                                     <div class="p-4">
                                         <!-- Number of tickets -->
                                         <div v-if="step === 0">
-                                            <p class="font-bold">Tickets: ${{concert.ticket}}.00</p>
-                                            <p class="mb-0">How many tickets would you like to purchase?</p>
-                                            <p class="mb-2 text-xs">You can enter a promo code after selecting the number of tickets.</p>
+                                            <!-- Tickets On Sale -->
+                                            <div v-if="onSale === true">
+                                                <p class="font-bold">Tickets: ${{concert.ticket}}.00</p>
+                                                <p class="mb-0">How many tickets would you like to purchase?</p>
+                                                <p class="mb-2 text-xs">You can enter a promo code after selecting the number of tickets.</p>
 
-                                            <div>
-                                                <div style="display:inline-block;width:15%;margin-right:5%;">
-                                                    <input type="number" class="form-input w-full " min="0" max="10" v-model="ticketNumber">
+                                                <div>
+                                                    <div style="display:inline-block;width:15%;margin-right:5%;">
+                                                        <input type="number" class="form-input w-full " min="0" max="10" v-model="ticketNumber">
+                                                    </div>
+                                                    <div style="display:inline-block;width:35%;margin-right:5%;">
+                                                        <button :disabled="ticketNumber < 1" class="w-full ticket-number-button" @click.prevent="ticketNumber --">-</button>
+                                                    </div>
+                                                    <div style="display:inline-block;width:40%;">
+                                                        <button class="w-full ticket-number-button" @click.prevent="ticketNumber ++">+</button>
+                                                    </div>
                                                 </div>
-                                                <div style="display:inline-block;width:35%;margin-right:5%;">
-                                                    <button :disabled="ticketNumber < 1" class="w-full ticket-number-button" @click.prevent="ticketNumber --">-</button>
+                                                <!-- Promo Code -->
+                                                <div v-if="ticketNumber > 0" class="mt-4 mb-4">
+                                                    <div v-if="promoMsg != null" class="mt-2 mb-2 font-bold">
+                                                        {{promoMsg}}
+                                                    </div>
+                                                    <label>If you have a promo code, please enter it.</label><br>
+                                                    <input type="text" class="form-input" v-model="promoCode" placeholder="Promo Code">
+                                         
+                                                    <button class="ml-1 bg-gray-400 p-2" @click.prevent="doPromoCode(concert.ticket)">
+                                                        Apply Code
+                                                    </button>
                                                 </div>
-                                                <div style="display:inline-block;width:40%;">
-                                                    <button class="w-full ticket-number-button" @click.prevent="ticketNumber ++">+</button>
+
+                                                <p class="font-bold mt-2">Total: ${{total = ticketNumber * concert.ticket - promoDiscount}}.00</p>
+                                                <div v-if="ticketNumber > 0">
+                                                    <p class="mb-2 text-xs">All ticket sales are final and only refundable if the concert is canceled.</p>
+                                                    <button @click="step = 1" class="buy-now-button mt-2 w-full">
+                                                        Buy Now
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <!-- Promo Code -->
-                                            <div v-if="ticketNumber > 0" class="mt-4 mb-4">
-                                                <div v-if="promoMsg != null" class="mt-2 mb-2 font-bold">
-                                                    {{promoMsg}}
-                                                </div>
-                                                <label>If you have a promo code, please enter it.</label><br>
-                                                <input type="text" class="form-input" v-model="promoCode" placeholder="Promo Code">
-                                     
-                                                <button class="ml-1 bg-gray-400 p-2" @click.prevent="doPromoCode(concert.ticket)">
-                                                    Apply Code
-                                                </button>
-                                            </div>
-
-                                            <p class="font-bold mt-2">Total: ${{total = ticketNumber * concert.ticket - promoDiscount}}.00</p>
-                                            <div v-if="ticketNumber > 0">
-                                                <p class="mb-2 text-xs">All ticket sales are final and only refundable if the concert is canceled.</p>
-                                                <button @click="step = 1" class="buy-now-button mt-2 w-full">
-                                                    Buy Now
-                                                </button>
+                                            <!-- Tickets Off Sale -->
+                                            <div v-else>
+                                                <p class="font-bold">Online sales have ended, but you can still get tickets at the door.</p>
+                                                <ul>
+                                                    <li>$35 without promo code.</li>
+                                                    <li>$20 with promo code. </li>
+                                                </ul>
                                             </div>
                                         </div>
                                         <!-- Ticket holder name -->
@@ -225,6 +236,9 @@
         ],
         mounted() {
             if(this.slug) {
+                if(this.slug == 'kyle-smith-the-b-foundation') {
+                    this.onSale = false
+                }
                 this.getConcert()
             }
         },
@@ -257,7 +271,8 @@
                 concerts: [],
                 promoCode: null,
                 promoMsg: null,
-                promoDiscount: 0
+                promoDiscount: 0,
+                onSale: true
             }
         },
         methods: {
