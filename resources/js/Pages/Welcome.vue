@@ -158,7 +158,16 @@
             filterConcerts() {
                 // Default
                 if(this.region == 'default') {
-                    this.matchedItems = this.concerts
+                    this.matchedItems = []
+                    for(var i=0;i<this.concerts.length;i++) {
+                        if(this.concerts[i].venue) {
+                            if(this.concerts[i].venue[0]) {
+                                if(this.concerts[i].status == 'active') {
+                                    this.matchedItems.push(this.concerts[i])
+                                }
+                            }  
+                        }
+                    }
                 } 
                 // Selected Region
                 else {
@@ -167,7 +176,10 @@
                         if(this.concerts[i].venue) {
                             if(this.concerts[i].venue[0]) {
                                 if(this.concerts[i].venue[0].region == this.region) {
-                                    this.matchedItems.push(this.concerts[i])
+                                    if(this.concerts[i].status == 'active') {
+                                        this.matchedItems.push(this.concerts[i])
+                                    }
+                                    
                                 }
                             }  
                         }
@@ -181,7 +193,16 @@
                 handler() {
                     if(this.concerts) {
                         if(this.concerts.length > 0) {
-                            this.matchedItems = this.concerts
+                            this.matchedItems = []
+                            for(var i=0;i<this.concerts.length;i++) {
+                                if(this.concerts[i].venue) {
+                                    if(this.concerts[i].venue[0]) {
+                                        if(this.concerts[i].status == 'active') {
+                                            this.matchedItems.push(this.concerts[i])
+                                        }
+                                    }  
+                                }
+                            }
                         }
                     }
                 },

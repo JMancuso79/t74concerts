@@ -439,8 +439,8 @@
             },
             doPromoCode: function(tixPrice) {
                 if(this.promoCode) {
-                    if(this.promoCode.toLowerCase() == 'promo20') {
-                        this.promoDiscount = 15 * this.ticketNumber
+                    if(this.promoCode.toLowerCase() == 'beyondfm') {
+                        this.promoDiscount = 5 * this.ticketNumber
                         this.promoMsg = 'Success! Your total has been updated.'
                     } else {
                         this.promoMsg = 'That code does not match a valid promo code.'

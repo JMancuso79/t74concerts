@@ -19253,8 +19253,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     doPromoCode: function doPromoCode(tixPrice) {
       if (this.promoCode) {
-        if (this.promoCode.toLowerCase() == 'promo20') {
-          this.promoDiscount = 15 * this.ticketNumber;
+        if (this.promoCode.toLowerCase() == 'beyondfm') {
+          this.promoDiscount = 5 * this.ticketNumber;
           this.promoMsg = 'Success! Your total has been updated.';
         } else {
           this.promoMsg = 'That code does not match a valid promo code.';
@@ -19423,7 +19423,17 @@ __webpack_require__.r(__webpack_exports__);
     filterConcerts: function filterConcerts() {
       // Default
       if (this.region == 'default') {
-        this.matchedItems = this.concerts;
+        this.matchedItems = [];
+
+        for (var i = 0; i < this.concerts.length; i++) {
+          if (this.concerts[i].venue) {
+            if (this.concerts[i].venue[0]) {
+              if (this.concerts[i].status == 'active') {
+                this.matchedItems.push(this.concerts[i]);
+              }
+            }
+          }
+        }
       } // Selected Region
       else {
           this.matchedItems = [];
@@ -19432,7 +19442,9 @@ __webpack_require__.r(__webpack_exports__);
             if (this.concerts[i].venue) {
               if (this.concerts[i].venue[0]) {
                 if (this.concerts[i].venue[0].region == this.region) {
-                  this.matchedItems.push(this.concerts[i]);
+                  if (this.concerts[i].status == 'active') {
+                    this.matchedItems.push(this.concerts[i]);
+                  }
                 }
               }
             }
@@ -19445,7 +19457,17 @@ __webpack_require__.r(__webpack_exports__);
       handler: function handler() {
         if (this.concerts) {
           if (this.concerts.length > 0) {
-            this.matchedItems = this.concerts;
+            this.matchedItems = [];
+
+            for (var i = 0; i < this.concerts.length; i++) {
+              if (this.concerts[i].venue) {
+                if (this.concerts[i].venue[0]) {
+                  if (this.concerts[i].status == 'active') {
+                    this.matchedItems.push(this.concerts[i]);
+                  }
+                }
+              }
+            }
           }
         }
       },
