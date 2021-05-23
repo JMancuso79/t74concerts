@@ -102,6 +102,7 @@
                                             <p v-if="errCode" class="mb-4 pb-2" style="border-bottom:2px solid #000000;">
                                                 {{errMsg}}
                                             </p>
+                                            <p class="font-bold mt-2 mb-2 text-lg border-bottom">Total: ${{total = ticketNumber * concert.ticket - promoDiscount}}.00</p>
                                             <p class="font-bold mb-2">Payment Information</p>
                                             <p style="font-size:14px; color:#444444;" class="mb-2">Your payment is processed securely through Stripe. Your card details are never stored on our servers.</p>
                                             <!-- Single -->
@@ -439,7 +440,7 @@
             },
             doPromoCode: function(tixPrice) {
                 if(this.promoCode) {
-                    if(this.promoCode.toLowerCase() == 'beyondfm') {
+                    if(this.promoCode.toLowerCase() == 'beyondfm' || this.promoCode.toLowerCase() == 'ramone') {
                         this.promoDiscount = 5 * this.ticketNumber
                         this.promoMsg = 'Success! Your total has been updated.'
                     } else {
