@@ -119,9 +119,9 @@ Route::get('/tickets/{slug}', function ($slug) {
 	}
 	if($slug == 'inimical-drive-red-flag-2021-07-17') {
 		$page_data = [
-			'title' => 'Tower74 Concerts | Inimical Drive at Red Flag - St. Louis, MO',
-			'description' => 'Tower74 Concerts | Inimical Drive at Red Flag - St. Louis, MO.',
-			'image' => 'https://tower74concerts.com/images/id-full.jpg',
+			'title' => 'Tower74 Concerts | The Beyond FM Birthday Bash With Inimical Drive',
+			'description' => 'Tower74 Presents The Beyond FM Birthday Bash With Inimical Drive at Red Flag - St. Louis, MO.',
+			'image' => 'https://tower74concerts.com/images/red-flag-id.png',
 			'url' => 'https://tower74concerts.com/tickets/'.$slug
 		];	
 	}
