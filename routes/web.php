@@ -19,7 +19,7 @@ Route::get('/', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
 		'url' => 'https://tower74concerts.com'
 	];
 	session([
@@ -59,7 +59,7 @@ Route::get('/contact', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Contact',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
 		'url' => 'https://tower74concerts.com/contact'
 	];
 	session([
@@ -89,7 +89,7 @@ Route::get('/booking', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Booking',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
 		'url' => 'https://tower74concerts.com/booking'
 	];
 	session([
@@ -159,19 +159,19 @@ Route::get('/venue/{slug}', function ($slug) {
     ]);
 });
 
-Route::get('/sunset-strip-showcase', function () {
+Route::get('/concerts', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts | Sunset Strip Showcase',
+		'title' => 'Tower74 Concerts | Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/sunset-strip-showcase.jpg',
-		'url' => 'https://tower74concerts.com/sunset-strip-showcase'
+		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
+		'url' => 'https://tower74concerts.com/concerts'
 	];
 	session([
-		'slug' => 'sunset-strip-showcase',
-		'page' => 'sunset-strip-showcase',
+		'slug' => 'concerts',
+		'page' => 'concerts',
 		'page_data' => $page_data
 	]);
-    return Inertia::render('SunsetStripShowcase');
+    return Inertia::render('Concerts');
 });
 
 
