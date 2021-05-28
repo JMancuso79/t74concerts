@@ -174,6 +174,7 @@ Route::get('/concerts', function () {
     return Inertia::render('Concerts');
 });
 
+Route::get('/concert/{slug}', '\App\Http\Controllers\PagesController@getConcert');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

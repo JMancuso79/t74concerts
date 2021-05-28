@@ -17,25 +17,23 @@
                     <img v-if="concert.filename != null && concert.filename != ''" class="w-full" :src="concert.filename" :alt="concert.title">
                      -->
                     <!-- Date -->
-                    <div>
-                        {{concert.event.date_time}} 
+                    <div class="font-bold mt-4 text-dark">
+                        {{concert.event.date_text}} 
                     </div>
                     <!-- Title -->
-                    <div class="font-bold pb-2 text-lg">
-                        {{concert.title}}
+                    <div class="font-bold pb-2 text-xl">
+                        <a :href="'/concert/'+concert.slug">
+                            {{concert.title}}
+                        </a>
                     </div>
                     <div class="pb-2">
                         <span class="font-bold">Tickets</span>
                         <!-- Tickets -->
                         <div v-if="concert.onsale">
-                            <div v-for="ticket in concert.tickets" class="capitalize mb-1">
-                                ${{ticket.price}} {{ticket.label}}
-                            </div>
-                            <!-- Ticket Link -->
-                            <div v-if="concert.event.ticket_link" class="pb-2">
-                                <a class="bg-gray-600 pl-2 pr-2 pt-1 pb-1 mr-1 text-white font-bold" :href="concert.event.ticket_link">
-                                    Buy Tickets
-                                </a>
+                            <div v-for="ticket in concert.tickets">
+                                <div v-if="ticket.status === 1" class="capitalize mb-1">
+                                    ${{ticket.price}} {{ticket.label}}
+                                </div>
                             </div>
                         </div>
                         <!-- Off Sale -->
@@ -65,20 +63,20 @@
                             <!--<img :src="concert.event.venue.image" />-->
                         </div>
                         <div>
-                            {{concert.event.venue.name}}
-                        </div>
-                        <div>
-                            {{concert.event.venue.street_address}}
-                        </div>
-                        <div>
-                            {{concert.event.venue.city}}, {{concert.event.venue.state}} {{concert.event.venue.zip_code}}
+                            {{concert.event.venue.name}} - {{concert.event.venue.city}}, {{concert.event.venue.state}}
                         </div>
                     </div>
                     <!-- Genres -->
                     <div v-if="concert.genres">
-                        <span class="bg-gray-600 pl-2 pr-2 pt-1 pb-1 mr-1 text-white" v-for="genre in concert.genres">
+                        <span class="chip-medium text-sm mr-1" v-for="genre in concert.genres">
                             {{genre.name}}
                         </span>
+                    </div>
+                    <!-- Ticket Link -->
+                    <div class="mt-4">
+                        <a class="bg-primary text-white pt-2 pb-2 block text-center font-bold" :href="'/concert/'+concert.slug">
+                            Details & Tickets
+                        </a>
                     </div>
                 </div>
             </div>
@@ -90,6 +88,7 @@
 <script>
     import Header from '@/Pages/Partials/Header'
     import Footer from '@/Pages/Partials/Footer'
+    import { parseISO, format } from 'date-fns'
 
     export default {
         components: {
@@ -128,6 +127,7 @@
                     // Default
                     if(this.keyword === null) {
                         for(var i=0;i<this.concerts.length;i++) {
+                            this.concerts[i].event.date_text = format(parseISO(this.concerts[i].event.date_time), 'MMMM dd, yyyy')
                             let isOnSale = false
                             if(this.concerts[i].tickets) {
                                 for(var x=0;x<this.concerts[i].tickets.length;x++) {
