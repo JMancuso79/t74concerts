@@ -24859,7 +24859,7 @@ var _hoisted_5 = {
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   "class": "header-logo",
-  src: "/images/tower-full-logo-orange.jpg"
+  src: "/images/tower-grey-text.jpg"
 }, null, -1
 /* HOISTED */
 );
