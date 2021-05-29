@@ -24796,7 +24796,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "/"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/tower74-grey-trans.png"
+  src: "/images/tower74-black-logo-1.jpg"
 })])], -1
 /* HOISTED */
 );
@@ -24859,7 +24859,7 @@ var _hoisted_5 = {
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   "class": "header-logo",
-  src: "/images/tower-orange.jpg"
+  src: "/images/tower-full-logo-orange.jpg"
 }, null, -1
 /* HOISTED */
 );
@@ -27351,7 +27351,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.header-logo {\n        width:42px;\n}\n    ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.header-logo {\n        width:200px;\n}\n    ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
