@@ -24858,7 +24858,7 @@ var _hoisted_5 = {
 };
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/tower-orange.png"
+  src: "/images/tower74-orange-text.png"
 }, null, -1
 /* HOISTED */
 );
