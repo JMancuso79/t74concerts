@@ -116,6 +116,6 @@
 </script>
     <style>
       .header-logo {
-        width:48px;
+        width:42px;
       }
     </style>

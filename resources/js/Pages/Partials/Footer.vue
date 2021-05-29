@@ -10,7 +10,7 @@
         <ArtistWave />-->
         <div class="mx-auto pt-4" style="max-width:240px;">
             <a href="/">
-                <img src="/images/tower74-black-logo.jpg" />
+                <img src="/images/tower74-grey-trans.png" />
             </a>
         </div>
         <div class="bg-black">
