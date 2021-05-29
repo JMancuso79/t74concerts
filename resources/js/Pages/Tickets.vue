@@ -13,7 +13,7 @@
                 <!-- Concert -->
                 <div v-if="concert != null && concert != undefined && concert != []">
                    
-                    <div class="mt-4 ml-4 mr-4 md:m-0">
+                    <div class="mt-4">
                         <img class="w-full" :src="concert.imageFull" :alt="concert.title">
                         <div class="p-4 w-full bg-black">
                             <p class="text-date font-bold uppercase">{{concert.dateHuman}} | {{concert.time}}</p>
@@ -30,7 +30,7 @@
                     </div>
        
 
-                    <div class="mb-4 ml-4 mr-4 md:m-0">
+                    <div class="mb-4">
                         <div>
                             <div class="dark:bg-gray-200 shadow-md overflow-hidden">
                                 <!-- Not Loading -->

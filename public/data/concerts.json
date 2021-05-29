@@ -113,7 +113,7 @@
    },
    {
       "id":"1003",
-      "status":"active",
+      "status":"not-active",
       "date":"2021-07-23",
       "dateHuman":"Friday, July 23rd 2021",
       "time":"7:00 pm",

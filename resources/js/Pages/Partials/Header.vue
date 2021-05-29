@@ -10,13 +10,15 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link href="/" class="lg-logo">
-                                    Tower74
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="133" height="36" viewBox="0 0 133 36">
+                                      <text id="TOWER_74" data-name="TOWER 74" class="cls-1" x="66.578" y="27.527"><tspan x="66.578">TOWER 74</tspan></text>
+                                    </svg>
                                 </inertia-link>
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-dark">
-                                <jet-nav-link href="/" class="text-dark">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-white">
+                                <jet-nav-link href="/">
                                     Concerts
                                 </jet-nav-link>
                                 <jet-nav-link href="/about">
@@ -34,8 +36,8 @@
 
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center sm:hidden">
-                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-dark hover:text-dark focus:outline-none focus:text-dark transition duration-150 ease-in-out">
-                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white focus:outline-none focus:white transition duration-150 ease-in-out">
+                                <svg class="h-6 w-6 hamburger" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                                     <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
@@ -114,3 +116,11 @@
         }
     }
 </script>
+    <style>
+      .cls-1 {
+        font-size: 28px;
+        fill: #ee7523;
+        text-anchor: middle;
+        font-family: "Neon 80s";
+      }
+    </style>

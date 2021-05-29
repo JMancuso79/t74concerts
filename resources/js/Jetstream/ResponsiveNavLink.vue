@@ -17,8 +17,8 @@
         computed: {
             classes() {
                 return this.active
-                            ? 'block pl-3 pr-4 py-2 text-base font-bold text-dark  focus:outline-none transition duration-150 ease-in-out'
-                            : 'block pl-3 pr-4 py-2 text-base font-bold text-dark hover:text-white hover:bg-black focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out'
+                            ? 'block pl-3 pr-4 py-2 text-base font-bold text-white  focus:outline-none transition duration-150 ease-in-out'
+                            : 'block pl-3 pr-4 py-2 text-base font-bold text-white hover:text-medium hover:bg-black focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out'
             }
         }
     }

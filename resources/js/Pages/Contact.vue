@@ -9,7 +9,7 @@
         -->
         <div class="top-spacer mb-4">
             <!-- Event -->
-            <div class="max-width mx-auto">
+            <div class="max-width mx-auto pt-4">
                 <div class="bg-black ml-4 mr-4 mb-4 md:m-0">
                     <div class="pl-4 pr-4">
                         <div>

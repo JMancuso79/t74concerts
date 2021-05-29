@@ -8,20 +8,20 @@
             Content 
         -->
         <div class="top-spacer">
-            <div class="max-width mx-auto">
-                <div class="mr-4 ml-4 md:m-0">
+            <div class="max-width mx-auto pt-4">
+                <div class="md:m-0">
                     <!-- 
                         Not Loading 
                     -->
                     <div v-if="isLoading === false">
-                        <!-- Regions -->
-                        <div class="mb-4 text-white">
+                        <!-- Regions
+                        <div class="p-4 text-white">
                             <div class="bg-black">
                                 <button :class="defaultClass" @click="region = 'default'">All Regions</button>
                                 <button :class="westCoastClass" @click="region = 'west-coast'">West Coast</button>
                                 <button :class="midWestClass" @click="region = 'midwest'">Midwest</button>
                             </div>
-                        </div>
+                        </div> -->
                         <div v-if="matchedItems" class="text-white">
                             <!-- Concerts -->
                             <div v-if="matchedItems.length > 0">
