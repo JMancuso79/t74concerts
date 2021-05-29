@@ -26,6 +26,7 @@
 									Select Tickets 
 								-->
 								<div v-if="step === 0">
+									<p class="font-bold mb-2">Select Tickets</p>
 									<div v-for="ticket in onSaleTix">
 										<div class="grid grid-flow-col gap-1 mb-1 border-bottom pb-1">
 											<div class="row-span-2 col-span-2 capitalize">${{ticket.price}} {{ticket.label}}</div>
@@ -53,7 +54,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="font-bold mt-4 mb-4">
+									<div class="mt-4 mb-4">
 										{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
 									</div>
 			                        <button v-if="items.length > 0" class="bg-primary text-white pt-2 pb-2 w-full font-bold" @click.prevent="step = 1">
@@ -64,9 +65,7 @@
 									Promo Code 
 								-->
 								<div v-if="step === 1">
-									<div class="mt-4">
-										{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
-									</div>
+									<p><span class="font-bold">Promo Code</span><br>If you have a promo code, please enter it.</p>
 									<div v-if="items.length > 0" class="mt-4">
 										<!-- Promo Code -->
 										<div v-if="showPromo === true">
@@ -74,16 +73,18 @@
 	                                        <div v-if="promoMsg != null" class="mt-2 mb-2 font-bold">
 	                                            {{promoMsg}}
 	                                        </div>
-	                                        <label>If you have a promo code, please enter it.</label><br>
-	                                        <input type="text" class="form-input" v-model="promoCode" placeholder="Promo Code">
+	                                        
+	                                        <input type="text" class="form-input" v-model="promoCode" placeholder="Enter promo code">
 	                             
 	                                        <button v-if="promoCode != null && promoCode != ''" class="ml-1 bg-secondary p-2 text-white" @click.prevent="doPromoCode()">
 	                                            Apply
 	                                        </button>
 	                                        <p class="text-sm">Promo code discounts are only applied to "General Admission" tickets</p>
 	                                    </div>
-                                        <div class="pt-4">
-
+										<div class="mt-4">
+											{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
+										</div>
+                                        <div class="mt-4">
 					                        <button class="bg-gray-400 text-white pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
 					                            Skip
 					                        </button>
