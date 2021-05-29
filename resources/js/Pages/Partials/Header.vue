@@ -10,7 +10,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link href="/" class="lg-logo">
-                                    <img src="/images/tower74-orange-text.png" />
+                                    <img class="header-logo" src="/images/tower-logo-black.jpg" />
                                 </inertia-link>
                             </div>
 
@@ -115,10 +115,7 @@
     }
 </script>
     <style>
-      .cls-1 {
-        font-size: 28px;
-        fill: #ee7523;
-        text-anchor: middle;
-        font-family: "Neon 80s";
+      .header-logo {
+        width:60px;
       }
     </style>

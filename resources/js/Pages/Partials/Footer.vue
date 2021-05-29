@@ -8,7 +8,7 @@
             </div>
         </div>
         <ArtistWave />-->
-        <div class="mx-auto" style="max-width:240px;">
+        <div class="mx-auto pt-4" style="max-width:240px;">
             <a href="/">
                 <img src="/images/tower74-black-logo.jpg" />
             </a>
