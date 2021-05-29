@@ -54,6 +54,27 @@
 									<div class="font-bold mt-4">
 										{{items.length}} Ticket(s)<br>Total: ${{total}}
 									</div>
+									<div v-if="items.length > 0" class="mt-4">
+										<!-- Promo Code -->
+										<div v-if="showPromo === true">
+											<!-- Promo Code -->
+	                                        <div v-if="promoMsg != null" class="mt-2 mb-2 font-bold">
+	                                            {{promoMsg}}
+	                                        </div>
+	                                        <label>If you have a promo code, please enter it.</label><br>
+	                                        <input type="text" class="form-input" v-model="promoCode" placeholder="Promo Code">
+	                             
+	                                        <button v-if="promoCode != null && promoCode != ''" class="ml-1 bg-secondary p-2 text-white" @click.prevent="doPromoCode()">
+	                                            Apply
+	                                        </button>
+	                                        <p class="text-sm">Promo code discounts are only applied to "General Admission" tickets</p>
+	                                    </div>
+                                        <div class="pt-4">
+					                        <button class="bg-primary text-white pt-2 pb-2 w-full font-bold" >
+					                            Continue
+					                        </button>
+					                    </div>
+									</div>
 								</div>
 
 							</slot>
@@ -84,7 +105,11 @@
         		onSaleTix: [],
         		items: [],
         		total: 0,
-        		currentColor: 'red'
+        		currentColor: 'red',
+                promoCode: null,
+                promoMsg: null,
+                promoDiscount: 0,
+                showPromo: false
         	}
         },
         mounted() {
@@ -106,13 +131,27 @@
             },
             removeItem: function(index) {
  				this.items.splice(index, 1)
-            },            
+            }, 
+            doPromoCode: function() {
+                /*if(this.promoCode) {
+                    if(this.promoCode.toLowerCase() == 'beyondfm' || this.promoCode.toLowerCase() == 'ramone') {
+                        this.promoDiscount = 5 * this.ticketNumber
+                        this.promoMsg = 'Success! Your total has been updated.'
+                    } else {
+                        this.promoMsg = 'That code does not match a valid promo code.'
+                    }
+                }*/
+            }         
         },
         watch: {
         	items: {
         		handler() {
         			this.total = 0
+        			this.showPromo = false
 	                for(var x=0;x<this.items.length;x++) {
+	                	if(this.items[x].type == 'general-admission') {
+	                		this.showPromo = true
+	                	}
 	                	this.total = parseInt(this.items[x].price) + parseInt(this.total)
 	                }
         		},

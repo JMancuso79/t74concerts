@@ -18696,7 +18696,11 @@ __webpack_require__.r(__webpack_exports__);
       onSaleTix: [],
       items: [],
       total: 0,
-      currentColor: 'red'
+      currentColor: 'red',
+      promoCode: null,
+      promoMsg: null,
+      promoDiscount: 0,
+      showPromo: false
     };
   },
   mounted: function mounted() {
@@ -18719,14 +18723,29 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeItem: function removeItem(index) {
       this.items.splice(index, 1);
+    },
+    doPromoCode: function doPromoCode() {
+      /*if(this.promoCode) {
+          if(this.promoCode.toLowerCase() == 'beyondfm' || this.promoCode.toLowerCase() == 'ramone') {
+              this.promoDiscount = 5 * this.ticketNumber
+              this.promoMsg = 'Success! Your total has been updated.'
+          } else {
+              this.promoMsg = 'That code does not match a valid promo code.'
+          }
+      }*/
     }
   },
   watch: {
     items: {
       handler: function handler() {
         this.total = 0;
+        this.showPromo = false;
 
         for (var x = 0; x < this.items.length; x++) {
+          if (this.items[x].type == 'general-admission') {
+            this.showPromo = true;
+          }
+
           this.total = parseInt(this.items[x].price) + parseInt(this.total);
         }
       },
@@ -25121,6 +25140,40 @@ var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
+var _hoisted_19 = {
+  key: 0,
+  "class": "mt-4"
+};
+var _hoisted_20 = {
+  key: 0
+};
+var _hoisted_21 = {
+  key: 0,
+  "class": "mt-2 mb-2 font-bold"
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", null, "If you have a promo code, please enter it.", -1
+/* HOISTED */
+);
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
+  "class": "text-sm"
+}, "Promo code discounts are only applied to \"General Admission\" tickets", -1
+/* HOISTED */
+);
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "pt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  "class": "bg-primary text-white pt-2 pb-2 w-full font-bold"
+}, " Continue ")], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
     name: "modal"
@@ -25176,7 +25229,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Total: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.total), 1
         /* TEXT */
-        )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        )]), $data.items.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Promo Code "), $data.showPromo === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Promo Code "), $data.promoMsg != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.promoMsg), 1
+        /* TEXT */
+        )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_22, _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+          type: "text",
+          "class": "form-input",
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+            return $data.promoCode = $event;
+          }),
+          placeholder: "Promo Code"
+        }, null, 512
+        /* NEED_PATCH */
+        ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.promoCode]]), $data.promoCode != null && $data.promoCode != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+          key: 1,
+          "class": "ml-1 bg-secondary p-2 text-white",
+          onClick: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.doPromoCode();
+          }, ["prevent"]))
+        }, " Apply ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_24])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_25])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
       })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"modal-footer\">\n\t\t\t\t\t\t\t<slot name=\"footer\">\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t</slot>\n\t\t\t\t\t\t</div>")])])])];
     }),
     _: 3
