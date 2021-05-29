@@ -10,9 +10,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link href="/" class="lg-logo">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="133" height="36" viewBox="0 0 133 36">
-                                      <text id="TOWER_74" data-name="TOWER 74" class="cls-1" x="66.578" y="27.527"><tspan x="66.578">TOWER 74</tspan></text>
-                                    </svg>
+                                    <img src="/images/tower-orange.png" />
                                 </inertia-link>
                             </div>
 
