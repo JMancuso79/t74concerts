@@ -10,7 +10,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link href="/" class="lg-logo">
-                                    <img class="header-logo" src="/images/tower-grey-text.jpg" />
+                                    <img class="header-logo" src="/images/tower74-grey.jpg" />
                                 </inertia-link>
                             </div>
 

@@ -24796,7 +24796,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "/"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
-  src: "/images/tower74-black-logo-1.jpg"
+  src: "/images/tower74-grey-square.jpg"
 })])], -1
 /* HOISTED */
 );
@@ -24859,7 +24859,7 @@ var _hoisted_5 = {
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   "class": "header-logo",
-  src: "/images/tower-grey-text.jpg"
+  src: "/images/tower74-grey.jpg"
 }, null, -1
 /* HOISTED */
 );
