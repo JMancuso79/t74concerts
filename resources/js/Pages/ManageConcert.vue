@@ -13,9 +13,42 @@
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
 
                         <div v-if="orders" class="mt-8 text-2xl">
-                            {{title}}
+                            Missing {{title}} 
                         </div>
 
+                    </div>
+                    <div class="p-6 sm:px-20">
+                        <button @click.prevent="showPromoCodes = !showPromoCodes">
+                            <span v-if="showPromoCodes === false">Open Promo Codes</span>
+                            <span v-if="showPromoCodes === true">Close Promo Codes</span>
+                        </button>
+                    </div>
+                    <div v-if="showPromoCodes === true" class="p-6 sm:px-20">
+                        <div>
+                            <span class="text-lg bold">Create Promo Code</span>
+                        </div>
+                        <PromoCodeForm :concert-id="id" />
+                        <div v-if="promoCodes && promoCodes.length > 0">
+                            <div>
+                                <span class="text-lg bold">Promo Codes</span>
+                            </div>
+                            <div v-for="code in promoCodes" :key="code" class="mb-2">
+                                <div class="grid grid-cols-2 gap-2 border-bottom">
+                                    <div>
+                                        <!-- Group -->
+                                        <div class="w-full pb-2">
+                                            {{code.code}}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="w-full pb-2 text-right">
+                                            <span v-if="code.status === 0" class="text-sm">Not Active</span>
+                                            <span v-if="code.status === 1" class="text-sm">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
                     </div>
 
                     <div class="p-6 sm:px-20 bg-gray-200 bg-opacity-25">
@@ -76,14 +109,17 @@
     import AppLayout from '@/Layouts/AppLayout'
     //import Welcome from '@/Jetstream/Welcome'
     import { format } from 'date-fns'
+    import PromoCodeForm from '@/Pages/Partials/PromoCodeForm.vue'
 
     export default {
         props: ['id'],
         components: {
             AppLayout,
+            PromoCodeForm
             //Welcome,
         },
         mounted() {
+            this.getPromoCodes()
             this.getOrders()
         },
         data() {
@@ -94,6 +130,8 @@
                 keyword: null,
                 orders: [],
                 items: [],
+                promoCodes: null ,
+                showPromoCodes: false
             }
         },
 
@@ -122,7 +160,15 @@
             resetItems: function() {
                 this.items = this.orders
                 this.keyword = null
-            }           
+            },
+            getPromoCodes: function() {
+                axios.get('/api/get/promo-codes-all/' + this.id)
+                .then((response) => {
+                    this.promoCodes = response.data
+                }).catch(error => {
+                    console.log(error)
+                });
+            },           
         },
         watch: {
             keyword: function() {

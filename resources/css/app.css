@@ -39,6 +39,14 @@ p {
 .text-medium {
 	color:#D1D5DB;
 }
+.text-success {
+	color:#10B981;
+}
+
+.text-danger {
+	color:#EF4444;
+}
+
 
 .border-bottom {
 	padding:5px 0px;

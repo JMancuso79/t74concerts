@@ -22,10 +22,6 @@ class Order extends Model
         'price_per_ticket',
         'total_sale',
         'concert_id',
-        'concert_title',
-        'concert_date',
-        'venue',
-        'venue_city',
-        'venue_state',
+        'promo_code'
     ];
 }

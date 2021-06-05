@@ -14,7 +14,7 @@
 								</button>
 								<div>
 									<span class="font-bold text-lg">
-										{{concert.title}}
+										Buy Tickets | {{concert.title}}
 									</span>
 								</div>
 							</slot>
@@ -26,7 +26,7 @@
 									Select Tickets 
 								-->
 								<div v-if="step === 0">
-									<p class="font-bold mb-2">Select Tickets</p>
+									<p class="font-bold mb-2">Select Ticket(s)</p>
 									<div v-for="ticket in onSaleTix">
 										<div class="grid grid-flow-col gap-1 mb-1 border-bottom pb-1">
 											<div class="row-span-2 col-span-2 capitalize">${{ticket.price}} {{ticket.label}}</div>
@@ -65,30 +65,61 @@
 									Promo Code 
 								-->
 								<div v-if="step === 1">
-									<p><span class="font-bold">Promo Code</span><br>If you have a promo code, please enter it.</p>
-									<div v-if="items.length > 0" class="mt-4">
-										<!-- Promo Code -->
-										<div v-if="showPromo === true">
-											<!-- Promo Code -->
-	                                        <div v-if="promoMsg != null" class="mt-2 mb-2 font-bold">
-	                                            {{promoMsg}}
+									<!--  -->
+									<div v-if="showPromoCode === null">
+										Do you have a promo code?
+	                                    <div class="grid grid-cols-2 gap-2 mt-3">
+	                                        <div>
+	                                            <!-- Group -->
+	                                            <div class="w-full pb-2">
+	                                                <button class="w-full bg-primary p-2 text-white" @click.prevent="showPromoCode = true">
+	                                                	Yes
+	                                                </button>
+	                                            </div>
 	                                        </div>
-	                                        
-	                                        <input type="text" class="form-input" v-model="promoCode" placeholder="Enter promo code">
-	                             
-	                                        <button v-if="promoCode != null && promoCode != ''" class="ml-1 bg-secondary p-2 text-white" @click.prevent="doPromoCode()">
-	                                            Apply
-	                                        </button>
-	                                        <p class="text-sm">Promo code discounts are only applied to "General Admission" tickets</p>
+	                                        <div>
+	                                            <div class="w-full pb-2">
+	                                                <button class="w-full bg-gray-200 p-2" @click.prevent="showPromoCode = false">
+	                                                	No
+	                                                </button>         
+	                                            </div>
+	                                        </div>
 	                                    </div>
-										<div class="mt-4">
-											{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
+									</div>
+
+									<!-- Promo Code Form -->
+									<div v-if="showPromoCode === true">
+
+										<div v-if="items.length > 0" class="mt-4">
+											<!-- Promo Code -->
+											<div>
+		
+												<!-- Promo Code -->
+		                                        <div v-if="promoMsg != null" class="mt-2 mb-4 font-bold">
+		                                            <span class="text-danger" v-if="promoMsg == 'fail'">That didn't work!</span>
+		                                            <span class="text-success" v-if="promoMsg == 'success'">Your discount has been applied!</span>
+		                                        </div>
+		                                        <div v-if="promoMsg === null || promoMsg == 'fail'">
+		                                        	<input type="text" class="form-input" v-model="promoCode" placeholder="Enter promo code">
+		                             
+		                                        	<button v-if="promoCode != null && promoCode != ''" class="ml-1 bg-secondary p-2 text-white" @click.prevent="doPromoCode()">
+		                                            	Apply
+		                                        	</button>
+		                                        </div>
+		                                        <!--<p class="text-sm mt-2">Promo code discounts are only applied to "General Admission" tickets</p>-->
+		                                    </div>
+											<div class="mt-4">
+												{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
+											</div>
+	                                        <div class="mt-4">
+						                        <button v-if="promoMsg === null || promoMsg == 'fail'" class="bg-gray-400 text-white pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
+						                            Skip
+						                        </button>
+						                        <button v-else class="bg-primary text-white pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
+						                            Continue
+						                        </button>
+						                    </div>
 										</div>
-                                        <div class="mt-4">
-					                        <button class="bg-gray-400 text-white pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
-					                            Skip
-					                        </button>
-					                    </div>
 									</div>
 								</div>
 								<!-- 
@@ -156,6 +187,10 @@
 								-->
 								<div v-if="step === 4">
 									<p class="font-bold mb-2">Review Order</p>
+									<p class="text-right">
+										<button @click.prevent="step = 0">Edit Order</button>
+									</p>
+									<p>Ticket Holder: {{ticketHolder}}</p>
 									<div v-for="(item, index) in items">
 										<div class="grid grid-flow-col gap-1 mb-1 border-bottom pb-1 text-sm">
 											<div class="capitalize">
@@ -187,7 +222,40 @@
 									Payment submitted 
 								-->
 								<div v-if="step === 5">
-									Payment submitted
+									<div class="pb-3">
+										<span class="text-success bold text-xl">
+											Your tickets have been purchased!
+										</span>
+									</div>
+									<div class="pb-3">
+										<span class="text-lg">Which artist are you most excited to see?</span>
+									</div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div>
+                                        	<button class="w-full p-2 bg-primary text-white" @click.prevent="checkAll()">
+                                        		Check All
+                                        	</button>
+                                        </div>
+                                        <div>
+                                        	<button class="w-full p-2 bg-gray-200 text-dark" @click.prevent="artists = []">
+                                        		Reset
+                                        	</button>
+                                        </div>
+                                    </div>
+									<div v-for="(artist, index) in concert.artists" :key="artist">
+										<input type="checkbox" :id="'artist-'+index" :name="'artist '+index" :value="artist.id" v-model="artists">
+
+										<label class="ml-2 mb-2">{{artist.name}}</label>
+									</div>
+			                        <button v-if="artists.length > 0" class="bg-primary text-white mt-4 pt-2 pb-2 w-full font-bold" @click.prevent="step = 6">
+			                            Submit
+			                        </button>
+								</div>
+								<!-- 
+									Payment submitted 
+								-->
+								<div v-if="step === 6">
+									Done
 								</div>
 							</slot>
 						</div>
@@ -218,10 +286,13 @@
         		items: [],
         		total: 0,
         		currentColor: 'red',
+        		promoCodes: null,
                 promoCode: null,
                 promoMsg: null,
                 promoDiscount: 0,
-                showPromo: false,
+                showPromoCode: null,
+                isPromoCode: false,
+                artists: [],
                 //
                 nameOnCard: null,
                 email: null,
@@ -237,11 +308,24 @@
         	}
         },
         mounted() {
+        	
             if(this.concert) {
+            	this.getPromoCodes()
                 this.doTickets()
             }
         },
         methods: {
+			getPromoCodes: function() {
+                axios.get('/api/get/promo-codes/' + this.concert.id)
+                .then((response) => {
+                    this.promoCodes = response.data
+                    if(this.promoCodes && this.promoCodes.length) {
+                    	this.isPromoCode = true
+                    }
+                }).catch(error => {
+                    console.log(error)
+                });
+			},
             doTickets: function() {
                 this.onSaleTix = []
                 for(var x=0;x<this.concert.tickets.length;x++) {
@@ -257,14 +341,49 @@
  				this.items.splice(index, 1)
             }, 
             doPromoCode: function() {
-                /*if(this.promoCode) {
-                    if(this.promoCode.toLowerCase() == 'beyondfm' || this.promoCode.toLowerCase() == 'ramone') {
-                        this.promoDiscount = 5 * this.ticketNumber
-                        this.promoMsg = 'Success! Your total has been updated.'
-                    } else {
-                        this.promoMsg = 'That code does not match a valid promo code.'
-                    }
-                }*/
+                if(this.promoCodes && this.promoCodes.length > 0) {
+                	this.promoMsg = null
+                	let x = 0
+                	let promoData = null
+                	for(var i=0;i<this.promoCodes.length;i++) {
+                		if(this.promoCodes[i].code.toLowerCase() == this.promoCode.toLowerCase()) {
+                			x = 1
+                			promoData = this.promoCodes[i]
+                		}
+                	}
+                	if(x === 0) {
+                		this.promoMsg = 'fail'
+                	}
+                	if(x === 1) {
+                		this.promoMsg = 'success'
+                		// do calculation
+                		this.doDiscount(promoData)
+                	}
+                }
+            },
+            doDiscount: function(promoData) {
+            	if(promoData) {
+            		let tixNum = this.items.length
+            		let discountAmount = 0
+            		if(promoData.discount_type == 'dollars') {
+            			discountAmount = tixNum * promoData.discount
+            		}
+             		if(promoData.discount_type == 'percent') {
+            			// Do percentage
+            		}         
+            		if(discountAmount > 0) {
+            			this.total = this.total - discountAmount
+            		} 
+            		console.log(discountAmount) 		
+            	}
+            },
+            checkAll: function() {
+            	if(this.concert.artists) {
+            		this.artists = []
+            		for(var i=0;i<this.concert.artists.length;i++) {
+            			this.artists.push(this.concert.artists[i].id)
+            		}
+            	}
             }         
         },
         watch: {
@@ -273,13 +392,22 @@
         			this.total = 0
         			this.showPromo = false
 	                for(var x=0;x<this.items.length;x++) {
-	                	if(this.items[x].type == 'general-admission') {
-	                		this.showPromo = true
-	                	}
 	                	this.total = parseInt(this.items[x].price) + parseInt(this.total)
 	                }
         		},
         		deep: true
+        	},
+        	showPromoCode: function() {
+        		if(this.showPromoCode === false) {
+        			this.step = 2
+        		}
+        	},
+        	step: function() {
+        		if(this.step === 1) {
+        			if(this.isPromoCode === false) {
+        				this.step = 2
+        			}
+        		}
         	}
         }
     }

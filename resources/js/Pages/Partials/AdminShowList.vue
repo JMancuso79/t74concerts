@@ -3,7 +3,7 @@
 
         <div v-if="orders.length > 0">
             <div v-for="order in orders" :key="order" class="mb-3">
-                <h3 class="text-lg font-bold mb-3">{{order.title}}</h3>
+                <h3 class="text-lg font-bold mb-3">#{{order.id}}</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">
                     <div class="text-center bg-gray-200 p-2 mb-3">
                         <span class="font-bold">Tickets Sold</span><br>

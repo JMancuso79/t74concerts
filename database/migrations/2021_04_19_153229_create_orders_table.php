@@ -27,11 +27,7 @@ class CreateOrdersTable extends Migration
             $table->integer('price_per_ticket');
             $table->integer('total_sale');
             $table->integer('concert_id');
-            $table->string('concert_title');
-            $table->string('concert_date');
-            $table->string('venue');
-            $table->string('venue_city');
-            $table->string('venue_state');
+            $table->integer('promo_code')->nullable();
             $table->timestamps();
         });
     }

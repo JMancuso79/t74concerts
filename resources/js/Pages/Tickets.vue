@@ -77,12 +77,8 @@
                                                 </div>
                                             </div>
                                             <!-- Tickets Off Sale -->
-                                            <div v-else>
-                                                <p class="font-bold">Online sales have ended, but you can still get tickets at the door.</p>
-                                                <ul>
-                                                    <li>$35 without promo code.</li>
-                                                    <li>$20 with promo code. </li>
-                                                </ul>
+                                            <div v-else class="pt-4 pb-4">
+                                                <p class="font-bold">Online sales have ended, but you can still buy tickets at the door.</p>
                                             </div>
                                         </div>
                                         <!-- Ticket holder name -->
@@ -237,7 +233,7 @@
         ],
         mounted() {
             if(this.slug) {
-                if(this.slug == 'kyle-smith-the-b-foundation') {
+                if(this.slug == 'kyle-smith-the-b-foundation' || this.slug == 'sammy-ramone') {
                     this.onSale = false
                 }
                 this.getConcert()

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Stripe;
 use App\Models\Order;
+use App\Models\PromoCode;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
@@ -410,5 +411,55 @@ class PaymentController extends Controller
             $grossSales = $ticket_order->total_sale + $grossSales;
         }
         return $grossSales;
+    }
+
+    public function getPromoCodes($concert_id) {
+        $promo_codes = PromoCode::where('concert_id', $concert_id)->where('status', 1)->get();
+
+        return $promo_codes;
+    }
+
+    public function getAllPromoCodes($concert_id) {
+        $promo_codes = PromoCode::where('concert_id', $concert_id)->get();
+
+        return $promo_codes;
+    }
+
+    public function storePromoCode(Request $request) {
+
+        // Validate 
+        $validator = Validator::make($request->all(), [
+            'code' => 'required|string|max:255',
+        ]); 
+        if ($validator->fails()) {
+            // If Validation Fails
+            return response()->json([
+                'code' => 'fail-validation',
+                'errors' => $validator->errors()->first()
+            ]);
+        } else {
+            $promo_code = new PromoCode;
+
+            $promo_code->concert_id = $request->concert_id;
+            $promo_code->code = $request->code;
+            $promo_code->discount = $request->discount;
+            $promo_code->discount_type = $request->discount_type;
+            $promo_code->status = $request->status;
+
+            $promo_code->save();
+
+            if($promo_code) {
+                return response()->json([
+                    'code' => 'success',
+                    'message' => 'Your promo code was created.'
+                ]);
+            } else {
+                return response()->json([
+                    'code' => 'fail',
+                    'message' => 'Something went wrong.'
+                ]);
+            }
+        }  
+
     }
 }
