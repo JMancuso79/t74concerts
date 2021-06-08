@@ -22,6 +22,7 @@
 
 						<div class="modal-body">
 							<slot name="body">
+				
 								<!-- 
 									Select Tickets 
 								-->
@@ -64,7 +65,7 @@
 								<!-- 
 									Promo Code 
 								-->
-								<div v-if="step === 1">
+								<div v-if="step === 1 && promoCode != 'success'">
 									<!--  -->
 									<div v-if="showPromoCode === null">
 										Do you have a promo code?
@@ -72,14 +73,14 @@
 	                                        <div>
 	                                            <!-- Group -->
 	                                            <div class="w-full pb-2">
-	                                                <button class="w-full bg-primary p-2 text-white" @click.prevent="showPromoCode = true">
+	                                                <button class="w-full bg-primary p-2 text-white font-bold" @click.prevent="showPromoCode = true">
 	                                                	Yes
 	                                                </button>
 	                                            </div>
 	                                        </div>
 	                                        <div>
 	                                            <div class="w-full pb-2">
-	                                                <button class="w-full bg-gray-200 p-2" @click.prevent="showPromoCode = false">
+	                                                <button class="w-full bg-gray-200 p-2 font-bold" @click.prevent="showPromoCode = false">
 	                                                	No
 	                                                </button>         
 	                                            </div>
@@ -112,7 +113,7 @@
 												{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
 											</div>
 	                                        <div class="mt-4">
-						                        <button v-if="promoMsg === null || promoMsg == 'fail'" class="bg-gray-400 text-white pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
+						                        <button v-if="promoMsg === null || promoMsg == 'fail'" class="bg-gray-200 pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
 						                            Skip
 						                        </button>
 						                        <button v-else class="bg-primary text-white pt-2 pb-2 w-full font-bold"  @click.prevent="step = 2">
@@ -127,6 +128,9 @@
 								-->
 								<div v-if="step === 2">
                                     <p class="font-bold mb-2">Contact Information</p>
+                                    <div v-if="email && ticketHolder && contactFormValidated === false">
+                                    	<span class="text-danger">Email must be valid.</span>
+                                    </div>
                                     <p style="font-size:14px; color:#444444;" class="mb-2">Please enter the name of the person who will be checking in the day of the concert.</p>
                                     <!-- Single -->
                                     <div class="w-full pb-2">
@@ -137,7 +141,7 @@
                                         <input type="text" class="form-input w-full" v-model="email" placeholder="email*">
                                         <p class="text-sm">We only use your email to contact you about your order.</p>
                                     </div>
-			                        <button v-if="items.length > 0" class="bg-primary text-white pt-2 pb-2 w-full font-bold" @click.prevent="step = 3">
+			                        <button v-if="contactFormValidated === true" class="bg-primary text-white pt-2 pb-2 w-full font-bold" @click.prevent="step = 3">
 			                            Check Out
 			                        </button>
 
@@ -178,7 +182,7 @@
                                     <div class="w-full pb-2">
                                         <input type="text" class="form-input w-full" v-model="zip" placeholder="Zip Code*">
                                     </div>
-			                        <button v-if="items.length > 0" class="bg-primary text-white pt-2 pb-2 w-full font-bold" @click.prevent="step = 4">
+			                        <button v-if="paymentFormValidated === true" class="bg-primary text-white pt-2 pb-2 w-full font-bold" @click.prevent="step = 4">
 			                            Review Order
 			                        </button>
                                 </div>
@@ -206,15 +210,17 @@
 											</div>
 										</div>
 									</div>
+									<div v-if="promoMsg == 'success'" class="mt-4 mb-4">
+										Promo code discount: ${{promoDiscount}}
+									</div>
 									<div class="font-bold mt-4 mb-4">
 										{{items.length}} Ticket(s)<br><span class="font-bold ">Total: ${{total}}</span>
 									</div>
 									<div>
-										<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-
+										<input type="checkbox" id="agreement" name="agreement" v-model="iAgree" :value="true">
 										<label class="mb-2 text-xs"> I understand that all ticket sales are final and only refundable if the concert is canceled.</label>
 									</div>
-			                        <button v-if="items.length > 0" class="bg-primary text-white mt-4 pt-2 pb-2 w-full font-bold" @click.prevent="step = 5">
+			                        <button v-if="paymentFormValidated === true && iAgree === true" class="bg-primary text-white mt-4 pt-2 pb-2 w-full font-bold" @click.prevent="sendPayment()">
 			                            Submit Payment
 			                        </button>
 								</div>
@@ -247,7 +253,7 @@
 
 										<label class="ml-2 mb-2">{{artist.name}}</label>
 									</div>
-			                        <button v-if="artists.length > 0" class="bg-primary text-white mt-4 pt-2 pb-2 w-full font-bold" @click.prevent="step = 6">
+			                        <button v-if="artists.length > 0" class="bg-primary text-white mt-4 pt-2 pb-2 w-full font-bold" @click.prevent="storeCustomerArtists()">
 			                            Submit
 			                        </button>
 								</div>
@@ -255,7 +261,8 @@
 									Payment submitted 
 								-->
 								<div v-if="step === 6">
-									Done
+									Thank you! <br>
+									<button @click.prevent="$emit('close')">Close</button>
 								</div>
 							</slot>
 						</div>
@@ -304,7 +311,13 @@
                 city: null,
                 state: null,
                 zip: null,
-                ticketHolder: null
+                ticketHolder: null,
+                contactFormValidated: false,
+                paymentFormValidated: false,
+                isLoading: false,
+                errCode: null,
+                errMsg: null,
+                iAgree: false
         	}
         },
         mounted() {
@@ -373,8 +386,10 @@
             		}         
             		if(discountAmount > 0) {
             			this.total = this.total - discountAmount
+            			this.promoDiscount = discountAmount
             		} 
-            		console.log(discountAmount) 		
+
+            		//console.log(discountAmount) 		
             	}
             },
             checkAll: function() {
@@ -384,16 +399,135 @@
             			this.artists.push(this.concert.artists[i].id)
             		}
             	}
-            }         
+            },
+            storeCustomerArtists: function() {
+                axios.post('/api/store/customer-artists', {
+                	artists: this.artists,
+                	concert_id: this.concert.id,
+                }).then((response) => {
+                	if(response.data.code == 'complete') {
+                		this.step = 6
+                		this.artists = []
+                		// reset form
+                	}
+                }).catch(error => {
+                	console.log(error)
+                })
+            },
+            validateContactForm: function() {
+            	if(this.items.length > 0 && this.email && this.email != '' && this.ticketHolder && this.ticketHolder != '') {
+            		if(this.validateEmail(this.email) === true) {
+            			this.contactFormValidated = true
+            		} else {
+            			this.contactFormValidated = false
+            		}
+            	}	
+            },
+			validateEmail: function(val) {
+				const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(val);
+			},
+            validatePaymentForm: function() {
+                // Validate Name on card
+                let isNameValidated = false
+                if(this.nameOnCard != null && this.nameOnCard != '') {
+                    isNameValidated = true
+                }
+                // Validate Card Number
+                let isCardNumberValidated = false
+                if(this.cardNumber != null && this.cardNumber != '') {
+                    isCardNumberValidated = true
+                }
+                // Validate Month
+                let isMonthValidated = false
+                if(this.expMonth != null && this.expMonth != '') {
+                    isMonthValidated = true
+                }
+                // Validate Year
+                let isYearValidated = false
+                if(this.expYear != null && this.expYear != '') {
+                    isYearValidated = true
+                }
+                // Validate CVV
+                let isCvvValidated = false
+                if(this.cvv != null && this.cvv != '') {
+                    isCvvValidated = true
+                }
+                // Validate Zip
+                let isZipValidated = false
+                if(this.zip != null && this.zip != '') {
+                    isZipValidated = true
+                }
+                // If there are no false validations
+                if(isNameValidated !== false && isCardNumberValidated !== false && isMonthValidated !== false && isYearValidated !== false && isCvvValidated !== false && isZipValidated !== false) {
+                    this.paymentFormValidated = true
+                } else {
+                    this.paymentFormValidated = false
+                }
+            },   
+            sendPayment: function() {
+            	let pc = null;
+            	if(this.promoMsg == 'success') {
+            		pc = this.promoCode
+            	}
+                this.isLoading = true
+                axios.post('/api/payment', {
+	                email: this.email,
+	                nameOnCard: this.nameOnCard,
+	                cardNumber: this.cardNumber,
+	                expMonth: this.expMonth,
+	                expYear: this.expYear,
+	                cvv: this.cvv,
+	                zip: this.zip,
+	                total: this.total,
+	                ticketHolder: this.ticketHolder,
+	                ticketNumber: this.items.length,
+	                concertId: this.concert.id,
+	                promo_code: pc,
+	                concert: this.concert
+                }).then((response) => {
+
+                    // Validation error
+                    if(response.data.code == 'fail-validation' ) {
+                        this.errCode = 'fail-validation'
+                        this.errMsg = response.data.errors
+                    } 
+                    // All others
+                    else {
+                        this.errCode = response.data.code
+                        this.errMsg = response.data.message
+                        // Success
+                        if(this.errCode == 'success') {
+                            this.step = 5
+                            //this.resetForm()
+                        }
+                    }
+
+                    this.isLoading = false  
+                }).catch(error => {
+                    
+                    // Something went wrong
+                    this.errCode = error.code
+                    this.errMsg = error.message
+                    this.isLoading = false 
+                });
+            },      
         },
         watch: {
         	items: {
         		handler() {
         			this.total = 0
         			this.showPromo = false
-	                for(var x=0;x<this.items.length;x++) {
-	                	this.total = parseInt(this.items[x].price) + parseInt(this.total)
-	                }
+        			this.promoMsg = null
+        			this.promoDiscount = 0
+        			//this.isPromoCode = false
+        			if(this.items.length < 1) {
+        				this.step = 0
+        			} else {
+		                for(var x=0;x<this.items.length;x++) {
+		                	this.total = parseInt(this.items[x].price) + parseInt(this.total)
+		                }	
+        			}
         		},
         		deep: true
         	},
@@ -408,7 +542,31 @@
         				this.step = 2
         			}
         		}
-        	}
+        	},
+        	ticketHolder: function() {
+        		this.validateContactForm()
+        	},
+        	email: function() {
+        		this.validateContactForm()
+        	},
+        	nameOnCard: function() {
+        		this.validatePaymentForm()
+        	},
+        	cardNumber: function() {
+        		this.validatePaymentForm()
+        	},
+        	expMonth: function() {
+        		this.validatePaymentForm()
+        	},
+        	expYear: function() {
+        		this.validatePaymentForm()
+        	},
+        	cvv: function() {
+        		this.validatePaymentForm()
+        	},
+        	zip: function() {
+        		this.validatePaymentForm()
+        	},
         }
     }
 </script>

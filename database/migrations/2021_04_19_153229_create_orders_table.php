@@ -24,10 +24,9 @@ class CreateOrdersTable extends Migration
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
             $table->integer('num_of_tickets');
-            $table->integer('price_per_ticket');
             $table->integer('total_sale');
             $table->integer('concert_id');
-            $table->integer('promo_code')->nullable();
+            $table->string('promo_code')->nullable();
             $table->timestamps();
         });
     }

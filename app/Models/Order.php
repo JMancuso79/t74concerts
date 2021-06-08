@@ -19,7 +19,6 @@ class Order extends Model
         'zip',
         'stripe_payment_id',
         'num_of_tickets',
-        'price_per_ticket',
         'total_sale',
         'concert_id',
         'promo_code'

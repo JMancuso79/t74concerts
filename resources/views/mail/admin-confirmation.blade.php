@@ -29,9 +29,8 @@
                 <h3>Customer</h3>
                 <p>Name: {{$notification['customerName']}}</p>
                 <p>Email: {{$notification['customerEmail']}}</p>
-                <p>Phone: {{$notification['customerPhone']}}</p>
                 <p>
-                    {{$notification['customerCity']}}, {{$notification['customerState']}} {{$notification['customerZipCode']}}
+                    Zip: {{$notification['customerZipCode']}}
                 </p>
             </div>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Stripe;
+use App\Models\CustomerArtist;
 use App\Models\Order;
 use App\Models\PromoCode;
 use Illuminate\Support\Facades\Mail;
@@ -17,30 +18,17 @@ class PaymentController extends Controller
         $validator = Validator::make($request->all(), [
         	// User input
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:255',
             'nameOnCard' => 'required|string|max:255',
             'cardNumber' => 'required|string|max:255',
             'expMonth' => 'required|string|max:2',
             'expYear' => 'required|string|max:2',
             'cvv' => 'required|string|max:5',
-            'address' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'state' => 'required|string|max:255',
             'zip' => 'required|string|max:255',
             'ticketNumber' => 'required|integer|max:255',
             'ticketHolder' => 'required|string|max:255',
             // App input
             'total' => 'required|integer',
             'concertId' => 'required|integer',
-            'concertDate' => 'required|string|max:255',
-            'concertTime' => 'required|string|max:255',
-            'concertPrice' => 'required|integer',
-            'concertTitle' => 'required|string|max:255',
-            'concertVenue' => 'required|string|max:255',
-            'venueAddress' => 'required|string|max:255',
-            'venueCity' => 'required|string|max:255',
-            'venueState' => 'required|string|max:255',
-            'venueZip' => 'required|integer'
         ]); 
         if ($validator->fails()) {
         // If Validation Fails
@@ -70,9 +58,6 @@ class PaymentController extends Controller
                         'exp_month' => $paymentData->expMonth,
                         'exp_year' => $paymentData->expYear,
                         'cvc' => $paymentData->cvv,
-                        'address_city' => $paymentData->city,
-                        'address_line1' => $paymentData->address, 
-                        'address_state' => $paymentData->state, 
                         'address_zip' => $paymentData->zip, 
                     ],
                 ]);
@@ -82,7 +67,6 @@ class PaymentController extends Controller
                     $stripe_customer = Stripe\Customer::create([
                         'source' => $token['id'],
                         'email' => $paymentData->email,
-                        'phone' => $paymentData->phone,
                         'name' => $paymentData->nameOnCard,
                     ]);
                     // Customer successful
@@ -92,7 +76,7 @@ class PaymentController extends Controller
                             'customer' => $stripe_customer->id,
                             'amount' => number_format($paymentData->total, 2, '', '.'),
                             'currency' => 'usd',
-                            'description' => 'ID:'.$paymentData->concertId.' | '.$paymentData->concertTitle,
+                            'description' => 'ID:'.$paymentData->concertId,
                         ]); 
                         // Charge was successful
                         if($charge) {
@@ -101,26 +85,22 @@ class PaymentController extends Controller
                                 // Customer
                                 'customerName' => $paymentData->nameOnCard,
                                 'customerEmail' => $paymentData->email,
-                                'customerPhone' => $paymentData->phone,
-                                'customerCity' => $paymentData->city,
-                                'customerState' => $paymentData->state,
                                 'customerZipCode' => $paymentData->zip,
                                 // Concert
                                 'concertId' => $paymentData->concertId,
-                                'concertTitle' => $paymentData->concertTitle,
-                                'concertDate' => $paymentData->concertDate,
-                                'concertTime' => $paymentData->concertTime,
+                                'concertTitle' => $paymentData->concert['title'],
+                                'concertDate' =>  $paymentData->concert['event']['date_time'],
                                 // Tickets
                                 'ticketPrice' => $paymentData->concertPrice,
                                 'ticketHolder' => $paymentData->ticketHolder,
                                 'ticketNumber' => $paymentData->ticketNumber,
                                 'ticketTotal' => $paymentData->total,
                                 // Venue
-                                'venueName' => $paymentData->concertVenue,
-                                'venueStreetAddress' => $paymentData->venueAddress,
-                                'venueCity' => $paymentData->venueCity,
-                                'venueState' => $paymentData->venueState,
-                                'venueZipCode' => $paymentData->venueZip,
+                                'venueName' =>  $paymentData->concert['event']['venue']['name'],
+                                'venueStreetAddress' =>  $paymentData->concert['event']['venue']['street_address'],
+                                'venueCity' =>  $paymentData->concert['event']['venue']['city'],
+                                'venueState' =>  $paymentData->concert['event']['venue']['state'],
+                                'venueZipCode' =>  $paymentData->concert['event']['venue']['zip_code'],
                             ];
                             // Customer email
                             $this->sendToCustomer($notification);
@@ -248,19 +228,15 @@ class PaymentController extends Controller
     		$order->name_on_card = $orderData->nameOnCard;
     		$order->ticket_holder = $orderData->ticketHolder;
     		$order->email = $orderData->email;
-    		$order->phone = $orderData->phone;
-    		$order->city = $orderData->city;
-    		$order->state = $orderData->state;
+    		$order->phone = null;
+    		$order->city = null;
+    		$order->state = null;
     		$order->zip = $orderData->zip;
     		$order->num_of_tickets = $orderData->ticketNumber;
-    		$order->price_per_ticket = $orderData->concertPrice;
     		$order->total_sale = $orderData->total;
     		$order->concert_id = $orderData->concertId;
-    		$order->concert_title = $orderData->concertTitle;
-    		$order->concert_date = $orderData->concertDate;
-    		$order->venue = $orderData->concertVenue;
-    		$order->venue_city = $orderData->venueCity;
-    		$order->venue_state = $orderData->venueState;
+            $order->promo_code = $orderData->promo_code;
+            $order->price_per_ticket = 0;
 
     		$order->save();
 
@@ -310,7 +286,6 @@ class PaymentController extends Controller
             $order->state = $request->state;
             $order->zip = $request->zip;
             $order->num_of_tickets = $request->ticketNumber;
-            $order->price_per_ticket = $request->concertPrice;
             $order->total_sale = $request->total;
             $order->concert_id = $request->concertId;
             $order->concert_title = $request->concertTitle;
@@ -461,5 +436,50 @@ class PaymentController extends Controller
             }
         }  
 
+    }
+
+    public function storeCustomerArtists(Request $request) {
+        // Validate 
+        $validator = Validator::make($request->all(), [
+            'concert_id' => 'required|integer',
+        ]); 
+        if ($validator->fails()) {
+            // If Validation Fails
+            return response()->json([
+                'code' => 'fail-validation',
+                'errors' => $validator->errors()->first()
+            ]);
+        } else {
+            if($request->artists) {
+                foreach ($request->artists as $artist) {
+                    $this->storeArtist($artist, $request->concert_id);
+                }
+            }
+        }
+
+        return response()->json([
+            'code' => 'complete',
+        ]);   
+    }
+
+    public function storeArtist($artist_id, $concert_id) {
+        $customer_artist = new CustomerArtist;
+
+        $customer_artist->concert_id = $concert_id;
+        $customer_artist->artist_id = $artist_id;
+
+        $customer_artist->save();
+
+        if($customer_artist) {
+            return response()->json([
+                'code' => 'success',
+                'message' => 'Thank you.'
+            ]);
+        } else {
+            return response()->json([
+                'code' => 'fail',
+                'message' => 'Something went wrong.'
+            ]);
+        }
     }
 }
