@@ -36,8 +36,14 @@ p {
 	border-radius: 15px;
 }
 
+.text-primary {
+	color:#1E40AF;
+}
+.text-dark {
+	color:#374151;
+}
 .text-medium {
-	color:#D1D5DB;
+	color:#4B5563;
 }
 .text-success {
 	color:#10B981;
@@ -49,8 +55,6 @@ p {
 
 
 .border-bottom {
-	padding:5px 0px;
-	margin: 5px 0px;
 	border-bottom: 1px solid #eeeeee;
 }
 

@@ -9,6 +9,7 @@ use App\Models\CustomerArtist;
 use App\Models\Order;
 use App\Models\PromoCode;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class PaymentController extends Controller
 {
@@ -80,7 +81,8 @@ class PaymentController extends Controller
                         ]); 
                         // Charge was successful
                         if($charge) {
-                            // Customer email
+                            // Customer email   
+                            $concertDate = substr($paymentData->concert['event']['date_time'], 0, 10);
                             $notification = [
                                 // Customer
                                 'customerName' => $paymentData->nameOnCard,
@@ -89,7 +91,8 @@ class PaymentController extends Controller
                                 // Concert
                                 'concertId' => $paymentData->concertId,
                                 'concertTitle' => $paymentData->concert['title'],
-                                'concertDate' =>  $paymentData->concert['event']['date_time'],
+                                'concertDate' =>  $concertDate,
+                                'concertBody' => $paymentData->concert['body'],
                                 // Tickets
                                 'ticketPrice' => $paymentData->concertPrice,
                                 'ticketHolder' => $paymentData->ticketHolder,
@@ -102,13 +105,13 @@ class PaymentController extends Controller
                                 'venueState' =>  $paymentData->concert['event']['venue']['state'],
                                 'venueZipCode' =>  $paymentData->concert['event']['venue']['zip_code'],
                             ];
+                            // Save order in DB
+                            $this->storeOrder($paymentData, $charge->id);
                             // Customer email
                             $this->sendToCustomer($notification);
                             // Admin email
                             $this->sendToAdmin($notification);
-                            // Save order in DB
-                            $this->storeOrder($paymentData, $charge->id);
-
+                            
                             return response()->json([
                                 'charge_details' => $charge,
                                 'code' => 'success',
@@ -236,7 +239,6 @@ class PaymentController extends Controller
     		$order->total_sale = $orderData->total;
     		$order->concert_id = $orderData->concertId;
             $order->promo_code = $orderData->promo_code;
-            $order->price_per_ticket = 0;
 
     		$order->save();
 

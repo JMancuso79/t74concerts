@@ -14,11 +14,45 @@ class PagesController extends Controller
 		$request = $client->get('https://api.artistwave.com/api/get/concert/'.$slug);
 		$response = $request->getBody();
 
+		$data = json_decode($response);
+		$description = null;
+		if($data) {
+			$description = $data->title.' ';
+			if($data->artists) {
+				$i = 0;
+				$len = count($data->artists);
+				$description .= 'Featuring ';
+				foreach ($data->artists as $artist) {
+					if($i < $len - 1) {
+						$description .= $artist->name.', ';
+					}
+				    if ($i == $len - 1) {
+				        $description .= $artist->name.'. ';
+				    }
+
+				    $i++;
+				}
+			}
+			if($data->event->venue) {
+				$description .= 'At '.$data->event->venue->name;
+			}
+			if($data->event->venue->city) {
+				$description .= ' '.$data->event->venue->city.'. ';
+			}
+			if($data->event->venue->state) {
+				$description .= strtoupper($data->event->venue->state);
+			}
+			$image = null;
+			if($data->filename) {
+				$image = $data->filename;
+			}
+		}
+
 		$page_data = [
-			'title' => 'Tower74 Concerts | Against The Grave & Inimical Drive at Tiki Bar - Costa Mesa, CA',
-			'description' => 'Tower74 Concerts | Against The Grave & Inimical Drive at Tiki Bar - Costa Mesa, CA',
-			'image' => 'https://tower74concerts.com/images/tower74-atg-id-full.jpg',
-			'url' => 'https://tower74concerts.com/tickets/'.$slug
+			'title' => 'Tower74 | '.$data->title,
+			'description' => $description,
+			'image' => $image,
+			'url' => 'https://tower74concerts.com/concert/'.$slug
 		];	
 	
 		session([

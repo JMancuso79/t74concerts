@@ -7,65 +7,68 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer mb-4">
+        <div class="top-spacer">
             <div class="max-width mx-auto">
-                <div v-for="concert in matchedConcerts" class="bg-gray-200 m-4 p-4">
+                <div v-for="concert in matchedConcerts" class="bg-white p-4 border-bottom">
                     <div v-if="concert.filename != null">
-                        <img :src="concert.filename" />
+                        <a :href="'/concert/'+concert.slug">
+                            <img :src="concert.filename" />
+                        </a>
                     </div>
                     <!-- Image
                     <img v-if="concert.filename != null && concert.filename != ''" class="w-full" :src="concert.filename" :alt="concert.title">
                      -->
                     <!-- Date -->
-                    <div class="font-bold mt-4 text-dark">
+                    <div class="font-bold mt-4 text-medium">
                         {{concert.event.date_text}} 
                     </div>
                     <!-- Title -->
                     <div class="font-bold pb-2 text-xl">
-                        <a :href="'/concert/'+concert.slug">
+                        <a :href="'/concert/'+concert.slug" class="text-dark">
                             {{concert.title}}
                         </a>
                     </div>
-                    <div class="pb-2">
+                    <!-- Venue -->
+                    <div v-if="concert.event.venue" class="pb-2">
+                        <span class="font-bold text-dark">Venue</span> 
+                        <!--<div v-if="concert.event.venue.image">
+                            <img :src="concert.event.venue.image" />
+                        </div>-->
+                        <div class="text-medium">
+                            {{concert.event.venue.name}} - {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span>
+                        </div>
+                    </div>
+                    <!-- Tickets -->
+                    <!--<div class="pb-2">
                         <span class="font-bold">Tickets</span>
-                        <!-- Tickets -->
+                        
                         <div v-if="concert.onsale">
                             <div v-for="ticket in concert.tickets">
                                 <div v-if="ticket.status === 1" class="capitalize mb-1">
                                     ${{ticket.price}} {{ticket.label}}
                                 </div>
                             </div>
-                        </div>
-                        <!-- Off Sale -->
+                        </div>-->
+                        <!-- Off Sale
                         <div v-else>
                             Online sales are not available for this concert.
                         </div>
-                    </div>
+                    </div>-->
                     <!-- Artists -->
                     <div v-if="concert.artists.length > 0" class="pb-2">
-                        <span class="font-bold">Artists</span>
-                        <div v-for="artist in concert.artists">
+                        <span class="font-bold text-dark">Artists</span>
+                        <div v-for="artist in concert.artists" class="text-medium">
                             {{artist.name}}
-                            <div v-if="artist.image">
-                                <!--<img :src="artist.image" />-->
-                            </div>
+                            <!--<div v-if="artist.image">
+                                <img :src="artist.image" />
+                            </div>-->
                         </div>
                     </div>
-                    <!-- Details -->
+                    <!-- Details
                     <div v-if="concert.body != null && concert.body != ''" class="pb-2">
                         <div class="font-bold">Details</div> 
                         {{concert.body}}
-                    </div>
-                    <!-- Venue -->
-                    <div v-if="concert.event.venue" class="pb-2">
-                        <span class="font-bold">Venue</span> 
-                        <div v-if="concert.event.venue.image">
-                            <!--<img :src="concert.event.venue.image" />-->
-                        </div>
-                        <div>
-                            {{concert.event.venue.name}} - {{concert.event.venue.city}}, {{concert.event.venue.state}}
-                        </div>
-                    </div>
+                    </div> -->
                     <!-- Genres -->
                     <div v-if="concert.genres">
                         <span class="chip-medium text-sm mr-1" v-for="genre in concert.genres">

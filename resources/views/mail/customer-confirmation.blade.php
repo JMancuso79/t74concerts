@@ -40,9 +40,10 @@
         <div class="bg-white p-5 mb-5">
             <h3 class="text-capitalize">About Your Purchase</h3>
             <p>{{$notification['concertTitle']}} @ {{$notification['venueName']}}</p>
-            <p>Date & Time: {{$notification['concertDate']}}</p>
+            <p>Date: {{$notification['concertDate']}}</p>
             <p>Total Sale: {{$notification['ticketNumber']}} Ticket(s) | ${{$notification['ticketTotal']}}</p>
             <p>Primary Ticket Holder<br>{{$notification['ticketHolder']}}</p>
+            <p>Details<br>{{$notification['concertBody']}}</p>
         </div>
         <!-- Tickets -->
         <div class="bg-white p-5 mb-5">

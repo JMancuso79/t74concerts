@@ -7,11 +7,11 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer mb-4">
+        <div class="top-spacer">
             <div class="max-width mx-auto">
-                <div v-if="concert" class="bg-gray-200 m-4 p-4">
+                <div v-if="concert" class="bg-white p-4">
                     <div class="pb-4">
-                        <a class="bg-gray-400 pt-2 pb-2 pl-4 pr-4 text-sm capitalize" href="/concerts">
+                        <a class="bg-gray-200 pt-2 pb-2 pl-4 pr-4 text-sm capitalize" href="/concerts">
                              back to calendar
                         </a>
                     </div>
@@ -19,19 +19,19 @@
                         <img :src="concert.filename" />
                     </div>
                     <!-- Date -->
-                    <div class="font-bold mt-4 text-dark">
+                    <div class="font-bold mt-4 text-medium">
                         {{dateText}} 
                     </div>
                     <!-- Title -->
-                    <div class="font-bold pb-2 text-xl">
+                    <div class="font-bold pb-2 text-xl text-dark">
                         {{concert.title}}
                     </div>
                     <!-- Tickets -->
                     <div class="pb-2">
-                        <span class="font-bold">Tickets</span>
+                        <span class="font-bold text-dark">Tickets</span>
                         <div v-if="concert.onsale === true">
                             <div v-for="ticket in concert.tickets">
-                                <div v-if="ticket.status === 1" class="capitalize mb-1">
+                                <div v-if="ticket.status === 1" class="capitalize mb-1 text-medium">
                                     ${{ticket.price}} {{ticket.label}}
                                 </div>
                             </div>
@@ -49,8 +49,8 @@
                     </div>
                     <!-- Artists -->
                     <div v-if="concert.artists.length > 0" class="pb-2">
-                        <span class="font-bold">Artists</span>
-                        <div v-for="artist in concert.artists">
+                        <span class="font-bold text-dark">Artists</span>
+                        <div v-for="artist in concert.artists" class="text-medium">
                             {{artist.name}}
                             <div v-if="artist.image">
                                 <!--<img :src="artist.image" />-->
@@ -59,23 +59,25 @@
                     </div>
                     <!-- Details -->
                     <div v-if="concert.body != null && concert.body != ''" class="pb-2">
-                        <div class="font-bold">Details</div> 
-                        {{concert.body}}
+                        <div class="font-bold text-dark">Details</div> 
+                        <div class="text-medium">
+                            {{concert.body}}
+                        </div>
                     </div>
                     <!-- Venue -->
                     <div v-if="concert.event.venue" class="pb-2">
-                        <span class="font-bold">Venue</span> 
+                        <span class="font-bold text-dark">Venue</span> 
                         <div v-if="concert.event.venue.image">
                             <!--<img :src="concert.event.venue.image" />-->
                         </div>
-                        <div>
+                        <div class="text-medium">
                             {{concert.event.venue.name}}
                         </div>
-                        <div>
+                        <div class="text-medium">
                             {{concert.event.venue.street_address}}
                         </div>
-                        <div>
-                            {{concert.event.venue.city}}, {{concert.event.venue.state}} {{concert.event.venue.zip_code}}
+                        <div class="text-medium">
+                            {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span> {{concert.event.venue.zip_code}}
                         </div>
                     </div>
                     <!-- Genres -->

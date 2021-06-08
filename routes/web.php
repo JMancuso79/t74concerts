@@ -27,7 +27,7 @@ Route::get('/', function () {
 		'page' =>'calendar',
 		'page_data' => $page_data
 	]);
-    return Inertia::render('Welcome', [
+    return Inertia::render('Concerts', [
         'canLogin' => Route::has('login'),
         //'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
