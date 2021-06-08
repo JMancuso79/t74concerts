@@ -82,9 +82,9 @@
                     </div>
                     <!-- Genres -->
                     <div v-if="concert.genres">
-                        <span class="chip-medium text-sm mr-1" v-for="genre in concert.genres">
+                        <div class="chip-medium text-sm mr-1 mb-1 inline-block" v-for="genre in concert.genres">
                             {{genre.name}}
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>

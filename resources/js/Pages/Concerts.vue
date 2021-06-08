@@ -29,7 +29,7 @@
                         </a>
                     </div>
                     <!-- Venue -->
-                    <div v-if="concert.event.venue" class="pb-2">
+                    <div v-if="concert.event.venue" class="pb-2 text-dark">
                         <span class="font-bold text-dark">Venue</span> 
                         <!--<div v-if="concert.event.venue.image">
                             <img :src="concert.event.venue.image" />
@@ -71,9 +71,9 @@
                     </div> -->
                     <!-- Genres -->
                     <div v-if="concert.genres">
-                        <span class="chip-medium text-sm mr-1" v-for="genre in concert.genres">
+                        <div class="chip-medium text-sm mr-1 mb-1 inline-block" v-for="genre in concert.genres">
                             {{genre.name}}
-                        </span>
+                        </div>
                     </div>
                     <!-- Ticket Link -->
                     <div class="mt-4">
