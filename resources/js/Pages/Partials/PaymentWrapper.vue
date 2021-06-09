@@ -240,18 +240,29 @@
 										<div class="mb-2">
 											<span class="font-bold text-dark">Which artist are you most excited to see?</span>
 										</div>
-	                                    <div class="grid grid-cols-2 gap-2">
-	                                        <div class="mb-4">
+
+
+
+	                                    <div class="grid grid-cols-2 gap-2 mb-4 pb-2 pt-2" style="border-top:1px solid #eeeeee;border-bottom:1px solid #eeeeee;">
+	                                        <div>
 	                                        	<button class="text-dark" @click.prevent="checkAll()">
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+													  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+													</svg>
 	                                        		Check All
 	                                        	</button>
 	                                        </div>
 	                                        <div class="text-right">
 	                                        	<button class="text-dark" @click.prevent="artists = []">
+													<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+													  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+													</svg>
 	                                        		Reset
 	                                        	</button>
 	                                        </div>
 	                                    </div>
+
+
 										<div v-for="(artist, index) in concert.artists" :key="artist">
 											<input type="checkbox" :id="'artist-'+index" :name="'artist '+index" :value="artist.id" v-model="artists">
 
