@@ -18492,10 +18492,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/parseISO/index.js");
 /*import JetDropdown from '@/Jetstream/Dropdown'
 import JetDropdownLink from '@/Jetstream/DropdownLink'
 import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'*/
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     /*JetDropdown,
@@ -18505,21 +18508,56 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'*/
   },
   mounted: function mounted() {
     this.getOrdersByConcert();
+    this.getConcerts();
   },
   data: function data() {
     return {
-      orders: []
+      orders: [],
+      concerts: []
     };
   },
   methods: {
-    getOrdersByConcert: function getOrdersByConcert(id) {
+    getConcerts: function getConcerts() {
       var _this = this;
 
+      //this.isLoading = true
+      axios.get('https://api.artistwave.com/api/get/all-page-concerts/91').then(function (response) {
+        console.log(response.data);
+
+        if (response.data) {
+          _this.concerts = response.data;
+
+          _this.doList(); //this.isLoading = false
+
+        }
+      })["catch"](function (error) {
+        //this.isLoading = false
+        console.log(error);
+      });
+    },
+    getOrdersByConcert: function getOrdersByConcert(id) {
+      var _this2 = this;
+
       axios.get('/web-api/orders-by-concert').then(function (response) {
-        _this.orders = response.data;
+        _this2.orders = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    doList: function doList() {
+      if (this.concerts) {
+        // Loop through concerts
+        for (var i = 0; i < this.concerts.length; i++) {
+          this.concerts[i].orders = [];
+          this.concerts[i].human_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.default)((0,date_fns__WEBPACK_IMPORTED_MODULE_1__.default)(this.concerts[i].event.date_time), 'MMMM dd, yyyy'); // for each concert loop through orders and locate concert/order
+
+          for (var x = 0; x < this.orders.length; x++) {
+            if (this.concerts[i].id === this.orders[x].id) {
+              this.concerts[i].orders.push(this.orders[x]);
+            }
+          }
+        }
+      }
     }
   }
 });
@@ -24810,74 +24848,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  key: 0
+  "class": "text-xl font-bold"
 };
 var _hoisted_2 = {
-  "class": "text-lg font-bold mb-3"
+  "class": "grid grid-cols-1 mt-2 md:grid-cols-3 md:gap-4"
 };
 var _hoisted_3 = {
-  "class": "grid grid-cols-1 md:grid-cols-3 md:gap-4"
-};
-var _hoisted_4 = {
   "class": "text-center bg-gray-200 p-2 mb-3"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "font-bold"
 }, "Tickets Sold", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "text-2xl"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "text-center bg-gray-200 p-2 mb-3"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "font-bold"
 }, "Gross Sales", -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_11 = {
+var _hoisted_10 = {
   "class": "text-2xl"
 };
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "mb-3"
 };
-var _hoisted_13 = {
-  key: 1
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [$data.orders.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.orders, function (order) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.concerts, function (concert) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
-      key: order,
-      "class": "mb-3"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", _hoisted_2, "#" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.id), 1
+      key: concert,
+      "class": "mb-3 pb-3",
+      style: {
+        "border-bottom": "1px solid #eeeeee"
+      }
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.tickets_sold), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.human_date) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.name), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_11, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.gross_sales), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.orders[0].tickets_sold), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_10, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.orders[0].gross_sales), 1
+    /* TEXT */
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
       "class": "block p-2 border-2 border-black pointer text-center font-bold",
-      href: '/manage/concert/' + order.id
+      href: '/manage/concert/' + concert.id
     }, " Manage ", 8
     /* PROPS */
     , ["href"])])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_13, " There are currently no ticket sales "))]);
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div v-if=\"orders.length > 0\">\n            <div v-for=\"order in orders\" :key=\"order\" class=\"mb-3\">\n                <h3 class=\"text-lg font-bold mb-3\">#{{order.id}}</h3>\n \n            </div>\n        </div> \n        <div v-else>\n            There are currently no ticket sales\n        </div>  ")]);
 }
 
 /***/ }),
