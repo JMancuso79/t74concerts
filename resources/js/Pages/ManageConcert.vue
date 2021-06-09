@@ -68,6 +68,14 @@
                         </div>
                         
                         <div v-if="customerArtists">
+                            <div class="grid grid-cols-2 gap-1 border-bottom text-sm font-bold">
+                                <div>
+                                    Artist Name 
+                                </div>
+                                <div class="text-right">
+                                    Tix Sold
+                                </div>
+                            </div>
                             <div v-for="item in customerArtists" class="grid grid-cols-2 gap-1 border-bottom mb-1 pb-1">
                                 <div>
                                     {{item.name}} 
