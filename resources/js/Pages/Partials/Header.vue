@@ -4,12 +4,12 @@
         <div>
             <nav class="nav-bg shadow fixed w-full">
                 <!-- Primary Navigation Menu -->
-                <div class="max-width mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-width mx-auto pr-4">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
-                                <inertia-link href="/" class="lg-logo">
+                                <inertia-link href="/">
                                     <img src="/images/tower74-trans.png" class="block w-auto" style="height:4.5rem;" />
                                 </inertia-link>
                             </div>
