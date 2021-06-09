@@ -108,9 +108,9 @@ class PaymentController extends Controller
                             // Save order in DB
                             $this->storeOrder($paymentData, $charge->id);
                             // Customer email
-                            //$this->sendToCustomer($notification);
+                            $this->sendToCustomer($notification);
                             // Admin email
-                            //$this->sendToAdmin($notification);
+                            $this->sendToAdmin($notification);
                             
                             return response()->json([
                                 'charge_details' => $charge,
