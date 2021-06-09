@@ -484,4 +484,10 @@ class PaymentController extends Controller
             ]);
         }
     }
+
+    public function getArtistTixSold($artist_id, $concert_id) {
+        $artist_customers = CustomerArtist::where('artist_id', $artist_id)->where('concert_id', $concert_id)->get();
+
+        return $artist_customers;
+    }
 }

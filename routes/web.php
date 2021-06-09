@@ -219,4 +219,4 @@ Route::middleware('auth:sanctum')->get('/web-api/orders-by-concert', 'App\Http\C
 Route::middleware('auth:sanctum')->post('/web-api/box-office-order', 'App\Http\Controllers\PaymentController@boxOfficeOrder');
 Route::middleware('auth:sanctum')->get('/web-api/get-concert-orders/{id}', 'App\Http\Controllers\PaymentController@getConcertOrders');
 Route::middleware('auth:sanctum')->post('/web-api/post/promo-code', 'App\Http\Controllers\PaymentController@storePromoCode');
-
+Route::middleware('auth:sanctum')->get('/web-api/get-customer-artists/artist/{artist_id}/concert/{concert_id}', 'App\Http\Controllers\PaymentController@getArtistTixSold');
