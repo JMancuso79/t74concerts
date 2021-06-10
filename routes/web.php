@@ -19,7 +19,7 @@ Route::get('/', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com'
 	];
 	session([
@@ -39,7 +39,7 @@ Route::get('/register', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com'
 	];
 	session([
@@ -59,7 +59,7 @@ Route::get('/contact', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Contact',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com/contact'
 	];
 	session([
@@ -89,7 +89,7 @@ Route::get('/booking', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Booking',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com/booking'
 	];
 	session([
@@ -100,70 +100,11 @@ Route::get('/booking', function () {
     return Inertia::render('Booking');
 });
 
-Route::get('/tickets/{slug}', function ($slug) {
-	if($slug == 'kyle-smith-the-b-foundation') {
-		$page_data = [
-			'title' => 'Tower74 Concerts | Kyle Smith w/The B Foundation at Tiki Bar Costa Mesa',
-			'description' => 'Tower74 Presents Kyle Smith, The B Foundation, Rebel Shakedown and Die Criminal at Tiki Bar in Costa Mesa, CA. Capacity of this concert will be determined by Orange County COVID guidelines on the day of.',
-			'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
-			'url' => 'https://tower74concerts.com/tickets/'.$slug
-		];
-	}
-	if($slug == 'sammy-ramone') {
-		$page_data = [
-			'title' => 'Tower74 Concerts | Sammy Ramone w/ Velvateen, Doahs Daydream and Noble Savage at Tiki Bar Costa Mesa',
-			'description' => 'Tower74 Presents Sammy Ramone w/ Velvateen, Doahs Day Dream and Noble Savage at Tiki Bar in Costa Mesa, CA. Capacity of this concert will be determined by Orange County COVID guidelines on the day of.',
-			'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
-			'url' => 'https://tower74concerts.com/tickets/'.$slug
-		];	
-	}
-	if($slug == 'inimical-drive-red-flag-2021-07-17') {
-		$page_data = [
-			'title' => 'Tower74 Concerts | The Beyond FM Birthday Bash With Inimical Drive',
-			'description' => 'Tower74 Presents The Beyond FM Birthday Bash With Inimical Drive at Red Flag - St. Louis, MO.',
-			'image' => 'https://tower74concerts.com/images/red-flag-id.png',
-			'url' => 'https://tower74concerts.com/tickets/'.$slug
-		];	
-	}
-	if($slug == 'against-the-grave-inimical-drive-tiki-bar') {
-		$page_data = [
-			'title' => 'Tower74 Concerts | Against The Grave & Inimical Drive at Tiki Bar - Costa Mesa, CA',
-			'description' => 'Tower74 Concerts | Against The Grave & Inimical Drive at Tiki Bar - Costa Mesa, CA',
-			'image' => 'https://tower74concerts.com/images/tower74-atg-id-full.jpg',
-			'url' => 'https://tower74concerts.com/tickets/'.$slug
-		];	
-	}
-	session([
-		'slug' => $slug,
-		'page' =>'tickets',
-		'page_data' => $page_data
-	]);
-    return Inertia::render('Tickets', [
-    	'slug' => $slug
-    ]);
-});
-Route::get('/venue/{slug}', function ($slug) {
-	$page_data = [
-		'title' => 'Tower74 Concerts',
-		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-ks-bf-full.jpg',
-		'url' => 'https://tower74concerts.com/venue/'.$slug
-	];
-	session([
-		'slug' => $slug,
-		'page' =>'venue',
-		'page_data' => $page_data
-	]);
-    return Inertia::render('Venue', [
-    	'slug' => $slug
-    ]);
-});
-
 Route::get('/concerts', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower-74-sammy-ramone-full.jpg',
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com/concerts'
 	];
 	session([
@@ -184,8 +125,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/manage/concert/{id}', fun
 	$page_data = [
 		'title' => 'Tower74 Concerts | Manage Concert',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/sunset-strip-showcase.jpg',
-		'url' => 'https://tower74concerts.com/sunset-strip-showcase'
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'url' => 'https://tower74concerts.com/'
 	];
 	session([
 		'slug' => 'manage-concert',
@@ -201,8 +142,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/box-office/{id}', functio
 	$page_data = [
 		'title' => 'Tower74 Concerts | Box Office',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/sunset-strip-showcase.jpg',
-		'url' => 'https://tower74concerts.com/sunset-strip-showcase'
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'url' => 'https://tower74concerts.com/'
 	];
 	session([
 		'slug' => 'box-office',
