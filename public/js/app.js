@@ -24959,6 +24959,7 @@ var _hoisted_1 = {
   "class": "text-xl font-bold"
 };
 var _hoisted_2 = {
+  key: 0,
   "class": "grid grid-cols-1 mt-2 md:grid-cols-3 md:gap-4"
 };
 var _hoisted_3 = {
@@ -24998,6 +24999,16 @@ var _hoisted_10 = {
 var _hoisted_11 = {
   "class": "mb-3"
 };
+var _hoisted_12 = {
+  key: 1,
+  "class": "grid grid-cols-1 mt-2 md:grid-cols-3 md:gap-4"
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"text-center bg-gray-200 p-2 mb-3\"><span class=\"font-bold\">Tickets Sold</span><br><span class=\"text-2xl\">0</span></div><div class=\"text-center bg-gray-200 p-2 mb-3\"><span class=\"font-bold\">Gross Sales</span><br><span class=\"text-2xl\">$0</span></div>", 2);
+
+var _hoisted_15 = {
+  "class": "mb-3"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.concerts, function (concert) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
@@ -25010,7 +25021,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.human_date) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.name), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.orders[0].tickets_sold), 1
+    ), concert.orders.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.orders[0].tickets_sold), 1
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_10, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.orders[0].gross_sales), 1
     /* TEXT */
@@ -25019,7 +25030,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       href: '/manage/concert/' + concert.id
     }, " Manage ", 8
     /* PROPS */
-    , ["href"])])])]);
+    , ["href"])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+      "class": "block p-2 border-2 border-black pointer text-center font-bold",
+      href: '/manage/concert/' + concert.id
+    }, " Manage ", 8
+    /* PROPS */
+    , ["href"])])]))]);
   }), 128
   /* KEYED_FRAGMENT */
   )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div v-if=\"orders.length > 0\">\n            <div v-for=\"order in orders\" :key=\"order\" class=\"mb-3\">\n                <h3 class=\"text-lg font-bold mb-3\">#{{order.id}}</h3>\n \n            </div>\n        </div> \n        <div v-else>\n            There are currently no ticket sales\n        </div>  ")]);

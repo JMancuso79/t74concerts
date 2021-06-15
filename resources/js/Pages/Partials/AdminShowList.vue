@@ -4,7 +4,7 @@
         <div v-for="concert in concerts" :key="concert" class="mb-3 pb-3" style="border-bottom:1px solid #eeeeee;">
             <h3 class="text-xl font-bold">{{concert.title}}</h3>
             <p>{{concert.human_date}} {{concert.event.venue.name}}</p>
-            <div class="grid grid-cols-1 mt-2 md:grid-cols-3 md:gap-4">
+            <div v-if="concert.orders.length > 0" class="grid grid-cols-1 mt-2 md:grid-cols-3 md:gap-4">
                 <div class="text-center bg-gray-200 p-2 mb-3">
                     <span class="font-bold">Tickets Sold</span><br>
                     <span class="text-2xl">{{concert.orders[0].tickets_sold}}</span>
@@ -12,6 +12,21 @@
                 <div class="text-center bg-gray-200 p-2 mb-3">
                     <span class="font-bold">Gross Sales</span><br>
                     <span class="text-2xl">${{concert.orders[0].gross_sales}}</span>
+                </div>
+                <div class="mb-3">
+                    <a class="block p-2 border-2 border-black pointer text-center font-bold" :href="'/manage/concert/'+concert.id">
+                        Manage
+                    </a>
+                </div>
+            </div>
+            <div v-else class="grid grid-cols-1 mt-2 md:grid-cols-3 md:gap-4">
+                <div class="text-center bg-gray-200 p-2 mb-3">
+                    <span class="font-bold">Tickets Sold</span><br>
+                    <span class="text-2xl">0</span>
+                </div>
+                <div class="text-center bg-gray-200 p-2 mb-3">
+                    <span class="font-bold">Gross Sales</span><br>
+                    <span class="text-2xl">$0</span>
                 </div>
                 <div class="mb-3">
                     <a class="block p-2 border-2 border-black pointer text-center font-bold" :href="'/manage/concert/'+concert.id">
