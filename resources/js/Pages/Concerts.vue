@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <!-- Ticket Link -->
-                    <div class="pt-2 pb-2">
+                    <div class="p-2">
                         <a class="bg-primary block text-white pt-2 pb-2 text-center font-bold" :href="'/concert/'+concert.slug">
                             Details & Tickets
                         </a>

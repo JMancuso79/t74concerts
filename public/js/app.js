@@ -24411,7 +24411,7 @@ var _hoisted_8 = {
   "class": "uppercase"
 };
 var _hoisted_9 = {
-  "class": "pt-2 pb-2"
+  "class": "p-2"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
@@ -25610,7 +25610,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "stroke-linecap": "round",
   "stroke-linejoin": "round",
   "stroke-width": "2",
-  d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
+  d: "M6 18L18 6M6 6l12 12"
 })], -1
 /* HOISTED */
 );
@@ -25643,7 +25643,7 @@ var _hoisted_13 = {
 
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  "class": "h-6 w-6",
+  "class": "h-4 w-4",
   fill: "none",
   viewBox: "0 0 24 24",
   stroke: "currentColor"
@@ -25651,7 +25651,7 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
   "stroke-linecap": "round",
   "stroke-linejoin": "round",
   "stroke-width": "2",
-  d: "M12 4v16m8-8H4"
+  d: "M12 6v6m0 0v6m0-6h6m-6 0H6"
 })], -1
 /* HOISTED */
 );
