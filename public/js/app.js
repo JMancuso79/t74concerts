@@ -24389,10 +24389,10 @@ var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
 var _hoisted_2 = {
-  "class": "container mx-auto"
+  "class": "container mx-auto bg-white p-4"
 };
 var _hoisted_3 = {
-  "class": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 mb-4"
+  "class": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
 };
 var _hoisted_4 = {
   "class": "bg-black"
@@ -24432,7 +24432,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.state), 1
     /* TEXT */
     )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ticket Link "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-      "class": "bg-primary text-white block text-center font-bold",
+      "class": "bg-primary block text-white pt-2 pb-2 text-center font-bold",
       href: '/concert/' + concert.slug
     }, " Details & Tickets ", 8
     /* PROPS */

@@ -8,8 +8,8 @@
             Content 
         -->
 
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 mb-4">
+        <div class="container mx-auto bg-white p-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div v-for="concert in matchedConcerts" class="bg-black">
                     <div v-if="concert.filename != null">
                         <a :href="'/concert/'+concert.slug">
@@ -23,7 +23,7 @@
                     </div>
                     <!-- Ticket Link -->
                     <div class="pt-2 pb-2">
-                        <a class="bg-primary text-white block text-center font-bold" :href="'/concert/'+concert.slug">
+                        <a class="bg-primary block text-white pt-2 pb-2 text-center font-bold" :href="'/concert/'+concert.slug">
                             Details & Tickets
                         </a>
                     </div>
