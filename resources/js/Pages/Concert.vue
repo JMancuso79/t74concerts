@@ -8,7 +8,7 @@
             Content 
         -->
         <div class="container mx-auto">
-            <div>
+            <div v-if="isLoading === false">
                 <div v-if="concert" class="bg-white p-4">
                     <div class="pb-4">
                         <a class="bg-gray-200 pt-2 pb-2 pl-4 pr-4 text-sm capitalize" href="/concerts">
@@ -132,6 +132,19 @@
                     </div>
                 </div>
             </div>
+            <!-- Loading -->
+            <div v-else class="p-4">
+                <div style="width:100%;max-width:120px;margin:0 auto;">
+                    <div class="loading">
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="black">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="text-center">
+                    Loading
+                </div> 
+            </div>
         </div>
         <Footer page="concert" />
         <!-- use the modal component, pass in the prop -->
@@ -158,15 +171,18 @@
         props: ['concert', 'slug'],
         data() {
             return {
+                isLoading: false,
                 showModal: false,
                 dateText: null,
                 isOnSale: false
             }
         },
         mounted() {
+            this.isLoading = true
             if(this.concert) {
                 this.dateText = format(parseISO(this.concert.event.date_time), 'MMMM dd, yyyy')
                 this.doTickets()
+                this.isLoading = false
             }
         },
         methods: {
