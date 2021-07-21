@@ -7,7 +7,7 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer mb-4">
+        <div class="mb-4">
             <div class="max-width mx-auto">
                 <div class="bg-black mb-4">
                     <img src="/images/joshua-tree.jpg" class="w-full" alt="John Mancuso Joshua Tree" />
