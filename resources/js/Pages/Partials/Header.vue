@@ -1,10 +1,9 @@
 <template>
-    <div>
-       
-        <div>
-            <nav class="nav-bg shadow fixed w-full">
+    <div class="bg-black">
+        <div >
+            <nav class="nav-bg shadow w-full">
                 <!-- Primary Navigation Menu -->
-                <div class="max-width mx-auto pr-4">
+                <div class="container mx-auto pr-4">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
@@ -69,7 +68,6 @@
                     <slot name="header"></slot>
                 </div>
             </header>
-
 
         </div>
     </div>

@@ -8,9 +8,9 @@
 						<div class="modal-header">
 							<slot name="header">
 								<button class="modal-default-button" @click="$emit('close')">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								 		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-									</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+</svg>
 								</button>
 
 							</slot>
@@ -30,7 +30,9 @@
 												<div class="row-span-2 col-span-2 capitalize">${{ticket.price}} {{ticket.label}}</div>
 												<div class="row-span-2 text-right">
 													<button class="pt-2 pb-2 pr-4 pl-4 text-sm bg-green text-white" @click.prevent="addItem(ticket)">
-														Select
+														<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+														  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+														</svg>
 													</button>
 												</div>
 											</div>

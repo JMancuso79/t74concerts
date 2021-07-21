@@ -7,48 +7,92 @@
         <!-- 
             Content 
         -->
-        <div class="top-spacer">
-            <div class="max-width mx-auto">
+        <div class="container mx-auto">
+            <div>
                 <div v-if="concert" class="bg-white p-4">
                     <div class="pb-4">
                         <a class="bg-gray-200 pt-2 pb-2 pl-4 pr-4 text-sm capitalize" href="/concerts">
                              back to calendar
                         </a>
                     </div>
+
+                    <!-- Image -->
                     <div v-if="concert.filename != null">
-                        <img :src="concert.filename" />
-                    </div>
-                    <!-- Date -->
-                    <div class="font-bold mt-4 text-medium">
-                        {{dateText}} 
-                    </div>
-                    <!-- Title -->
-                    <div class="font-bold pb-2 text-xl text-dark">
-                        {{concert.title}}
-                    </div>
-                    <!-- Tickets -->
-                    <div class="pb-2">
-                        <span class="font-bold text-dark">Tickets</span>
-                        <div v-if="concert.onsale === true">
-                            <div v-for="ticket in concert.tickets">
-                                <div v-if="ticket.status === 1" class="capitalize mb-1 text-medium">
-                                    ${{ticket.price}} {{ticket.label}}
+
+                        <div class="md:flex">
+                            <div class="md:flex-shrink-0">
+                                <img class="md:h-48 w-full md:h-full md:w-48" :src="concert.filename" :alt="concert.title">
+                            </div>
+                            <div class="md:pl-4">
+                                <!-- Date -->
+                                <div class="font-bold mt-4 md:mt-0 text-medium">
+                                    {{dateText}} 
+                                </div>
+                                <!-- Title -->
+                                <div class="font-bold pb-2 text-xl text-dark">
+                                    {{concert.title}}
+                                </div>
+                                <!-- Tickets -->
+                                <div>
+                                    <span class="font-bold text-dark">Tickets</span>
+                                    <div v-if="concert.onsale === true">
+                                        <div v-for="ticket in concert.tickets">
+                                            <div v-if="ticket.status === 1" class="capitalize mb-1 text-medium">
+                                                ${{ticket.price}} {{ticket.label}}
+                                            </div>
+                                        </div>
+                                        <!-- Buy Ticket -->
+                                        <div class="pb-2">
+                                            <button class="bg-primary w-full text-white pt-2 pb-2 text-center font-bold pointer" id="show-modal" @click.prevent="showModal = true">
+                                                Buy Tickets
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Off Sale -->
+                                    <div v-else>
+                                        Please buy tickets are the door. Online sales are no longer available for this concert.
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Buy Ticket -->
-                            <div class="pb-2">
-                                <button class="bg-primary w-full text-white pt-2 pb-2 text-center font-bold pointer" id="show-modal" @click.prevent="showModal = true">
-                                    Buy Tickets
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Off Sale -->
-                        <div v-else>
-                            Online sales are not available for this concert.
                         </div>
                     </div>
+                    <!-- No Image -->
+                    <div v-else>
+                        <!-- Date -->
+                        <div class="font-bold mt-4 text-medium">
+                            {{dateText}} 
+                        </div>
+                        <!-- Title -->
+                        <div class="font-bold pb-2 text-xl text-dark">
+                            {{concert.title}}
+                        </div>
+                        <!-- Tickets -->
+                        <div class="pb-2">
+                            <span class="font-bold text-dark">Tickets</span>
+                            <div v-if="concert.onsale === true">
+                                <div v-for="ticket in concert.tickets">
+                                    <div v-if="ticket.status === 1" class="capitalize mb-1 text-medium">
+                                        ${{ticket.price}} {{ticket.label}}
+                                    </div>
+                                </div>
+                                <!-- Buy Ticket -->
+                                <div class="pb-2">
+                                    <button class="bg-primary w-full text-white pt-2 pb-2 text-center font-bold pointer" id="show-modal" @click.prevent="showModal = true">
+                                        Buy Tickets
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Off Sale -->
+                            <div v-else>
+                                Please buy tickets are the door. Online sales are no longer available for this concert.
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <!-- Artists -->
-                    <div v-if="concert.artists.length > 0" class="pb-2">
+                    <div v-if="concert.artists.length > 0" class="pb-2 md:pt-4">
                         <span class="font-bold text-dark">Artists</span>
                         <div v-for="artist in concert.artists" class="text-medium">
                             {{artist.name}}
