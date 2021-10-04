@@ -7,25 +7,48 @@
         <!-- 
             Content 
         -->
-
         <div class="container mx-auto bg-white p-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
+
+                <!--<div class="flex mb-4 justify-center items-center">
+                    <div class="flex-1">
+                        <input type="text" class="form-input w-full h-8" v-model="keyword" placeholder="Enter artist">
+                    </div>
+                    <div class="flex-none">
+                        <svg v-if="keyword == null" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" @click.prevent="reset()">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div v-if="matchedArtists && matchedArtists.length > 0">
+                    <div v-for="artist in matchedArtists">
+                        {{artist.name}}
+                    </div>
+                </div>-->
+
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <div v-for="concert in matchedConcerts" class="bg-black">
+                    <div v-for="concert in matchedConcerts" class="bg-black p-2">
                         <div v-if="concert.filename != null">
                             <a :href="'/concert/'+concert.slug">
                                 <img :src="concert.filename" />
                             </a>
                         </div>
-                        <div v-if="concert.event.venue" class="pt-2">
+                        <div v-if="concert.event.date_text" class="pt-2 text-white text-center font-bold">
+                            {{concert.event.date_text}}
+                        </div>
+                        <div v-if="concert.event.venue" class="mb-2">
                             <div class="text-white text-center text-sm font-bold">
-                                {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span>
+                                 {{concert.event.venue.name}} - {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span>
                             </div>
                         </div>
                         <!-- Ticket Link -->
-                        <div class="p-2">
-                            <a class="bg-primary block text-white pt-2 pb-2 text-center font-bold" :href="'/concert/'+concert.slug">
+                        <div>
+                            <a class="bg-primary block text-white p-2 text-center font-bold" :href="'/concert/'+concert.slug">
                                 Details & Tickets
                             </a>
                         </div>
@@ -64,6 +87,8 @@
             return {
                 isLoading: false,  
                 concerts: [],
+                artists: [],
+                matchedArtists: [],
                 matchedConcerts: [],
                 keyword: null,
                 filters: []
@@ -89,6 +114,11 @@
                 });
 
             },
+            reset: function() {
+                this.keyword = null
+                this.matchedArtists = []
+                this.matchedConcerts = []
+            }
         },
         watch: {
             concerts: {
@@ -106,12 +136,35 @@
                                     }
                                 }
                             }
+                            if(this.concerts[i].artists) {
+                                for(var y=0;y<this.concerts[i].artists.length;y++) {
+                                    if(this.concerts[i].artists[y].status === 1) {
+                                        this.artists.push(this.concerts[i].artists[y])
+                                    }
+                                }
+                            } 
                             this.concerts[i].onsale = isOnSale
                             this.matchedConcerts.push(this.concerts[i])
                         }
                     }
                 },
                 deep:true
+            },
+            keyword: function() {
+
+                if(this.keyword != null && this.keyword.length >= 2) {
+                    this.matchedArtists = []
+                    if(this.artists && this.artists.length > 0) {
+
+                        let str = this.keyword.toLowerCase()
+                        for(var i=0;i<this.artists.length;i++) {
+                            let artist = this.artists[i].name.toLowerCase()
+                            if(artist.includes(str)) {
+                                this.matchedArtists.push(this.artists[i])
+                            }
+                        }
+                    }
+                }
             }
         }
     }

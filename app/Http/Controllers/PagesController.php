@@ -66,4 +66,27 @@ class PagesController extends Controller
 	    	'concert' => json_decode($response)
 	    ]);
     }
+
+    public function getPromo($slug) {
+
+    	if($slug == 'josh-heinrichs') {
+	 		$page_data = [
+				'title' => 'Tower74 | Josh Heinrichs Southern California Dates October 2021',
+				'description' => 'Tower74 has three dates with Josh Heinrichs in Southern California October 2021. Friday, October 8th is the kickoff with Eureka Sound, Rebel Shakedown, SGV Vibes, Ganda, Triple Thread and special apperance by Josh Heinrichs at DiPiazzas in Long Beach. Saturday, October 9th Josh Heinrichs headlines The Viper Room in West Hollywood. Sunday, October 10th Josh Heinrichs headlines Tiki Bar in Costa Mesa. Tickets are on sale now.',
+				'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+				'url' => 'https://tower74concerts.com/promo/'.$slug
+			];
+    	}
+
+		session([
+			'slug' => $slug,
+			'page' =>'promo',
+			'page_data' => $page_data
+		]);
+
+	    return Inertia::render('Promo', [
+	    	'slug' => $slug,
+	    	//'concert' => json_decode($response)
+	    ]);   	
+    }
 }
