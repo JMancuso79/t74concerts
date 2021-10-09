@@ -7,7 +7,19 @@
         <!-- 
             Content 
         -->
-        <div class="container mx-auto bg-white p-4">
+  <div class="bg-feat">
+    <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+        <span class="block">Josh Heinrichs</span>
+        <span class="block">@ The Viper Room Saturday, October 9th</span>
+      </h2>
+      <p class="mt-4 text-lg leading-6 text-white">Tickets are available online or at the door. Masks will be required for entry.</p>
+      <a href="/concert/josh-heinrichs-1995888229" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-primary text-white font-extrabold  sm:w-auto">
+        Tickets & Info
+      </a>
+    </div>
+  </div>
+        <div class="container mx-auto bg-white p-4 mt-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
 
@@ -49,7 +61,7 @@
                         <!-- Ticket Link -->
                         <div>
                             <a class="bg-primary block text-white p-2 text-center font-bold" :href="'/concert/'+concert.slug">
-                                Details & Tickets
+                                Tickets & Info
                             </a>
                         </div>
                     </div>
@@ -169,3 +181,9 @@
         }
     }
 </script>
+
+<style>
+.bg-feat {
+    background: #202020;
+}
+</style>

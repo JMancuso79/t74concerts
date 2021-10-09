@@ -9,7 +9,7 @@
         -->
         <div class="top-spacer mb-4">
             <div class="max-width mx-auto">
-
+                
                 <div v-for="concert in matchedConcerts" class="bg-gray-200 m-4 p-4">
 
                     <div v-if="concert.filename != null">
