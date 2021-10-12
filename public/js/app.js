@@ -48402,7 +48402,7 @@ var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-feat\"><div class=\"max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8\"><h2 class=\"text-3xl font-extrabold text-black sm:text-4xl\"><span class=\"block\">Crazy Town &amp; Green Jelly</span><span class=\"block\">@ Tiki Bar Saturday, November 27th</span></h2><p class=\"mt-4 text-lg leading-6 text-black\">Tickets on sale soon.</p><!--&lt;a href=&quot;/concert/josh-heinrichs-2074377681&quot; class=&quot;mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-primary text-white font-extrabold  sm:w-auto&quot;&gt;\n        Tickets &amp; Info\n      &lt;/a&gt;--></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-primary\"><div class=\"max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8\"><h2 class=\"text-3xl font-extrabold text-white sm:text-4xl\"><span class=\"block\">Crazy Town &amp; Green Jelly</span><span class=\"block\">@ Tiki Bar Saturday, November 27th</span></h2><p class=\"mt-4 text-lg leading-6 text-white\">Tickets on sale soon.</p><!--&lt;a href=&quot;/concert/josh-heinrichs-2074377681&quot; class=&quot;mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-primary text-white font-extrabold  sm:w-auto&quot;&gt;\n        Tickets &amp; Info\n      &lt;/a&gt;--></div></div>", 1);
 
 var _hoisted_3 = {
   "class": "container mx-auto bg-white p-4 mt-4"
