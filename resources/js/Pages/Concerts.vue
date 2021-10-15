@@ -7,19 +7,19 @@
         <!-- 
             Content 
         -->
-  <div class="bg-primary">
+ <!-- <div class="bg-primary">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
         <span class="block">Crazy Town & Green Jelly</span>
         <span class="block">@ Tiki Bar Saturday, November 27th</span>
       </h2>
       <p class="mt-4 text-lg leading-6 text-white">Tickets on sale soon.</p>
-      <!--<a href="/concert/josh-heinrichs-2074377681" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-primary text-white font-extrabold  sm:w-auto">
+      <a href="/concert/josh-heinrichs-2074377681" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-primary text-white font-extrabold  sm:w-auto">
         Tickets & Info
-      </a>-->
+      </a>
     </div>
 
-  </div>
+  </div>-->
         <div class="container mx-auto bg-white p-4 mt-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
