@@ -5,21 +5,21 @@
         -->
         <Header />
         <!-- 
-            Content 
+            Content--> 
         
  <div class="bg-primary">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        <span class="block">The Heroine</span>
-        <span class="block">@ DiPiazza's Friday, October 22nd</span>
+        <span class="block">Scott Russo the Voice of Unwritten Law</span>
+        <span class="block">@ The Viper Room Sunday, October 24th</span>
       </h2>
       <p class="mt-4 text-lg leading-6 text-white">Tickets are available online or at the door.</p>
-      <a href="/concert/the-heroine-280909685" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-white text-black font-extrabold  sm:w-auto">
+      <a href="https://tower74concerts.com/concert/scott-russo-the-voice-of-unwritten-law-acoustic-performance-1601652486" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3  text-base    bg-white text-black font-extrabold  sm:w-auto">
         Tickets & Info
       </a>
     </div>
 
-  </div>-->
+  </div>
         <div class="container mx-auto bg-white p-4 mt-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
