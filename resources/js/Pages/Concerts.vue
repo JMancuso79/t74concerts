@@ -5,7 +5,7 @@
         -->
         <Header />
         <!-- 
-            Content--> 
+            Content
         
  <div class="bg-primary">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@
       </a>
     </div>
 
-  </div>
+  </div>--> 
         <div class="container mx-auto bg-white p-4 mt-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
