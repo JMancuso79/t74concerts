@@ -6,20 +6,20 @@
         <Header />
         <!-- 
             Content
-       
+       -->
  <div class="bg-primary">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        <span class="block">Adema</span>
-        <span class="block">@ Tiki Bar, November 5th</span>
+        <span class="block">Julien-k</span>
+        <span class="block">@ Tiki Bar, November 12th</span>
       </h2>
       <p class="mt-4 text-lg leading-6 text-white">Tickets are available online or at the door.</p>
-      <a href="https://tower74concerts.com/concert/adema-1640604552" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold  sm:w-auto">
+      <a href="https://tower74concerts.com/concert/julien-k-103418981" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold  sm:w-auto">
         Tickets & Info
       </a>
     </div>
 
-  </div> -->
+  </div> 
         <div class="container mx-auto bg-white p-4 mt-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
