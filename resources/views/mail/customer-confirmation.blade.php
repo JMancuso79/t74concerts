@@ -65,7 +65,7 @@
         <div class="bg-white p-5">
             <h3 class="text-capitalize">Contact</h3>
             <p>
-                If you need to reach Tower74, please do not reply to this email. <a href="https://tower74concerts.com/contact">Click here to email</a> or text 949 205 9629. 
+                If you need to reach Tower74, please do not reply to this email. <a href="https://tower74concerts.com/contact">Click here to email</a>. 
             </p>
         </div>
         <!-- Website -->

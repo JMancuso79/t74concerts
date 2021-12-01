@@ -18,7 +18,7 @@
         <div>
             <p>Your information has been received and we will be in touch shortly.</p>
             <p>
-                If you need to reach Tower74, please do not reply to this email. <a href="https://tower74concerts.com/contact">Click here to email</a> or text 949 205 9629. 
+                If you need to reach Tower74, please do not reply to this email. <a href="https://tower74concerts.com/contact">Click here to email</a>. 
             </p>
         </div>
         <!-- Website -->

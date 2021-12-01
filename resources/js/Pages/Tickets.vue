@@ -184,7 +184,7 @@
                                             <div class="pb-4">
                                                 <h3 class="text-lg font-bold text-gray-900">Contact</h3>
                                                 <p>
-                                                    If you have questions or need to reach Tower74 please <a class="font-bold" href="/contact">click here to email</a> or text 949 205 9629. 
+                                                    If you have questions or need to reach Tower74 please <a class="font-bold" href="/contact">click here to email</a>. 
                                                 </p>
                                             </div>
                                         </div>
