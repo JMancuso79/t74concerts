@@ -6,20 +6,20 @@
         <Header />
         <!-- 
             Content
-       
+       -->
  <div class="bg-primary">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        <span class="block">Tower74 Rock & Metal Fest</span>
-        <span class="block">@ Tiki Bar, November 27th</span>
+        <span class="block">Nick Sefakis & Eureka Sound</span>
+        <span class="block">@ Tiki Bar, December 3rd</span>
       </h2>
       <p class="mt-4 text-lg leading-6 text-white">Tickets available online or at the door.</p>
-      <a href="https://tower74concerts.com/concert/tower74-rock-metalfest-562941957" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold  sm:w-auto">
+      <a href="https://tower74concerts.com/concert/nick-sefakis-weureka-sound-2131032795" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold  sm:w-auto">
         Tickets & Info
       </a>
     </div>
 
-  </div> -->
+  </div> 
         <div class="container mx-auto bg-white p-4 mt-4">
             <!-- Not Loading -->
             <div v-if="isLoading === false">
