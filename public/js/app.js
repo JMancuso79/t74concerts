@@ -48401,75 +48401,72 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "feat-bg bottom-spacer"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-primary\"><div class=\"max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8\"><h2 class=\"text-3xl font-extrabold text-white sm:text-4xl\"><span class=\"block\">Nick Sefakis &amp; Eureka Sound</span><span class=\"block\">@ Tiki Bar, December 3rd</span></h2><p class=\"mt-4 text-lg leading-6 text-white\">Tickets available online or at the door.</p><a href=\"https://tower74concerts.com/concert/nick-sefakis-weureka-sound-2131032795\" class=\"mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold sm:w-auto\"> Tickets &amp; Info </a></div></div>", 1);
-
-var _hoisted_3 = {
+var _hoisted_2 = {
   "class": "container mx-auto bg-white p-4 mt-4"
 };
-var _hoisted_4 = {
+var _hoisted_3 = {
   key: 0
 };
-var _hoisted_5 = {
+var _hoisted_4 = {
   "class": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
 };
-var _hoisted_6 = {
+var _hoisted_5 = {
   "class": "bg-black p-2"
 };
-var _hoisted_7 = {
+var _hoisted_6 = {
   key: 0
 };
-var _hoisted_8 = ["href"];
-var _hoisted_9 = ["src"];
-var _hoisted_10 = {
+var _hoisted_7 = ["href"];
+var _hoisted_8 = ["src"];
+var _hoisted_9 = {
   key: 1,
   "class": "pt-2 text-white text-center font-bold"
 };
-var _hoisted_11 = {
+var _hoisted_10 = {
   key: 2,
   "class": "mb-2"
 };
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "text-white text-center text-sm font-bold"
 };
-var _hoisted_13 = {
+var _hoisted_12 = {
   "class": "uppercase"
 };
-var _hoisted_14 = ["href"];
+var _hoisted_13 = ["href"];
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"p-4\"><div style=\"width:100%;max-width:120px;margin:0 auto;\"><div class=\"loading\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"black\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1\" d=\"M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z\"></path></svg></div></div><div class=\"text-center\"> Loading </div></div>", 1);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"p-4\"><div style=\"width:100%;max-width:120px;margin:0 auto;\"><div class=\"loading\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"black\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1\" d=\"M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z\"></path></svg></div></div><div class=\"text-center\"> Loading </div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
 
   var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content\n       "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not Loading "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"flex mb-4 justify-center items-center\">\n                    <div class=\"flex-1\">\n                        <input type=\"text\" class=\"form-input w-full h-8\" v-model=\"keyword\" placeholder=\"Enter artist\">\n                    </div>\n                    <div class=\"flex-none\">\n                        <svg v-if=\"keyword == null\" xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z\" />\n                        </svg>\n                        <svg v-else xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" @click.prevent=\"reset()\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" />\n                        </svg>\n                    </div>\n                </div>\n\n                <div v-if=\"matchedArtists && matchedArtists.length > 0\">\n                    <div v-for=\"artist in matchedArtists\">\n                        {{artist.name}}\n                    </div>\n                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.matchedConcerts, function (concert) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [concert.filename != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Header\n        "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n            Content\n       \n <div class=\"bg-primary\">\n    <div class=\"max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8\">\n      <h2 class=\"text-3xl font-extrabold text-white sm:text-4xl\">\n        <span class=\"block\">Nick Sefakis & Eureka Sound</span>\n        <span class=\"block\">@ Tiki Bar, December 3rd</span>\n      </h2>\n      <p class=\"mt-4 text-lg leading-6 text-white\">Tickets available online or at the door.</p>\n      <a href=\"https://tower74concerts.com/concert/nick-sefakis-weureka-sound-2131032795\" class=\"mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold  sm:w-auto\">\n        Tickets & Info\n      </a>\n    </div>\n\n  </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Not Loading "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"flex mb-4 justify-center items-center\">\n                    <div class=\"flex-1\">\n                        <input type=\"text\" class=\"form-input w-full h-8\" v-model=\"keyword\" placeholder=\"Enter artist\">\n                    </div>\n                    <div class=\"flex-none\">\n                        <svg v-if=\"keyword == null\" xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z\" />\n                        </svg>\n                        <svg v-else xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" @click.prevent=\"reset()\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" />\n                        </svg>\n                    </div>\n                </div>\n\n                <div v-if=\"matchedArtists && matchedArtists.length > 0\">\n                    <div v-for=\"artist in matchedArtists\">\n                        {{artist.name}}\n                    </div>\n                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.matchedConcerts, function (concert) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [concert.filename != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: '/concert/' + concert.slug
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       src: concert.filename
     }, null, 8
     /* PROPS */
-    , _hoisted_9)], 8
+    , _hoisted_8)], 8
     /* PROPS */
-    , _hoisted_8)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), concert.event.date_text ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.date_text), 1
+    , _hoisted_7)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), concert.event.date_text ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.date_text), 1
     /* TEXT */
-    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), concert.event.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.name) + " - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.city) + ", ", 1
+    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), concert.event.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.name) + " - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.city) + ", ", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.state), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.state), 1
     /* TEXT */
     )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ticket Link "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       "class": "bg-primary block text-white p-2 text-center font-bold",
       href: '/concert/' + concert.slug
     }, " Tickets & Info ", 8
     /* PROPS */
-    , _hoisted_14)])]);
+    , _hoisted_13)])]);
   }), 256
   /* UNKEYED_FRAGMENT */
   ))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_15], 2112
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Loading "), _hoisted_14], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer, {
     page: "concerts"
