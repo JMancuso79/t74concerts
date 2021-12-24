@@ -89,6 +89,7 @@
                                         {{genre.name}}
                                     </div>
                                 </div>
+                                <div id="buy-tickets"></div>
                             </div>
                         </div>
                     </div>
@@ -97,7 +98,7 @@
           </div>
         </main>
         <aside class="md:block lg:col-span-4">
-          <div id="buy-tickets" class="sticky top-4 space-y-4">
+          <div class="sticky top-4 space-y-4">
             <!-- 
               Right Col Here
             -->

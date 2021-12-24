@@ -128,7 +128,7 @@
 	                            </div>
 	                            <!-- Group -->
 	                            <div class="w-full pb-2">
-	                                <input type="text" class="form-input w-full" v-model="email" placeholder="email*">
+	                                <input type="text" required class="form-input w-full" v-model="email" placeholder="email*">
 	                                <p class="text-sm mt-2 text-medium">*We only use your email to contact you about your order.</p>
 	                            </div>
 		                        <button v-if="contactFormValidated === true" class="bg-primary text-white pt-2 pb-2 w-full font-bold" @click.prevent="step = 3">
@@ -141,7 +141,12 @@
 							-->
 							<div v-if="step === 3">
 	                            <p class="font-bold text-dark mb-2">Payment Information</p>
-	                            <p class="text-sm mb-2 text-medium">Your payment is processed securely through Stripe. Your card details are never stored on our servers.</p>
+	                            <div class="flex mb-2 text-green-600">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+									  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+									</svg>
+	                            	<span class="text-sm">Your payment is processed securely through Stripe.</span>
+	                            </div>
 	                            <p v-if="errCode" class="mb-4 pb-2 text-xl" style="border-bottom:2px solid #eeeeee;">
 	                                <span v-if="errCode == 'success'" class="text-success">{{errMsg}}</span>
 	                                <span v-else class="text-danger">{{errMsg}}</span>

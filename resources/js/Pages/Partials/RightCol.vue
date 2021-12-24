@@ -2,8 +2,10 @@
   <div>
     <section aria-labelledby="who-to-follow-heading" class="mb-4">
       <div class="bg-white rounded-lg shadow">
+
         <div class="p-6">
-          <h2 id="who-to-follow-heading" class="text-base font-medium text-gray-900">
+          <img src="/images/tower74.jpg" style="width:100%!important;" />
+          <h2 id="who-to-follow-heading" class="mt-2 text-base font-medium text-gray-900">
             Tower 74 Agency
           </h2>
 
