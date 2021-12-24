@@ -3,7 +3,7 @@
         <div class="container mx-auto">
             <div class="mx-auto pt-4" style="max-width:220px;">
                 <a href="/">
-                    <img src="/images/tower74-black-logo.jpg" />
+                    <img src="/images/logo-stroke-red.png" />
                 </a>
             </div>
         </div>

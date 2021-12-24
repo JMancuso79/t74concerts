@@ -1,172 +1,126 @@
 <template>
-    <div class="feat-bg bottom-spacer">
-        <!-- 
-            Header
-        -->
-        <Header />
-        <!-- 
-            Content 
-        -->
-        <div class="container mx-auto">
-            <div v-if="isLoading === false">
-                <div v-if="concert" class="bg-white p-4">
-                    <div class="pb-4">
-                        <a class="bg-gray-200 pt-2 pb-2 pl-4 pr-4 text-sm capitalize" href="/concerts">
-                             back to calendar
-                        </a>
-                    </div>
+  <div class="min-h-full">
 
-                    <!-- Image -->
-                    <div v-if="concert.filename != null">
+    <!-- 
+      Top Nav Here
+    -->
+    <Header />
 
-                        <div class="md:flex">
-                            <div class="md:flex-shrink-0">
-                                <img class="md:h-48 w-full md:h-full md:w-48" :src="concert.filename" :alt="concert.title">
-                            </div>
-                            <div class="md:pl-4">
-                                <!-- Date -->
-                                <div class="font-bold mt-4 md:mt-0 text-medium">
-                                    {{dateText}} 
-                                </div>
-                                <!-- Title -->
-                                <div class="font-bold pb-2 text-xl text-dark">
-                                    {{concert.title}}
-                                </div>
-                                <!-- Tickets -->
-                                <div>
-                                    <span class="font-bold text-dark">Tickets</span>
-                                    <div v-if="concert.onsale === true">
-                                        <div v-for="ticket in concert.tickets">
-                                            <div v-if="ticket.status === 1" class="capitalize mb-1 text-medium">
-                                                ${{ticket.price}} {{ticket.label}}
-                                            </div>
-                                        </div>
-                                        <!-- Buy Ticket -->
-                                        <div class="pb-2">
-                                            <button class="bg-primary w-full text-white pt-2 pb-2 text-center font-bold pointer" id="show-modal" @click.prevent="showModal = true">
-                                                Buy Tickets
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <!-- Off Sale -->
-                                    <div v-else>
-                                        Please buy tickets are the door. Online sales are no longer available for this concert.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- No Image -->
-                    <div v-else>
-                        <!-- Date -->
-                        <div class="font-bold mt-4 text-medium">
-                            {{dateText}} 
-                        </div>
-                        <!-- Title -->
-                        <div class="font-bold pb-2 text-xl text-dark">
-                            {{concert.title}}
-                        </div>
-                        <!-- Tickets -->
-                        <div class="pb-2">
-                            <span class="font-bold text-dark">Tickets</span>
-                            <div v-if="concert.onsale === true">
-                                <div v-for="ticket in concert.tickets">
-                                    <div v-if="ticket.status === 1" class="capitalize mb-1 text-medium">
-                                        ${{ticket.price}} {{ticket.label}}
-                                    </div>
-                                </div>
-                                <!-- Buy Ticket -->
-                                <div class="pb-2">
-                                    <button class="bg-primary w-full text-white pt-2 pb-2 text-center font-bold pointer" id="show-modal" @click.prevent="showModal = true">
-                                        Buy Tickets
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- Off Sale -->
-                            <div v-else>
-                                Please buy tickets are the door. Online sales are no longer available for this concert.
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- Artists -->
-                    <div v-if="concert.artists.length > 0" class="pb-2 md:pt-4">
-                        <span class="font-bold text-dark">Artists</span>
-                        <div v-for="artist in concert.artists" class="text-medium">
-                            {{artist.name}}
-                            <div v-if="artist.image">
-                                <!--<img :src="artist.image" />-->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Details -->
-                    <div v-if="concert.body != null && concert.body != ''" class="pb-2">
-                        <div class="font-bold text-dark">Details</div> 
-                        <div class="text-medium">
-                            {{concert.body}}
-                        </div>
-                    </div>
-                    <!-- Venue -->
-                    <div v-if="concert.event.venue" class="pb-2">
-                        <span class="font-bold text-dark">Venue</span> 
-                        <div v-if="concert.event.venue.image">
-                            <!--<img :src="concert.event.venue.image" />-->
-                        </div>
-                        <div class="text-medium">
-                            {{concert.event.venue.name}}
-                        </div>
-                        <div class="text-medium">
-                            {{concert.event.venue.street_address}}
-                        </div>
-                        <div class="text-medium">
-                            {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span> {{concert.event.venue.zip_code}}
-                        </div>
-                    </div>
-                    <!-- Genres -->
-                    <div v-if="concert.genres">
-                        <div class="chip-medium text-sm mr-1 mb-1 inline-block" v-for="genre in concert.genres">
-                            {{genre.name}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Loading -->
-            <div v-else class="p-4">
-                <div style="width:100%;max-width:120px;margin:0 auto;">
-                    <div class="loading">
-                        <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="black">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="text-center">
-                    Loading
-                </div> 
-            </div>
+    <div v-if="concert" class="py-10">
+      <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <div class="pl-4 pr-4 mb-4 md:pl-0 md:pr-0 md:block lg:col-span-3">
+          <!-- 
+            Side Nav Here
+          -->
+          <img class="h-18 w-18 rounded-md" :src="concert.filename" alt="" />
         </div>
-        <Footer page="concert" />
-        <!-- use the modal component, pass in the prop -->
-        <PaymentWrapper :concert="concert" v-if="showModal" @close="showModal = false">
-            <!--
-            you can use custom content here to overwrite
-            default content
+        <main class="lg:col-span-5">
+          <div>
+            <div class="artist-list">
+                <div class="">
+
+                    <div>
+                        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
+                            <!-- Date -->
+                            <div class="font-bold text-medium">
+                                {{dateText}} 
+                            </div>
+                            <!-- Title -->
+                            <div class="font-bold pb-2 text-xl text-dark">
+                                {{concert.title}}
+                            </div>
+                            <!-- Tickets -->
+                            <div class="pb-2">
+                                <span class="font-bold text-dark">Tickets</span>
+                                <div v-if="concert.onsale === true">
+                                    <div v-for="ticket in concert.tickets">
+                                        <div v-if="ticket.status === 1" class="capitalize mb-2 text-medium">
+                                            ${{ticket.price}} {{ticket.label}}<br>
+
+                                        </div>
+                                    </div>
+                                    <!-- Buy Ticket -->
+                                    <div class="block lg:hidden mb-4">
+                                        <a href="#buy-tickets" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            Buy Tickets
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Off Sale -->
+                                <div v-else>
+                                    Please buy tickets are the door. Online sales are no longer available for this concert.
+                                </div>
+                                <!-- Artists -->
+                                <div v-if="concert.artists.length > 0" class="pb-2 md:pt-4">
+                                    <span class="font-bold text-dark">Artists</span>
+                                    <div v-for="artist in concert.artists" class="text-medium">
+                                        {{artist.name}}
+                                        <div v-if="artist.image">
+                                            <!--<img :src="artist.image" />-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Details -->
+                                <div v-if="concert.body != null && concert.body != ''" class="pb-2">
+                                    <div class="font-bold text-dark">Details</div> 
+                                    <div class="text-medium">
+                                        {{concert.body}}
+                                    </div>
+                                </div>
+                                <!-- Venue -->
+                                <div v-if="concert.event.venue" class="pb-2">
+                                    <span class="font-bold text-dark">Venue</span> 
+                                    <div v-if="concert.event.venue.image">
+                                        <!--<img :src="concert.event.venue.image" />-->
+                                    </div>
+                                    <div class="text-medium">
+                                        {{concert.event.venue.name}}
+                                    </div>
+                                    <div class="text-medium">
+                                        {{concert.event.venue.street_address}}
+                                    </div>
+                                    <div class="text-medium">
+                                        {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span> {{concert.event.venue.zip_code}}
+                                    </div>
+                                </div>
+                                <!-- Genres -->
+                                <div v-if="concert.genres">
+                                    <div class="chip-medium text-sm mr-1 mb-1 inline-block" v-for="genre in concert.genres">
+                                        {{genre.name}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </main>
+        <aside class="md:block lg:col-span-4">
+          <div id="buy-tickets" class="sticky top-4 space-y-4">
+            <!-- 
+              Right Col Here
             -->
-            <h3 slot="header">custom header</h3>
-        </PaymentWrapper>
+            <PaymentWrapper :concert="concert" />
+          </div>
+        </aside>
+      </div>
     </div>
+
+  </div>
+
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
     import Footer from '@/Pages/Partials/Footer'
+    import RightCol from '@/Pages/Partials/RightCol'
     import PaymentWrapper from '@/Pages/Partials/PaymentWrapper'
     import { parseISO, format } from 'date-fns'
 
     export default {
         components: {
-            Header, Footer, PaymentWrapper
+            Header, Footer, PaymentWrapper, RightCol
         },
         props: ['concert', 'slug'],
         data() {

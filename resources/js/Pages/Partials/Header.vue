@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-black">
+    <div class="bg-gray-800 shadow">
         <div >
-            <nav class="nav-bg shadow w-full">
+            <nav class="w-full">
                 <!-- Primary Navigation Menu -->
                 <div class="container mx-auto pr-4">
                     <div class="flex justify-between h-16">
@@ -9,7 +9,7 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <inertia-link href="/">
-                                    <img src="/images/tower74-trans.png" class="block w-auto" style="height:4.5rem;" />
+                                    <img src="/images/t74-white-wp.png" class="block w-auto pl-4" style="height:4.5rem;" />
                                 </inertia-link>
                             </div>
 
@@ -17,9 +17,6 @@
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-white">
                                 <jet-nav-link href="/">
                                     Concerts
-                                </jet-nav-link>
-                                <jet-nav-link href="/about">
-                                    About
                                 </jet-nav-link>
                                 <jet-nav-link href="/booking">
                                     Booking
@@ -48,9 +45,6 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <jet-responsive-nav-link href="/">
                             Concerts
-                        </jet-responsive-nav-link>
-                        <jet-responsive-nav-link href="/about">
-                            About
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link href="/booking">
                             Booking

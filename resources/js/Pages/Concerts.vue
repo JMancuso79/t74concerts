@@ -1,100 +1,130 @@
 <template>
-    <div class="feat-bg bottom-spacer">
-        <!-- 
-            Header
-        -->
-        <Header />
-        <!-- 
-            Content
-       
- <div class="bg-primary">
-    <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        <span class="block">Nick Sefakis & Eureka Sound</span>
-        <span class="block">@ Tiki Bar, December 3rd</span>
-      </h2>
-      <p class="mt-4 text-lg leading-6 text-white">Tickets available online or at the door.</p>
-      <a href="https://tower74concerts.com/concert/nick-sefakis-weureka-sound-2131032795" class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 text-base bg-white text-black font-extrabold  sm:w-auto">
-        Tickets & Info
-      </a>
-    </div>
+  <div class="min-h-full">
 
-  </div> -->
-        <div class="container mx-auto bg-white p-4 mt-4">
-            <!-- Not Loading -->
-            <div v-if="isLoading === false">
+    <!-- 
+      Top Nav Here
+    -->
+    <Header />
 
-                <!--<div class="flex mb-4 justify-center items-center">
-                    <div class="flex-1">
-                        <input type="text" class="form-input w-full h-8" v-model="keyword" placeholder="Enter artist">
-                    </div>
-                    <div class="flex-none">
-                        <svg v-if="keyword == null" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" @click.prevent="reset()">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </div>
-                </div>
+    <div class="py-10">
+      <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
+          <!-- 
+            Side Nav Here
+          -->
+          <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
+            <div class="pb-8 space-y-1">
+              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-600 hover:bg-gray-50', 'group flex items-center px-3 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
+                <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'flex-shrink-0 -ml-1 mr-3 h-6 w-6']" aria-hidden="true" />
+                <span class="truncate">
+                  {{ item.name }}
+                </span>
+              </a>
+            </div>
+            <!--<div class="pt-10">
+              <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="communities-headline">
+                Explore
+              </p>
+              <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
+                <a v-for="community in communities" :key="community.name" :href="community.href" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                  <span class="truncate">
+                    {{ community.name }}
+                  </span>
+                </a>
+              </div>
+            </div>-->
+          </nav>
+        </div>
+        <main class="lg:col-span-9 xl:col-span-6">
+          <div>
+            <div class="artist-list">
+                <div class="">
 
-                <div v-if="matchedArtists && matchedArtists.length > 0">
-                    <div v-for="artist in matchedArtists">
-                        {{artist.name}}
-                    </div>
-                </div>-->
+                    <div class="">
+                        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                            <div class="mb-6">
+                                <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
+                                    Upcoming Concerts
+                                </h2>
+                            </div>
+                            <div v-if="concerts && concerts.length">
+                                <ul role="list" class="-my-5 divide-y divide-gray-200">
+                                    <li v-for="concert in concerts" :key="concert.id" class="py-4">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <img class="h-14 w-14 rounded-md" :src="concert.filename" alt="" />
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm text-gray-900">
+                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-white">
+                                                        {{ concert.event.date_text }}
+                                                    </span>
+                                                </p>
+                                                <h4 v-if="concert.event.venue" class="text-gray-800">
+                                                    {{ concert.event.venue.name }} {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
+                                                </h4>
+                                                <p class="text-sm text-gray-800">{{ concert.title }}</p>
+                                            </div>
+                                            <div>
+                                                <a :href="'/concert/'+concert.slug" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                                                    Tickets
+                                                </a>
+                                            </div>
+                                        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <div v-for="concert in matchedConcerts" class="bg-black p-2">
-                        <div v-if="concert.filename != null">
-                            <a :href="'/concert/'+concert.slug">
-                                <img :src="concert.filename" />
-                            </a>
-                        </div>
-                        <div v-if="concert.event.date_text" class="pt-2 text-white text-center font-bold">
-                            {{concert.event.date_text}}
-                        </div>
-                        <div v-if="concert.event.venue" class="mb-2">
-                            <div class="text-white text-center text-sm font-bold">
-                                 {{concert.event.venue.name}} - {{concert.event.venue.city}}, <span class="uppercase">{{concert.event.venue.state}}</span>
+
+
+                           
+                                    </li>
+                                </ul>
+                            </div> 
+                            <div v-else>
+                                There are currently no concerts.
                             </div>
                         </div>
-                        <!-- Ticket Link -->
-                        <div>
-                            <a class="bg-primary block text-white p-2 text-center font-bold" :href="'/concert/'+concert.slug">
-                                Tickets & Info
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Loading -->
-            <div v-else class="p-4">
-                <div style="width:100%;max-width:120px;margin:0 auto;">
-                    <div class="loading">
-                        <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="black">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="text-center">
-                    Loading
-                </div> 
-            </div>
-        </div>
-      
-        <Footer page="concerts" />
+          </div>
+        </main>
+        <aside class="hidden xl:block xl:col-span-4">
+          <div class="sticky top-4 space-y-4">
+            <!-- 
+              Right Col Here
+            -->
+            <RightCol />
+          </div>
+        </aside>
+      </div>
     </div>
+  </div>
+
 </template>
 
 <script>
     import Header from '@/Pages/Partials/Header'
     import Footer from '@/Pages/Partials/Footer'
+    import RightCol from '@/Pages/Partials/RightCol'
     import { parseISO, format } from 'date-fns'
+    import { TicketIcon, HomeIcon, MailIcon, CalendarIcon } from '@heroicons/vue/outline'
 
+    const navigation = [
+      { name: 'Home', href: '/', icon: HomeIcon, current: true },
+      { name: 'Concerts', href: '/', icon: TicketIcon, current: false },
+      { name: 'Booking', href: '/booking', icon: CalendarIcon, current: false },
+      { name: 'Contact', href: '/contact', icon: MailIcon, current: false },
+    ]
+
+    const communities = []
     export default {
         components: {
-            Header, Footer
+            Header, 
+            Footer,
+            TicketIcon, 
+            HomeIcon, 
+            MailIcon,
+            CalendarIcon,
+            RightCol
         },
         data() {
             return {
@@ -109,6 +139,12 @@
         },
         mounted() {
             this.getConcerts()
+        },
+        setup() {
+            return {
+      navigation,
+      communities,
+            }
         },
         methods: {
             getConcerts: function() {
