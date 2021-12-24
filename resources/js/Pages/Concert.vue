@@ -102,6 +102,7 @@
               Right Col Here
             -->
             <PaymentWrapper :concert="concert" />
+            <RightCol />
           </div>
         </aside>
       </div>
