@@ -41,6 +41,23 @@
                 <div class="">
 
                     <div class="">
+                        <!-- Feature -->
+                        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
+                            <a href="https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544">
+                                <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/61ae48f1a800e.jpeg" class="w-full" />
+                            </a>
+                            <div class="bg-white pt-4">
+                                <a href="https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544">
+                                    <h3 class="text-lg leading-6 font-bold text-blue-900">Gary Dread & Rick Haze</h3>
+                                </a>
+                                <p class="text-gray-900">Tickets are available online or at the door for $20.</p>
+                            </div>
+                            <p>
+                                <a href="https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544" class="mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900">
+                                    Buy Tickets
+                                </a>
+                            </p>
+                        </div>
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                             <div class="mb-6">
                                 <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
