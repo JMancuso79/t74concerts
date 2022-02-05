@@ -58,46 +58,51 @@
                                 </a>
                             </p>
                         </div> -->
-                        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                            <div class="mb-6">
-                                <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
-                                    Upcoming Concerts
-                                </h2>
+                        <div v-if="isLoading === false">
+                            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                                <div class="mb-6">
+                                    <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
+                                        Upcoming Concerts
+                                    </h2>
+                                </div>
+                                <div v-if="concerts && concerts.length">
+                                    <ul role="list" class="-my-5 divide-y divide-gray-200">
+                                        <li v-for="concert in concerts" :key="concert.id" class="py-4">
+                                            <div class="flex items-center space-x-4">
+                                                <div class="flex-shrink-0">
+                                                    <img class="h-14 w-14 rounded-md" :src="concert.filename" alt="" />
+                                                </div>
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-sm text-gray-900">
+                                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-white">
+                                                            {{ concert.event.date_text }}
+                                                        </span>
+                                                    </p>
+                                                    <h4 v-if="concert.event.venue" class="text-gray-800">
+                                                        {{ concert.event.venue.name }} {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
+                                                    </h4>
+                                                    <p class="text-sm text-gray-800">{{ concert.title }}</p>
+                                                </div>
+                                                <div>
+                                                    <a :href="'/concert/'+concert.slug" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                                                        Tickets
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+
+                               
+                                        </li>
+                                    </ul>
+                                </div> 
+                                <div v-else>
+                                    There are currently no concerts.
+                                </div>
                             </div>
-                            <div v-if="concerts && concerts.length">
-                                <ul role="list" class="-my-5 divide-y divide-gray-200">
-                                    <li v-for="concert in concerts" :key="concert.id" class="py-4">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-14 w-14 rounded-md" :src="concert.filename" alt="" />
-                                            </div>
-                                            <div class="flex-1 min-w-0">
-                                                <p class="text-sm text-gray-900">
-                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-white">
-                                                        {{ concert.event.date_text }}
-                                                    </span>
-                                                </p>
-                                                <h4 v-if="concert.event.venue" class="text-gray-800">
-                                                    {{ concert.event.venue.name }} {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
-                                                </h4>
-                                                <p class="text-sm text-gray-800">{{ concert.title }}</p>
-                                            </div>
-                                            <div>
-                                                <a :href="'/concert/'+concert.slug" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-                                                    Tickets
-                                                </a>
-                                            </div>
-                                        </div>
-
-
-
-                           
-                                    </li>
-                                </ul>
-                            </div> 
-                            <div v-else>
-                                There are currently no concerts.
-                            </div>
+                        </div>
+                        <div v-else>
+                            Loading...
                         </div>
                     </div>
                 </div>

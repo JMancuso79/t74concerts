@@ -47659,10 +47659,13 @@ var _hoisted_12 = {
   "class": ""
 };
 var _hoisted_13 = {
+  key: 0
+};
+var _hoisted_14 = {
   "class": "bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mb-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   id: "create-artist-heading",
@@ -47671,47 +47674,50 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_15 = {
+var _hoisted_16 = {
   key: 0
 };
-var _hoisted_16 = {
+var _hoisted_17 = {
   role: "list",
   "class": "-my-5 divide-y divide-gray-200"
 };
-var _hoisted_17 = {
+var _hoisted_18 = {
   "class": "flex items-center space-x-4"
 };
-var _hoisted_18 = {
+var _hoisted_19 = {
   "class": "flex-shrink-0"
 };
-var _hoisted_19 = ["src"];
-var _hoisted_20 = {
+var _hoisted_20 = ["src"];
+var _hoisted_21 = {
   "class": "flex-1 min-w-0"
 };
-var _hoisted_21 = {
+var _hoisted_22 = {
   "class": "text-sm text-gray-900"
 };
-var _hoisted_22 = {
+var _hoisted_23 = {
   "class": "inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-gray-800 text-white"
 };
-var _hoisted_23 = {
+var _hoisted_24 = {
   key: 0,
   "class": "text-gray-800"
 };
-var _hoisted_24 = {
+var _hoisted_25 = {
   "class": "uppercase"
 };
-var _hoisted_25 = {
+var _hoisted_26 = {
   "class": "text-sm text-gray-800"
 };
-var _hoisted_26 = ["href"];
-var _hoisted_27 = {
+var _hoisted_27 = ["href"];
+var _hoisted_28 = {
   key: 1
 };
-var _hoisted_28 = {
+var _hoisted_29 = {
+  key: 1
+};
+var _hoisted_30 = {
   "class": "hidden xl:block xl:col-span-4"
 };
-var _hoisted_29 = {
+var _hoisted_31 = {
   "class": "sticky top-4 space-y-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -47737,33 +47743,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_7);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"pt-10\">\n              <p class=\"px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider\" id=\"communities-headline\">\n                Explore\n              </p>\n              <div class=\"mt-3 space-y-2\" aria-labelledby=\"communities-headline\">\n                <a v-for=\"community in communities\" :key=\"community.name\" :href=\"community.href\" class=\"group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50\">\n                  <span class=\"truncate\">\n                    {{ community.name }}\n                  </span>\n                </a>\n              </div>\n            </div>")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Feature\n                        <div class=\"bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6\">\n                            <a href=\"https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544\">\n                                <img src=\"https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/61ae48f1a800e.jpeg\" class=\"w-full\" />\n                            </a>\n                            <div class=\"bg-white pt-4\">\n                                <a href=\"https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544\">\n                                    <h3 class=\"text-lg leading-6 font-bold text-blue-900\">Gary Dread & Rick Haze</h3>\n                                </a>\n                                <p class=\"text-gray-900\">Tickets are available online or at the door for $20.</p>\n                            </div>\n                            <p>\n                                <a href=\"https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544\" class=\"mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900\">\n                                    Buy Tickets\n                                </a>\n                            </p>\n                        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, $data.concerts && $data.concerts.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_16, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.concerts, function (concert) {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"pt-10\">\n              <p class=\"px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider\" id=\"communities-headline\">\n                Explore\n              </p>\n              <div class=\"mt-3 space-y-2\" aria-labelledby=\"communities-headline\">\n                <a v-for=\"community in communities\" :key=\"community.name\" :href=\"community.href\" class=\"group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50\">\n                  <span class=\"truncate\">\n                    {{ community.name }}\n                  </span>\n                </a>\n              </div>\n            </div>")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Feature\n                        <div class=\"bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6\">\n                            <a href=\"https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544\">\n                                <img src=\"https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/61ae48f1a800e.jpeg\" class=\"w-full\" />\n                            </a>\n                            <div class=\"bg-white pt-4\">\n                                <a href=\"https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544\">\n                                    <h3 class=\"text-lg leading-6 font-bold text-blue-900\">Gary Dread & Rick Haze</h3>\n                                </a>\n                                <p class=\"text-gray-900\">Tickets are available online or at the door for $20.</p>\n                            </div>\n                            <p>\n                                <a href=\"https://tower74concerts.com/concert/rick-haze-gary-dread-1786491544\" class=\"mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900\">\n                                    Buy Tickets\n                                </a>\n                            </p>\n                        </div> "), $data.isLoading === false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, $data.concerts && $data.concerts.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.concerts, function (concert) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: concert.id,
       "class": "py-4"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       "class": "h-14 w-14 rounded-md",
       src: concert.filename,
       alt: ""
     }, null, 8
     /* PROPS */
-    , _hoisted_19)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.date_text), 1
+    , _hoisted_20)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.date_text), 1
     /* TEXT */
-    )]), concert.event.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h4", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.name) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.city) + ", ", 1
+    )]), concert.event.venue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h4", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.name) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.city) + ", ", 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.state), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.event.venue.state), 1
     /* TEXT */
-    )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
+    )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: '/concert/' + concert.slug,
       "class": "inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"
     }, " Tickets ", 8
     /* PROPS */
-    , _hoisted_26)])])]);
+    , _hoisted_27)])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_27, " There are currently no concerts. "))])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n              Right Col Here\n            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RightCol)])])])])]);
+  ))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_28, " There are currently no concerts. "))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_29, " Loading... "))])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n              Right Col Here\n            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RightCol)])])])])]);
 }
 
 /***/ }),
