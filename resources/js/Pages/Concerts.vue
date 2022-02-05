@@ -89,9 +89,6 @@
                                                     </a>
                                                 </div>
                                             </div>
-
-
-
                                
                                         </li>
                                     </ul>
@@ -102,7 +99,13 @@
                             </div>
                         </div>
                         <div v-else>
-                            Loading...
+                            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                                <div>
+                                    <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
+                                        Loading concerts...
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
