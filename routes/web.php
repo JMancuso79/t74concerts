@@ -15,6 +15,27 @@ use Inertia\Inertia;
 |
 */
 
+
+Route::get('/concert/old-blood-zero-theorem-against-the-grave-fate-destroyed-scarlet-siren-683953680', function () {
+	$page_data = [
+		'title' => 'Old Blood, Against The Grave, Fate Destroyed, Constraints Of Light, & Scarlet Siren',
+		'description' => 'Old Blood, Against The Grave, Fate Destroyed, Constraints Of Light, & Scarlet Siren at The Viper. West Hollywood, CA',
+		'image' => 'https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/6205cab9d0f6c.jpeg',
+		'url' => 'https://tower74concerts.com/concert/old-blood-against-the-grave-fate-destroyed-constraints-of-light-scarlet-siren-459074972'
+	];
+	session([
+		'slug' => null,
+		'page' =>'concert',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('Concerts', [
+        'canLogin' => Route::has('login'),
+        //'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
 Route::get('/', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts',
