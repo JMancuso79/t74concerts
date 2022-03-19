@@ -41,7 +41,7 @@
                 <div class="">
 
                     <div class="">
-                        <!-- Feature -->
+                        <!-- Feature
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
                             <a href="https://tower74concerts.com/concert/law-perfect-by-tomorrow-the-resinators-triple-thread-capital-dub-56379389">
                                 <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/61e6dd521b633.jpeg" class="w-full" />
@@ -57,7 +57,7 @@
                                     Buy Tickets
                                 </a>
                             </p>
-                        </div> 
+                        </div>  -->
                         <div v-if="isLoading === false">
                             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                                 <div class="mb-6">
