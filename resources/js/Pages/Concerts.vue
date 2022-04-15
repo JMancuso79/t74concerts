@@ -83,8 +83,8 @@
                                                     </h4>
                                                     <p class="text-sm text-gray-800">{{ concert.title }}</p>
                                                 </div>
-                                                <div>
-                                                    <a :href="'/concert/'+concert.slug" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                                                <div v-if="concert.event">
+                                                    <a @click.prevent="doTicketLink(concert.slug, concert.event.ticket_link)" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
                                                         Tickets
                                                     </a>
                                                 </div>
@@ -167,8 +167,8 @@
         },
         setup() {
             return {
-      navigation,
-      communities,
+                navigation,
+                communities,
             }
         },
         methods: {
@@ -192,6 +192,13 @@
                 this.keyword = null
                 this.matchedArtists = []
                 this.matchedConcerts = []
+            },
+            doTicketLink: function(slug, tLink) {
+                if(tLink && tLink != '') {
+                    window.location = tLink
+                } else {
+                    window.location = '/concert/'+slug
+                }
             }
         },
         watch: {

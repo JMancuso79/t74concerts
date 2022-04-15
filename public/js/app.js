@@ -41874,6 +41874,13 @@ var communities = [];
       this.keyword = null;
       this.matchedArtists = [];
       this.matchedConcerts = [];
+    },
+    doTicketLink: function doTicketLink(slug, tLink) {
+      if (tLink && tLink != '') {
+        window.location = tLink;
+      } else {
+        window.location = '/concert/' + slug;
+      }
     }
   },
   watch: {
@@ -47707,15 +47714,18 @@ var _hoisted_25 = {
 var _hoisted_26 = {
   "class": "text-sm text-gray-800"
 };
-var _hoisted_27 = ["href"];
-var _hoisted_28 = {
-  key: 1
+var _hoisted_27 = {
+  key: 0
 };
+var _hoisted_28 = ["onClick"];
 var _hoisted_29 = {
   key: 1
 };
+var _hoisted_30 = {
+  key: 1
+};
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   id: "create-artist-heading",
@@ -47724,11 +47734,11 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_31 = [_hoisted_30];
-var _hoisted_32 = {
+var _hoisted_32 = [_hoisted_31];
+var _hoisted_33 = {
   "class": "hidden xl:block xl:col-span-4"
 };
-var _hoisted_33 = {
+var _hoisted_34 = {
   "class": "sticky top-4 space-y-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -47772,15 +47782,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(concert.title), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/concert/' + concert.slug,
+    )]), concert.event ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+        return $options.doTicketLink(concert.slug, concert.event.ticket_link);
+      }, ["prevent"]),
       "class": "inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"
     }, " Tickets ", 8
     /* PROPS */
-    , _hoisted_27)])])]);
+    , _hoisted_28)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_28, " There are currently no concerts. "))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_29, _hoisted_31))])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n              Right Col Here\n            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RightCol)])])])])]);
+  ))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_29, " There are currently no concerts. "))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_30, _hoisted_32))])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n              Right Col Here\n            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RightCol)])])])])]);
 }
 
 /***/ }),
