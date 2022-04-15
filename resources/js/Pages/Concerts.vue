@@ -79,7 +79,7 @@
                                                         </span>
                                                     </p>
                                                     <h4 v-if="concert.event.venue" class="text-gray-800">
-                                                        {{ concert.event.venue.name }} {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
+                                                        {{ concert.event.venue.name }} - {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
                                                     </h4>
                                                     <p class="text-sm text-gray-800">{{ concert.title }}</p>
                                                 </div>
