@@ -56,10 +56,11 @@
                                                             {{ concert.event.date_text }}
                                                         </span>
                                                     </p>
-                                                    <h4 v-if="concert.event.venue" class="text-gray-800">
+                                                    <h4 class="text-gray-800 truncate font-bold">{{ concert.title }}</h4>
+                                                    <p v-if="concert.event.venue" class="text-sm truncate text-gray-800">
                                                         {{ concert.event.venue.name }} - {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
-                                                    </h4>
-                                                    <p class="text-sm text-gray-800">{{ concert.title }}</p>
+                                                    </p>
+                                                    
                                                 </div>
                                                 <div v-if="concert.event">
                                                     <a @click.prevent="doTicketLink(concert.slug, concert.event.ticket_link)" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
