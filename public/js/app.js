@@ -47769,7 +47769,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: concert.id,
       "class": "py-4"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-      "class": "h-14 w-14 rounded-md",
+      "class": "w-14 rounded-md",
       src: concert.filename,
       alt: ""
     }, null, 8

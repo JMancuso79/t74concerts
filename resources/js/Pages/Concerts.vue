@@ -70,7 +70,7 @@
                                         <li v-for="concert in concerts" :key="concert.id" class="py-4">
                                             <div class="flex items-center space-x-4">
                                                 <div class="flex-shrink-0">
-                                                    <img class="h-14 w-14 rounded-md" :src="concert.filename" alt="" />
+                                                    <img class="w-14 rounded-md" :src="concert.filename" alt="" />
                                                 </div>
                                                 <div class="flex-1 min-w-0">
                                                     <p class="text-sm text-gray-900">
