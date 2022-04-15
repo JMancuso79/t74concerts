@@ -8,34 +8,12 @@
 
     <div class="py-10">
       <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
-        <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
+        
           <!-- 
             Side Nav Here
           -->
-          <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
-            <div class="pb-8 space-y-1">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-600 hover:bg-gray-50', 'group flex items-center px-3 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
-                <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'flex-shrink-0 -ml-1 mr-3 h-6 w-6']" aria-hidden="true" />
-                <span class="truncate">
-                  {{ item.name }}
-                </span>
-              </a>
-            </div>
-            <!--<div class="pt-10">
-              <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="communities-headline">
-                Explore
-              </p>
-              <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
-                <a v-for="community in communities" :key="community.name" :href="community.href" class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                  <span class="truncate">
-                    {{ community.name }}
-                  </span>
-                </a>
-              </div>
-            </div>-->
-          </nav>
-        </div>
-        <main class="lg:col-span-9 xl:col-span-6">
+
+        <main class="col-span-12 lg:col-span-8">
           <div>
             <div class="artist-list">
                 <div class="">
@@ -59,7 +37,7 @@
                             </p>
                         </div>  -->
                         <div v-if="isLoading === false">
-                            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
                                     <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
                                         Upcoming Concerts
@@ -112,11 +90,8 @@
             </div>
           </div>
         </main>
-        <aside class="hidden xl:block xl:col-span-4">
+        <aside class="col-span-12 lg:col-span-4">
           <div class="sticky top-4 space-y-4">
-            <!-- 
-              Right Col Here
-            -->
             <RightCol />
           </div>
         </aside>
@@ -199,7 +174,8 @@
                 } else {
                     window.location = '/concert/'+slug
                 }
-            }
+            },
+
         },
         watch: {
             concerts: {

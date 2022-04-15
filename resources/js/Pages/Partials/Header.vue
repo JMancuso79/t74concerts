@@ -18,9 +18,6 @@
                                 <jet-nav-link href="/">
                                     Concerts
                                 </jet-nav-link>
-                                <jet-nav-link href="/booking">
-                                    Booking
-                                </jet-nav-link>
                                 <jet-nav-link href="/contact">
                                     Contact
                                 </jet-nav-link>
@@ -45,9 +42,6 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <jet-responsive-nav-link href="/">
                             Concerts
-                        </jet-responsive-nav-link>
-                        <jet-responsive-nav-link href="/booking">
-                            Booking
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link href="/contact">
                             Contact
