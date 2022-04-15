@@ -47794,7 +47794,7 @@ var _hoisted_8 = {
   key: 0
 };
 var _hoisted_9 = {
-  "class": "bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10"
+  "class": "bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4"
 };
 var _hoisted_10 = {
   "class": "mb-6"

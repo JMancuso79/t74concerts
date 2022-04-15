@@ -21,7 +21,7 @@
                     <div class="">
 
                         <div v-if="isLoading === false">
-                            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
                                     <h2 id="create-artist-heading" class="text-base font-medium text-gray-900">
                                         Contact Tower74
