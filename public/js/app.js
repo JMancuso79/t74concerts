@@ -42979,8 +42979,8 @@ __webpack_require__.r(__webpack_exports__);
     ChatAltIcon: _heroicons_vue_solid__WEBPACK_IMPORTED_MODULE_1__.ChatAltIcon
   },
   setup: function setup() {
-    function goTo() {
-      window.location = 'https://tower74agency.com';
+    function goTo(URL) {
+      window.location = URL;
     }
 
     return {
@@ -49846,10 +49846,10 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "https://tower74agency.com",
+  href: "https://tower74agency.com/reggae-showcase/",
   target: "_blank"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "/images/tower74.jpg",
+  src: "/images/NOW-BOOKING-REGGAE-SHOWCASE-SQUARE.jpg",
   style: {
     "width": "100%!important"
   }
@@ -49860,7 +49860,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n        Right Col Here\n      "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-      return $setup.goTo('https://tower74agency.com');
+      return $setup.goTo('https://tower74agency.com/reggae-showcase/');
     }, ["prevent"])),
     type: "button",
     "class": "mt-4 w-full px-4 py-2 border border-gray-300 shadow-sm text-center font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
