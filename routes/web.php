@@ -91,6 +91,21 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
 
+Route::get('/product/{id}', function ($id) {
+	$page_data = [
+		'title' => 'Tower74 | Shop',
+		'description' => '',
+		'image' => '',
+		'url' => 'https://tower74concerts.com/product/'.$id
+	];
+	session([
+		'slug' => 'product',
+		'page' => 'product',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('Product');
+});
+
 Route::get('/about', function () {
 	$page_data = [
 		'title' => 'Tower74 Concerts | About',
