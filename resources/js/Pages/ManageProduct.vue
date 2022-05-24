@@ -83,12 +83,22 @@
       <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <!-- Replace with your content -->
         <div class="px-4 py-4 sm:px-0">
-
           <div class="grid grid-cols-12 gap-4">
             <!-- Form -->
             <div class="col-span-12 lg:col-span-8">
               <div class="bg-white overflow-hidden shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
+                  <!-- View -->
+                  <div class="rounded-md bg-blue-50 p-4 mb-4">
+                    <div class="flex">
+                      <div class="ml-3 flex-1 md:flex md:justify-between">
+                        <p class="text-sm text-blue-700">Check out the product on the live site.</p>
+                        <p class="mt-3 text-sm md:mt-0 md:ml-6">
+                          <a :href="'/product/'+id" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">View <span aria-hidden="true">&rarr;</span></a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   <!-- Success -->
                   <div v-if="success">
                     <div class="rounded-md bg-green-50 p-4">
