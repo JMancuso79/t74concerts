@@ -103,7 +103,26 @@ Route::get('/product/{id}', function ($id) {
 		'page' => 'product',
 		'page_data' => $page_data
 	]);
-    return Inertia::render('Product');
+    return Inertia::render('Product', [
+    	'id' => $id
+    ]);
+});
+
+Route::get('/manage/product/{id}', function ($id) {
+	$page_data = [
+		'title' => 'Tower74 | Shop',
+		'description' => '',
+		'image' => '',
+		'url' => 'https://tower74concerts.com/product/'.$id
+	];
+	session([
+		'slug' => 'manage_product',
+		'page' => 'manage-product',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('ManageProduct', [
+    	'id' => $id
+    ]);
 });
 
 Route::get('/about', function () {
@@ -158,6 +177,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/manage/products', function () {
+    return Inertia::render('ManageProducts');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/manage/concert/{id}', function ($id) {
 	$page_data = [
 		'title' => 'Tower74 Concerts | Manage Concert',
@@ -198,3 +221,19 @@ Route::middleware('auth:sanctum')->post('/web-api/box-office-order', 'App\Http\C
 Route::middleware('auth:sanctum')->get('/web-api/get-concert-orders/{id}', 'App\Http\Controllers\PaymentController@getConcertOrders');
 Route::middleware('auth:sanctum')->post('/web-api/post/promo-code', 'App\Http\Controllers\PaymentController@storePromoCode');
 Route::middleware('auth:sanctum')->get('/web-api/get-customer-artists/artist/{artist_id}/concert/{concert_id}', 'App\Http\Controllers\PaymentController@getArtistTixSold');
+/*
+|--------------------------------------------------------------------------
+| Product Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth:sanctum')->post('/web-api/v1/product', 'App\Http\Controllers\ProductsController@store');
+Route::middleware('auth:sanctum')->post('/web-api/v1/update-product/{id}', 'App\Http\Controllers\ProductsController@update');
+Route::middleware('auth:sanctum')->get('/web-api/v1/delete-product/{id}', 'App\Http\Controllers\ProductsController@destroy');
+Route::get('/web-api/v1/product/{id}', 'App\Http\Controllers\ProductsController@show');
+Route::middleware('auth:sanctum')->get('/web-api/v1/manage-product-list', 'App\Http\Controllers\ProductsController@manageProductsList');
+/*
+|--------------------------------------------------------------------------
+| Image Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth:sanctum')->post('/web-api/v1/image', 'App\Http\Controllers\ImagesController@store');

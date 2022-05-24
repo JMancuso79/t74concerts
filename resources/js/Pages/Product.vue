@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <Header />
-    <main class="mt-8 max-w-2xl mx-auto pb-16 px-4 sm:pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <main v-if="isReady" class="mt-8 max-w-2xl mx-auto pb-16 px-4 sm:pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="lg:grid lg:grid-cols-12 lg:auto-rows-min lg:gap-x-8">
         <div class="lg:col-start-8 lg:col-span-5">
           <div class="flex justify-between">
@@ -65,7 +65,7 @@
             <div class="mt-8">
               <div class="flex items-center justify-between">
                 <h2 class="text-sm font-medium text-gray-900">Size</h2>
-                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See sizing chart</a>
+                <!--<a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See sizing chart</a>-->
               </div>
 
               <RadioGroup v-model="selectedSize" class="mt-2">
@@ -97,7 +97,7 @@
 
             <div class="mt-4 prose prose-sm text-gray-500">
               <ul role="list">
-                <li v-for="item in product.details" :key="item">{{ item }}</li>
+                <li>{{ product.shortDescription }}</li>
               </ul>
             </div>
           </div>
@@ -186,8 +186,8 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script>
+import { ref, onMounted } from 'vue'
 import Header from '@/Pages/Partials/Header'
 import {
   Dialog,
@@ -218,245 +218,138 @@ import {
 } from '@heroicons/vue/outline'
 import { StarIcon } from '@heroicons/vue/solid'
 
-const navigation = {
-  categories: [
-    {
-      id: 'women',
-      name: 'Women',
-      featured: [
-        {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
-          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
-        },
-        {
-          name: 'Basic Tees',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
-          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
-        },
-        {
-          name: 'Accessories',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg',
-          imageAlt: 'Model wearing minimalist watch with black wristband and white watch face.',
-        },
-      ],
-      sections: [
-        [
-          {
-            id: 'shoes',
-            name: 'Shoes & Accessories',
-            items: [
-              { name: 'Sneakers', href: '#' },
-              { name: 'Boots', href: '#' },
-              { name: 'Flats', href: '#' },
-              { name: 'Sandals', href: '#' },
-              { name: 'Heels', href: '#' },
-              { name: 'Socks', href: '#' },
-            ],
-          },
-          {
-            id: 'collection',
-            name: 'Shop Collection',
-            items: [
-              { name: 'Everything', href: '#' },
-              { name: 'Core', href: '#' },
-              { name: 'New Arrivals', href: '#' },
-              { name: 'Sale', href: '#' },
-              { name: 'Accessories', href: '#' },
-            ],
-          },
-        ],
-        [
-          {
-            id: 'clothing',
-            name: 'All Clothing',
-            items: [
-              { name: 'Basic Tees', href: '#' },
-              { name: 'Artwork Tees', href: '#' },
-              { name: 'Tops', href: '#' },
-              { name: 'Bottoms', href: '#' },
-              { name: 'Swimwear', href: '#' },
-              { name: 'Underwear', href: '#' },
-            ],
-          },
-          {
-            id: 'accessories',
-            name: 'All Accessories',
-            items: [
-              { name: 'Watches', href: '#' },
-              { name: 'Wallets', href: '#' },
-              { name: 'Bags', href: '#' },
-              { name: 'Sunglasses', href: '#' },
-              { name: 'Hats', href: '#' },
-              { name: 'Belts', href: '#' },
-            ],
-          },
-        ],
-        [
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Full Nelson', href: '#' },
-              { name: 'My Way', href: '#' },
-              { name: 'Re-Arranged', href: '#' },
-              { name: 'Counterfeit', href: '#' },
-              { name: 'Significant Other', href: '#' },
-            ],
-          },
-        ],
-      ],
-    },
-    {
-      id: 'men',
-      name: 'Men',
-      featured: [
-        {
-          name: 'Accessories',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg',
-          imageAlt:
-            'Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters.',
-        },
-        {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-        },
-        {
-          name: 'Artwork Tees',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
-          imageAlt:
-            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-        },
-      ],
-      sections: [
-        [
-          {
-            id: 'shoes',
-            name: 'Shoes & Accessories',
-            items: [
-              { name: 'Sneakers', href: '#' },
-              { name: 'Boots', href: '#' },
-              { name: 'Sandals', href: '#' },
-              { name: 'Socks', href: '#' },
-            ],
-          },
-          {
-            id: 'collection',
-            name: 'Shop Collection',
-            items: [
-              { name: 'Everything', href: '#' },
-              { name: 'Core', href: '#' },
-              { name: 'New Arrivals', href: '#' },
-              { name: 'Sale', href: '#' },
-            ],
-          },
-        ],
-        [
-          {
-            id: 'clothing',
-            name: 'All Clothing',
-            items: [
-              { name: 'Basic Tees', href: '#' },
-              { name: 'Artwork Tees', href: '#' },
-              { name: 'Pants', href: '#' },
-              { name: 'Hoodies', href: '#' },
-              { name: 'Swimsuits', href: '#' },
-            ],
-          },
-          {
-            id: 'accessories',
-            name: 'All Accessories',
-            items: [
-              { name: 'Watches', href: '#' },
-              { name: 'Wallets', href: '#' },
-              { name: 'Bags', href: '#' },
-              { name: 'Sunglasses', href: '#' },
-              { name: 'Hats', href: '#' },
-              { name: 'Belts', href: '#' },
-            ],
-          },
-        ],
-        [
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Re-Arranged', href: '#' },
-              { name: 'Counterfeit', href: '#' },
-              { name: 'Full Nelson', href: '#' },
-              { name: 'My Way', href: '#' },
-            ],
-          },
-        ],
-      ],
-    },
-  ],
-  pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
-  ],
-}
-const product = {
-  name: 'Tower 74 Black Tee',
-  price: '$25',
-  href: '#',
-  breadcrumbs: [
-    { id: 1, name: 'Women', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
-  ],
-  images: [
-    {
-      id: 1,
-      imageSrc: '/images/back-tee-1.jpg',
-      imageAlt: "Back of men's Basic Tee.",
-      primary: true,
-    },
-    {
-      id: 2,
-      imageSrc: '/images/front-tee-1.jpg',
-      imageAlt: "Front of men's Basic Tee.",
-      primary: false,
-    },
-  ],
-  colors: [
-    { name: 'Black', bgColor: 'bg-gray-900', selectedColor: 'ring-gray-900' },
-    //{ name: 'Heather Grey', bgColor: 'bg-gray-400', selectedColor: 'ring-gray-400' },
-  ],
-  sizes: [
-    //{ name: 'XXS', inStock: true },
-    //{ name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-  ],
-  description: `
-    <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p>
-    <p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>
-  `,
-  details: [
-    'Only the best materials',
-    'Ethically and locally made',
-    'Pre-washed and pre-shrunk',
-    'Machine wash cold with similar colors',
-  ],
-}
-const policies = [
-  { name: 'United States delivery only', icon: GlobeIcon, description: 'Delivery charge is $5 per shirt.' },
-  //{ name: 'Loyalty rewards', icon: CurrencyDollarIcon, description: "Don't look at other tees" },
-]
-const reviews = {}
-const relatedProducts = []
-const footerNavigation = {}
+export default {
+  components: {
+    CurrencyDollarIcon,
+    GlobeIcon,
+    MenuIcon,
+    SearchIcon,
+    ShoppingBagIcon,
+    UserIcon,
+    XIcon,
+    Dialog,
+    DialogPanel,
+    Popover,
+    PopoverButton,
+    PopoverGroup,
+    PopoverPanel,
+    RadioGroup,
+    RadioGroupLabel,
+    RadioGroupOption,
+    Tab,
+    TabGroup,
+    TabList,
+    TabPanel,
+    TabPanels,
+    TransitionChild,
+    TransitionRoot,
+    StarIcon,
+    Header
+  },
+  props: ['id'],
+  setup(props) {
+    const product = ref([]);
+    const open = ref(false);
+    const selectedColor = ref([]);
+    const selectedSize = ref([]);
+    const isLoading = ref(false);
+    const isReady = ref(false);
+    const policies = ref([
+      { name: 'United States delivery only', icon: GlobeIcon, description: 'Delivery charge is $5 per shirt.' },
+      //{ name: 'Loyalty rewards', icon: CurrencyDollarIcon, description: "Don't look at other tees" },
+    ])
 
-const open = ref(false)
-const selectedColor = ref(product.colors[0])
-const selectedSize = ref(product.sizes[2])
+    onMounted(() => {
+      getProduct() 
+    })
+
+    function getProduct() {
+      isLoading.value = true
+      axios.get('/web-api/v1/product/'+props.id)
+      .then((response) => {
+        doProduct(response.data)
+        isLoading.value = false
+      })
+    }
+
+    function doProduct(p) {
+      let imgs = []
+      if(p.images && p.images.length) {
+        for (var i=0;i<p.images.length;i++) {
+          if(p.images[i].featured === 1) {
+            imgs.push({
+              id: p.images[i].id,
+              imageSrc: p.images[i].filepath,
+              imageAlt: p.title,
+              primary: true,
+            })
+          }
+        }
+        for (var i=0;i<p.images.length;i++) {
+          if(p.images[i].featured === 0) {
+            imgs.push({
+              id: p.images[i].id,
+              imageSrc: p.images[i].filepath,
+              imageAlt: p.title,
+              primary: false,
+            })
+          }
+        }
+      }
+
+      product.value = {
+        id: p.id,
+        name: p.name,
+        price: '$'+p.price,
+        description: p.description,
+        shortDescription: p.short_description,
+        image: p.image,
+        images: imgs,
+        colors: doColors(p.colors),
+        sizes: doSizes(p.sizes)
+      }
+      isReady.value = true
+    }
+
+    function doColors(c) {
+      let arr = []
+      let colors = []
+      if(c) {
+        arr = c.split(' ')
+      }
+      for(var i=0;i<arr.length;i++) {
+        if(arr[i] == 'black') {
+          colors.push({
+            name: 'Black', 
+            bgColor: 'bg-gray-900', 
+            selectedColor: 'ring-gray-900'
+          })
+        }
+      }
+      return colors
+    }
+
+    function doSizes(s) {
+      let arr = []
+      let sizes = []
+      if(s) {
+        arr = s.split(' ')
+      }
+      for(var i=0;i<arr.length;i++) {
+          sizes.push({ name: arr[i], inStock: true })
+      }
+      return sizes
+    }
+
+    return {
+      product,
+      open,
+      selectedColor,
+      selectedSize,
+      policies,
+      isLoading,
+      isReady
+    }
+  }
+}
 </script>
