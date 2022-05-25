@@ -20,6 +20,9 @@
                                 <jet-nav-link style="color:#ffffff!important;" :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
+                                <jet-nav-link style="color:#ffffff!important;" href="/manage/products">
+                                    Manage Products
+                                </jet-nav-link>
                             </div>
                         </div>
 
@@ -142,6 +145,9 @@
                     <div class="pt-2 pb-3 space-y-1 bg-gray-200">
                         <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link href="/manage/products">
+                            Manage Products
                         </jet-responsive-nav-link>
                     </div>
 
