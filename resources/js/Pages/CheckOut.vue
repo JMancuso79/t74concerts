@@ -256,6 +256,11 @@
         </div>
       </form>
     </div>
+    <footer aria-labelledby="footer-heading">
+        <div class="border-t border-gray-100 py-10 text-center">
+          <p class="text-sm text-gray-500">&copy; 2022 Tower 74 LLC. All rights reserved.</p>
+        </div>
+    </footer>
   </div>
 </template>
 
@@ -311,7 +316,8 @@ export default {
       shipping,
       taxes,
       discount,
-      subtotal
+      subtotal,
+      paymentMethods
     }
   }
 }
