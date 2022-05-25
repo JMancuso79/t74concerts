@@ -53275,25 +53275,32 @@ var _hoisted_10 = {
 };
 var _hoisted_11 = ["src", "alt"];
 var _hoisted_12 = {
+  "class": "lg:hidden pt-4 lg:pt-0"
+};
+var _hoisted_13 = {
+  "class": "grid grid-cols-12 gap-x-4"
+};
+var _hoisted_14 = ["src", "alt"];
+var _hoisted_15 = {
   "class": "mt-8 lg:col-span-5"
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-sm font-medium text-gray-900"
 }, "Color", -1
 /* HOISTED */
 );
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Choose a color ");
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Choose a color ");
 
-var _hoisted_15 = {
+var _hoisted_18 = {
   "class": "flex items-center space-x-3"
 };
-var _hoisted_16 = {
+var _hoisted_19 = {
   "class": "mt-8"
 };
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex items-center justify-between"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-sm font-medium text-gray-900"
@@ -53301,69 +53308,69 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Choose a size ");
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Choose a size ");
 
-var _hoisted_19 = {
+var _hoisted_22 = {
   "class": "grid grid-cols-3 gap-3 sm:grid-cols-6"
 };
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "mt-8 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 }, "Add to cart", -1
 /* HOISTED */
 );
 
-var _hoisted_21 = {
+var _hoisted_24 = {
   "class": "mt-10"
 };
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-sm font-medium text-gray-900"
 }, "Description", -1
 /* HOISTED */
 );
 
-var _hoisted_23 = ["innerHTML"];
-var _hoisted_24 = {
+var _hoisted_26 = ["innerHTML"];
+var _hoisted_27 = {
   "class": "mt-8 border-t border-gray-200 pt-8"
 };
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-sm font-medium text-gray-900"
 }, "Fabric & Care", -1
 /* HOISTED */
 );
 
-var _hoisted_26 = {
+var _hoisted_29 = {
   "class": "mt-4 prose prose-sm text-gray-500"
 };
-var _hoisted_27 = {
+var _hoisted_30 = {
   role: "list"
 };
-var _hoisted_28 = {
+var _hoisted_31 = {
   "aria-labelledby": "policies-heading",
   "class": "mt-10"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   id: "policies-heading",
   "class": "sr-only"
 }, "Our Policies", -1
 /* HOISTED */
 );
 
-var _hoisted_30 = {
+var _hoisted_33 = {
   "class": "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
 };
-var _hoisted_31 = {
+var _hoisted_34 = {
   "class": "mt-4 text-sm font-medium text-gray-900"
 };
-var _hoisted_32 = {
+var _hoisted_35 = {
   "class": "mt-1 text-sm text-gray-500"
 };
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("footer", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("footer", {
   "aria-labelledby": "footer-heading"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-t border-gray-100 py-10 text-center"
@@ -53397,7 +53404,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_11);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Color picker "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RadioGroup, {
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Mobile Thumbs Only "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.product.images, function (image) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: image.id,
+      "class": "col-span-6"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: image.imageSrc,
+      alt: image.imageAlt,
+      "class": "rounded-lg"
+    }, null, 8
+    /* PROPS */
+    , _hoisted_14)]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Color picker "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RadioGroup, {
     modelValue: $setup.selectedColor,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.selectedColor = $event;
@@ -53409,12 +53429,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "sr-only"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_14];
+          return [_hoisted_17];
         }),
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.product.colors, function (color) {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.product.colors, function (color) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RadioGroupOption, {
           as: "template",
           key: color.name,
@@ -53463,7 +53483,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Size picker "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RadioGroup, {
+  , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Size picker "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RadioGroup, {
     modelValue: $setup.selectedSize,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.selectedSize = $event;
@@ -53475,12 +53495,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "sr-only"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_18];
+          return [_hoisted_21];
         }),
         _: 1
         /* STABLE */
 
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.product.sizes, function (size) {
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.product.sizes, function (size) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RadioGroupOption, {
           as: "template",
           key: size.name,
@@ -53524,28 +53544,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modelValue"])]), _hoisted_20]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Product details "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  , ["modelValue"])]), _hoisted_23]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Product details "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "mt-4 prose prose-sm text-gray-500",
     innerHTML: $setup.product.description
   }, null, 8
   /* PROPS */
-  , _hoisted_23)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.product.shortDescription), 1
+  , _hoisted_26)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.product.shortDescription), 1
   /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Policies "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dl", _hoisted_30, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.policies, function (policy) {
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Policies "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dl", _hoisted_33, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.policies, function (policy) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: policy.name,
       "class": "bg-gray-50 border border-gray-200 rounded-lg p-6 text-center"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)(policy.icon), {
       "class": "mx-auto h-6 w-6 flex-shrink-0 text-gray-400",
       "aria-hidden": "true"
-    })), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(policy.name), 1
+    })), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(policy.name), 1
     /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(policy.description), 1
+    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", _hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(policy.description), 1
     /* TEXT */
     )]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Reviews \n      <section aria-labelledby=\"reviews-heading\" class=\"mt-16 sm:mt-24\">\n        <h2 id=\"reviews-heading\" class=\"text-lg font-medium text-gray-900\">Recent reviews</h2>\n\n        <div class=\"mt-6 border-t border-b border-gray-200 pb-10 divide-y divide-gray-200 space-y-10\">\n          <div v-for=\"review in reviews.featured\" :key=\"review.id\" class=\"pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8\">\n            <div class=\"lg:col-start-5 lg:col-span-8 xl:col-start-4 xl:col-span-9 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:items-start\">\n              <div class=\"flex items-center xl:col-span-1\">\n                <div class=\"flex items-center\">\n                  <StarIcon v-for=\"rating in [0, 1, 2, 3, 4]\" :key=\"rating\" :class=\"[review.rating > rating ? 'text-yellow-400' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']\" aria-hidden=\"true\" />\n                </div>\n                <p class=\"ml-3 text-sm text-gray-700\">{{ review.rating }}<span class=\"sr-only\"> out of 5 stars</span></p>\n              </div>\n\n              <div class=\"mt-4 lg:mt-6 xl:mt-0 xl:col-span-2\">\n                <h3 class=\"text-sm font-medium text-gray-900\">{{ review.title }}</h3>\n\n                <div class=\"mt-3 space-y-6 text-sm text-gray-500\" v-html=\"review.content\" />\n              </div>\n            </div>\n\n            <div class=\"mt-6 flex items-center text-sm lg:mt-0 lg:col-start-1 lg:col-span-4 lg:row-start-1 lg:flex-col lg:items-start xl:col-span-3\">\n              <p class=\"font-medium text-gray-900\">{{ review.author }}</p>\n              <time :datetime=\"review.datetime\" class=\"ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:ml-0 lg:mt-2 lg:border-0 lg:pl-0\">{{ review.date }}</time>\n            </div>\n          </div>\n        </div>\n      </section>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Related products\n      <section aria-labelledby=\"related-heading\" class=\"mt-16 sm:mt-24\">\n        <h2 id=\"related-heading\" class=\"text-lg font-medium text-gray-900\">Customers also purchased</h2>\n\n        <div class=\"mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8\">\n          <div v-for=\"relatedProduct in relatedProducts\" :key=\"relatedProduct.id\" class=\"group relative\">\n            <div class=\"w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none\">\n              <img :src=\"relatedProduct.imageSrc\" :alt=\"relatedProduct.imageAlt\" class=\"w-full h-full object-center object-cover lg:w-full lg:h-full\" />\n            </div>\n            <div class=\"mt-4 flex justify-between\">\n              <div>\n                <h3 class=\"text-sm text-gray-700\">\n                  <a :href=\"relatedProduct.href\">\n                    <span aria-hidden=\"true\" class=\"absolute inset-0\" />\n                    {{ relatedProduct.name }}\n                  </a>\n                </h3>\n                <p class=\"mt-1 text-sm text-gray-500\">{{ relatedProduct.color }}</p>\n              </div>\n              <p class=\"text-sm font-medium text-gray-900\">{{ relatedProduct.price }}</p>\n            </div>\n          </div>\n        </div>\n      </section> ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_33]);
+  ))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Reviews \n      <section aria-labelledby=\"reviews-heading\" class=\"mt-16 sm:mt-24\">\n        <h2 id=\"reviews-heading\" class=\"text-lg font-medium text-gray-900\">Recent reviews</h2>\n\n        <div class=\"mt-6 border-t border-b border-gray-200 pb-10 divide-y divide-gray-200 space-y-10\">\n          <div v-for=\"review in reviews.featured\" :key=\"review.id\" class=\"pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8\">\n            <div class=\"lg:col-start-5 lg:col-span-8 xl:col-start-4 xl:col-span-9 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:items-start\">\n              <div class=\"flex items-center xl:col-span-1\">\n                <div class=\"flex items-center\">\n                  <StarIcon v-for=\"rating in [0, 1, 2, 3, 4]\" :key=\"rating\" :class=\"[review.rating > rating ? 'text-yellow-400' : 'text-gray-200', 'h-5 w-5 flex-shrink-0']\" aria-hidden=\"true\" />\n                </div>\n                <p class=\"ml-3 text-sm text-gray-700\">{{ review.rating }}<span class=\"sr-only\"> out of 5 stars</span></p>\n              </div>\n\n              <div class=\"mt-4 lg:mt-6 xl:mt-0 xl:col-span-2\">\n                <h3 class=\"text-sm font-medium text-gray-900\">{{ review.title }}</h3>\n\n                <div class=\"mt-3 space-y-6 text-sm text-gray-500\" v-html=\"review.content\" />\n              </div>\n            </div>\n\n            <div class=\"mt-6 flex items-center text-sm lg:mt-0 lg:col-start-1 lg:col-span-4 lg:row-start-1 lg:flex-col lg:items-start xl:col-span-3\">\n              <p class=\"font-medium text-gray-900\">{{ review.author }}</p>\n              <time :datetime=\"review.datetime\" class=\"ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:ml-0 lg:mt-2 lg:border-0 lg:pl-0\">{{ review.date }}</time>\n            </div>\n          </div>\n        </div>\n      </section>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Related products\n      <section aria-labelledby=\"related-heading\" class=\"mt-16 sm:mt-24\">\n        <h2 id=\"related-heading\" class=\"text-lg font-medium text-gray-900\">Customers also purchased</h2>\n\n        <div class=\"mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8\">\n          <div v-for=\"relatedProduct in relatedProducts\" :key=\"relatedProduct.id\" class=\"group relative\">\n            <div class=\"w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none\">\n              <img :src=\"relatedProduct.imageSrc\" :alt=\"relatedProduct.imageAlt\" class=\"w-full h-full object-center object-cover lg:w-full lg:h-full\" />\n            </div>\n            <div class=\"mt-4 flex justify-between\">\n              <div>\n                <h3 class=\"text-sm text-gray-700\">\n                  <a :href=\"relatedProduct.href\">\n                    <span aria-hidden=\"true\" class=\"absolute inset-0\" />\n                    {{ relatedProduct.name }}\n                  </a>\n                </h3>\n                <p class=\"mt-1 text-sm text-gray-500\">{{ relatedProduct.color }}</p>\n              </div>\n              <p class=\"text-sm font-medium text-gray-900\">{{ relatedProduct.price }}</p>\n            </div>\n          </div>\n        </div>\n      </section> ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_36]);
 }
 
 /***/ }),
