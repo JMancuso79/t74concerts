@@ -108,6 +108,36 @@ Route::get('/product/{id}', function ($id) {
     ]);
 });
 
+Route::get('/cart', function () {
+	$page_data = [
+		'title' => 'Tower74 | Shop',
+		'description' => '',
+		'image' => '',
+		'url' => 'https://tower74concerts.com/cart'
+	];
+	session([
+		'slug' => 'cart',
+		'page' => 'cart',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('Cart');
+});
+
+Route::get('/check-out', function () {
+	$page_data = [
+		'title' => 'Tower74 | Shop',
+		'description' => '',
+		'image' => '',
+		'url' => 'https://tower74concerts.com/check-out'
+	];
+	session([
+		'slug' => 'check-out',
+		'page' => 'check-out',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('CheckOut');
+});
+
 Route::get('/manage/product/{id}', function ($id) {
 	$page_data = [
 		'title' => 'Tower74 | Shop',
