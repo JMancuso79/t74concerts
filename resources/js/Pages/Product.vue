@@ -256,7 +256,11 @@ export default {
   setup(props) {
     const product = ref([]);
     const open = ref(false);
-    const selectedColor = ref([]);
+    const selectedColor = ref({
+      name: 'Black', 
+      bgColor: 'bg-gray-900', 
+      selectedColor: 'ring-gray-900'
+    });
     const selectedSize = ref([]);
     const isLoading = ref(false);
     const isReady = ref(false);
@@ -349,7 +353,17 @@ export default {
 
     function addToCart() {
       // Send to server for php session var
-      window.location = '/cart'
+      isLoading.value = true
+      axios.post('/web-api/v1/cart', {
+        product: product.value,
+        selectedColor: selectedColor.value,
+        selectedSize: selectedSize.value
+      }).then((response) => {
+        if(response.data.message == 'success') {
+          window.location = '/cart'
+        }
+      })
+      
     }
 
     return {

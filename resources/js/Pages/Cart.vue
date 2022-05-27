@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <Header />
-
+{{cartItems}}
     <main class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
@@ -144,7 +144,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Header from '@/Pages/Partials/Header'
 import {
   Dialog,
@@ -210,9 +210,20 @@ export default {
     MenuIcon, SearchIcon, ShoppingBagIcon, XIconOutline,
     CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIconSolid
   },
-  props: [],
+  props: ['cartItems'],
   setup(props) {
     const open = ref(false)
+
+    onMounted(() => {
+      doCartItems()
+    })
+
+    function doCartItems() {
+      if(props.cartItems && props.cartItems.length) {
+        //check if id and attributes match an item in the cart (id, size and color match add to quantity and not product)
+        // if no - add to products
+      }
+    }
 
     function checkOut() {
       window.location = '/check-out'

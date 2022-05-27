@@ -120,7 +120,16 @@ Route::get('/cart', function () {
 		'page' => 'cart',
 		'page_data' => $page_data
 	]);
-    return Inertia::render('Cart');
+
+	$products = [];
+
+	if(session('products')) {
+		$products = session('products');
+	}
+
+    return Inertia::render('Cart', [
+    	'cartItems' => $products,
+    ]);
 });
 
 Route::get('/check-out', function () {
@@ -261,6 +270,7 @@ Route::middleware('auth:sanctum')->post('/web-api/v1/update-product/{id}', 'App\
 Route::middleware('auth:sanctum')->get('/web-api/v1/delete-product/{id}', 'App\Http\Controllers\ProductsController@destroy');
 Route::get('/web-api/v1/product/{id}', 'App\Http\Controllers\ProductsController@show');
 Route::middleware('auth:sanctum')->get('/web-api/v1/manage-product-list', 'App\Http\Controllers\ProductsController@manageProductsList');
+Route::post('/web-api/v1/cart', 'App\Http\Controllers\CartController@store');
 /*
 |--------------------------------------------------------------------------
 | Image Routes

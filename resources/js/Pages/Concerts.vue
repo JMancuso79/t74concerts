@@ -19,23 +19,23 @@
                 <div class="">
 
                     <div class="">
-                        <!-- Feature 
+                        <!-- Feature --> 
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
-                            <a href="https://tower74concerts.com/concert/ital-vibes-album-release-1070187023">
-                                <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/625caba6f148a.jpeg" class="w-full" />
+                            <a href="https://tower74concerts.com/concert/sgv-vibes-809162468">
+                                <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/62853d2aa156c.jpeg" class="w-full" />
                             </a>
                             <div class="bg-white pt-4">
-                                <a href="https://tower74concerts.com/concert/ital-vibes-album-release-1070187023">
-                                    <h3 class="text-lg leading-6 font-bold text-blue-900">Ital Vibes Album Release @ The Viper Room</h3>
+                                <a href="https://tower74concerts.com/concert/sgv-vibes-809162468">
+                                    <h3 class="text-lg leading-6 font-bold text-blue-900">SGV Vibes @ Tiki Bar</h3>
                                 </a>
                                 <p class="text-gray-900">Tickets are available online or at the door.</p>
                             </div>
                             <p>
-                                <a href="https://tower74concerts.com/concert/ital-vibes-album-release-1070187023" class="mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900">
+                                <a href="https://tower74concerts.com/concert/sgv-vibes-809162468" class="mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900">
                                     Buy Tickets
                                 </a>
                             </p>
-                        </div> --> 
+                        </div> 
                         <div v-if="isLoading === false">
                             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
