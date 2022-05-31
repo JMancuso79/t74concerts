@@ -316,7 +316,8 @@ export default {
         image: p.image,
         images: imgs,
         colors: doColors(p.colors),
-        sizes: doSizes(p.sizes)
+        sizes: doSizes(p.sizes),
+        category: p.category
       }
       isReady.value = true
     }
@@ -352,18 +353,50 @@ export default {
     }
 
     function addToCart() {
+      let s = null
       // Send to server for php session var
+      if(selectedSize.value) {
+        // Small
+        if(selectedSize.value.name == 's') {
+          s = 'small'
+        }
+        // Medium
+        if(selectedSize.value.name == 'm') {
+          s = 'medium'
+        }
+        // Large
+        if(selectedSize.value.name == 'l') {
+          s = 'large'
+        }
+        // Extra Large
+        if(selectedSize.value.name == 'xl') {
+          s = 'extra large'
+        }
+        // Double XL
+        if(selectedSize.value.name == 'xxl') {
+          s = 'xx large'
+        }
+      }
+
       isLoading.value = true
       axios.post('/web-api/v1/cart', {
-        product: product.value,
-        selectedColor: selectedColor.value,
-        selectedSize: selectedSize.value
+        id: product.value.id,
+        name: product.value.name,
+        price: product.value.price,
+        size: s,
+        color: selectedColor.value.name,
+        inStock: true,
+        category: product.value.category,
+        image: product.value.image
       }).then((response) => {
         if(response.data.message == 'success') {
           window.location = '/cart'
         }
+        if(response.data.message == 'fail-validation') {
+          console.log(response.data.errors)
+        }
       })
-      
+      isLoading.value = false
     }
 
     return {

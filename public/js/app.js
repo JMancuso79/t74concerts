@@ -41726,17 +41726,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var products = [{
-  id: 1,
-  name: 'Tower 74 Black Surf Tee',
-  href: '#',
-  price: '$32.00',
-  color: 'Black',
-  inStock: true,
-  size: 'Large',
-  imageSrc: '/images/front-tee-1.jpg',
-  imageAlt: "Tower 74 Black Surf Tee."
-}];
 var relatedProducts = [{
   id: 1,
   name: 'Billfold Wallet',
@@ -41775,13 +41764,28 @@ var relatedProducts = [{
   props: ['cartItems'],
   setup: function setup(props) {
     var open = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var products = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)([]);
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
       doCartItems();
     });
 
     function doCartItems() {
-      if (props.cartItems && props.cartItems.length) {//check if id and attributes match an item in the cart (id, size and color match add to quantity and not product)
-        // if no - add to products
+      if (props.cartItems && props.cartItems.length) {
+        //check if id and attributes match an item in the cart (id, size and color match add to quantity and not product)
+        for (var i = 0; i < props.cartItems.length; i++) {
+          products.value.push({
+            id: props.cartItems[i].id,
+            name: props.cartItems[i].name,
+            href: '/product/' + props.cartItems[i].id,
+            price: props.cartItems[i].price,
+            color: props.cartItems[i].color,
+            inStock: props.cartItems[i].inStock,
+            size: props.cartItems[i].size,
+            imageSrc: props.cartItems[i].image,
+            imageAlt: props.cartItems[i].name
+          });
+        } // if no - add to products
+
       }
     }
 
@@ -41789,11 +41793,22 @@ var relatedProducts = [{
       window.location = '/check-out';
     }
 
+    function removeFromCart(p, index) {
+      axios.post('/web-api/v1/remove-item-from-cart', {
+        id: p.id,
+        size: p.size,
+        color: p.color
+      }).then(function (response) {
+        products.value.splice(index, 1);
+      });
+    }
+
     return {
       open: open,
       checkOut: checkOut,
       products: products,
-      relatedProducts: relatedProducts
+      relatedProducts: relatedProducts,
+      removeFromCart: removeFromCart
     };
   }
 });
@@ -43986,7 +44001,8 @@ __webpack_require__.r(__webpack_exports__);
         image: p.image,
         images: imgs,
         colors: doColors(p.colors),
-        sizes: doSizes(p.sizes)
+        sizes: doSizes(p.sizes),
+        category: p.category
       };
       isReady.value = true;
     }
@@ -44031,17 +44047,55 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     function addToCart() {
-      // Send to server for php session var
+      var s = null; // Send to server for php session var
+
+      if (selectedSize.value) {
+        // Small
+        if (selectedSize.value.name == 's') {
+          s = 'small';
+        } // Medium
+
+
+        if (selectedSize.value.name == 'm') {
+          s = 'medium';
+        } // Large
+
+
+        if (selectedSize.value.name == 'l') {
+          s = 'large';
+        } // Extra Large
+
+
+        if (selectedSize.value.name == 'xl') {
+          s = 'extra large';
+        } // Double XL
+
+
+        if (selectedSize.value.name == 'xxl') {
+          s = 'xx large';
+        }
+      }
+
       isLoading.value = true;
       axios.post('/web-api/v1/cart', {
-        product: product.value,
-        selectedColor: selectedColor.value,
-        selectedSize: selectedSize.value
+        id: product.value.id,
+        name: product.value.name,
+        price: product.value.price,
+        size: s,
+        color: selectedColor.value.name,
+        inStock: true,
+        category: product.value.category,
+        image: product.value.image
       }).then(function (response) {
         if (response.data.message == 'success') {
           window.location = '/cart';
         }
+
+        if (response.data.message == 'fail-validation') {
+          console.log(response.data.errors);
+        }
       });
+      isLoading.value = false;
     }
 
     return {
@@ -48533,7 +48587,7 @@ var _hoisted_16 = {
 };
 var _hoisted_17 = {
   key: 0,
-  "class": "ml-4 pl-4 border-l border-gray-200 text-gray-500"
+  "class": "ml-4 pl-4 border-l border-gray-200 text-gray-500 capitalize"
 };
 var _hoisted_18 = {
   "class": "mt-1 text-sm font-medium text-gray-900"
@@ -48550,10 +48604,7 @@ var _hoisted_30 = [_hoisted_22];
 var _hoisted_31 = {
   "class": "absolute top-0 right-0"
 };
-var _hoisted_32 = {
-  type: "button",
-  "class": "-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
-};
+var _hoisted_32 = ["onClick"];
 
 var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "sr-only"
@@ -48681,9 +48732,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_QuestionMarkCircleIcon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("QuestionMarkCircleIcon");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cartItems) + " ", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.products, function (product, productIdx) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.products, function (product, productIdx) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: product.id,
       "class": "flex py-6 sm:py-10"
@@ -48715,10 +48764,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     }, _hoisted_30, 8
     /* PROPS */
-    , _hoisted_21), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_XIconSolid, {
+    , _hoisted_21), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+        return $setup.removeFromCart(product, productIdx);
+      }, ["prevent"]),
+      type: "button",
+      "class": "-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+    }, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_XIconSolid, {
       "class": "h-5 w-5",
       "aria-hidden": "true"
-    })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_34, [product.inStock ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_CheckIcon, {
+    })], 8
+    /* PROPS */
+    , _hoisted_32)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_34, [product.inStock ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_CheckIcon, {
       key: 0,
       "class": "flex-shrink-0 h-5 w-5 text-green-500",
       "aria-hidden": "true"

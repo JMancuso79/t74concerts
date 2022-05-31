@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <Header />
-{{cartItems}}
+
     <main class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
@@ -29,7 +29,7 @@
                       <p class="text-gray-500">
                         {{ product.color }}
                       </p>
-                      <p v-if="product.size" class="ml-4 pl-4 border-l border-gray-200 text-gray-500">
+                      <p v-if="product.size" class="ml-4 pl-4 border-l border-gray-200 text-gray-500 capitalize">
                         {{ product.size }}
                       </p>
                     </div>
@@ -50,7 +50,7 @@
                     </select>
 
                     <div class="absolute top-0 right-0">
-                      <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
+                      <button @click.prevent="removeFromCart(product, productIdx)" type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
                         <span class="sr-only">Remove</span>
                         <XIconSolid class="h-5 w-5" aria-hidden="true" />
                       </button>
@@ -164,19 +164,6 @@ import {
 import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon as XIconOutline } from '@heroicons/vue/outline'
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon as XIconSolid } from '@heroicons/vue/solid'
 
-const products = [
-  {
-    id: 1,
-    name: 'Tower 74 Black Surf Tee',
-    href: '#',
-    price: '$32.00',
-    color: 'Black',
-    inStock: true,
-    size: 'Large',
-    imageSrc: '/images/front-tee-1.jpg',
-    imageAlt: "Tower 74 Black Surf Tee.",
-  },
-]
 const relatedProducts = [
   {
     id: 1,
@@ -213,6 +200,7 @@ export default {
   props: ['cartItems'],
   setup(props) {
     const open = ref(false)
+    const products = ref([])
 
     onMounted(() => {
       doCartItems()
@@ -221,6 +209,19 @@ export default {
     function doCartItems() {
       if(props.cartItems && props.cartItems.length) {
         //check if id and attributes match an item in the cart (id, size and color match add to quantity and not product)
+        for(var i=0;i<props.cartItems.length;i++) {
+          products.value.push({
+            id: props.cartItems[i].id,
+            name: props.cartItems[i].name,
+            href: '/product/'+props.cartItems[i].id,
+            price: props.cartItems[i].price,
+            color: props.cartItems[i].color,
+            inStock: props.cartItems[i].inStock,
+            size: props.cartItems[i].size,
+            imageSrc: props.cartItems[i].image,
+            imageAlt: props.cartItems[i].name,
+          })
+        }
         // if no - add to products
       }
     }
@@ -229,11 +230,22 @@ export default {
       window.location = '/check-out'
     }
 
+    function removeFromCart(p, index) {
+      axios.post('/web-api/v1/remove-item-from-cart', {
+        id: p.id,
+        size: p.size,
+        color: p.color
+      }).then((response) => {
+        products.value.splice(index, 1)
+      })
+    }
+
     return {
       open,
       checkOut,
       products,
-      relatedProducts
+      relatedProducts,
+      removeFromCart
     }
   }
 }
