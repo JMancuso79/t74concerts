@@ -270,8 +270,10 @@ Route::middleware('auth:sanctum')->post('/web-api/v1/update-product/{id}', 'App\
 Route::middleware('auth:sanctum')->get('/web-api/v1/delete-product/{id}', 'App\Http\Controllers\ProductsController@destroy');
 Route::get('/web-api/v1/product/{id}', 'App\Http\Controllers\ProductsController@show');
 Route::middleware('auth:sanctum')->get('/web-api/v1/manage-product-list', 'App\Http\Controllers\ProductsController@manageProductsList');
-Route::post('/web-api/v1/cart', 'App\Http\Controllers\CartController@store');
+Route::post('/web-api/v1/cart', 'App\Http\Controllers\CartController@addProductToCart');
 Route::post('/web-api/v1/remove-item-from-cart', 'App\Http\Controllers\CartController@destroy');
+Route::post('/web-api/v1/update-product-quantity', 'App\Http\Controllers\CartController@updateProductQuantity');
+
 /*
 |--------------------------------------------------------------------------
 | Image Routes

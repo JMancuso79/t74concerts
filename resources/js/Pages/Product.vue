@@ -389,6 +389,7 @@ export default {
         category: product.value.category,
         image: product.value.image
       }).then((response) => {
+        console.log(response)
         if(response.data.message == 'success') {
           window.location = '/cart'
         }

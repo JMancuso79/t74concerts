@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     //
-    public function store(Request $request) {
+    public function addProductToCart(Request $request) {
         // Validate 
         $validator = Validator::make($request->all(), [
         	// User input
@@ -16,6 +16,8 @@ class CartController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|string|max:255',
             'category' => 'required|string|max:255',
+            'size' => 'required|string|max:255',
+            'color' => 'required|string|max:255',
         ]); 
         // Validation Error
         if ($validator->fails()) {
@@ -27,37 +29,60 @@ class CartController extends Controller
         } 
         // Validation passes
         else {
-        	$product = [
-        		'id' => $request->id,
-        		'name' => $request->name,
-        		'price' => $request->price,
-        		'category' => $request->category,
-        		'size' => $request->size,
-        		'color' => $request->color,
-        		'image' => $request->image,
-        		'inStock' => true
-        	];
-
-        	$products = [];
-
-        	if(session('products')) {
-        		$products = session('products');
-	        	// Check if item is in cart here
-				if($this->checkForItemInCart($request->id, $request->size, $request->color) === false) {
-					$products[] = $product;
-				}	
-        	} else {
-        		$products[] = $product;
+        	// Set products
+        	$products = $this->setProducts();
+        	// Cart is not empty
+        	if(!empty($products)) {
+        		// Product is not in cart
+        		if($this->checkForItemInCart($request->id, $request->size, $request->color) === false) {
+        			$products[] = $this->doProduct($request, null);
+        		} else {
+        			$quantity = $this->getProductQuantity($request->id, $request->size, $request->color);
+        			$quantity = $quantity + 1;
+ 					$products = $this->updateQuantity($request, $quantity, $products);
+        		}
+        	} 
+        	// Add product to empty cart
+        	else {
+        		$products[] = $this->doProduct($request, null);
         	}
 
+        	// Update Cart
 			session([
 				'products' => $products
 			]);
 
 	        return response()->json([
-	            'message' => 'success'
+	            'message' => 'success',
+	            'products' => $products
 	        ]);
 	    }
+    }
+
+    public function setProducts() {
+    	$products = [];
+    	if((session('products')) && (!empty(session('products')))) {
+    		$products = session('products');
+    	}
+    	return $products;
+    }
+
+    public function doProduct($data, $quantity) {
+    	if($quantity == null) {
+    		$quantity = 1;
+    	}
+		$product = [
+    		'id' => $data->id,
+    		'name' => $data->name,
+    		'price' => $data->price,
+    		'category' => $data->category,
+    		'size' => $data->size,
+    		'color' => $data->color,
+    		'image' => $data->image,
+    		'inStock' => true,
+    		'quantity' => $quantity
+    	];
+    	return $product;
     }
 
     public function checkForItemInCart($id, $size, $color) {
@@ -81,6 +106,28 @@ class CartController extends Controller
 		}
    
     	return $isInCart;
+    }
+
+    public function getProductQuantity($id, $size, $color) {
+    	$products = session('products');
+    	$quantity = 0;
+
+		foreach ($products as $p) {
+			// Item ID is in shop
+			if($p['id'] === $id) {
+				// item is clothing
+				if($p['category'] == 'tee-shirt') {
+					// If size matches item in cart
+					if($p['size'] == $size) {
+    					// If color matches item in cart
+    					if($p['color'] == $color) {
+    						$quantity =  $p['quantity'];
+    					}
+					}
+				}
+ 			}
+		}
+		return $quantity;
     }
 
     public function destroy(Request $request) {
@@ -112,5 +159,56 @@ class CartController extends Controller
 			]);
     	}
     	return;
+    }
+
+    public function updateQuantity($product, $quantity, $products) {
+    	$oldProducts = $products;
+    	$products = [];
+    	foreach ($oldProducts as $p) {
+    		// Is this the product?
+    		if($product->id == $p['id']) {
+    			if($product->size == $p['size']) {
+	    			if($product->color == $p['color']) {
+	    				$products[] = $this->doProduct($product, $quantity);
+	    			} else {
+	    				$products[] = $p;
+	    			}
+    			} else {
+    				$products[] = $p;
+    			}
+    		} else {
+    			$products[] = $p;
+    		}
+    	}
+    	return $products;
+    }
+
+    public function updateProductQuantity(Request $request) {
+    	$oldProducts = $request->products;
+    	$product = $request->product;
+    	$products = [];
+    	foreach ($oldProducts as $p) {
+    		// Is this the product?
+    		if($product->id == $p->id) {
+    			if($product->size == $p->size) {
+	    			if($product->color == $p->color) {
+	    				$products[] = $this->doProduct($rproduct, $request->quantity);
+	    			} else {
+	    				$products[] = $p;
+	    			}
+    			} else {
+    				$products[] = $p;
+    			}
+    		} else {
+    			$products[] = $p;
+    		}
+    	}
+		session([
+			'products' => $products
+		]);
+        return response()->json([
+            'message' => 'success',
+            'products' => $products
+        ]);
     }
 }

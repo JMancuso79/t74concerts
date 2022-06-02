@@ -5,11 +5,13 @@
     <main class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
+      
+
       <form class="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
         <section aria-labelledby="cart-heading" class="lg:col-span-7">
           <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
 
-          <ul role="list" class="border-t border-b border-gray-200 divide-y divide-gray-200">
+          <ul v-if="products && products.length" role="list" class="border-t border-b border-gray-200 divide-y divide-gray-200">
             <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-6 sm:py-10">
               <div class="flex-shrink-0">
                 <img :src="product.imageSrc" :alt="product.imageAlt" class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48" />
@@ -38,15 +40,15 @@
 
                   <div class="mt-4 sm:mt-0 sm:pr-9">
                     <label :for="`quantity-${productIdx}`" class="sr-only">Quantity, {{ product.name }}</label>
-                    <select :id="`quantity-${productIdx}`" :name="`quantity-${productIdx}`" class="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
+                    <select v-model="product.quantity" :id="`quantity-${productIdx}`" :name="`quantity-${productIdx}`" class="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                      <option :value="1">1</option>
+                      <option :value="2">2</option>
+                      <option :value="3">3</option>
+                      <option :value="4">4</option>
+                      <option :value="5">5</option>
+                      <option :value="6">6</option>
+                      <option :value="7">7</option>
+                      <option :value="8">8</option>
                     </select>
 
                     <div class="absolute top-0 right-0">
@@ -66,6 +68,20 @@
               </div>
             </li>
           </ul>
+          <!-- Cart is empty -->
+          <div v-else class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+            <div class="flex">
+              <div class="flex-shrink-0">
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                  Your cart is empty!
+                  {{ ' ' }}
+                  <a href="/product/4" class="font-medium underline text-yellow-700 hover:text-yellow-600"> Click here to visit the shop </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- Order summary -->
@@ -99,7 +115,7 @@
             </div>
             <div class="border-t border-gray-200 pt-4 flex items-center justify-between">
               <dt class="text-base font-medium text-gray-900">Order total</dt>
-              <dd class="text-base font-medium text-gray-900">$112.32</dd>
+              <dd class="text-base font-medium text-gray-900">${{total}}</dd>
             </div>
           </dl>
 
@@ -201,6 +217,7 @@ export default {
   setup(props) {
     const open = ref(false)
     const products = ref([])
+    const total = ref(0)
 
     onMounted(() => {
       doCartItems()
@@ -220,6 +237,7 @@ export default {
             size: props.cartItems[i].size,
             imageSrc: props.cartItems[i].image,
             imageAlt: props.cartItems[i].name,
+            quantity: props.cartItems[i].quantity
           })
         }
         // if no - add to products
@@ -240,12 +258,42 @@ export default {
       })
     }
 
+    function doTotal(p, q, t) {
+      //updateProductQuantity(p, q)
+      let productTotal = parseInt(q) * parseInt(t)
+      total.value = total.value + parseInt(productTotal)
+    }
+
+    function updateProductQuantity(p, q) {
+      axios.post('/web-api/v1/update-product-quantity', {
+        product: p, 
+        quantity: q,
+        products: products.value
+      }).then((response) => {
+        console.log(response)
+      })
+    }
+
     return {
       open,
       checkOut,
       products,
       relatedProducts,
-      removeFromCart
+      removeFromCart,
+      total,
+      doTotal
+    }
+  },
+  watch: {
+    products: {
+      handler() {
+        if(this.products && this.products.length) {
+          for(var i=0;i<this.products.length;i++) {
+            this.doTotal(this.products[i], this.products[i].quantity, this.products[i].price.replace('$', ''))
+          }
+        }
+      },
+      deep:true
     }
   }
 }
