@@ -272,7 +272,7 @@ Route::get('/web-api/v1/product/{id}', 'App\Http\Controllers\ProductsController@
 Route::middleware('auth:sanctum')->get('/web-api/v1/manage-product-list', 'App\Http\Controllers\ProductsController@manageProductsList');
 Route::post('/web-api/v1/cart', 'App\Http\Controllers\CartController@addProductToCart');
 Route::post('/web-api/v1/remove-item-from-cart', 'App\Http\Controllers\CartController@destroy');
-Route::post('/web-api/v1/update-product-quantity', 'App\Http\Controllers\CartController@updateProductQuantity');
+Route::post('/web-api/v1/update-cart', 'App\Http\Controllers\CartController@update');
 
 /*
 |--------------------------------------------------------------------------

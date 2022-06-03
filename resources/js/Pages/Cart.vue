@@ -5,8 +5,6 @@
     <main class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
-      
-
       <form class="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
         <section aria-labelledby="cart-heading" class="lg:col-span-7">
           <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
@@ -91,7 +89,7 @@
           <dl class="mt-6 space-y-4">
             <div class="flex items-center justify-between">
               <dt class="text-sm text-gray-600">Subtotal</dt>
-              <dd class="text-sm font-medium text-gray-900">$99.00</dd>
+              <dd class="text-sm font-medium text-gray-900">${{subTotal}}.00</dd>
             </div>
             <div class="border-t border-gray-200 pt-4 flex items-center justify-between">
               <dt class="flex items-center text-sm text-gray-600">
@@ -101,7 +99,7 @@
                   <QuestionMarkCircleIcon class="h-5 w-5" aria-hidden="true" />
                 </a>
               </dt>
-              <dd class="text-sm font-medium text-gray-900">$5.00</dd>
+              <dd class="text-sm font-medium text-gray-900">${{shipping}}.00</dd>
             </div>
             <div class="border-t border-gray-200 pt-4 flex items-center justify-between">
               <dt class="flex text-sm text-gray-600">
@@ -111,7 +109,7 @@
                   <QuestionMarkCircleIcon class="h-5 w-5" aria-hidden="true" />
                 </a>
               </dt>
-              <dd class="text-sm font-medium text-gray-900">$8.32</dd>
+              <dd class="text-sm font-medium text-gray-900">${{taxes}}</dd>
             </div>
             <div class="border-t border-gray-200 pt-4 flex items-center justify-between">
               <dt class="text-base font-medium text-gray-900">Order total</dt>
@@ -217,7 +215,10 @@ export default {
   setup(props) {
     const open = ref(false)
     const products = ref([])
+    const subTotal = ref(0)
     const total = ref(0)
+    const shipping = ref(0)
+    const taxes = ref(0)
 
     onMounted(() => {
       doCartItems()
@@ -225,7 +226,7 @@ export default {
 
     function doCartItems() {
       if(props.cartItems && props.cartItems.length) {
-        //check if id and attributes match an item in the cart (id, size and color match add to quantity and not product)
+        subTotal.value = 0
         for(var i=0;i<props.cartItems.length;i++) {
           products.value.push({
             id: props.cartItems[i].id,
@@ -237,10 +238,19 @@ export default {
             size: props.cartItems[i].size,
             imageSrc: props.cartItems[i].image,
             imageAlt: props.cartItems[i].name,
-            quantity: props.cartItems[i].quantity
+            quantity: props.cartItems[i].quantity,
+            category: props.cartItems[i].category
           })
+          // Calculations
+          if(props.cartItems[i].quantity && props.cartItems[i].quantity > 0) {
+            calculateSubTotal(props.cartItems[i].quantity, props.cartItems[i].price.replace('$', ''))
+            doShipping()
+            calculateTaxes()
+            calculateTotal()
+          } 
         }
-        // if no - add to products
+      } else {
+        resetTotal()
       }
     }
 
@@ -258,20 +268,46 @@ export default {
       })
     }
 
-    function doTotal(p, q, t) {
-      //updateProductQuantity(p, q)
-      let productTotal = parseInt(q) * parseInt(t)
-      total.value = total.value + parseInt(productTotal)
-    }
-
-    function updateProductQuantity(p, q) {
-      axios.post('/web-api/v1/update-product-quantity', {
-        product: p, 
-        quantity: q,
-        products: products.value
+    function updateCart(c) {
+      axios.post('/web-api/v1/update-cart', {
+        products: c,
+        subTotal: subTotal.value,
+        shipping: shipping.value,
+        taxes: taxes.value,
+        total: total.value
       }).then((response) => {
         console.log(response)
       })
+    }
+
+    function calculateTotal() {
+      let t = subTotal.value + shipping.value + parseFloat(taxes.value)
+      total.value = t.toFixed(2)
+    }
+
+    function calculateSubTotal(q, p) {
+      subTotal.value += parseInt(q) * parseInt(p)
+    }
+
+    function doShipping() {
+      if(subTotal.value > 0) {
+        shipping.value = 5
+      }
+    }
+
+    function calculateTaxes() {
+      let tempTotal = subTotal.value + shipping.value
+      if(tempTotal && tempTotal > 0) {
+        let tax = parseFloat(7.25) / 100 * tempTotal
+        taxes.value = tax.toFixed(2)
+      }
+    }
+
+    function resetTotal() {
+      subTotal.value = 0
+      shipping.value = 0
+      taxes.value = 0
+      total.value = 0
     }
 
     return {
@@ -281,17 +317,47 @@ export default {
       relatedProducts,
       removeFromCart,
       total,
-      doTotal
+      updateCart,
+      shipping,
+      subTotal,
+      taxes,
+      calculateSubTotal,
+      doShipping,
+      resetTotal,
+      calculateTaxes,
+      calculateTotal
     }
   },
   watch: {
     products: {
       handler() {
+        let cart = []
         if(this.products && this.products.length) {
+          this.subTotal = 0
           for(var i=0;i<this.products.length;i++) {
-            this.doTotal(this.products[i], this.products[i].quantity, this.products[i].price.replace('$', ''))
-          }
+            cart.push({
+              id: this.products[i].id,
+              name:  this.products[i].name,
+              price:  this.products[i].price,
+              category:  this.products[i].category,
+              size:  this.products[i].size,
+              color:  this.products[i].color,
+              image:  this.products[i].imageSrc,
+              inStock: true,
+              quantity:  this.products[i].quantity
+            })
+            // Calculations
+            if(this.products[i].quantity && this.products[i].quantity > 0) {
+              this.calculateSubTotal(this.products[i].quantity, this.products[i].price.replace('$', ''))
+              this.doShipping()
+              this.calculateTaxes()
+              this.calculateTotal()
+            } 
+          } 
+        } else {
+          this.resetTotal()
         }
+        this.updateCart(cart)
       },
       deep:true
     }

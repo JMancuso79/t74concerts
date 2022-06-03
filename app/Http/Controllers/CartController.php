@@ -161,6 +161,27 @@ class CartController extends Controller
     	return;
     }
 
+    public function update(Request $request) {
+    	$products = [];
+    	foreach ($request->products as $p) {
+			$products[] = [
+	    		'id' => $p['id'],
+	    		'name' => $p['name'],
+	    		'price' => $p['price'],
+	    		'category' => $p['category'],
+	    		'size' => $p['size'],
+	    		'color' => $p['color'],
+	    		'image' => $p['image'],
+	    		'inStock' => $p['inStock'],
+	    		'quantity' => $p['quantity']
+	    	];
+    	}
+		session([
+			'products' => $products
+		]);
+    	return;
+    }
+
     public function updateQuantity($product, $quantity, $products) {
     	$oldProducts = $products;
     	$products = [];
