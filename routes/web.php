@@ -144,7 +144,16 @@ Route::get('/check-out', function () {
 		'page' => 'check-out',
 		'page_data' => $page_data
 	]);
-    return Inertia::render('CheckOut');
+
+	$products = [];
+
+	if(session('products')) {
+		$products = session('products');
+	}
+	
+    return Inertia::render('CheckOut', [
+    	'cartItems' => $products,
+    ]);
 });
 
 Route::get('/manage/product/{id}', function ($id) {

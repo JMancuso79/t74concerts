@@ -1,6 +1,7 @@
 <template>
   <div class="bg-gray-50">
     <Header />
+
     <div class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Checkout</h2>
 
@@ -13,6 +14,12 @@
               <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
               <div class="mt-1">
                 <input type="email" id="email-address" name="email-address" autocomplete="email" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+              <div class="mt-1">
+                <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
               </div>
             </div>
           </div>
@@ -32,13 +39,6 @@
                 <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
                 <div class="mt-1">
                   <input type="text" id="last-name" name="last-name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-                </div>
-              </div>
-
-              <div class="sm:col-span-2">
-                <label for="company" class="block text-sm font-medium text-gray-700">Company</label>
-                <div class="mt-1">
-                  <input type="text" name="company" id="company" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
 
@@ -66,16 +66,16 @@
               <div>
                 <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
                 <div class="mt-1">
-                  <select id="country" name="country" autocomplete="country-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
+                  <select v-model="country" id="country" name="country" autocomplete="country-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="US">United States</option>
+                    <!--<option>Canada</option>
+                    <option>Mexico</option>-->
                   </select>
                 </div>
               </div>
 
               <div>
-                <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
+                <label for="region" class="block text-sm font-medium text-gray-700">State</label>
                 <div class="mt-1">
                   <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
@@ -88,12 +88,6 @@
                 </div>
               </div>
 
-              <div class="sm:col-span-2">
-                <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-                <div class="mt-1">
-                  <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-                </div>
-              </div>
             </div>
           </div>
 
@@ -129,7 +123,7 @@
           <div class="mt-10 border-t border-gray-200 pt-10">
             <h2 class="text-lg font-medium text-gray-900">Payment</h2>
 
-            <fieldset class="mt-4">
+            <!--<fieldset class="mt-4">
               <legend class="sr-only">Payment type</legend>
               <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
                 <div v-for="(paymentMethod, paymentMethodIdx) in paymentMethods" :key="paymentMethod.id" class="flex items-center">
@@ -140,7 +134,7 @@
                   </label>
                 </div>
               </div>
-            </fieldset>
+            </fieldset>-->
 
             <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
               <div class="col-span-4">
@@ -181,7 +175,7 @@
           <div class="mt-4 bg-white border border-gray-200 rounded-lg shadow-sm">
             <h3 class="sr-only">Items in your cart</h3>
             <ul role="list" class="divide-y divide-gray-200">
-              <li v-for="product in products" :key="product.id" class="flex py-6 px-4 sm:px-6">
+              <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-6 px-4 sm:px-6">
                 <div class="flex-shrink-0">
                   <img :src="product.imageSrc" :alt="product.imageAlt" class="w-20 rounded-md" />
                 </div>
@@ -191,19 +185,19 @@
                     <div class="min-w-0 flex-1">
                       <h4 class="text-sm">
                         <a :href="product.href" class="font-medium text-gray-700 hover:text-gray-800">
-                          {{ product.title }}
+                          {{ product.name }}
                         </a>
                       </h4>
-                      <p class="mt-1 text-sm text-gray-500">
+                      <p class="mt-1 text-sm text-gray-500 capitalize">
                         {{ product.color }}
                       </p>
-                      <p class="mt-1 text-sm text-gray-500">
+                      <p class="mt-1 text-sm text-gray-500 capitalize">
                         {{ product.size }}
                       </p>
                     </div>
 
                     <div class="ml-4 flex-shrink-0 flow-root">
-                      <button type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500">
+                      <button @click.prevent="removeFromCart(product, productIdx)" type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500">
                         <span class="sr-only">Remove</span>
                         <TrashIcon class="h-5 w-5" aria-hidden="true" />
                       </button>
@@ -215,7 +209,7 @@
 
                     <div class="ml-4">
                       <label for="quantity" class="sr-only">Quantity</label>
-                      <select id="quantity" name="quantity" class="rounded-md border border-gray-300 text-base font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                      <select v-model="product.quantity" id="quantity" name="quantity" class="rounded-md border border-gray-300 text-base font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -233,19 +227,19 @@
             <dl class="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6">
               <div class="flex items-center justify-between">
                 <dt class="text-sm">Subtotal</dt>
-                <dd class="text-sm font-medium text-gray-900">$64.00</dd>
+                <dd class="text-sm font-medium text-gray-900">${{subTotal}}.00</dd>
               </div>
               <div class="flex items-center justify-between">
                 <dt class="text-sm">Shipping</dt>
-                <dd class="text-sm font-medium text-gray-900">$5.00</dd>
+                <dd class="text-sm font-medium text-gray-900">${{shipping}}.00</dd>
               </div>
               <div class="flex items-center justify-between">
                 <dt class="text-sm">Taxes</dt>
-                <dd class="text-sm font-medium text-gray-900">$5.52</dd>
+                <dd class="text-sm font-medium text-gray-900">${{taxes}}</dd>
               </div>
               <div class="flex items-center justify-between border-t border-gray-200 pt-6">
                 <dt class="text-base font-medium">Total</dt>
-                <dd class="text-base font-medium text-gray-900">$75.52</dd>
+                <dd class="text-base font-medium text-gray-900">${{total}}</dd>
               </div>
             </dl>
 
@@ -267,7 +261,7 @@
 <script>
 
 
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RadioGroup, RadioGroupDescription, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue'
 import { CheckCircleIcon, TrashIcon } from '@heroicons/vue/solid'
 import Header from '@/Pages/Partials/Header'
@@ -277,28 +271,18 @@ export default {
     Header,CheckCircleIcon, TrashIcon,RadioGroup, RadioGroupDescription, RadioGroupLabel, RadioGroupOption
 
   },
-  setup() {
-    const subtotal = '$210.00'
+  props: ['cartItems'],
+  setup(props) {
+    const subTotal = ref(0)
     const discount = { code: 'CHEAPSKATE', amount: '$24.00' }
-    const taxes = '$23.68'
-    const shipping = '$22.00'
-    const total = '$341.68'
-    const products = [
-      {
-        id: 1,
-        title: 'Tower 74 Black Surf Tee',
-        href: '#',
-        price: '$32.00',
-        color: 'Black',
-        size: 'Large',
-        imageSrc: '/images/front-tee-1.jpg',
-        imageAlt: "Tower 74 Black Surf Tee.",
-      },
-      // More products...
-    ]
+    const taxes = ref(0)
+    const shipping = ref(0)
+    const total = ref(0)
+    const products = ref([])
+    const country = ref('US')
     const deliveryMethods = [
       { id: 1, title: 'Standard', turnaround: '4–10 business days', price: '$5.00' },
-      { id: 2, title: 'Express', turnaround: '2–5 business days', price: '$16.00' },
+      //{ id: 2, title: 'Express', turnaround: '2–5 business days', price: '$16.00' },
     ]
     const paymentMethods = [
       { id: 'credit-card', title: 'Credit card' },
@@ -308,6 +292,92 @@ export default {
 
     const selectedDeliveryMethod = ref(deliveryMethods[0])
 
+    onMounted(() => {
+      doCartItems()
+    })
+
+    function doCartItems() {
+      if(props.cartItems && props.cartItems.length) {
+        //subTotal.value = 0
+        for(var i=0;i<props.cartItems.length;i++) {
+          products.value.push({
+            id: props.cartItems[i].id,
+            name: props.cartItems[i].name,
+            href: '/product/'+props.cartItems[i].id,
+            price: props.cartItems[i].price,
+            color: props.cartItems[i].color,
+            inStock: props.cartItems[i].inStock,
+            size: props.cartItems[i].size,
+            imageSrc: props.cartItems[i].image,
+            imageAlt: props.cartItems[i].name,
+            quantity: props.cartItems[i].quantity,
+            category: props.cartItems[i].category
+          })
+          // Calculations
+          /*if(props.cartItems[i].quantity && props.cartItems[i].quantity > 0) {
+            calculateSubTotal(props.cartItems[i].quantity, props.cartItems[i].price.replace('$', ''))
+            doShipping()
+            calculateTaxes()
+            calculateTotal()
+          } */
+        }
+      } else {
+        //resetTotal()
+      }
+    }
+
+    function removeFromCart(p, index) {
+      axios.post('/web-api/v1/remove-item-from-cart', {
+        id: p.id,
+        size: p.size,
+        color: p.color
+      }).then((response) => {
+        products.value.splice(index, 1)
+      })
+    }
+
+    function updateCart(c) {
+      axios.post('/web-api/v1/update-cart', {
+        products: c,
+        subTotal: subTotal.value,
+        shipping: shipping.value,
+        taxes: taxes.value,
+        total: total.value
+      }).then((response) => {
+        console.log(response)
+      })
+    }
+
+    function calculateTotal() {
+      let t = subTotal.value + shipping.value + parseFloat(taxes.value)
+      total.value = t.toFixed(2)
+    }
+
+    function calculateSubTotal(q, p) {
+      subTotal.value += parseInt(q) * parseInt(p)
+    }
+
+    function doShipping() {
+      if(subTotal.value > 0) {
+        shipping.value = 5
+      }
+    }
+
+    function calculateTaxes() {
+      let tempTotal = subTotal.value + shipping.value
+      if(tempTotal && tempTotal > 0) {
+        let tax = parseFloat(7.25) / 100 * tempTotal
+        taxes.value = tax.toFixed(2)
+      }
+    }
+
+    function resetTotal() {
+      subTotal.value = 0
+      shipping.value = 0
+      taxes.value = 0
+      total.value = 0
+    }
+
     return {
       products,
       deliveryMethods,
@@ -316,8 +386,50 @@ export default {
       shipping,
       taxes,
       discount,
-      subtotal,
-      paymentMethods
+      subTotal,
+      paymentMethods,
+      removeFromCart,
+      updateCart,
+      calculateSubTotal,
+      doShipping,
+      resetTotal,
+      calculateTaxes,
+      calculateTotal,
+      country
+    }
+  },
+  watch: {
+    products: {
+      handler() {
+        let cart = []
+        if(this.products && this.products.length) {
+          this.subTotal = 0
+          for(var i=0;i<this.products.length;i++) {
+            cart.push({
+              id: this.products[i].id,
+              name:  this.products[i].name,
+              price:  this.products[i].price,
+              category:  this.products[i].category,
+              size:  this.products[i].size,
+              color:  this.products[i].color,
+              image:  this.products[i].imageSrc,
+              inStock: true,
+              quantity:  this.products[i].quantity
+            })
+            // Calculations
+            if(this.products[i].quantity && this.products[i].quantity > 0) {
+              this.calculateSubTotal(this.products[i].quantity, this.products[i].price.replace('$', ''))
+              this.doShipping()
+              this.calculateTaxes()
+              this.calculateTotal()
+            } 
+          } 
+        } else {
+          this.resetTotal()
+        }
+        this.updateCart(cart)
+      },
+      deep:true
     }
   }
 }
