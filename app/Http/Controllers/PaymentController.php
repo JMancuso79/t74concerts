@@ -490,4 +490,34 @@ class PaymentController extends Controller
 
         return $artist_customers;
     }
+
+    public function storeProductPayment() {
+        // Validate 
+        $validator = Validator::make($request->all(), [
+            // User input
+            'email' => 'required|email|max:255',
+            'nameOnCard' => 'required|string|max:255',
+            'cardNumber' => 'required|string|max:255',
+            //'expMonth' => 'required|string|max:2',
+            //'expYear' => 'required|string|max:2',
+            'cvc' => 'required|string|max:5',
+            'zip' => 'required|string|max:255',
+            'productId' => 'required|integer|max:255',
+            'fName' => 'required|string|max:255',
+            'lName' => 'required|string|max:255',
+            // App input
+            'total' => 'required|integer',
+
+        ]); 
+        if ($validator->fails()) {
+        // If Validation Fails
+            return response()->json([
+                'code' => 'fail-validation',
+                'errors' => $validator->errors()->first()
+            ]);
+        } else {
+            // Process payment
+
+        }   
+    }
 }

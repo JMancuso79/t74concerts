@@ -150,7 +150,7 @@ Route::get('/check-out', function () {
 	if(session('products')) {
 		$products = session('products');
 	}
-	
+
     return Inertia::render('CheckOut', [
     	'cartItems' => $products,
     ]);
@@ -282,7 +282,8 @@ Route::middleware('auth:sanctum')->get('/web-api/v1/manage-product-list', 'App\H
 Route::post('/web-api/v1/cart', 'App\Http\Controllers\CartController@addProductToCart');
 Route::post('/web-api/v1/remove-item-from-cart', 'App\Http\Controllers\CartController@destroy');
 Route::post('/web-api/v1/update-cart', 'App\Http\Controllers\CartController@update');
-
+// Payment
+Route::post('/web-api/v1/product-payment', 'App\Http\Controllers\PaymentController@storeProductPayment');
 /*
 |--------------------------------------------------------------------------
 | Image Routes
