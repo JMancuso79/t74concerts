@@ -682,7 +682,7 @@ class PaymentController extends Controller
 
         $user_details->save();
 
-        return;
+        return $user_details;
     }
 
     public function updateCustomerDetails($id, $data) {
@@ -698,7 +698,7 @@ class PaymentController extends Controller
 
         $user_details->save();  
 
-        return;
+        return $user_details;
     }
 
     public function storeNewOrder($transaction_id, $status, $user_id, $total, $delivery_method) {

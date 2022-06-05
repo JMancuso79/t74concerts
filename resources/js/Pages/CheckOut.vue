@@ -285,12 +285,17 @@
     </div>
     <!-- Loading -->
     <div v-else class="max-w-2xl mx-auto pt-24 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-      <button type="button" class="bg-blue-500" disabled>
-        <svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        </svg>
-        Processing...
+      <button disabled type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="animate-spin h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+            </svg>
+            Processing...
       </button>
+
+
+
+        
+    
     </div>
     <!-- Footer -->
     <footer aria-labelledby="footer-heading">
@@ -647,3 +652,18 @@ export default {
 
 
 </script>
+
+<style>
+animate-spin {
+ animation: spin 1s linear infinite; 
+}  
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
