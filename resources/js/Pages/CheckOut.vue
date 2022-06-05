@@ -1,8 +1,16 @@
 <template>
   <div id="page-top" class="bg-gray-50">
     <Header />
-
-    <div v-if="isLoading === false" class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <!-- Loading -->
+    <div v-if="processing == true" class="max-w-2xl mx-auto pt-24 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
+      <button disabled type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="animate-spin h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+            </svg>
+            Processing...
+      </button>
+    </div>
+    <div v-if="processing == false" class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Checkout</h2>
 
       <!-- Errors -->
@@ -283,20 +291,7 @@
         </div>
       </form>
     </div>
-    <!-- Loading -->
-    <div v-else class="max-w-2xl mx-auto pt-24 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-      <button disabled type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            <svg xmlns="http://www.w3.org/2000/svg" class="animate-spin h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-            </svg>
-            Processing...
-      </button>
 
-
-
-        
-    
-    </div>
     <!-- Footer -->
     <footer aria-labelledby="footer-heading">
         <div class="border-t border-gray-100 py-10 text-center">
@@ -346,7 +341,7 @@ export default {
     const expiration = ref(null)
     const cvc = ref(null)
 
-    const isLoading = ref(false)
+    const processing = ref(false)
 
     const errors = ref([])
 
@@ -453,69 +448,70 @@ export default {
 
     function validateForm() {
       let isValidated = true
+      processing.value = true
       // Email
       if(email.value == null || email.value == '') {
-        errors.value.push(['A valid email is required'])
+        errors.value.push('A valid email is required')
         isValidated = false
       }
       // First Name
       if(fName.value == null || fName.value == '') {
-        errors.value.push(['First name is required'])
+        errors.value.push('First name is required')
         isValidated = false
       }
       // Last Name
       if(lName.value == null || lName.value == '') {
-        errors.value.push(['Last name is required'])
+        errors.value.push('Last name is required')
         isValidated = false
       }
       // Street Address
       if(streetAddress.value == null || streetAddress.value == '') {
-        errors.value.push(['Street address is required'])
+        errors.value.push('Street address is required')
         isValidated = false
       }
       // City
       if(city.value == null || city.value == '') {
-        errors.value.push(['City is required'])
+        errors.value.push('City is required')
         isValidated = false
       }
       // State
       if(state.value == null || state.value == '') {
-        errors.value.push(['State is required'])
+        errors.value.push('State is required')
         isValidated = false
       }
       // Country
       if(country.value == null || country.value == '') {
-        errors.value.push(['Country is required'])
+        errors.value.push('Country is required')
         isValidated = false
       }
       // Zip
       if(zip.value == null || zip.value == '') {
-        errors.value.push(['Postal Code is required'])
+        errors.value.push('Postal Code is required')
         isValidated = false
       }
       // Delivery Method
       if(deliveryMethod.value == null || deliveryMethod.value == '') {
-        errors.value.push(['Delivery Method is required'])
+        errors.value.push('Delivery Method is required')
         isValidated = false
       }
       // Card Number
       if(cardNumber.value == null || cardNumber.value == '') {
-        errors.value.push(['Card number is required'])
+        errors.value.push('Card number is required')
         isValidated = false
       }
       // Name on card
       if(nameOnCard.value == null || nameOnCard.value == '') {
-        errors.value.push(['Name on card is required'])
+        errors.value.push('Name on card is required')
         isValidated = false
       }
       // Expiration
       if(expiration.value == null || expiration.value == '') {
-        errors.value.push(['Expiration is required'])
+        errors.value.push('Expiration is required')
         isValidated = false
       }
       // CVC
       if(cvc.value == null || cvc.value == '') {
-        errors.value.push(['The security code is required'])
+        errors.value.push('The security code is required')
         isValidated = false
       }
 
@@ -525,7 +521,6 @@ export default {
     }
 
     function submit() {
-      isLoading.value = true
       axios.post('/web-api/v1/product-payment', {
         products: products.value,
         total: total.value,
@@ -548,17 +543,24 @@ export default {
         //exp_year: expYear.value,
         cvc: cvc.value
       }).then((response) => {
+        
         if(response.data.message == 'success') {
           window.location = '/thank-you'
         } else {
-          errors.value = response.data.errors
+          errors.value.push(response.data.errors)
           const element = document.getElementById('page-top');
           element.scrollIntoView();
         }
+
+        processing.value = false
+
       }).catch(error => {
-        console.log(error)
+        processing.value = false
+        
+        errors.value.push('Please check that your card number, expiration date and security code are correct.')
+        
       })
-      isLoading.value = false
+      
     }
 
     return {
@@ -597,7 +599,7 @@ export default {
       submit,
       errors,
       validateForm,
-      isLoading
+      processing
     }
   },
   watch: {
@@ -639,6 +641,7 @@ export default {
         if(this.validateForm() === true) {
           this.submit()
         } else {
+          this.processing = false
           const el = document.getElementById('page-top');
           el.scrollIntoView();
         }

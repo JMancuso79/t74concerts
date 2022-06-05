@@ -56,6 +56,7 @@
                 <p>
                     {{$notification['customer_details']['city']}}, {{$notification['customer_details']['state']}} {{$notification['customer_details']['zip']}} 
                 </p>
+                <p><strong>Total: ${{$notification['total']}}</strong></p>
             </div>
             <!-- Details -->
             <div class="mb-4">

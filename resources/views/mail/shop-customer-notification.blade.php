@@ -64,6 +64,12 @@
             </div>
             <!-- Tickets -->
             <div class="mb-4">
+                <h3>Total</h3>
+                <p>${{$notification['total']}}</p>
+            </div>
+            
+            <!-- Tickets -->
+            <div class="mb-4">
                 <h3>Shipping</h3>
                 <p>
                     If your products are in stock they ship within two business days of receiving the order. If you purchased an item that is out of stock it will ship within two weeks. 
