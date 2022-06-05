@@ -2,7 +2,7 @@
   <div id="page-top" class="bg-gray-50">
     <Header />
 
-    <div class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div v-if="isLoading === false" class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only">Checkout</h2>
 
       <!-- Errors -->
@@ -283,6 +283,16 @@
         </div>
       </form>
     </div>
+    <!-- Loading -->
+    <div v-else class="max-w-2xl mx-auto pt-24 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
+      <button type="button" class="bg-blue-500" disabled>
+        <svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        </svg>
+        Processing...
+      </button>
+    </div>
+    <!-- Footer -->
     <footer aria-labelledby="footer-heading">
         <div class="border-t border-gray-100 py-10 text-center">
           <p class="text-sm text-gray-500">&copy; 2022 Tower 74 LLC. All rights reserved.</p>
