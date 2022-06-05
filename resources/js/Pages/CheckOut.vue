@@ -16,7 +16,7 @@
             <h3 v-else class="text-sm font-medium text-red-800">There was 1 error in your submission</h3>
             <div class="mt-2 text-sm text-red-700">
               <ul role="list" class="list-disc pl-5 space-y-1">
-                <li v-for="error in errors" :key="error">{{error.msg}}</li>
+                <li v-for="error in errors" :key="error">{{error}}</li>
               </ul>
             </div>
           </div>
@@ -331,6 +331,8 @@ export default {
     const expiration = ref(null)
     const cvc = ref(null)
 
+    const isLoading = ref(false)
+
     const errors = ref([])
 
     const submitted = ref(false)
@@ -438,93 +440,67 @@ export default {
       let isValidated = true
       // Email
       if(email.value == null || email.value == '') {
-        errors.value.push({
-          msg: 'A valid email is required'
-        })
+        errors.value.push(['A valid email is required'])
         isValidated = false
       }
       // First Name
       if(fName.value == null || fName.value == '') {
-        errors.value.push({
-          msg: 'First name is required'
-        })
+        errors.value.push(['First name is required'])
         isValidated = false
       }
       // Last Name
       if(lName.value == null || lName.value == '') {
-        errors.value.push({
-          msg: 'Last name is required'
-        })
+        errors.value.push(['Last name is required'])
         isValidated = false
       }
       // Street Address
       if(streetAddress.value == null || streetAddress.value == '') {
-        errors.value.push({
-          msg: 'Street address is required'
-        })
+        errors.value.push(['Street address is required'])
         isValidated = false
       }
       // City
       if(city.value == null || city.value == '') {
-        errors.value.push({
-          msg: 'City is required'
-        })
+        errors.value.push(['City is required'])
         isValidated = false
       }
       // State
       if(state.value == null || state.value == '') {
-        errors.value.push({
-          msg: 'State is required'
-        })
+        errors.value.push(['State is required'])
         isValidated = false
       }
       // Country
       if(country.value == null || country.value == '') {
-        errors.value.push({
-          msg: 'Country is required'
-        })
+        errors.value.push(['Country is required'])
         isValidated = false
       }
       // Zip
       if(zip.value == null || zip.value == '') {
-        errors.value.push({
-          msg: 'Postal Code is required'
-        })
+        errors.value.push(['Postal Code is required'])
         isValidated = false
       }
       // Delivery Method
       if(deliveryMethod.value == null || deliveryMethod.value == '') {
-        errors.value.push({
-          msg: 'Delivery Method is required'
-        })
+        errors.value.push(['Delivery Method is required'])
         isValidated = false
       }
       // Card Number
       if(cardNumber.value == null || cardNumber.value == '') {
-        errors.value.push({
-          msg: 'Card number is required'
-        })
+        errors.value.push(['Card number is required'])
         isValidated = false
       }
       // Name on card
       if(nameOnCard.value == null || nameOnCard.value == '') {
-        errors.value.push({
-          msg: 'Name on card is required'
-        })
+        errors.value.push(['Name on card is required'])
         isValidated = false
       }
       // Expiration
       if(expiration.value == null || expiration.value == '') {
-        errors.value.push({
-          msg: 'Expiration is required'
-        })
+        errors.value.push(['Expiration is required'])
         isValidated = false
       }
       // CVC
       if(cvc.value == null || cvc.value == '') {
-        errors.value.push({
-          msg: 'The security code is required'
-        })
+        errors.value.push(['The security code is required'])
         isValidated = false
       }
 
@@ -534,7 +510,40 @@ export default {
     }
 
     function submit() {
-      console.log('submitted')
+      isLoading.value = true
+      axios.post('/web-api/v1/product-payment', {
+        products: products.value,
+        total: total.value,
+        discount: discount.value,
+        promo_code: null,
+        email: email.value,
+        phone: phone.value,
+        first_name: fName.value,
+        last_name: lName.value,
+        street_address: streetAddress.value,
+        unit: unit.value,
+        city: city.value,
+        state: state.value,
+        zip: zip.value,
+        country: country.value,
+        delivery_method: deliveryMethod.value,
+        card_number: cardNumber.value,
+        name_on_card: nameOnCard.value,
+        //exp_month: expMonth.value,
+        //exp_year: expYear.value,
+        cvc: cvc.value
+      }).then((response) => {
+        if(response.data.message == 'success') {
+          console.log(response.data)
+        } else {
+          errors.value = response.data.errors
+          const element = document.getElementById('page-top');
+          element.scrollIntoView();
+        }
+      }).catch(error => {
+        console.log(error)
+      })
+      isLoading.value = false
     }
 
     return {
@@ -572,7 +581,8 @@ export default {
       submitted,
       submit,
       errors,
-      validateForm
+      validateForm,
+      isLoading
     }
   },
   watch: {

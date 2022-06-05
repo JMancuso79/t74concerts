@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
 use Stripe;
 use App\Models\CustomerArtist;
+use App\Models\CustomerDetail;
+use App\Models\ProcessedOrder;
+use App\Models\OrderedItem;
 use App\Models\Order;
 use App\Models\PromoCode;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class PaymentController extends Controller
 {
@@ -491,23 +496,24 @@ class PaymentController extends Controller
         return $artist_customers;
     }
 
-    public function storeProductPayment() {
+    public function storeProductPayment(Request $request) {
         // Validate 
         $validator = Validator::make($request->all(), [
-            // User input
+            'total' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'nameOnCard' => 'required|string|max:255',
-            'cardNumber' => 'required|string|max:255',
-            //'expMonth' => 'required|string|max:2',
-            //'expYear' => 'required|string|max:2',
-            'cvc' => 'required|string|max:5',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'street_address' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
             'zip' => 'required|string|max:255',
-            'productId' => 'required|integer|max:255',
-            'fName' => 'required|string|max:255',
-            'lName' => 'required|string|max:255',
-            // App input
-            'total' => 'required|integer',
-
+            'delivery_method' => 'required|string|max:255',
+            'name_on_card' => 'required|string|max:255',
+            'card_number' => 'required|string|max:255',
+            //'exp_month' => 'required|string|max:2',
+            //'exp_year' => 'required|string|max:2',
+            'cvc' => 'required|string|max:5',
         ]); 
         if ($validator->fails()) {
         // If Validation Fails
@@ -516,8 +522,208 @@ class PaymentController extends Controller
                 'errors' => $validator->errors()->first()
             ]);
         } else {
-            // Process payment
+            // Make sure there are products
+            if(($request->products) && (count($request->products) > 0)) {
 
+                $stripeSecret = \config('payment.stripeSecret');
+                Stripe\Stripe::setApiKey($stripeSecret);
+
+                // Create Token
+                $token = Stripe\Token::create([
+                    'card' => [
+                        'number' => $request->card_number,
+                        'exp_month' => '02',
+                        'exp_year' => '2023',
+                        'cvc' => $request->cvc,
+                        'address_zip' => $request->zip, 
+                    ],
+                ]);
+
+                // check if customer exists
+                $user = $this->isNewCustomer($request->email);
+                if(!$user) {
+
+                    if($token['id']) {
+                        // Create Customer
+                        $stripe_customer = Stripe\Customer::create([
+                            'source' => $token['id'],
+                            'email' => $request->email,
+                            'name' => $request->name_on_card,
+                        ]);
+                    }
+
+                    $user = $this->storeUser($request, $stripe_customer->id);
+                } else {
+                    $stripe_customer = Stripe\Customer::retrieve($user->stripe_id);
+                }
+
+                $user_details = $this->isNewCustomerDetails($user->id);
+
+                if(!$user_details) {
+                    $this->storeCustomerDetails($user->id, $request);
+                } 
+                // Update the details
+                else {
+                    $this->updateCustomerDetails($user->id, $request);
+                }
+
+                try {
+                    // charge
+                    $charge = Stripe\Charge::create([
+                        'customer' => $stripe_customer->id,
+                        'amount' => number_format($request->total, 2, '', '.'),
+                        'currency' => 'usd',
+                        'description' => 'test'
+                    ]); 
+
+                    // store order
+                    $order = $this->storeNewOrder($charge->id, $charge->status, $user->id, $request->total, $request->delivery_method);
+                    // store order items
+                    if($order) {
+                        $this->storeProducts($order->id, $user->id, $request->products);
+                    }
+                    // do notification to customer
+
+                    // do notification to admin
+
+                    return response()->json([
+                        'message' => 'success',
+                        'charge_details' => $charge,
+                        'errors' => []
+                    ]); 
+
+                } catch(\Stripe\Exception\CardException $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                } catch (\Stripe\Exception\RateLimitException $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                } catch (\Stripe\Exception\InvalidRequestException $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                } catch (\Stripe\Exception\AuthenticationException $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                } catch (\Stripe\Exception\ApiConnectionException $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                } catch (\Stripe\Exception\ApiErrorException $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                } catch (Exception $e) {
+                    $body = $e->getJsonBody();
+                    $err  = $body['error'];
+                    return response()->json($err);
+                }
+            }
+            // Return validation error
+            else {
+                return response()->json([
+                    'code' => 'fail-validation',
+                    'errors' => ['You must have at least one product in the cart.']
+                ]);
+            }
         }   
+    }
+
+    public function isNewCustomer($email) {
+        $user = User::where('email', $email)->first();
+        return $user;
+    }
+
+    public function isNewCustomerDetails($user_id) {
+        $user = CustomerDetail::where('user_id', $user_id)->first();
+        return $user;
+    }
+
+    public function storeUser($data, $stripe_id) {
+        $user = new User;
+
+        $user->name = $data->first_name.' '.$data->last_name;
+        $user->email = $data->email;
+        $user->password = Hash::make(rand().''.rand());
+        $user->stripe_id = $stripe_id;
+
+        $user->save();
+
+        return $user;
+    }
+
+    public function storeCustomerDetails($id, $data) {
+        $user_details = new CustomerDetail;
+
+        $user_details->user_id = $id;
+        $user_details->phone = $data->phone;
+        $user_details->street_address = $data->street_address;
+        $user_details->unit = $data->unit;
+        $user_details->city = $data->city;
+        $user_details->state = $data->state;
+        $user_details->zip = $data->zip;
+        $user_details->country = $data->country;
+
+        $user_details->save();
+
+        return;
+    }
+
+    public function updateCustomerDetails($id, $data) {
+        $user_details = CustomerDetail::where('user_id', $id)->first();
+
+        $user_details->phone = $data->phone;
+        $user_details->street_address = $data->street_address;
+        $user_details->unit = $data->unit;
+        $user_details->city = $data->city;
+        $user_details->state = $data->state;
+        $user_details->zip = $data->zip;
+        $user_details->country = $data->country;
+
+        $user_details->save();  
+
+        return;
+    }
+
+    public function storeNewOrder($transaction_id, $status, $user_id, $total, $delivery_method) {
+        $order = new ProcessedOrder;
+
+        $order->customer_id = $user_id; 
+        $order->transaction_id = $transaction_id;   
+        $order->total = $total;   
+        $order->status = $status;   
+        $order->promo_code = null;   
+        $order->discount = null;   
+        $order->delivery_method = $delivery_method;   
+
+        $order->save();           
+
+        return $order;
+    }
+
+    public function storeProducts($order_id, $user_id, $products) {
+        foreach ($products as $product) {
+            $this->storeProduct($order_id, $user_id, $product);
+        }
+        return;
+    }
+
+    public function storeProduct($order_id, $user_id, $product) {
+        $p = new OrderedItem;
+
+        $p->order_id = $order_id;
+        $p->customer_id = $user_id;
+        $p->product_id = $product['id'];
+        $p->quantity = $product['quantity'];
+        $p->size = $product['size'];
+        $p->color = $product['color'];
+        $p->status = 'test';
+
+        $p->save();
+
+        return;
     }
 }
