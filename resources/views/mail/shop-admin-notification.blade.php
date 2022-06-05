@@ -27,29 +27,23 @@
 <body>
     <div class="bg-grey">
         <div class="p-5">
-            <h1 class="text-capitalize">Thank You For Your Order!</h1>
+            <h1 class="text-capitalize">New Order From Shop!</h1>
         </div>
         <!-- Thank You -->
         <div class="bg-white p-5 mb-5">
-            <h3 class="text-capitalize">Your support helps us book concerts which creates revenue for venues and keeps artists working!</h3>
+            <h3 class="text-capitalize">Customer</h3>
+            <p>Customer info</p>
         </div>
         <!-- Details -->
         <div class="bg-white p-5 mb-5">
-            <h3 class="text-capitalize">About Your Purchase</h3>
+            <h3 class="text-capitalize">About The Purchase</h3>
             <p>Loop through products here</p>
         </div>
         <!-- Tickets -->
         <div class="bg-white p-5 mb-5">
-            <h3>Shipping</h3>
+            <h3>Total</h3>
             <p>
-                If your products are in stock they ship within two business days of receiving the order. If you purchased an item that is out of stock it will ship within two weeks. 
-            </p>
-        </div>
-        <!-- Contact -->
-        <div class="bg-white p-5">
-            <h3 class="text-capitalize">Contact</h3>
-            <p>
-                If you have questions about your order, please do not reply to this email. <a href="https://tower74concerts.com/contact">Click here to contact us</a>. 
+                Total goes here 
             </p>
         </div>
         <!-- Website -->

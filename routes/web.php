@@ -156,6 +156,22 @@ Route::get('/check-out', function () {
     ]);
 });
 
+Route::get('/thank-you', function () {
+	$page_data = [
+		'title' => 'Tower74 | Thank You!',
+		'description' => '',
+		'image' => '',
+		'url' => 'https://tower74concerts.com/thank-you'
+	];
+	session([
+		'slug' => 'thank-you',
+		'page' => 'thank-you',
+		'page_data' => $page_data
+	]);
+
+    return Inertia::render('ThankYou');
+});
+
 Route::get('/manage/product/{id}', function ($id) {
 	$page_data = [
 		'title' => 'Tower74 | Shop',

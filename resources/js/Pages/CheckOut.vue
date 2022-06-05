@@ -534,7 +534,7 @@ export default {
         cvc: cvc.value
       }).then((response) => {
         if(response.data.message == 'success') {
-          console.log(response.data)
+          window.location = '/thank-you'
         } else {
           errors.value = response.data.errors
           const element = document.getElementById('page-top');

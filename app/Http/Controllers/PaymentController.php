@@ -582,9 +582,22 @@ class PaymentController extends Controller
                     if($order) {
                         $this->storeProducts($order->id, $user->id, $request->products);
                     }
-                    // do notification to customer
 
+                    $notification = [
+                        'customer' => $user,
+                        'customer_details' => $user_details,
+                        'products' => $request->products,
+                        'total' => $request->total
+                    ];
+
+                    // do notification to customer
+                    $this->sendEmailToCustomer($notification, $request->email);           
                     // do notification to admin
+                    $this->sendEmailToAdmin($notification);
+
+                    session([
+                        'products' => []
+                    ]);
 
                     return response()->json([
                         'message' => 'success',
@@ -725,5 +738,53 @@ class PaymentController extends Controller
         $p->save();
 
         return;
+    }
+
+    public function sendEmailToCustomer($notification, $email) {
+        if($notification) {
+            Mail::send('mail.shop-customer-notification', ['notification' => $notification], function ($message) use ($notification, $email) {
+                $message->subject('Thank you for your order!');
+                $message->from('noreply@tower74concerts.com', 'Tower 74');
+                $message->to($email);
+            });
+
+            if( count(Mail::failures()) > 0 ) {
+                return response()->json([
+                    'message' => 'fail',
+                ]);            
+            } else {
+                return response()->json([
+                    'message' => 'success',
+                ]);
+            }
+        } else {
+            return response()->json([
+                'message' => 'fail',
+            ]); 
+        }
+    }
+
+    public function sendEmailToAdmin($notification) {
+        if($notification) {
+            Mail::send('mail.shop-admin-notification', ['notification' => $notification], function ($message) use ($notification) {
+                $message->subject('New Order!');
+                $message->from('noreply@tower74concerts.com', 'Tower 74');
+                $message->to('booking@tower74concerts.com');
+            });
+
+            if( count(Mail::failures()) > 0 ) {
+                return response()->json([
+                    'message' => 'fail',
+                ]);            
+            } else {
+                return response()->json([
+                    'message' => 'success',
+                ]);
+            }
+        } else {
+            return response()->json([
+                'message' => 'fail',
+            ]); 
+        }
     }
 }
