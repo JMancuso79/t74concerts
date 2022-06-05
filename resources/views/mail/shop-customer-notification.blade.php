@@ -56,7 +56,7 @@
                             <img src="https://tower74concerts.com/storage/images/628d5902e11b8_back-tee-1.jpg" style="max-width:280px;" width="100%" />
                         </p>
                         <p style="margin-top:5px;" class="text-capitalize">
-                            <strong>{{ $product['name'] }}</strong> {{ $product['color'] }} ({{ $product['quantity'] }}  )
+                            <strong>{{ $product['name'] }}</strong> {{ $product['color'] }} ({{ $product['quantity'] }})
                             <br>Size: {{ $product['size'] }} 
                         </p>
                     </div>

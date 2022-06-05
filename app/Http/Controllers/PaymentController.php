@@ -560,11 +560,11 @@ class PaymentController extends Controller
                 $user_details = $this->isNewCustomerDetails($user->id);
 
                 if(!$user_details) {
-                    $this->storeCustomerDetails($user->id, $request);
+                    $user_details = $this->storeCustomerDetails($user->id, $request);
                 } 
                 // Update the details
                 else {
-                    $this->updateCustomerDetails($user->id, $request);
+                    $user_details = $this->updateCustomerDetails($user->id, $request);
                 }
 
                 try {

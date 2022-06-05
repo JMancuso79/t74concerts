@@ -67,22 +67,13 @@
                             <img src="https://tower74concerts.com/storage/images/628d5902e11b8_back-tee-1.jpg" style="max-width:280px;" width="100%" />
                         </p>
                         <p style="margin-top:5px;" class="text-capitalize">
-                            <strong>{{ $product['name'] }}</strong> {{ $product['color'] }} ({{ $product['quantity'] }}  )
+                            <strong>{{ $product['name'] }}</strong> {{ $product['color'] }} ({{ $product['quantity'] }})
                             <br>Size: {{ $product['size'] }} 
                         </p>
                     </div>
                 @endforeach
             </div>
 
-
-            <!-- Contact -->
-            <div class="mb-4">
-                <h3 class="text-capitalize">Contact</h3>
-                <p>
-                    If you have questions about your order, please do not reply to this email. 
-                </p>
-                <p><a href="https://tower74concerts.com/contact">Click here to contact us</a></p>
-            </div>
             <!-- Website -->
             <div class="mb-4">
                 <p>
