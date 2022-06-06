@@ -41796,7 +41796,7 @@ var relatedProducts = [{
             imageAlt: props.cartItems[i].name,
             quantity: props.cartItems[i].quantity,
             category: props.cartItems[i].category,
-            leadTime: 'Ships wihin 2 weeks'
+            leadTime: '2 weeks'
           }); // Calculations
 
           if (props.cartItems[i].quantity && props.cartItems[i].quantity > 0) {
