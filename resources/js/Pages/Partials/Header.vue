@@ -11,7 +11,7 @@
           </DisclosureButton>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex-shrink-0 flex items-center">
+          <div @click.prevent="goTo('/concerts')" class="flex-shrink-0 flex items-center">
             <img src="/images/t74-white-wp.png" class="block lg:hidden h-10" />
             <img src="/images/t74-white-wp.png" class="hidden lg:block h-10"  />
           </div>
@@ -22,10 +22,10 @@
           </div>
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <!--<button type="button" @click.prevent="goTo()" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+          <button type="button" @click.prevent="goTo('/cart')" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
             <span class="sr-only">View notifications</span>
             <ShoppingBagIcon class="h-6 w-6" aria-hidden="true" />
-          </button>-->
+          </button>
 
         </div>
       </div>
@@ -45,7 +45,7 @@ import { ShoppingBagIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 const navigation = [
   { name: 'Concerts', href: '/concerts', current: false },
-  //{ name: 'Shop', href: '/product/4', current: false },
+  { name: 'Shop', href: '/product/4', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 export default {
@@ -53,8 +53,8 @@ export default {
     ShoppingBagIcon, MenuIcon, XIcon, Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems
   },
   setup() {
-    function goTo() {
-      window.location = '/cart'
+    function goTo(v) {
+      window.location = v
     }
 
     return {

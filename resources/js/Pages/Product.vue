@@ -47,6 +47,23 @@
           </div>
         </div>
         <div class="mt-8 lg:col-span-5">
+          <!-- Errors -->
+          <div v-if="errors && errors.length" class="rounded-md bg-red-50 p-4 mb-4">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <XCircleIcon class="h-5 w-5 text-red-400" aria-hidden="true" />
+              </div>
+              <div class="ml-3">
+                <h3 v-if="errors.length != 1" class="text-sm font-medium text-red-800">There were {{errors.length}} errors </h3>
+                <h3 v-else class="text-sm font-medium text-red-800">There was 1 error </h3>
+                <div class="mt-2 text-sm text-red-700">
+                  <ul role="list" class="list-disc pl-5 space-y-1">
+                    <li v-for="error in errors" :key="error">{{error}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
           <form>
             <!-- Color picker -->
             <div>
@@ -92,7 +109,7 @@
           </form>
 
           <!-- Product details -->
-          <div class="mt-10">
+          <div v-if="product.description && product.description != ''" class="mt-10">
             <h2 class="text-sm font-medium text-gray-900">Description</h2>
 
             <div class="mt-4 prose prose-sm text-gray-500" v-html="product.description" />
@@ -222,7 +239,7 @@ import {
   UserIcon,
   XIcon,
 } from '@heroicons/vue/outline'
-import { StarIcon } from '@heroicons/vue/solid'
+import { StarIcon, CheckCircleIcon, TrashIcon, XCircleIcon } from '@heroicons/vue/solid'
 
 export default {
   components: {
@@ -250,7 +267,8 @@ export default {
     TransitionChild,
     TransitionRoot,
     StarIcon,
-    Header
+    Header,
+    CheckCircleIcon, TrashIcon, XCircleIcon
   },
   props: ['id'],
   setup(props) {
@@ -264,8 +282,9 @@ export default {
     const selectedSize = ref([]);
     const isLoading = ref(false);
     const isReady = ref(false);
+    const errors = ref([])
     const policies = ref([
-      { name: 'United States delivery only', icon: GlobeIcon, description: 'Delivery charge is $5 per shirt.' },
+      { name: 'United States delivery only', icon: GlobeIcon, description: 'Standard delivery charge is $5.' },
       //{ name: 'Loyalty rewards', icon: CurrencyDollarIcon, description: "Don't look at other tees" },
     ])
 
@@ -353,51 +372,55 @@ export default {
     }
 
     function addToCart() {
-      let s = null
-      // Send to server for php session var
-      if(selectedSize.value) {
-        // Small
-        if(selectedSize.value.name == 's') {
-          s = 'small'
+        let s = null
+        // Send to server for php session var
+        if(selectedSize.value) {
+          // Small
+          if(selectedSize.value.name == 's') {
+            s = 'small'
+          }
+          // Medium
+          if(selectedSize.value.name == 'm') {
+            s = 'medium'
+          }
+          // Large
+          if(selectedSize.value.name == 'l') {
+            s = 'large'
+          }
+          // Extra Large
+          if(selectedSize.value.name == 'xl') {
+            s = 'xl'
+          }
+          // Double XL
+          if(selectedSize.value.name == 'xxl') {
+            s = 'xxl'
+          }
+          // Double XL
+          if(selectedSize.value.name == 'xxxl') {
+            s = 'xxxl'
+          }
         }
-        // Medium
-        if(selectedSize.value.name == 'm') {
-          s = 'medium'
-        }
-        // Large
-        if(selectedSize.value.name == 'l') {
-          s = 'large'
-        }
-        // Extra Large
-        if(selectedSize.value.name == 'xl') {
-          s = 'extra large'
-        }
-        // Double XL
-        if(selectedSize.value.name == 'xxl') {
-          s = 'xx large'
-        }
-      }
 
-      isLoading.value = true
-      axios.post('/web-api/v1/cart', {
-        id: product.value.id,
-        name: product.value.name,
-        price: product.value.price,
-        size: s,
-        color: selectedColor.value.name,
-        inStock: true,
-        category: product.value.category,
-        image: product.value.image
-      }).then((response) => {
-        console.log(response)
-        if(response.data.message == 'success') {
-          window.location = '/cart'
-        }
-        if(response.data.message == 'fail-validation') {
-          console.log(response.data.errors)
-        }
-      })
-      isLoading.value = false
+        isLoading.value = true
+        axios.post('/web-api/v1/cart', {
+          id: product.value.id,
+          name: product.value.name,
+          price: product.value.price,
+          size: s,
+          color: selectedColor.value.name,
+          inStock: true,
+          category: product.value.category,
+          image: product.value.image
+        }).then((response) => {
+          console.log(response)
+          if(response.data.message == 'success') {
+            window.location = '/cart'
+          }
+          if(response.data.message == 'fail-validation') {
+            errors.value.push(response.data.errors)
+          }
+        })
+        isLoading.value = false
     }
 
     return {
@@ -408,7 +431,8 @@ export default {
       policies,
       isLoading,
       isReady,
-      addToCart
+      addToCart,
+      errors
     }
   }
 }

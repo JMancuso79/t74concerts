@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <Header />
-
+{{products}}
     <main class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
@@ -12,7 +12,9 @@
           <ul v-if="products && products.length" role="list" class="border-t border-b border-gray-200 divide-y divide-gray-200">
             <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-6 sm:py-10">
               <div class="flex-shrink-0">
-                <img :src="product.imageSrc" :alt="product.imageAlt" class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48" />
+                <a :href="product.href">
+                  <img :src="product.imageSrc" :alt="product.imageAlt" class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48" />
+                </a>
               </div>
 
               <div class="ml-4 flex-1 flex flex-col justify-between sm:ml-6">
@@ -30,7 +32,8 @@
                         {{ product.color }}
                       </p>
                       <p v-if="product.size" class="ml-4 pl-4 border-l border-gray-200 text-gray-500 capitalize">
-                        {{ product.size }}
+                        <span v-if="product.size != 'xl' && product.size != 'xxl' && product.size != 'xxxl'">{{ product.size }}</span>
+                        <span v-else class="uppercase">{{ product.size }}</span>
                       </p>
                     </div>
                     <p class="mt-1 text-sm font-medium text-gray-900">{{ product.price }}</p>
@@ -120,7 +123,9 @@
           <div class="mt-6">
             <button type="submit" @click.prevent="checkOut()" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Checkout</button>
           </div>
+
         </section>
+
       </form>
 
       <!-- Related products
@@ -228,18 +233,23 @@ export default {
       if(props.cartItems && props.cartItems.length) {
         subTotal.value = 0
         for(var i=0;i<props.cartItems.length;i++) {
+          let inStock = true
+          if(props.cartItems[i].size == 'xxl' || props.cartItems[i].size == 'xxxl') {
+            inStock = false
+          }
           products.value.push({
             id: props.cartItems[i].id,
             name: props.cartItems[i].name,
             href: '/product/'+props.cartItems[i].id,
             price: props.cartItems[i].price,
             color: props.cartItems[i].color,
-            inStock: props.cartItems[i].inStock,
+            inStock: inStock,
             size: props.cartItems[i].size,
             imageSrc: props.cartItems[i].image,
             imageAlt: props.cartItems[i].name,
             quantity: props.cartItems[i].quantity,
-            category: props.cartItems[i].category
+            category: props.cartItems[i].category,
+            leadTime: 'Ships wihin 2 weeks'
           })
           // Calculations
           if(props.cartItems[i].quantity && props.cartItems[i].quantity > 0) {
@@ -335,6 +345,10 @@ export default {
         if(this.products && this.products.length) {
           this.subTotal = 0
           for(var i=0;i<this.products.length;i++) {
+            let inStock = true
+            if(this.products[i].size == 'xxl' || this.products[i].size == 'xxxl') {
+              inStock = false
+            }
             cart.push({
               id: this.products[i].id,
               name:  this.products[i].name,
@@ -343,8 +357,9 @@ export default {
               size:  this.products[i].size,
               color:  this.products[i].color,
               image:  this.products[i].imageSrc,
-              inStock: true,
-              quantity:  this.products[i].quantity
+              inStock: inStock,
+              quantity:  this.products[i].quantity,
+              leadTime: 'Ships wihin 2 weeks'
             })
             // Calculations
             if(this.products[i].quantity && this.products[i].quantity > 0) {

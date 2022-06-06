@@ -100,10 +100,12 @@
                 </div>
               </div>
 
-              <div>
-                <label for="region" class="block text-sm font-medium text-gray-700">State</label>
+              <div v-if="states && states.length">
+                <label for="country" class="block text-sm font-medium text-gray-700">State</label>
                 <div class="mt-1">
-                  <input v-model="state" type="text" name="region" id="region" autocomplete="address-level1" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                  <select v-model="state" id="country" name="country" autocomplete="country-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option v-for="s in states" :key="s.id" :value="s.abbreviation">{{s.name}}</option>
+                  </select>
                 </div>
               </div>
 
@@ -162,29 +164,49 @@
               </div>
             </fieldset>-->
 
-            <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
-              <div class="col-span-4">
-                <label for="card-number" class="block text-sm font-medium text-gray-700">Card number</label>
-                <div class="mt-1">
-                  <input v-model="cardNumber" type="text" id="card-number" name="card-number" autocomplete="cc-number" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-                </div>
-              </div>
-
-              <div class="col-span-4">
+            <div class="mt-6 grid grid-cols-6 gap-y-6 gap-x-4">
+              <div class="col-span-6">
                 <label for="name-on-card" class="block text-sm font-medium text-gray-700">Name on card</label>
                 <div class="mt-1">
                   <input v-model="nameOnCard" type="text" id="name-on-card" name="name-on-card" autocomplete="cc-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
-
-              <div class="col-span-3">
-                <label for="expiration-date" class="block text-sm font-medium text-gray-700">Expiration date (MM/YY)</label>
+              <div class="col-span-6">
+                <label for="card-number" class="block text-sm font-medium text-gray-700">Card number</label>
                 <div class="mt-1">
-                  <input v-model="expiration" type="text" name="expiration-date" id="expiration-date" autocomplete="cc-exp" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                  <input v-model="cardNumber" type="text" id="card-number" name="card-number" autocomplete="cc-number" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                </div>
+              </div>
+          
+
+              <div class="col-span-3 md:col-span-2">
+                <label for="country" class="block text-sm font-medium text-gray-700">Exp Month</label>
+                <div class="mt-1">
+                  <select v-model="expMonth" id="country" name="country" autocomplete="country-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+              </div>
+            
+              <div class="col-span-3 md:col-span-2">
+                <label for="expiration-date" class="block text-sm font-medium text-gray-700">Exp Year (YYYY)</label>
+                <div class="mt-1">
+                  <input v-model="expYear" type="text" name="expiration-date" id="expiration-date" autocomplete="cc-exp" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
 
-              <div>
+              <div class="col-span-2">
                 <label for="cvc" class="block text-sm font-medium text-gray-700">CVC</label>
                 <div class="mt-1">
                   <input v-model="cvc" type="text" name="cvc" id="cvc" autocomplete="csc" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
@@ -203,7 +225,9 @@
             <ul role="list" class="divide-y divide-gray-200">
               <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-6 px-4 sm:px-6">
                 <div class="flex-shrink-0">
-                  <img :src="product.imageSrc" :alt="product.imageAlt" class="w-20 rounded-md" />
+                   <a :href="product.href">
+                    <img :src="product.imageSrc" :alt="product.imageAlt" class="w-20 rounded-md" />
+                  </a>
                 </div>
 
                 <div class="ml-6 flex-1 flex flex-col">
@@ -218,7 +242,8 @@
                         {{ product.color }}
                       </p>
                       <p class="mt-1 text-sm text-gray-500 capitalize">
-                        {{ product.size }}
+                        <span v-if="product.size != 'xl' && product.size != 'xxl' && product.size != 'xxxl'">{{ product.size }}</span>
+                        <span v-else class="uppercase">{{ product.size }}</span>
                       </p>
                     </div>
 
@@ -333,6 +358,9 @@ export default {
     const state = ref(null)
     const country = ref('US')
     const zip = ref(null)
+    const states = ref([])
+    const expMonth = ref(null)
+    const expYear = ref(null)
 
     const deliveryMethod = ref('standard')
 
@@ -361,7 +389,14 @@ export default {
 
     onMounted(() => {
       doCartItems()
+      getStates()
     })
+
+    function getStates() {
+      axios.get('/web-api/v1/states').then((response) => {
+        states.value = response.data
+      })
+    }
 
     function doCartItems() {
       if(props.cartItems && props.cartItems.length) {
@@ -505,8 +540,13 @@ export default {
         isValidated = false
       }
       // Expiration
-      if(expiration.value == null || expiration.value == '') {
-        errors.value.push('Expiration is required')
+      if(expMonth.value == null || expMonth.value == '') {
+        errors.value.push('Expiration month is required')
+        isValidated = false
+      }
+      // Expiration
+      if(expYear.value == null || expYear.value == '' || expYear.value.length != 4) {
+        errors.value.push('Four digit expiration year is required')
         isValidated = false
       }
       // CVC
@@ -539,8 +579,8 @@ export default {
         delivery_method: deliveryMethod.value,
         card_number: cardNumber.value,
         name_on_card: nameOnCard.value,
-        //exp_month: expMonth.value,
-        //exp_year: expYear.value,
+        exp_month: expMonth.value,
+        exp_year: expYear.value,
         cvc: cvc.value
       }).then((response) => {
         
@@ -599,7 +639,10 @@ export default {
       submit,
       errors,
       validateForm,
-      processing
+      processing,
+      states,
+      expMonth,
+      expYear
     }
   },
   watch: {

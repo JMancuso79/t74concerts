@@ -300,6 +300,8 @@ Route::post('/web-api/v1/remove-item-from-cart', 'App\Http\Controllers\CartContr
 Route::post('/web-api/v1/update-cart', 'App\Http\Controllers\CartController@update');
 // Payment
 Route::post('/web-api/v1/product-payment', 'App\Http\Controllers\PaymentController@storeProductPayment');
+// States
+Route::get('/web-api/v1/states', '\App\Http\Controllers\LocationsController@states');
 /*
 |--------------------------------------------------------------------------
 | Image Routes

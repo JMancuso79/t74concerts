@@ -511,8 +511,8 @@ class PaymentController extends Controller
             'delivery_method' => 'required|string|max:255',
             'name_on_card' => 'required|string|max:255',
             'card_number' => 'required|string|max:255',
-            //'exp_month' => 'required|string|max:2',
-            //'exp_year' => 'required|string|max:2',
+            'exp_month' => 'required|string|max:2',
+            'exp_year' => 'required|string|max:4',
             'cvc' => 'required|string|max:5',
         ]); 
         if ($validator->fails()) {
@@ -532,8 +532,8 @@ class PaymentController extends Controller
                 $token = Stripe\Token::create([
                     'card' => [
                         'number' => $request->card_number,
-                        'exp_month' => '02',
-                        'exp_year' => '2023',
+                        'exp_month' => $request->exp_month,
+                        'exp_year' => $request->exp_year,
                         'cvc' => $request->cvc,
                         'address_zip' => $request->zip, 
                     ],
