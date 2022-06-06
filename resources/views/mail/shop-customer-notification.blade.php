@@ -53,7 +53,7 @@
                     <div style="border-bottom: 1px solid #eeeeee; padding-bottom:5px;" class="mb-2">
                         <p>
                             <a href="https://tower74concerts.com/product/{{ $product['id'] }}">
-                                <img src="https://tower74concerts.com/storage/images/628d5902e11b8_back-tee-1.jpg" style="max-width:280px;" width="100%" />
+                                <img src="https://tower74concerts.com{{$product['image']}}" style="max-width:280px;" width="100%" />
                             </a>
                         </p>
                         <p style="margin-top:5px;" class="text-capitalize">
