@@ -90,16 +90,7 @@
                 </div>
               </div>
 
-              <div>
-                <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                <div class="mt-1">
-                  <select v-model="country" id="country" name="country" autocomplete="country-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="US">United States</option>
-                    <!--<option>Canada</option>
-                    <option>Mexico</option>-->
-                  </select>
-                </div>
-              </div>
+
 
               <div v-if="states && states.length">
                 <label for="country" class="block text-sm font-medium text-gray-700">State</label>
@@ -116,7 +107,16 @@
                   <input v-model="zip" type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
-
+              <div>
+                <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+                <div class="mt-1">
+                  <select v-model="country" id="country" name="country" autocomplete="country-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="US">United States</option>
+                    <!--<option>Canada</option>
+                    <option>Mexico</option>-->
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
 
