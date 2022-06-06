@@ -1,5 +1,6 @@
 <template>
   <div id="page-top" class="bg-gray-50">
+
     <Header />
     <!-- Loading -->
     <div v-if="processing == true" class="max-w-2xl mx-auto pt-24 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">

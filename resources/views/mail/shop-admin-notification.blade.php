@@ -64,7 +64,7 @@
                 @foreach ($notification['products'] as $product)
                     <div style="border-bottom: 1px solid #eeeeee; padding-bottom:5px;" class="mb-2">
                         <p>
-                            <img src="https://tower74concerts.com{{$product['image']}}" style="max-width:280px;" width="100%" />
+                            <img src="https://tower74concerts.com{{$product['imageSrc']}}" style="max-width:280px;" width="100%" />
                         </p>
                         <p style="margin-top:5px;" class="text-capitalize">
                             <strong>{{ $product['name'] }}</strong> {{ $product['color'] }} ({{ $product['quantity'] }})
