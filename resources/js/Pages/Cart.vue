@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <Header />
-{{products}}
+
     <main class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
