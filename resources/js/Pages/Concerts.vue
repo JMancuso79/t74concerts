@@ -19,7 +19,7 @@
                 <div class="">
 
                     <div class="">
-                        <!-- Feature   --> 
+                        <!-- Feature   
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
                             <a href="https://tower74concerts.com/concert/chaser-1368930500">
                                 <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/62c83556704c3.jpeg" class="w-full" />
@@ -35,7 +35,7 @@
                                     Buy Tickets
                                 </a>
                             </p>
-                        </div> 
+                        </div> --> 
                         <div v-if="isLoading === false">
                             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
