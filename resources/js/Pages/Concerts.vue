@@ -92,9 +92,9 @@
           </div>
         </main>
         <aside class="col-span-12 lg:col-span-4">
-          <!--<div class="sticky top-4 space-y-4">
+          <div class="sticky top-4 space-y-4">
             <RightCol />
-          </div>-->
+          </div>
         </aside>
       </div>
     </div>
