@@ -58,7 +58,7 @@
                                             </div>
                                           </h3>
                                           <p class="mt-1 text-sm text-gray-600 line-clamp-2">
-                                            Please visit the Tower 74 Agency website for booking opportunities.
+                                           
                                           </p>
                                         </div>
                                       </li>
