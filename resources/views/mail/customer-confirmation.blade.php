@@ -29,21 +29,14 @@
         <div class="p-5">
             <h1 class="text-capitalize">Thank You For Your Order!</h1>
         </div>
-        <!-- Thank You -->
-        <div class="bg-white p-5 mb-5">
-            <h3 class="text-capitalize">Your support helps us book concerts which creates revenue for venues and keeps artists working!</h3>
-        </div>
         <!-- Details -->
         <div class="bg-white p-5 mb-5">
             <h3 class="text-capitalize">About Your Purchase</h3>
-            <p>Loop through products here</p>
+            <p>Your name has been added to the will call list. All you have to do is give us your name at the door and be ready to show your ID. </p>
         </div>
-        <!-- Tickets -->
+        <!-- Thank You -->
         <div class="bg-white p-5 mb-5">
-            <h3>Shipping</h3>
-            <p>
-                If your products are in stock they ship within two business days of receiving the order. If you purchased an item that is out of stock it will ship within two weeks. 
-            </p>
+            <h3 class="text-capitalize">Your support helps us book concerts which creates revenue for venues and keeps artists working!</h3>
         </div>
         <!-- Contact -->
         <div class="bg-white p-5">
