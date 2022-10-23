@@ -61,15 +61,11 @@ class BookingController extends Controller
 	            $message->to('booking@tower74concerts.com');
 	        });
 
-	        if( count(Mail::failures()) > 0 ) {
-	            return response()->json([
-	                'message' => 'fail',
-	            ]);            
-	        } else {
-	            return response()->json([
-	                'message' => 'success',
-	            ]);
-	        }
+
+            return response()->json([
+                'message' => 'success',
+            ]);
+	        
     	} else {
             return response()->json([
                 'message' => 'fail',
@@ -85,15 +81,11 @@ class BookingController extends Controller
                 $message->to($notification->email);
             });
 
-            if( count(Mail::failures()) > 0 ) {
-                return response()->json([
-                    'message' => 'fail',
-                ]);            
-            } else {
-                return response()->json([
-                    'message' => 'success',
-                ]);
-            }
+
+            return response()->json([
+                'message' => 'success',
+            ]);
+            
         } else {
             return response()->json([
                 'message' => 'fail',

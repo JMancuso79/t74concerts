@@ -37,15 +37,10 @@ class ContactController extends Controller
 	            $message->to('booking@tower74concerts.com');
 	        });
 
-	        if( count(Mail::failures()) > 0 ) {
-	            return response()->json([
-	                'message' => 'fail',
-	            ]);            
-	        } else {
-	            return response()->json([
-	                'message' => 'success',
-	            ]);
-	        }
+
+            return response()->json([
+                'message' => 'success',
+            ]);
         }
     }
 
