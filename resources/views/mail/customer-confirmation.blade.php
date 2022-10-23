@@ -32,11 +32,11 @@
         <!-- Details -->
         <div class="bg-white p-5 mb-5">
             <h3 class="text-capitalize">About Your Purchase</h3>
-            <p>Your name has been added to the will call list. All you have to do is give us your name at the door and be ready to show your ID. </p>
+            <p>Your name has been added to the will call list. Please have your ID ready when you arrive at the venue.</p>
         </div>
         <!-- Thank You -->
         <div class="bg-white p-5 mb-5">
-            <h3 class="text-capitalize">Your support helps us book concerts which creates revenue for venues and keeps artists working!</h3>
+            <p>Your support helps us book concerts which creates revenue for venues and keeps artists working!</p>
         </div>
         <!-- Contact -->
         <div class="bg-white p-5">
