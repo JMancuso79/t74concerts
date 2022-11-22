@@ -18,7 +18,7 @@
             <div class="artist-list">
                 <div class="">
 
-                    <div class="">
+                    <div class="featured-artist">
                         <!-- Feature 
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
                             <a href="https://tower74concerts.com/concert/tomorrows-bad-seeds-the-b-foundation-326491577">
