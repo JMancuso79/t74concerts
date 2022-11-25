@@ -38,7 +38,7 @@ Route::get('/concert/old-blood-zero-theorem-against-the-grave-fate-destroyed-sca
 
 Route::get('/', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts',
+		'title' => 'Tower 74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
 		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com'
@@ -58,7 +58,7 @@ Route::get('/', function () {
 
 Route::get('/register', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts',
+		'title' => 'Tower 74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
 		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com'
@@ -78,7 +78,7 @@ Route::get('/register', function () {
 
 Route::get('/contact', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts | Contact',
+		'title' => 'Tower 74 Concerts | Contact',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
 		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com/contact'
@@ -93,7 +93,7 @@ Route::get('/contact', function () {
 
 Route::get('/product/{id}', function ($id) {
 	$page_data = [
-		'title' => 'Tower74 | Shop',
+		'title' => 'Tower 74 | Shop',
 		'description' => '',
 		'image' => '',
 		'url' => 'https://tower74concerts.com/product/'.$id
@@ -110,7 +110,7 @@ Route::get('/product/{id}', function ($id) {
 
 Route::get('/cart', function () {
 	$page_data = [
-		'title' => 'Tower74 | Shop',
+		'title' => 'Tower 74 | Shop',
 		'description' => '',
 		'image' => '',
 		'url' => 'https://tower74concerts.com/cart'
@@ -134,7 +134,7 @@ Route::get('/cart', function () {
 
 Route::get('/check-out', function () {
 	$page_data = [
-		'title' => 'Tower74 | Shop',
+		'title' => 'Tower 74 | Shop',
 		'description' => '',
 		'image' => '',
 		'url' => 'https://tower74concerts.com/check-out'
@@ -158,7 +158,7 @@ Route::get('/check-out', function () {
 
 Route::get('/thank-you', function () {
 	$page_data = [
-		'title' => 'Tower74 | Thank You!',
+		'title' => 'Tower 74 | Thank You!',
 		'description' => '',
 		'image' => '',
 		'url' => 'https://tower74concerts.com/thank-you'
@@ -174,7 +174,7 @@ Route::get('/thank-you', function () {
 
 Route::get('/manage/product/{id}', function ($id) {
 	$page_data = [
-		'title' => 'Tower74 | Shop',
+		'title' => 'Tower 74 | Shop',
 		'description' => '',
 		'image' => '',
 		'url' => 'https://tower74concerts.com/product/'.$id
@@ -191,7 +191,7 @@ Route::get('/manage/product/{id}', function ($id) {
 
 Route::get('/about', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts | About',
+		'title' => 'Tower 74 Concerts | About',
 		'description' => 'Tower 74 LLC was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. Shortly after high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americomas street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20s while working for indie record labels Americoma and Rotten Records.',
 		'image' => 'https://tower74concerts.com/images/joshua-tree.jpg',
 		'url' => 'https://tower74concerts.com/about'
@@ -206,7 +206,7 @@ Route::get('/about', function () {
 
 Route::get('/booking', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts | Booking',
+		'title' => 'Tower 74 Concerts | Booking',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
 		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com/booking'
@@ -221,7 +221,7 @@ Route::get('/booking', function () {
 
 Route::get('/concerts', function () {
 	$page_data = [
-		'title' => 'Tower74 Concerts | Concerts',
+		'title' => 'Tower 74 Concerts | Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
 		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
 		'url' => 'https://tower74concerts.com/concerts'
@@ -232,6 +232,21 @@ Route::get('/concerts', function () {
 		'page_data' => $page_data
 	]);
     return Inertia::render('Concerts');
+});
+
+Route::get('/web-development', function () {
+	$page_data = [
+		'title' => 'Tower 74 | Web Development',
+		'description' => 'Tower74 is based in Newport Beach, CA.',
+		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'url' => 'https://tower74concerts.com/web-development'
+	];
+	session([
+		'slug' => 'web-development',
+		'page' => 'web-development',
+		'page_data' => $page_data
+	]);
+    return Inertia::render('WebDevelopment');
 });
 
 Route::get('/promo/{slug}', '\App\Http\Controllers\PagesController@getPromo');

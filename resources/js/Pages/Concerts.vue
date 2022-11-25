@@ -19,23 +19,23 @@
                 <div class="">
 
                     <div class="featured-artist">
-                        <!-- Feature 
+                        <!-- Feature --> 
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
-                            <a href="https://tower74concerts.com/concert/tomorrows-bad-seeds-the-b-foundation-326491577">
-                                <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/6308e4fc3aa10.jpeg" class="w-full" />
+                            <a href="/concert/porch-bobby-hustle-1860150981">
+                                <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/63781867705de.jpeg" class="w-full" />
                             </a>
                             <div class="bg-white pt-4">
-                                <a href="https://tower74concerts.com/concert/tomorrows-bad-seeds-the-b-foundation-326491577">
-                                    <h3 class="text-lg leading-6 font-bold text-blue-900">Tomorrows Bad Seeds @ Tiki Bar</h3>
+                                <a href="/concert/porch-bobby-hustle-1860150981">
+                                    <h3 class="text-lg leading-6 font-bold text-blue-900">Porch & Bobby Hustle @ Tiki Bar</h3>
                                 </a>
                                 <p class="text-gray-900">Tickets are available online or at the door.</p>
                             </div>
                             <p>
-                                <a href="https://tower74concerts.com/concert/tomorrows-bad-seeds-the-b-foundation-326491577" class="mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900">
+                                <a href="/concert/porch-bobby-hustle-1860150981" class="mt-4 w-full block text-center px-4 py-2 border border-blue-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-900">
                                     Buy Tickets
                                 </a>
                             </p>
-                        </div>--> 
+                        </div>
                         <div v-if="isLoading === false">
                             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
