@@ -40,7 +40,7 @@ Route::get('/', function () {
 	$page_data = [
 		'title' => 'Tower 74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com'
 	];
 	session([
@@ -60,7 +60,7 @@ Route::get('/register', function () {
 	$page_data = [
 		'title' => 'Tower 74 Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com'
 	];
 	session([
@@ -80,7 +80,7 @@ Route::get('/contact', function () {
 	$page_data = [
 		'title' => 'Tower 74 Concerts | Contact',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com/contact'
 	];
 	session([
@@ -193,7 +193,7 @@ Route::get('/about', function () {
 	$page_data = [
 		'title' => 'Tower 74 Concerts | About',
 		'description' => 'Tower 74 LLC was formed in January of 2021 by John Mancuso. John is a web and app developer and long time concert promoter. Originally from St. Louis, MO, he played in bands in the STL metal scene in high school. Shortly after high school, in 2000, he moved to Huntington Beach, CA. While looking for a new band, he found intern work at Americoma Records, owned by Nikki Sixx, in West Hollywood. While stuffing envelopes to send out to Americomas street team, he began booking local bands at venues up and down the Sunset Strip. He booked and managed local bands in his early 20s while working for indie record labels Americoma and Rotten Records.',
-		'image' => 'https://tower74concerts.com/images/joshua-tree.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com/about'
 	];
 	session([
@@ -208,7 +208,7 @@ Route::get('/booking', function () {
 	$page_data = [
 		'title' => 'Tower 74 Concerts | Booking',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com/booking'
 	];
 	session([
@@ -223,7 +223,7 @@ Route::get('/concerts', function () {
 	$page_data = [
 		'title' => 'Tower 74 Concerts | Concerts',
 		'description' => 'Tower74 Concerts is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com/concerts'
 	];
 	session([
@@ -238,7 +238,7 @@ Route::get('/web-development', function () {
 	$page_data = [
 		'title' => 'Tower 74 | Web Development',
 		'description' => 'Tower74 is based in Newport Beach, CA.',
-		'image' => 'https://tower74concerts.com/images/tower74-full.jpg',
+		'image' => 'https://tower74concerts.com/images/t74-marketing-full.jpg',
 		'url' => 'https://tower74concerts.com/web-development'
 	];
 	session([
