@@ -7,7 +7,7 @@
       <div class="relative mx-auto max-w-2xl py-24 px-4 sm:px-6 lg:max-w-7xl lg:py-32 lg:px-8">
         <div class="relative">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-6xl">Tower 74 Website & App Development</h1>
-          <p class="mt-6 max-w-2xl text-xl text-gray-600">We create fully responsive websites that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one  year of hosting, maintenance, backups and software updates.</p>
+          <p class="mt-6 max-w-2xl text-xl text-gray-600">We create fully responsive websites and apps that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one  year of hosting, maintenance, backups and software updates.</p>
         </div>
       </div>
     </div>
@@ -60,6 +60,8 @@ const pricing = {
       frequency: '',
       description: '',
       features: [
+        'Responsive on all devices',
+        'High quality templates & theme',
         'Landing page', 
         '3 content pages', 
         'Contact page', 
@@ -77,6 +79,8 @@ const pricing = {
       frequency: '',
       description: '',
       features: [
+        'Responsive on all devices',
+        'High quality templates & theme',
         'Landing page', 
         '3 content pages', 
         'Contact page', 
@@ -93,8 +97,9 @@ const pricing = {
       title: 'Custom Website',
       price: 1250,
       frequency: '',
-      description: 'Custom websites start at $1,250',
+      description: 'Custom websites and apps start at $1,250',
       features: [
+        'Custom & mobile first design',
         'Landing page', 
         '5+ content pages', 
         'Contact page', 
