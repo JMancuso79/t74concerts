@@ -23058,6 +23058,10 @@ var navigation = [{
   href: '/product/4',
   current: false
 }, {
+  name: 'Web Development',
+  href: '/web-development',
+  current: false
+}, {
   name: 'Contact',
   href: '/contact',
   current: false
@@ -25004,7 +25008,7 @@ __webpack_require__.r(__webpack_exports__);
         price: 420,
         frequency: '',
         description: '',
-        features: ['Landing page', '3 content pages', 'Contact Page', 'SSL Certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
+        features: ['Landing page', '3 content pages', 'Contact page', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
         cta: 'Get Started',
         mostPopular: false
       }, {
@@ -25012,7 +25016,7 @@ __webpack_require__.r(__webpack_exports__);
         price: 750,
         frequency: '',
         description: '',
-        features: ['Landing page', '3 content pages', 'Contact Page', 'Shop w/cart', 'SSL Certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
+        features: ['Landing page', '3 content pages', 'Contact page', 'Shop w/cart', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
         cta: 'Get Started',
         mostPopular: true
       }, {
@@ -25020,7 +25024,7 @@ __webpack_require__.r(__webpack_exports__);
         price: 1250,
         frequency: '',
         description: 'Custom websites start at $1,250',
-        features: ['Landing page', '5+ content pages', 'Contact Page', 'Shop w/cart', 'SSL Certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
+        features: ['Landing page', '5+ content pages', 'Contact page', 'Shop w/cart', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
         cta: 'Get Started',
         mostPopular: false
       }]
@@ -34287,7 +34291,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "pb-16 bg-gray-50"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative\"><!-- Page Header --><div class=\"relative mx-auto max-w-2xl py-24 px-4 sm:px-6 lg:max-w-7xl lg:py-32 lg:px-8\"><div class=\"relative\"><h1 class=\"text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-6xl\">Tower 74 Web Development</h1><p class=\"mt-6 max-w-2xl text-xl text-gray-600\">We create fully responsive websites that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one year of hosting, maintenance, backups and software updates.</p></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative\"><!-- Page Header --><div class=\"relative mx-auto max-w-2xl py-24 px-4 sm:px-6 lg:max-w-7xl lg:py-32 lg:px-8\"><div class=\"relative\"><h1 class=\"text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-6xl\">Tower 74 Website &amp; App Development</h1><p class=\"mt-6 max-w-2xl text-xl text-gray-600\">We create fully responsive websites that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one year of hosting, maintenance, backups and software updates.</p></div></div></div>", 1);
 var _hoisted_3 = {
   "class": "relative",
   "aria-labelledby": "pricing-heading"

@@ -46,6 +46,7 @@ import { ShoppingBagIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 const navigation = [
   { name: 'Concerts', href: '/concerts', current: false },
   { name: 'Shop', href: '/product/4', current: false },
+  { name: 'Web Development', href: '/web-development', current: false },
   { name: 'Contact', href: '/contact', current: false },
 ]
 export default {
