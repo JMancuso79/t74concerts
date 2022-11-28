@@ -18,8 +18,8 @@
             <div class="artist-list">
                 <div class="">
 
-                    <div class="featured-artist">
-                        <!-- Feature --> 
+                    <div class="featured-artist-section">
+                        <!-- Feature
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-6">
                             <a href="/concert/porch-bobby-hustle-1860150981">
                                 <img src="https://artistwavesoftware.s3-us-west-1.amazonaws.com/posts/63781867705de.jpeg" class="w-full" />
@@ -35,7 +35,7 @@
                                     Buy Tickets
                                 </a>
                             </p>
-                        </div>
+                        </div> --> 
                         <div v-if="isLoading === false">
                             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
