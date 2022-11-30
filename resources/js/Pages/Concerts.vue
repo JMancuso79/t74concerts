@@ -6,6 +6,19 @@
     -->
     <Header />
 
+    <div class="relative bg-gray-900 py-32 px-6 sm:py-40 sm:px-12 lg:px-16 mb-16">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="/storage/images/en-young-bg.jpg" alt="" class="h-full w-full object-cover object-center" />
+        </div>
+        <div aria-hidden="true" class="absolute inset-0 bg-gray-900 bg-opacity-50" />
+        <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+            <p class="mt-3 text-sm text-white">Featured Concert</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl uppercase">E.N Young & Imperial Sound</h2>
+            <p class="mt-3 text-xl text-white">With performances by Ital Vibes, Bobby Hustle & Capital Dub</p>
+            <a href="/concert/en-young-imperial-sound-wital-vibes-659077554" class="mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Buy Tickets</a>
+        </div>
+    </div>
+
     <div class="py-10">
       <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
         
