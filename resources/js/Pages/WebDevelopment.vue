@@ -1,18 +1,18 @@
 <template>
   <div class="pb-16 bg-gray-50">
     <Header />
-    <!-- Header and Page Header -->
-    <div class="relative">
-      <!-- Page Header -->
-      <div class="relative mx-auto max-w-2xl py-24 px-4 sm:px-6 lg:max-w-7xl lg:py-32 lg:px-8">
-        <div class="relative">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-6xl">Tower 74 Website & App Development</h1>
-          <p class="mt-6 max-w-2xl text-xl text-gray-600">We create fully responsive websites and apps that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one  year of hosting, maintenance, backups and software updates.</p>
+    <main>
+      <div class="relative bg-gray-900 py-32 px-6 sm:py-40 sm:px-12 lg:px-16 mb-16 lg:mb-24">
+        <div class="absolute inset-0 overflow-hidden">
+          <img src="/storage/images/space-bg.jpg" alt="" class="h-full w-full object-cover object-center" />
+        </div>
+        <div aria-hidden="true" class="absolute inset-0 bg-gray-900 bg-opacity-50" />
+        <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Tower 74 Website & App Development</h2>
+          <p class="mt-3 text-xl text-white">We create fully responsive websites and apps that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one  year of hosting, maintenance, backups and software updates.</p>
+          <a href="/contact" class="mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Get Started</a>
         </div>
       </div>
-    </div>
-
-    <main>
       <!-- Pricing Section -->
       <section class="relative" aria-labelledby="pricing-heading">
         <h2 id="pricing-heading" class="sr-only">Pricing</h2>
@@ -56,7 +56,7 @@ const pricing = {
   tiers: [
     {
       title: 'Basic Website',
-      price: 420,
+      price: 550,
       frequency: '',
       description: '',
       features: [
@@ -64,6 +64,7 @@ const pricing = {
         'High quality templates & theme',
         'Landing page', 
         '3 content pages', 
+        '3 stock photos',
         'Contact page', 
         'SSL certificate', 
         '1 year of hosting', 
@@ -75,7 +76,7 @@ const pricing = {
     },
     {
       title: 'Basic Website + Shop',
-      price: 750,
+      price: 850,
       frequency: '',
       description: '',
       features: [
@@ -83,6 +84,7 @@ const pricing = {
         'High quality templates & theme',
         'Landing page', 
         '3 content pages', 
+        '3 stock photos',
         'Contact page', 
         'Shop w/cart', 
         'SSL certificate', 
@@ -102,6 +104,7 @@ const pricing = {
         'Custom & mobile first design',
         'Landing page', 
         '5+ content pages', 
+        '5 stock photos',
         'Contact page', 
         'Shop w/cart', 
         'SSL certificate', 

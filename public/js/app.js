@@ -25005,18 +25005,18 @@ __webpack_require__.r(__webpack_exports__);
     var pricing = {
       tiers: [{
         title: 'Basic Website',
-        price: 420,
+        price: 550,
         frequency: '',
         description: '',
-        features: ['Responsive on all devices', 'High quality templates & theme', 'Landing page', '3 content pages', 'Contact page', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
+        features: ['Responsive on all devices', 'High quality templates & theme', 'Landing page', '3 content pages', '3 stock photos', 'Contact page', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
         cta: 'Get Started',
         mostPopular: false
       }, {
         title: 'Basic Website + Shop',
-        price: 750,
+        price: 850,
         frequency: '',
         description: '',
-        features: ['Responsive on all devices', 'High quality templates & theme', 'Landing page', '3 content pages', 'Contact page', 'Shop w/cart', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
+        features: ['Responsive on all devices', 'High quality templates & theme', 'Landing page', '3 content pages', '3 stock photos', 'Contact page', 'Shop w/cart', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
         cta: 'Get Started',
         mostPopular: true
       }, {
@@ -25024,7 +25024,7 @@ __webpack_require__.r(__webpack_exports__);
         price: 1250,
         frequency: '',
         description: 'Custom websites and apps start at $1,250',
-        features: ['Custom & mobile first design', 'Landing page', '5+ content pages', 'Contact page', 'Shop w/cart', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
+        features: ['Custom & mobile first design', 'Landing page', '5+ content pages', '5 stock photos', 'Contact page', 'Shop w/cart', 'SSL certificate', '1 year of hosting', '1 year of maintenance & backups', '1 year of software updates'],
         cta: 'Get Started',
         mostPopular: false
       }]
@@ -34290,7 +34290,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "pb-16 bg-gray-50"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative\"><!-- Page Header --><div class=\"relative mx-auto max-w-2xl py-24 px-4 sm:px-6 lg:max-w-7xl lg:py-32 lg:px-8\"><div class=\"relative\"><h1 class=\"text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-6xl\">Tower 74 Website &amp; App Development</h1><p class=\"mt-6 max-w-2xl text-xl text-gray-600\">We create fully responsive websites and apps that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one year of hosting, maintenance, backups and software updates.</p></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative bg-gray-900 py-32 px-6 sm:py-40 sm:px-12 lg:px-16 mb-16 lg:mb-24\"><div class=\"absolute inset-0 overflow-hidden\"><img src=\"/storage/images/space-bg.jpg\" alt=\"\" class=\"h-full w-full object-cover object-center\"></div><div aria-hidden=\"true\" class=\"absolute inset-0 bg-gray-900 bg-opacity-50\"></div><div class=\"relative mx-auto flex max-w-3xl flex-col items-center text-center\"><h2 class=\"text-3xl font-bold tracking-tight text-white sm:text-4xl\">Tower 74 Website &amp; App Development</h2><p class=\"mt-3 text-xl text-white\">We create fully responsive websites and apps that look great on all devices. Our basic website packages are built with high quality templates and themes. All of our packages come with SSL certificate, one year of hosting, maintenance, backups and software updates.</p><a href=\"/contact\" class=\"mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto\">Get Started</a></div></div>", 1);
 var _hoisted_3 = {
   "class": "relative",
   "aria-labelledby": "pricing-heading"
@@ -34332,7 +34332,7 @@ var _hoisted_14 = {
   "class": "ml-3 text-gray-600"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header and Page Header "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Pricing Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tiers "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.pricing.tiers, function (tier) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Pricing Section "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Tiers "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.pricing.tiers, function (tier) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: tier.title,
       "class": "relative flex flex-col border border-gray-300 bg-white p-8 shadow-sm"
