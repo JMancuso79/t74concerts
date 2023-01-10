@@ -1,14 +1,14 @@
 <template>
   <div class="min-h-full">
 
-    <!-- 
+    <!--
       Top Nav Here
     -->
     <Header />
 
-    <div class="relative bg-gray-900 py-32 px-6 sm:py-40 sm:px-12 lg:px-16 mb-16">
+    <div class="relative bg-gray-900 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
         <div class="absolute inset-0 overflow-hidden">
-            <img src="/storage/images/en-young-bg.jpg" alt="" class="h-full w-full object-cover object-center" />
+            <img src="https://tower74concerts.com/storage/images/en-young-bg.jpg" alt="" class="h-full w-full object-cover object-center" />
         </div>
         <div aria-hidden="true" class="absolute inset-0 bg-gray-900 bg-opacity-50" />
         <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -21,8 +21,8 @@
 
     <div class="py-10">
       <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
-        
-          <!-- 
+
+          <!--
             Side Nav Here
           -->
 
@@ -48,7 +48,7 @@
                                     Buy Tickets
                                 </a>
                             </p>
-                        </div> --> 
+                        </div> -->
                         <div v-if="isLoading === false">
                             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                                 <div class="mb-6">
@@ -73,7 +73,7 @@
                                                     <p v-if="concert.event.venue" class="text-sm truncate text-gray-800">
                                                         {{ concert.event.venue.name }} - {{concert.event.venue.city}},  <span class="uppercase">{{concert.event.venue.state}}</span>
                                                     </p>
-                                                    
+
                                                 </div>
                                                 <div v-if="concert.event">
                                                     <a @click.prevent="doTicketLink(concert.slug, concert.event.ticket_link)" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
@@ -81,10 +81,10 @@
                                                     </a>
                                                 </div>
                                             </div>
-                               
+
                                         </li>
                                     </ul>
-                                </div> 
+                                </div>
                                 <div v-else>
                                     There are currently no concerts.
                                 </div>
@@ -132,17 +132,17 @@
     const communities = []
     export default {
         components: {
-            Header, 
+            Header,
             Footer,
-            TicketIcon, 
-            HomeIcon, 
+            TicketIcon,
+            HomeIcon,
             MailIcon,
             CalendarIcon,
             RightCol
         },
         data() {
             return {
-                isLoading: false,  
+                isLoading: false,
                 concerts: [],
                 artists: [],
                 matchedArtists: [],
@@ -213,7 +213,7 @@
                                         this.artists.push(this.concerts[i].artists[y])
                                     }
                                 }
-                            } 
+                            }
                             this.concerts[i].onsale = isOnSale
                             this.matchedConcerts.push(this.concerts[i])
                         }

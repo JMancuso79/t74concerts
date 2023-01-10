@@ -178,7 +178,7 @@
                   <input v-model="cardNumber" type="text" id="card-number" name="card-number" autocomplete="cc-number" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
-          
+
 
               <div class="col-span-3 md:col-span-2">
                 <label for="country" class="block text-sm font-medium text-gray-700">Exp Month</label>
@@ -199,7 +199,7 @@
                   </select>
                 </div>
               </div>
-            
+
               <div class="col-span-3 md:col-span-2">
                 <label for="expiration-date" class="block text-sm font-medium text-gray-700">Exp Year (YYYY)</label>
                 <div class="mt-1">
@@ -227,7 +227,7 @@
               <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-6 px-4 sm:px-6">
                 <div class="flex-shrink-0">
                    <a :href="product.href">
-                    <img :src="product.imageSrc" :alt="product.imageAlt" class="w-20 rounded-md" />
+                    <img :src="'https://tower74concerts.com'+product.imageSrc" :alt="product.imageAlt" class="w-20 rounded-md" />
                   </a>
                 </div>
 
@@ -348,7 +348,7 @@ export default {
     const shipping = ref(0)
     const total = ref(0)
     const products = ref([])
-    
+
     const email = ref(null)
     const phone = ref(null)
     const fName = ref(null)
@@ -584,7 +584,7 @@ export default {
         exp_year: expYear.value,
         cvc: cvc.value
       }).then((response) => {
-        
+
         if(response.data.message == 'success') {
           window.location = '/thank-you'
         } else {
@@ -597,11 +597,11 @@ export default {
 
       }).catch(error => {
         processing.value = false
-        
+
         errors.value.push('Please check that your card number, expiration date and security code are correct.')
-        
+
       })
-      
+
     }
 
     return {
@@ -621,12 +621,12 @@ export default {
       resetTotal,
       calculateTaxes,
       calculateTotal,
-      email, 
+      email,
       phone,
       fName,
       lName,
       streetAddress,
-      unit, 
+      unit,
       city,
       state,
       zip,
@@ -670,8 +670,8 @@ export default {
               this.doShipping()
               this.calculateTaxes()
               this.calculateTotal()
-            } 
-          } 
+            }
+          }
         } else {
           this.resetTotal()
         }
@@ -702,8 +702,8 @@ export default {
 
 <style>
 animate-spin {
- animation: spin 1s linear infinite; 
-}  
+ animation: spin 1s linear infinite;
+}
 
 @keyframes spin {
   from {

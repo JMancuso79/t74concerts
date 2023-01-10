@@ -12,7 +12,7 @@
               {{ product.price }}
             </p>
           </div>
-          <!-- Reviews 
+          <!-- Reviews
           <div class="mt-4">
             <h2 class="sr-only">Reviews</h2>
             <div class="flex items-center">
@@ -35,12 +35,12 @@
         <div class="mt-8 lg:mt-0 lg:col-start-1 lg:col-span-7 lg:row-start-1 lg:row-span-3">
           <h2 class="sr-only">Images</h2>
           <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-            <img v-for="image in product.images" :key="image.id" :src="image.imageSrc" :alt="image.imageAlt" :class="[image.primary ? 'lg:col-span-2 lg:row-span-2' : 'hidden lg:block', 'rounded-lg']" />
+            <img v-for="image in product.images" :key="image.id" :src="'https://tower74concerts.com'+image.imageSrc" :alt="image.imageAlt" :class="[image.primary ? 'lg:col-span-2 lg:row-span-2' : 'hidden lg:block', 'rounded-lg']" />
             <!-- Mobile Thumbs Only -->
             <div class="lg:hidden pt-4 lg:pt-0">
               <div class="grid grid-cols-12 gap-x-4">
                 <div v-for="image in product.images" :key="image.id" class="col-span-6">
-                  <img :src="image.imageSrc" :alt="image.imageAlt" class="rounded-lg " />
+                  <img :src="'https://tower74concerts.com'+image.imageSrc" :alt="image.imageAlt" class="rounded-lg " />
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@
         </div>
       </div>
 
-      <!-- Reviews 
+      <!-- Reviews
       <section aria-labelledby="reviews-heading" class="mt-16 sm:mt-24">
         <h2 id="reviews-heading" class="text-lg font-medium text-gray-900">Recent reviews</h2>
 
@@ -275,8 +275,8 @@ export default {
     const product = ref([]);
     const open = ref(false);
     const selectedColor = ref({
-      name: 'Black', 
-      bgColor: 'bg-gray-900', 
+      name: 'Black',
+      bgColor: 'bg-gray-900',
       selectedColor: 'ring-gray-900'
     });
     const selectedSize = ref([]);
@@ -289,7 +289,7 @@ export default {
     ])
 
     onMounted(() => {
-      getProduct() 
+      getProduct()
     })
 
     function getProduct() {
@@ -350,8 +350,8 @@ export default {
       for(var i=0;i<arr.length;i++) {
         if(arr[i] == 'black') {
           colors.push({
-            name: 'Black', 
-            bgColor: 'bg-gray-900', 
+            name: 'Black',
+            bgColor: 'bg-gray-900',
             selectedColor: 'ring-gray-900'
           })
         }

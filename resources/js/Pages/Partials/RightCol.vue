@@ -1,16 +1,16 @@
-<template> 
+<template>
   <div>
     <div class="bg-white rounded-lg shadow p-6 mb-4">
-      <!-- 
+      <!--
         Right Col Here
       -->
       <a href="/contact">
-          <img src="/storage/images/T74-MARKETING-WINTER-22.jpg" style="width:100%!important;" />
+          <img src="https://tower74concerts.com/storage/images/T74-MARKETING-WINTER-22.jpg" style="width:100%!important;" />
       </a>
       <button @click.prevent="goTo('/contact')" type="button" class="mt-4 w-full px-4 py-2 border border-gray-300 shadow-sm text-center font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Contact</button>
     </div>
     <div class="bg-white rounded-lg shadow p-6 mb-4">
-        <!-- 
+        <!--
           Right Col Here
         -->
         <a href="/product/4">

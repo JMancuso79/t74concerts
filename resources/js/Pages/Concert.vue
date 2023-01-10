@@ -1,15 +1,14 @@
 <template>
   <div class="min-h-full">
 
-    <!-- 
+    <!--
       Top Nav Here
     -->
     <Header />
-
     <div v-if="concert" class="py-10">
       <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="pl-4 pr-4 mb-4 md:pl-0 md:pr-0 md:block lg:col-span-3">
-          <!-- 
+          <!--
             Side Nav Here
           -->
           <img class="h-18 w-18 rounded-md" :src="concert.filename" alt="" />
@@ -23,7 +22,7 @@
                         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mb-4">
                             <!-- Date -->
                             <div class="font-bold text-medium">
-                                {{dateText}} 
+                                {{dateText}}
                             </div>
                             <!-- Title -->
                             <div class="font-bold pb-2 text-xl text-dark">
@@ -32,11 +31,10 @@
                             <!-- Tickets -->
                             <div class="pb-2">
                                 <span class="font-bold text-dark">Tickets</span>
-                                <div v-if="concert.onsale === true">
+                                <div>
                                     <div v-for="ticket in concert.tickets">
                                         <div v-if="ticket.status === 1" class="capitalize mb-2 text-medium">
                                             ${{ticket.price}} {{ticket.label}}<br>
-
                                         </div>
                                     </div>
                                     <!-- Buy Ticket -->
@@ -46,9 +44,13 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!-- Off Sale -->
-                                <div v-else>
-                                    Please buy tickets are the door. Online sales are no longer available for this concert.
+                                <!-- Off Sale and not free -->
+                                <div v-if="concert.onSale === false && concert.isFree === false">
+                                    Online sales have ended or may not be available for this concert. Please get tickets at the door.
+                                </div>
+                                <!-- Free -->
+                                <div v-if="concert.isFree">
+                                    This is a free concert.
                                 </div>
                                 <!-- Artists -->
                                 <div v-if="concert.artists.length > 0" class="pb-2 md:pt-4">
@@ -62,14 +64,14 @@
                                 </div>
                                 <!-- Details -->
                                 <div v-if="concert.body != null && concert.body != ''" class="pb-2">
-                                    <div class="font-bold text-dark">Details</div> 
+                                    <div class="font-bold text-dark">Details</div>
                                     <div class="text-medium">
                                         {{concert.body}}
                                     </div>
                                 </div>
                                 <!-- Venue -->
                                 <div v-if="concert.event.venue" class="pb-2">
-                                    <span class="font-bold text-dark">Venue</span> 
+                                    <span class="font-bold text-dark">Venue</span>
                                     <div v-if="concert.event.venue.image">
                                         <!--<img :src="concert.event.venue.image" />-->
                                     </div>
@@ -99,10 +101,12 @@
         </main>
         <aside class="md:block lg:col-span-4">
           <div class="sticky top-4 space-y-4">
-            <!-- 
+            <!--
               Right Col Here
             -->
-            <PaymentWrapper :concert="concert" />
+            <div v-if="concert.onSale === true && concert.isFree === false">
+                <PaymentWrapper :concert="concert" />
+            </div>
             <RightCol />
           </div>
         </aside>
@@ -130,7 +134,8 @@
                 isLoading: false,
                 showModal: false,
                 dateText: null,
-                isOnSale: false
+                isOnSale: false,
+                isFree: true
             }
         },
         mounted() {
@@ -145,12 +150,18 @@
             doTickets: function() {
                 this.isOnSale = false
                 for(var x=0;x<this.concert.tickets.length;x++) {
+                    // Determine if show is on sale
                     if(this.concert.tickets[x].status === 1) {
                         this.isOnSale = true
                     }
+                    // Determine if show is free
+                    if(this.concert.tickets[x].price > 0) {
+                        this.isFree = false
+                    }
                 }
-                
-                this.concert.onsale = this.isOnSale
+
+                this.concert.onSale = this.isOnSale
+                this.concert.isFree = this.isFree
             }
         },
         watch: {

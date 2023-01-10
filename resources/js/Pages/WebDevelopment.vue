@@ -4,7 +4,7 @@
     <main>
       <div class="relative bg-gray-900 py-32 px-6 sm:py-40 sm:px-12 lg:px-16 mb-16 lg:mb-24">
         <div class="absolute inset-0 overflow-hidden">
-          <img src="/storage/images/space-bg.jpg" alt="" class="h-full w-full object-cover object-center" />
+          <img src="https://tower74concerts.com/storage/images/space-bg.jpg" alt="" class="h-full w-full object-cover object-center" />
         </div>
         <div aria-hidden="true" class="absolute inset-0 bg-gray-900 bg-opacity-50" />
         <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -62,13 +62,13 @@ const pricing = {
       features: [
         'Responsive on all devices',
         'High quality templates & theme',
-        'Landing page', 
-        '3 content pages', 
+        'Landing page',
+        '3 content pages',
         '3 stock photos',
-        'Contact page', 
-        'SSL certificate', 
-        '1 year of hosting', 
-        '1 year of maintenance & backups', 
+        'Contact page',
+        'SSL certificate',
+        '1 year of hosting',
+        '1 year of maintenance & backups',
         '1 year of software updates'
       ],
       cta: 'Get Started',
@@ -82,14 +82,14 @@ const pricing = {
       features: [
         'Responsive on all devices',
         'High quality templates & theme',
-        'Landing page', 
-        '3 content pages', 
+        'Landing page',
+        '3 content pages',
         '3 stock photos',
-        'Contact page', 
-        'Shop w/cart', 
-        'SSL certificate', 
-        '1 year of hosting', 
-        '1 year of maintenance & backups', 
+        'Contact page',
+        'Shop w/cart',
+        'SSL certificate',
+        '1 year of hosting',
+        '1 year of maintenance & backups',
         '1 year of software updates'
       ],
       cta: 'Get Started',
@@ -102,14 +102,14 @@ const pricing = {
       description: 'Custom websites and apps start at $1,250',
       features: [
         'Custom & mobile first design',
-        'Landing page', 
-        '5+ content pages', 
+        'Landing page',
+        '5+ content pages',
         '5 stock photos',
-        'Contact page', 
-        'Shop w/cart', 
-        'SSL certificate', 
-        '1 year of hosting', 
-        '1 year of maintenance & backups', 
+        'Contact page',
+        'Shop w/cart',
+        'SSL certificate',
+        '1 year of hosting',
+        '1 year of maintenance & backups',
         '1 year of software updates'
       ],
       cta: 'Get Started',

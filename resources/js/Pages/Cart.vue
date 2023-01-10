@@ -13,7 +13,7 @@
             <li v-for="(product, productIdx) in products" :key="product.id" class="flex py-6 sm:py-10">
               <div class="flex-shrink-0">
                 <a :href="product.href">
-                  <img :src="product.imageSrc" :alt="product.imageAlt" class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48" />
+                  <img :src="'https://tower74concerts.com'+product.imageSrc" :alt="product.imageAlt" class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48" />
                 </a>
               </div>
 
@@ -257,7 +257,7 @@ export default {
             doShipping()
             calculateTaxes()
             calculateTotal()
-          } 
+          }
         }
       } else {
         resetTotal()
@@ -367,8 +367,8 @@ export default {
               this.doShipping()
               this.calculateTaxes()
               this.calculateTotal()
-            } 
-          } 
+            }
+          }
         } else {
           this.resetTotal()
         }
