@@ -15,7 +15,7 @@
             <p class="mt-3 text-sm text-white">Featured Concert</p>
             <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl uppercase">E.N Young & Imperial Sound</h2>
             <p class="mt-3 text-xl text-white">With performances by Ital Vibes, Bobby Hustle & Capital Dub</p>
-            <a href="/concert/en-young-imperial-sound-wital-vibes-659077554" class="mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Buy Tickets</a>
+            <a href="/concert/en-young-imperial-sound-wital-vibes-659077554" class="mt-8 block w-full rounded-md border-2 border-white bg-transparent py-3 px-8 text-base font-bold text-white hover:bg-gray-100 sm:w-auto uppercase">Buy Tickets</a>
         </div>
     </div>
 
