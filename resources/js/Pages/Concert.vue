@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                     <!-- Buy Ticket -->
-                                    <div class="block lg:hidden mb-4">
+                                    <div v-if="concert.onSale && concert.isFree === false" class="block lg:hidden mb-4">
                                         <a href="#buy-tickets" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                                             Buy Tickets
                                         </a>
@@ -49,11 +49,11 @@
                                     Online sales have ended or may not be available for this concert. Please get tickets at the door.
                                 </div>
                                 <!-- Free -->
-                                <div v-if="concert.isFree">
+                                <div v-if="concert.isFree" class="text-medium">
                                     This is a free concert.
                                 </div>
                                 <!-- Artists -->
-                                <div v-if="concert.artists.length > 0" class="pb-2 md:pt-4">
+                                <div v-if="concert.artists.length > 0" class="pb-2 pt-4">
                                     <span class="font-bold text-dark">Artists</span>
                                     <div v-for="artist in concert.artists" class="text-medium">
                                         {{artist.name}}
